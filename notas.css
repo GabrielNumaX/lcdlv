@@ -1,0 +1,53 @@
+#main {
+    background-color: green;
+    margin-top: 0;
+    padding-top: 0;
+}
+
+#article-main h1 {
+    background-color: aqua;
+    margin-top: 0;
+    padding-top: 0;
+    font-size: 48px;
+    letter-spacing: 1px;
+}
+
+
+#aside h2 {
+    letter-spacing: 2px;
+    padding-top: 20px;
+}
+
+.ul-notas {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.li-notas a {
+    text-decoration: none;
+    margin-right: 16px;
+    color: #dddddd;
+}
+
+.li-notas a:link {
+    color: #1c52c7cc; 
+}
+
+.li-notas a:visited {
+    color: #dddddd;
+}
+
+.li-notas a:hover {
+    color: #1c52c7cc; 
+    /* text-shadow: 0px 0px 8px #1c91c7; */
+    /* text-shadow: 0px 0px 12px #1C91C7; */
+}
+
+.li-notas a:active {
+    color: #1c52c7cc; 
+}
+
+.span-fecha {
+    color: #dddddd;
+}
