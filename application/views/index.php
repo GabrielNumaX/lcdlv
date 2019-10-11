@@ -22,6 +22,15 @@
     <link type="text/css" rel="stylesheet" href="<?= base_url()?>assets/css/master.css">
     <link rel="stylesheet" href="<?= base_url()?>assets/css/posts.css">
 
+    <!-- JQuery and JS scripts -->
+    <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+
+    <script type="text/javascript" src="<?php echo base_url();?>assets/js/index.js" ></script>
+              
+
     <title>LCdLV</title>
 </head>
 <body class="container">
@@ -80,10 +89,32 @@
             </div>
 
             <div class="div-desc">
-                <p class="p-desc">descripcion post esto puede ser muy largo
+                <p class="p-desc-no-show">descripcion post esto puede ser muy largo
+                    por los que habria que manejar que se despliege cuando se hace
+                    click en algun lado, poner cantidad de lineas o algo
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Pellentesque orci metus, descripcion post esto puede ser muy largo
+                    por los que habria que manejar que se despliege cuando se hace
+                    click en algun lado, poner cantidad de lineas o algo
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Pellentesque orci metus, descripcion post esto puede ser muy largo
+                    por los que habria que manejar que se despliege cuando se hace
+                    click en algun lado, poner cantidad de lineas o algo
+                    por los que habria que manejar que se despliege cuando se hace
+                    click en algun lado, poner cantidad de lineas o algo
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Pellentesque orci metus, descripcion post esto puede ser muy largo
+                    por los que habria que manejar que se despliege cuando se hace
+                    click en algun lado, poner cantidad de lineas o algo
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Pellentesque orci metus, descripcion post esto puede ser muy largo
                     por los que habria que manejar que se despliege cuando se hace
                     click en algun lado, poner cantidad de lineas o algo
                 </p>
+                
+            </div>
+            <div class="div-p-click">
+                <p class="p-show-click">Mostrar</p>
             </div>
 
             <table class="table-comments">
@@ -94,10 +125,26 @@
                     <td class="comments">comentario 1</td>
                 </tr>
                 <tr>
-                    <td class="comments">comentario 2</td>
+                    <td class="comments">
+                    <p class="p-comments-no-show">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Pellentesque orci metus, descripcion post esto puede ser muy largo
+                        por los que habria que manejar que se despliege cuando se hace
+                        click en algun lado, poner cantidad de lineas o algo
+                        </p>
+                        <span class="show-comments">Mostrar comentario</span>
+                    </td>
                 </tr>
                 <tr>
-                    <td class="comments">comentario 3</td>
+                    <td class="comments">
+                        <p class="p-comments-no-show">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Pellentesque orci metus, descripcion post esto puede ser muy largo
+                        por los que habria que manejar que se despliege cuando se hace
+                        click en algun lado, poner cantidad de lineas o algo
+                        </p>
+                        <span class="show-comments">Mostrar comentario</span>
+                    </td>
                 </tr>
             </table>
 
