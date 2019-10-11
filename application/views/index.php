@@ -111,7 +111,7 @@
                     por los que habria que manejar que se despliege cuando se hace
                     click en algun lado, poner cantidad de lineas o algo
                 </p>
-                
+    
             </div>
             <div class="div-p-click">
                 <p class="p-show-click">Mostrar</p>
