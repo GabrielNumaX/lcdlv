@@ -11,24 +11,24 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
 
     <!-- this is for favicon from realfavicongenerator.net -->
-    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
-    <link rel="manifest" href="./favicon/site.webmanifest">
-    <link rel="mask-icon" href="./favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="apple-touch-icon" sizes="180x180" href="<?= base_url()?>assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="<?= base_url()?>assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="<?= base_url()?>assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="<?= base_url()?>assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="<?= base_url()?>assets/favicon/safari-pinned-tab.svg" color="#5bbad5">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
-    <link type="text/css" rel="stylesheet" href="./master.css">
+    <link type="text/css" rel="stylesheet" href="<?= base_url()?>assets/css/master.css">
     <!-- <link type="text/css"rel="stylesheet" href="./posts.css"> -->
-    <link type="text/css"rel="stylesheet" href="./notas.css">
+    <link type="text/css"rel="stylesheet" href="<?= base_url()?>assets/css/notas.css">
 
     <title>LCdLV</title>
 </head>
 <body class="container">
     <header>
         <nav>
-            <a href="./index.html">Inicio</a>
+            <a href="<?=base_url('Home/index')?>">Inicio</a>
             <a href="">Notas</a>
             <a href="">Archivo</a>
         </nav>
@@ -60,145 +60,261 @@
     <main id="main">
         <article id="article-main">
             <h1>Notas</h1>
-            <p>aca iria una descripcion de las notas</p>
+            <div class="div-notas-desc">
+                <p>aca iria una descripcion de las notas</p>
+            </div>
         </article>
-        <!-- all this is the template for dynamic loadin from backend and/or db -->
-        <!-- <article id="article-post">
-            <h2 class="h2-title">TITULO POST</h2>
-            
-            <div class="div-time">
-                <time class="time-post">fecha y hora de post</time>
-            </div>
+        <article class="article-notas">
 
-            <div class="div-img">
-                <img class="img-post" 
-                    src="./img/mosquitos.jpg" 
-                    alt="">
-            </div>
+            <div class="nota">
+                <h3 class="h3-nota">
+                    ACA IRIA EL TITULO NOTA1
+                </h3>
+                <p class="p-nota">
 
-            <div class="div-comments">
-                <span class="qty-comments">cantidad comentarios</span>
-            </div>
+                <!-- dummy text -->
 
-            <div class="div-desc">
-                <p class="p-desc">descripcion post esto puede ser muy largo
-                    por los que habria que manejar que se despliege cuando se hace
-                    click en algun lado, poner cantidad de lineas o algo
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque orci metus, pharetra eu elit a, malesuada condimentum felis. Fusce a tellus eleifend, ultrices ligula id, luctus tellus. Donec eleifend lorem id turpis suscipit, nec vehicula nunc egestas. Ut sit amet ex vitae nunc lacinia lobortis sed sed urna. Sed ut gravida dui. Pellentesque laoreet, ante ut sollicitudin varius, sapien nunc ultricies magna, vel egestas libero ipsum et orci. Nunc sit amet ipsum sed est consectetur luctus. Nullam neque lectus, convallis non magna a, facilisis tincidunt velit. Phasellus ultricies consequat nibh. Nulla rutrum ultricies convallis. Sed pharetra tortor sit amet facilisis luctus. Duis quis pharetra purus, non fringilla augue. Nunc non eleifend sem. Aenean fermentum suscipit erat, eget interdum leo condimentum at. Integer condimentum justo nec congue rhoncus. Suspendisse eu erat non quam aliquet porttitor at a orci.
+
+Pellentesque condimentum elementum nisl, id fringilla turpis viverra vel. Donec condimentum at leo in ullamcorper. Pellentesque in nunc sit amet arcu rhoncus sollicitudin. In in leo consequat, pretium lacus eu, malesuada nisl. Sed tellus tellus, porttitor ut facilisis sit amet, convallis ut orci. Aliquam feugiat, dui ut placerat elementum, dui tortor facilisis massa, sit amet facilisis tellus nisl quis sem. Nullam consectetur lacus aliquet, fringilla quam in, ultrices libero. Maecenas mollis purus ante, ac tempus felis placerat at. Nunc vitae viverra ligula, sed gravida elit. Aenean vehicula, turpis in placerat ultrices, nisi mi gravida ex, at ultricies felis odio eu odio. Sed convallis aliquam ante sed pellentesque. Quisque iaculis commodo nisl eget laoreet. Cras dignissim, felis quis molestie ultrices, ipsum felis lobortis turpis, ut rutrum justo massa ut tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus volutpat placerat justo, id pretium nunc viverra sed. Etiam auctor risus libero, et sagittis justo iaculis ut.
+
+Curabitur rutrum tortor pellentesque mauris lobortis rhoncus. Donec tristique condimentum urna eu tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras ut orci et massa posuere aliquet. Phasellus finibus finibus dui, a finibus ex elementum eget. Quisque et tellus metus. Morbi et semper erat. Duis pulvinar ex ac ligula semper, rhoncus porta mi volutpat. Nunc sit amet viverra arcu. Phasellus lectus neque, facilisis id ornare eu, laoreet in metus. Praesent sollicitudin nulla id augue auctor lobortis. Nulla cursus massa vel lorem mollis, in pretium sem hendrerit. Praesent at faucibus sapien. Maecenas eu turpis ultricies ante vehicula aliquet non ut quam. Nulla non consectetur lectus, non mattis turpis. Cras commodo justo in viverra varius.
+
+Sed egestas tristique ipsum, ac consequat nulla sagittis gravida. Vestibulum non purus mollis, dictum nibh vitae, viverra arcu. Praesent placerat justo in erat lacinia volutpat. Duis arcu justo, pulvinar ac sapien in, pellentesque pretium tortor. Sed fringilla orci in vehicula congue. Suspendisse at nisi non augue tempus faucibus. Duis eleifend neque tincidunt, egestas massa non, maximus mi.
+
+Quisque ante nisi, dictum a rhoncus eget, efficitur at justo. Ut a fermentum tellus. Integer scelerisque blandit urna eu malesuada. Vivamus et lacus non velit volutpat imperdiet sed congue massa. Maecenas ut suscipit nulla, nec tincidunt urna. Nam auctor dui a pellentesque pharetra. Ut nisl orci, pharetra vel quam sed, tempor sodales orci. Sed pharetra ex eu magna gravida dapibus ut ut mauris. Quisque turpis nisl, fringilla id dictum nec, laoreet sed nibh. Sed pellentesque dolor in efficitur accumsan. Vestibulum eget ipsum vitae metus semper fringilla. 
                 </p>
-            </div> -->
+                
+            </div>
 
-            <!-- <table class="table-comments">
-                <tr>
-                    <td class="comments">comentario 1</td>
-                </tr>
-                <tr>
-                    <td class="comments">comentario 2</td>
-                </tr>
-                <tr>
-                    <td class="comments">comentario 3</td>
-                </tr>
-            </table>
+            <div class="nota">
+                <h3 class="h3-nota">
+                    ACA IRIA EL TITULO  NOTA2
+                </h3>
+                <p class="p-nota">
 
-            <form class="form-comments"action="">
-                <input class="input-comments" 
-                    type="text" 
-                    placeholder="Escribe un comentario...">
-            </form> -->
+                <!-- dummy text -->
 
-        </article>        
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque orci metus, pharetra eu elit a, malesuada condimentum felis. Fusce a tellus eleifend, ultrices ligula id, luctus tellus. Donec eleifend lorem id turpis suscipit, nec vehicula nunc egestas. Ut sit amet ex vitae nunc lacinia lobortis sed sed urna. Sed ut gravida dui. Pellentesque laoreet, ante ut sollicitudin varius, sapien nunc ultricies magna, vel egestas libero ipsum et orci. Nunc sit amet ipsum sed est consectetur luctus. Nullam neque lectus, convallis non magna a, facilisis tincidunt velit. Phasellus ultricies consequat nibh. Nulla rutrum ultricies convallis. Sed pharetra tortor sit amet facilisis luctus. Duis quis pharetra purus, non fringilla augue. Nunc non eleifend sem. Aenean fermentum suscipit erat, eget interdum leo condimentum at. Integer condimentum justo nec congue rhoncus. Suspendisse eu erat non quam aliquet porttitor at a orci.
+
+Pellentesque condimentum elementum nisl, id fringilla turpis viverra vel. Donec condimentum at leo in ullamcorper. Pellentesque in nunc sit amet arcu rhoncus sollicitudin. In in leo consequat, pretium lacus eu, malesuada nisl. Sed tellus tellus, porttitor ut facilisis sit amet, convallis ut orci. Aliquam feugiat, dui ut placerat elementum, dui tortor facilisis massa, sit amet facilisis tellus nisl quis sem. Nullam consectetur lacus aliquet, fringilla quam in, ultrices libero. Maecenas mollis purus ante, ac tempus felis placerat at. Nunc vitae viverra ligula, sed gravida elit. Aenean vehicula, turpis in placerat ultrices, nisi mi gravida ex, at ultricies felis odio eu odio. Sed convallis aliquam ante sed pellentesque. Quisque iaculis commodo nisl eget laoreet. Cras dignissim, felis quis molestie ultrices, ipsum felis lobortis turpis, ut rutrum justo massa ut tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus volutpat placerat justo, id pretium nunc viverra sed. Etiam auctor risus libero, et sagittis justo iaculis ut.
+
+Curabitur rutrum tortor pellentesque mauris lobortis rhoncus. Donec tristique condimentum urna eu tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Cras ut orci et massa posuere aliquet. Phasellus finibus finibus dui, a finibus ex elementum eget. Quisque et tellus metus. Morbi et semper erat. Duis pulvinar ex ac ligula semper, rhoncus porta mi volutpat. Nunc sit amet viverra arcu. Phasellus lectus neque, facilisis id ornare eu, laoreet in metus. Praesent sollicitudin nulla id augue auctor lobortis. Nulla cursus massa vel lorem mollis, in pretium sem hendrerit. Praesent at faucibus sapien. Maecenas eu turpis ultricies ante vehicula aliquet non ut quam. Nulla non consectetur lectus, non mattis turpis. Cras commodo justo in viverra varius.
+
+Sed egestas tristique ipsum, ac consequat nulla sagittis gravida. Vestibulum non purus mollis, dictum nibh vitae, viverra arcu. Praesent placerat justo in erat lacinia volutpat. Duis arcu justo, pulvinar ac sapien in, pellentesque pretium tortor. Sed fringilla orci in vehicula congue. Suspendisse at nisi non augue tempus faucibus. Duis eleifend neque tincidunt, egestas massa non, maximus mi.
+
+Quisque ante nisi, dictum a rhoncus eget, efficitur at justo. Ut a fermentum tellus. Integer scelerisque blandit urna eu malesuada. Vivamus et lacus non velit volutpat imperdiet sed congue massa. Maecenas ut suscipit nulla, nec tincidunt urna. Nam auctor dui a pellentesque pharetra. Ut nisl orci, pharetra vel quam sed, tempor sodales orci. Sed pharetra ex eu magna gravida dapibus ut ut mauris. Quisque turpis nisl, fringilla id dictum nec, laoreet sed nibh. Sed pellentesque dolor in efficitur accumsan. Vestibulum eget ipsum vitae metus semper fringilla. 
+                </p>
+                
+            </div>
+
+        </article>
+               
     </main>
+
+    <!-- aside con position fixed para que no scrollee
+        con sticky overlapea al header sino dejar normal
+        asi da para cargar 15 notas/fechas. pero overlapea el
+        footer asi que ver mas adelante.  -->
     <aside id="aside">
        <h2>Ultimas Notas</h2>
-       <ul class="ul-notas">
+
+       <div class="div-notas">
+        <ul class="ul-notas">
+            <li class="li-notas">
+                <a href="">Ultima nota</a>
+                </li>
+            <li class="li-notas">
+                <a href="">nota anterior</a>
+                </li>
+            <li class="li-notas">
+                <a href="">nota</a>
+                </li>
+            <li class="li-notas">
+                <a href="">overflow para titulo nota larga</a>
+                </li>
+                
+            <li class="li-notas">
+                <a href="">nota anterior</a>
+                </li>
+            <li class="li-notas">
+                <a href="">nota anterior</a>
+                </li>
+            <li class="li-notas">
+                <a href="">nota anterior</a>
+                </li>
+            <li class="li-notas">
+                <a href="">nota anterior</a>
+                </li>
+            <li class="li-notas">
+                <a href="">nota anterior</a>
+                </li>
+            <li class="li-notas">
+                <a href="">nota anterior</a>
+                </li>
+            <li class="li-notas">
+                <a href="">nota anterior</a>
+                </li>
+            <li class="li-notas">
+                <a href="">nota anterior</a>
+                </li>
+            <li class="li-notas">
+                <a href="">nota anterior</a>
+                </li>
+            <li class="li-notas">
+                <a href="">nota anterior</a>
+                </li>
+            <li class="li-notas">
+                <a href="">nota anterior</a>
+                </li>
+            </ul>
+       </div>
+
+       <div class="div-fechas">
+            <ul class="ul-fechas">
+
+                <li class="li-fechas">
+                    11/10/2019
+                </li>
+                <li class="li-fechas">
+                    10/10/2019
+                </li>
+                <li class="li-fechas">
+                09/10/2019
+                </li>
+                <li class="li-fechas">
+                08/10/2019
+                </li>               
+                <li class="li-fechas">
+                07/10/2019
+                </li>
+                <li class="li-fechas">
+                06/10/2019
+                </li>
+                <li class="li-fechas">
+                05/10/2019
+                </li>
+                <li class="li-fechas">
+                04/10/2019
+                </li>
+                <li class="li-fechas">
+                03/10/2019
+                </li>
+                <li class="li-fechas">
+                02/10/2019
+                </li>
+                <li class="li-fechas">
+                01/10/2019
+                </li>
+                <li class="li-fechas">
+                30/10/2019
+                </li>
+                <li class="li-fechas">
+                29/10/2019
+                </li>
+                <li class="li-fechas">
+                28/10/2019
+                </li>
+                <li class="li-fechas">
+                27/10/2019
+                </li>
+            </ul>
+       </div>
+
+       <!-- This was the first approach. Couldn't manage
+            to get a text-overflow ONLY for the a tag and not the span
+            so I created two divs with lists for NOTA and FECHA -->
+       <!-- <ul class="ul-notas">
            <li class="li-notas">
                <a href="">Ultima nota</a>
-               <span class="span-fecha">fecha notas</span>
+               <span class="span-fecha">fecha</span>
             </li>
            <li class="li-notas">
                <a href="">nota anterior</a>
-               <span class="span-fecha">fecha notas</span>
+               <span class="span-fecha">fecha</span>
+            </li>
+           <li class="li-notas">
+               <a href="">nota</a>
+               <span class="span-fecha">fecha</span>
+            </li>
+           <li class="li-notas">
+               <a href="">overflow para titulo nota larga</a>
+               <span class="span-fecha">fecha</span>
+            </li>
+            
+           <li class="li-notas">
+               <a href="">nota anterior</a>
+               <span class="span-fecha">fecha</span>
             </li>
            <li class="li-notas">
                <a href="">nota anterior</a>
-               <span class="span-fecha">fecha notas</span>
+               <span class="span-fecha">fecha</span>
             </li>
            <li class="li-notas">
                <a href="">nota anterior</a>
-               <span class="span-fecha">fecha notas</span>
+               <span class="span-fecha">fecha</span>
             </li>
            <li class="li-notas">
                <a href="">nota anterior</a>
-               <span class="span-fecha">fecha notas</span>
+               <span class="span-fecha">fecha</span>
             </li>
            <li class="li-notas">
                <a href="">nota anterior</a>
-               <span class="span-fecha">fecha notas</span>
+               <span class="span-fecha">fecha</span>
             </li>
            <li class="li-notas">
                <a href="">nota anterior</a>
-               <span class="span-fecha">fecha notas</span>
+               <span class="span-fecha">fecha</span>
             </li>
            <li class="li-notas">
                <a href="">nota anterior</a>
-               <span class="span-fecha">fecha notas</span>
+               <span class="span-fecha">fecha</span>
             </li>
            <li class="li-notas">
                <a href="">nota anterior</a>
-               <span class="span-fecha">fecha notas</span>
+               <span class="span-fecha">fecha</span>
             </li>
            <li class="li-notas">
                <a href="">nota anterior</a>
-               <span class="span-fecha">fecha notas</span>
+               <span class="span-fecha">fecha</span>
             </li>
            <li class="li-notas">
                <a href="">nota anterior</a>
-               <span class="span-fecha">fecha notas</span>
+               <span class="span-fecha">fecha</span>
             </li>
            <li class="li-notas">
                <a href="">nota anterior</a>
-               <span class="span-fecha">fecha notas</span>
+               <span class="span-fecha">fecha</span>
             </li>
            <li class="li-notas">
                <a href="">nota anterior</a>
-               <span class="span-fecha">fecha notas</span>
+               <span class="span-fecha">fecha</span>
             </li>
            <li class="li-notas">
                <a href="">nota anterior</a>
-               <span class="span-fecha">fecha notas</span>
+               <span class="span-fecha">fecha</span>
             </li>
            <li class="li-notas">
                <a href="">nota anterior</a>
-               <span class="span-fecha">fecha notas</span>
+               <span class="span-fecha">fecha</span>
             </li>
            <li class="li-notas">
                <a href="">nota anterior</a>
-               <span class="span-fecha">fecha notas</span>
+               <span class="span-fecha">fecha</span>
             </li>
            <li class="li-notas">
                <a href="">nota anterior</a>
-               <span class="span-fecha">fecha notas</span>
+               <span class="span-fecha">fecha</span>
             </li>
            <li class="li-notas">
                <a href="">nota anterior</a>
-               <span class="span-fecha">fecha notas</span>
+               <span class="span-fecha">fecha</span>
             </li>
            <li class="li-notas">
                <a href="">nota anterior</a>
-               <span class="span-fecha">fecha notas</span>
+               <span class="span-fecha">fecha</span>
             </li>
-           <li class="li-notas">
-               <a href="">nota anterior</a>
-               <span class="span-fecha">fecha notas</span>
-            </li>
-           <li class="li-notas">
-               <a href="">nota anterior</a>
-               <span class="span-fecha">fecha notas</span>
-            </li>
-           <li class="li-notas">
-               <a href="">nota anterior</a>
-               <span class="span-fecha">fecha notas</span>
-            </li>
-        </ul>
+        </ul> -->
     </aside>
     <footer>
         footer

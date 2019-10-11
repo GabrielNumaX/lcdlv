@@ -35,3 +35,13 @@ esto esto todo lo que hice ayer 10.10.19 pedazo de gato JAJJAJA
 ;).
 
 (seguir escribiendo para abajo con FECHA).
+
+11.10.09
+
+- plantilla notas.php
+
+faltaria definir el ASIDE que tiene position fixed pero se superpone
+con el footer, en position sticky pasa por arriba del header.
+Sino dejar normal.
+
+

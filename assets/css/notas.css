@@ -1,33 +1,79 @@
 #main {
-    background-color: green;
     margin-top: 0;
     padding-top: 0;
 }
 
 #article-main h1 {
-    background-color: aqua;
+    background-color: #dddddd;
     margin-top: 0;
     padding-top: 0;
     font-size: 48px;
     letter-spacing: 1px;
+    text-align: center;
+}
+
+.div-notas-desc {
+    background-color: blue;
+    width: 70%;
+    margin: 0 auto;
+}
+
+#aside {
+    display: grid;
+    grid-template-columns: 175px 105px;
+    grid-template-rows: auto auto;
+    align-content: flex-start;
+    position: fixed;
+    right: 0;
+    top: 50px;
+    height: 100%;
 }
 
 
 #aside h2 {
+    grid-column: 1 / 3;
+    grid-row: 1 / 1;
     letter-spacing: 2px;
-    padding-top: 20px;
 }
 
+.div-notas {
+    grid-column: 1 / 2;
+    grid-row: 2 / 2;
+}
+
+.div-fechas {
+    grid-column: 2 / 3;
+    grid-row: 2 / 2;
+    text-align: left;
+}
 .ul-notas {
     list-style-type: none;
-    margin: 0;
+    margin: 0 auto;
     padding: 0;
+    padding-right: 10px;
+}
+
+.li-notas {
+    margin-bottom: 8px;
+    margin-left: 22px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;   
+    font-size: 14px;
+    text-align: left;
+}
+
+.li-notas:last-of-type {
+    margin-bottom: 20px;
 }
 
 .li-notas a {
     text-decoration: none;
+    margin: 0;
     margin-right: 16px;
     color: #dddddd;
+    text-align: left;
 }
 
 .li-notas a:link {
@@ -47,7 +93,54 @@
 .li-notas a:active {
     color: #1c52c7cc; 
 }
-
+/* 
 .span-fecha {
     color: #dddddd;
+} */
+
+.ul-fechas {
+    list-style-type: none;
+    margin: 0 auto;
+    padding: 0;
 }
+
+.li-fechas {
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+    /* white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;    */
+    font-size: 14px;
+}
+
+.li-fechas:last-of-type {
+    margin-bottom: 20px;
+}
+
+/* this is for the NOTE itself */
+
+.article-notas {
+    width: 70%;
+    margin: 0 auto 120px;
+    background-color: tomato;
+}
+
+.nota {
+    margin-bottom: 80px;
+    background-color: whitesmoke;
+    border: 1px solid black;
+    border-radius: 1rem;
+}
+
+.h3-nota {
+    text-align: center;
+}
+
+.p-nota {
+    margin: 0 28px 40px;
+    text-align: left;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    line-height: 2;
+}
+

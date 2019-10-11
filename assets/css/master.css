@@ -10,7 +10,7 @@ body {
 /* recordar que la 6 col-> 220px es del aside VER */
 .container {
     display: grid;
-    grid-template-columns: repeat(5, 1fr) 220px;
+    grid-template-columns: repeat(5, 1fr) 250px;
     grid-template-rows: 50px auto 100px;
 }
 
