@@ -1,0 +1,37 @@
+Client Specs:
+
+A ver, la idea seria plantilla tipo blog, un 
+-> posteo, que pueda ser 
+	-texto, 
+	-imagen, 
+	-video, y 
+	-casilla de comentarios. 
+
+Y tal vez un apartado en donde escribir algunas notas, o textos mas largos, tipo como tiene la fanpage de facebook. Y despues no mucho mas amigo.
+
+
+11.10.19
+
+- plantilla index.html
+
+esta comentado en el html la parte que tiene que cargar dinamico
+de la bdd.
+Faltaria la plantilla para que suba videos o solo el texto (NOTAS)
+
+la casilla de los comentarios llevan funciones de VALIDATION para 
+que el formato del texto. tambien para que esconda el texto
+despues de X lineas como FACEBOOK.
+
+- plantilla notas.html
+
+esta parte esta verde, la idea seria que muestre las ultimas notas
+en la parte pricipal (un numero X ponele 10)
+luego en el ASIDE que vaya filtrando de la BDD las ultimas notas
+por titulo (que seria el link para que habra) y le puse la fecha
+al lado (esto se puede sacar si no es buena idea).
+
+esto esto todo lo que hice ayer 10.10.19 pedazo de gato JAJJAJA
+
+;).
+
+(seguir escribiendo para abajo con FECHA).
