@@ -1,0 +1,23 @@
+tabla FOTOS
+	->titulo foto
+	->fecha foto
+	->foto
+	->descripcion foto
+	->comentarios asociados a foto
+
+tabla NOTAS
+	->titulo nota
+	->fecha nota
+	->nota
+	->comentarios nota
+
+tabla VIDEO
+	->titulo video
+	->fecha video
+	->video
+	->comentarios video
+
+tabla ARCHIVO
+	(no seria necesaria lee todo de las demas tablas
+	y ordena por fecha)
+	
