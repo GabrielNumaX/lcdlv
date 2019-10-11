@@ -28,7 +28,7 @@
     <header>
         <nav>
             <a href="#main">Inicio</a>
-            <a href="./notas.html">Notas</a>
+            <a href="<?=base_url('Nota')?>">Notas</a>
             <a href="">Archivo</a>
         </nav>
         <form class="form-search" action="">
