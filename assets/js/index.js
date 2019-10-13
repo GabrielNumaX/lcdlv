@@ -7,7 +7,7 @@ $(document).ready(function() {
         
         let desc = $('.div-desc p');
 
-        console.log( $(desc));
+        // console.log( $(desc));
 
         if($(desc).hasClass('p-desc-no-show')){
 
@@ -33,13 +33,14 @@ $(document).ready(function() {
 
         let comment = $(this).prev();
 
+
         if($(comment).hasClass('p-comments-no-show')){
 
             $(comment).removeClass('p-comments-no-show');
 
             $(comment).addClass('p-comments-show');
 
-            $('.show-comments').html('Ocultar comentario');
+            $(this).html('Ocultar comentario');
         }
         else if ($(comment).hasClass('p-comments-show')){
 
@@ -47,7 +48,7 @@ $(document).ready(function() {
 
              $(comment).addClass('p-comments-no-show');
 
-             $('.show-comments').html('Mostrar comentario');
+             $(this).html('Mostrar comentario');
         }
         
       }); //end show/no show

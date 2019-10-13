@@ -217,7 +217,7 @@ footer {
 /* this is ASIDE style */
 #aside {
     display: grid;
-    grid-template-columns: 160px 90px; /*250px*/
+    grid-template-columns: 157px 93px; /*250px*/
     grid-template-rows: auto auto;
     right: 0;
     top: 50px;
@@ -373,7 +373,7 @@ footer {
     margin: 0;
     padding: 0;
     padding-bottom: 8px;
-    max-width: 42vw;
+    max-width: 45vw;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -382,6 +382,7 @@ footer {
 .p-comments-show {
     margin: 0;
     padding: 0;
+    width: 45vw;
     padding-bottom: 8px;
 }
 

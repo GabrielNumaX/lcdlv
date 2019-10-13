@@ -73,7 +73,12 @@
             <h1>Notas</h1>
 
             <div class="div-notas-desc">
-                <p>aca iria una descripcion de las notas general o bienvenida de las notas</p>
+                <p>aca iria una descripcion de las notas general o bienvenida de las notas
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Pellentesque orci metus, pharetra eu elit a, malesuada condimentum felis. 
+                Fusce a tellus eleifend, ultrices ligula id, luctus tellus. 
+                Donec eleifend lorem id turpis suscipit, nec vehicula nunc egestas.
+                </p>
             </div>
         </article>
 

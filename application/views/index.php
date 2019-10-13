@@ -80,7 +80,10 @@
     <main id="main">
 
          <aside id="aside-left">
-            aside left
+           
+        </aside>
+        <aside id="aside-right">
+            
         </aside>
 
         <article id="article-main">
@@ -150,7 +153,7 @@
                 
                     <tr>
                         <td class="comments">
-                        <p class="p-comments-no-show">
+                        <p class="comments-p p-comments-no-show">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                             Pellentesque orci metus, descripcion post esto puede ser muy largo
                             por los que habria que manejar que se despliege cuando se hace
@@ -262,9 +265,6 @@
         
         </div> <!--end post container -->
 
-        <aside id="aside-right">
-            aside right
-        </aside>
     </main>
 
     <footer id="footer">
