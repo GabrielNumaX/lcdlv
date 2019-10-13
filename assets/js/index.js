@@ -3,11 +3,15 @@ $(document).ready(function() {
     console.log('script loaded');
 
     //this is to show/hide post description
+    //when clicked scroll out WILL TRY TO FIX
     $('.p-show-click').on('click', function () {
         
         let desc = $('.div-desc p');
 
-        // console.log( $(desc));
+        const elemToScrollTo = $(this).parent().prev().prev().children();
+
+        // console.log(elemToScrollTo);
+
 
         if($(desc).hasClass('p-desc-no-show')){
 
@@ -16,6 +20,14 @@ $(document).ready(function() {
             $(desc).addClass('p-desc-show');
 
             $('.p-show-click').html('Ocultar');
+
+            // $('html, body').animate({
+            //     scrollTop: $(elemToScrollTo).offset().top
+            // }, 1500);
+
+            //this solves the scrolling issue
+            $('html, body').scrollTop(elemToScrollTo.offset().top);
+
         }
         else if($(desc).hasClass('p-desc-show')){
 
@@ -24,6 +36,13 @@ $(document).ready(function() {
             $(desc).addClass('p-desc-no-show');
 
             $('.p-show-click').html('Mostrar');
+
+            // $('html, body').animate({
+            //     scrollTop: $(elemToScrollTo).offset().top
+            // }, 1500);   
+            
+            //this solves the scrolling issue
+            $('html, body').scrollTop(elemToScrollTo.offset().top);
         }
     });
 

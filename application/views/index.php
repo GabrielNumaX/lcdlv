@@ -87,7 +87,7 @@
         </aside>
 
         <article id="article-main">
-            <h1>ACA IRIA EL TITULO DE LA BIEVENIDA</h1>
+            <h1>Aca iria el Titulo de La Bienvenida</h1>
             <p>aca iria un saludo de bienvenida
             descripcion post esto puede ser muy largo
             por los que habria que manejar que se despliege cuando se hace
@@ -101,9 +101,9 @@
         <div class="post-container">
 
 
-        <!-- all this is the template for dynamic loadin from backend and/or db -->
+        <!-- all this is the template for dynamic loading from backend and/or db -->
 
-            <article id="article-post">
+            <article class="article-post">
                 <h2 class="h2-title">TITULO POST</h2>
 
                 <div class="div-time">
@@ -183,17 +183,21 @@
 
             </article>
 
-            <article id="article-post">
-                <h2 class="h2-title">TITULO POST</h2>
+            <!-- VIDEO template  -->
+            <article class="article-post">
+                <h2 class="h2-title">TITULO VIDEO</h2>
 
                 <div class="div-time">
                     <time class="time-post">fecha y hora de post</time>
                 </div>
 
                 <div class="div-img">
-                    <img class="img-post"
-                        src="<?=base_url()?>assets/img/mosquitos.jpg"
-                        alt="">
+                    <video class="video-post" controls>
+                        <source 
+                        src="<?=base_url()?>assets/videos/2019-10-13 15-02-42.mp4" 
+                        type="video/mp4"
+                        controls>
+                    </video>
                 </div>
 
                 <div class="div-comments">
@@ -203,25 +207,7 @@
                 <div class="div-desc">
                     <p class="p-desc-no-show">descripcion post esto puede ser muy largo
                         por los que habria que manejar que se despliege cuando se hace
-                        click en algun lado, poner cantidad de lineas o algo
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Pellentesque orci metus, descripcion post esto puede ser muy largo
-                        por los que habria que manejar que se despliege cuando se hace
-                        click en algun lado, poner cantidad de lineas o algo
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Pellentesque orci metus, descripcion post esto puede ser muy largo
-                        por los que habria que manejar que se despliege cuando se hace
-                        click en algun lado, poner cantidad de lineas o algo
-                        por los que habria que manejar que se despliege cuando se hace
-                        click en algun lado, poner cantidad de lineas o algo
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Pellentesque orci metus, descripcion post esto puede ser muy largo
-                        por los que habria que manejar que se despliege cuando se hace
-                        click en algun lado, poner cantidad de lineas o algo
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                        Pellentesque orci metus, descripcion post esto puede ser muy largo
-                        por los que habria que manejar que se despliege cuando se hace
-                        click en algun lado, poner cantidad de lineas o algo
+                        click en algun lado, poner cantidad de lineas o algo                        
                     </p>
         
                 </div>
@@ -261,7 +247,92 @@
                         placeholder="Escribe un comentario...">
                 </form>
 
-            </article>
+            </article> <!--fin post video-->
+
+
+            <!-- template notas -->
+            <article class="article-notas"> 
+                                              
+                <div class="nota">
+                    <h3 class="h3-nota">
+                        ACA IRIA EL TITULO NOTA1
+                    </h3>
+                    <p class="p-nota">
+
+                    <!-- dummy text -->
+
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Pellentesque orci metus, pharetra eu elit a, malesuada condimentum felis. 
+                    Fusce a tellus eleifend, ultrices ligula id, luctus tellus. 
+                    Donec eleifend lorem id turpis suscipit, nec vehicula nunc egestas. 
+                    Ut sit amet ex vitae nunc lacinia lobortis sed sed urna. 
+                    Sed ut gravida dui. Pellentesque laoreet, ante ut sollicitudin varius, 
+                    sapien nunc ultricies magna, vel egestas libero ipsum et orci. 
+                    Nunc sit amet ipsum sed est consectetur luctus. 
+                    Nullam neque lectus, convallis non magna a, facilisis tincidunt velit. 
+                    Phasellus ultricies consequat nibh. Nulla rutrum ultricies convallis. 
+                    Sed pharetra tortor sit amet facilisis luctus. Duis quis pharetra purus, 
+                    non fringilla augue. Nunc non eleifend sem. Aenean fermentum suscipit erat, 
+                    eget interdum leo condimentum at. Integer condimentum justo nec congue 
+                    rhoncus. Suspendisse eu erat non quam aliquet porttitor at a orci.
+
+                    Pellentesque condimentum elementum nisl, id fringilla turpis viverra vel. 
+                    Donec condimentum at leo in ullamcorper. Pellentesque in nunc sit amet arcu
+                    rhoncus sollicitudin. In in leo consequat, pretium lacus eu, malesuada 
+                    nisl. Sed tellus tellus, porttitor ut facilisis sit amet, convallis ut 
+                    orci. Aliquam feugiat, dui ut placerat elementum, dui tortor facilisis m
+                    assa, sit amet facilisis tellus nisl quis sem. Nullam consectetur lacus 
+                    aliquet, fringilla quam in, ultrices libero. Maecenas mollis purus ante, 
+                    ac tempus felis placerat at. Nunc vitae viverra ligula, sed gravida elit. 
+                    Aenean vehicula, turpis in placerat ultrices, nisi mi gravida ex, at 
+                    ultricies felis odio eu odio. Sed convallis aliquam ante sed pellentesque. 
+                    Quisque iaculis commodo nisl eget laoreet. Cras dignissim, felis quis 
+                    molestie ultrices, ipsum felis lobortis turpis, ut rutrum justo massa ut 
+                    tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus. 
+                    Phasellus volutpat placerat justo, id pretium nunc viverra sed. 
+                    Etiam auctor risus libero, et sagittis justo iaculis ut.
+
+                    </p>
+                    
+                </div>
+
+                <div class="div-notes-comments">
+                    <span class="qty-notes-comments">cantidad comentarios</span>
+                </div>
+
+                <table class="table-comments">
+                
+                    <tr>
+                        <td class="comments">
+                        <p class="p-comments-no-show">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            Pellentesque orci metus, descripcion post esto puede ser muy largo
+                            por los que habria que manejar que se despliege cuando se hace
+                            click en algun lado, poner cantidad de lineas o algo
+                            </p>
+                            <span class="show-comments">Mostrar comentario</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="comments">
+                            <p class="p-comments-no-show">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            Pellentesque orci metus, descripcion post esto puede ser muy largo
+                            por los que habria que manejar que se despliege cuando se hace
+                            click en algun lado, poner cantidad de lineas o algo
+                            </p>
+                            <span class="show-comments">Mostrar comentario</span>
+                        </td>
+                    </tr>
+                </table>
+
+                <form class="form-comments"action="">
+                    <input class="input-comments"
+                        type="text"
+                        placeholder="Escribe un comentario...">
+                </form>                                                                   
+
+            </article> <!-- fin nota 1-->
         
         </div> <!--end post container -->
 

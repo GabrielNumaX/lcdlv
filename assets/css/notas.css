@@ -126,13 +126,12 @@ main {
     padding-bottom: 30px;
 }
 
-/* this to avoid header overlapping */
-main::before {
-    content: ".";
-    color: #dddddd;
-    display: block;
-    padding-top: 50px;
-    margin-top: -50px;    
+
+/* THIS IS avoid header overlapping  from 
+https://css-tricks.com/fixed-headers-on-page-links-and-overlapping-content-oh-my/ */
+
+html {
+    scroll-padding-top: 55px;
 }
 
 aside {

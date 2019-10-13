@@ -8,7 +8,7 @@
 
         <!-- all this is the template for dynamic loadin from backend and/or db -->
 
-        <article id="article-post"> 		ESTO LLEVA ID PARA CARGA DYNAMIC
+        <article class="article-post"> 		ESTO LLEVA ID PARA CARGA DYNAMIC
             <h2 class="h2-title">   		ESTO LLEVA ID PARA CARGA DYNAMIC
 
             <div class="div-time">  		ESTO LLEVA ID PARA CARGA DYNAMIC
