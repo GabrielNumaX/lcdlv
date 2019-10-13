@@ -15,7 +15,6 @@
     padding: 0 20px;
 }
 #article-post {
-    /* text-align: center; */
     width: 100%;
     margin: 0 auto 50px;
 }
@@ -32,12 +31,10 @@
     width: 70%;
     height: auto;
     text-align: justify;
-    /* overflow: auto; */
     background-color: #ddd;
 }
 
 .p-desc-no-show {
-    /* padding: 8px 12px 8px 16px; */
     padding: 8px 2px 8px 12px;
     max-width: 54vw;
     white-space: nowrap;
@@ -86,19 +83,12 @@
 
 .div-img {
     width: 70%;
-    /* height: 400px; */
     text-align: justify;
     margin: 0 auto;
     padding: 0;
-/*     
-    -webkit-box-shadow: 0px 0px 13px 1px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 0px 13px 1px rgba(0,0,0,0.75);
-    box-shadow: 0px 0px 13px 1px rgba(0,0,0,0.75); */
 }
 .img-post {
     width: 100%;
-    /* margin: 0;
-    padding: 0; */
     border-radius: 8px;
     /* this is from cssmatic/box-shadow */
     -webkit-box-shadow: 0px 0px 13px 1px rgba(0,0,0,0.75);
@@ -115,13 +105,10 @@
 
 .table-comments {
     width: 60%;
-    /* this is to implement overflow */
-    /* height: 3rem; */
     background-color: #ddd;
     margin: 0 auto;
     border: none;
     border-collapse: separate;
-    /* border-radius: 20px; */
     border-spacing: 0 15px;
 }
 
@@ -132,10 +119,6 @@
     border: 1px solid black;
     border-radius: 20px;
     background-color: whitesmoke;
-    /* max-width: 0;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis; */
 }
 
 .p-comments-no-show {

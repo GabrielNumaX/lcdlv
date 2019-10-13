@@ -19,11 +19,9 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
-    <link type="text/css" rel="stylesheet" href="<?= base_url()?>assets/css/master.css">
+    <!-- <link type="text/css" rel="stylesheet" href="<?= base_url()?>assets/css/master.css"> -->
     <!-- este es el formato de las notas -->
     <link type="text/css"rel="stylesheet" href="<?= base_url()?>assets/css/notas.css">
-    <!-- este es el formato reutilizado de los comentarios -->
-    <!-- <link rel="stylesheet" href="<?= base_url()?>assets/css/posts.css"> -->
 
     <!-- JQuery and JS scripts -->
     <script
@@ -41,7 +39,7 @@
         <nav>
             <a href="<?=base_url('Home/index')?>">Inicio</a>
             <a href="#main">Notas</a>
-            <a href="">Archivo</a>
+            <a href="<?=base_url('Archivo/archivos')?>">Archivo</a>
         </nav>
         <form class="form-search" action="">
             <input class="input-search" type="search" 
@@ -69,18 +67,16 @@
         </div>
     </header>
 
-    <!-- <div class="header-fix">
-
-    </div> -->
-
-
+    
     <main id="main">
         <article id="article-main">
             <h1>Notas</h1>
+
             <div class="div-notas-desc">
                 <p>aca iria una descripcion de las notas general o bienvenida de las notas</p>
             </div>
         </article>
+
         <!-- cada article con un id para crear la plantilla de cada nota esta seria id="article-nota-1"-->
         <article class="article-notas"> 
                                               
@@ -156,12 +152,7 @@
             </div>
 
             <table class="table-comments">
-                <!-- <tr class="table-row-comments">
-                    <th class="header-comments">Header tabla</th>
-                </tr> -->
-                <tr>
-                    <td class="comments">comentario 1</td>
-                </tr>
+               
                 <tr>
                     <td class="comments">
                     <p class="p-comments-no-show">
@@ -239,12 +230,7 @@
             </div>
 
             <table class="table-comments">
-                <!-- <tr class="table-row-comments">
-                    <th class="header-comments">Header tabla</th>
-                </tr> -->
-                <tr>
-                    <td class="comments">comentario 1</td>
-                </tr>
+               
                 <tr>
                     <td class="comments">
                     <p class="p-comments-no-show">
@@ -288,16 +274,18 @@
        <h2>Ultimas Notas</h2>
 
        <div class="div-notas">
+
+       <!-- this LOADS dynamic -->
         <ul class="ul-notas">
             <li class="li-notas">
                 <a class="li-notas-a" href="">Ultima nota</a>
-                </li>
+            </li>
             <li class="li-notas">
                 <a class="li-notas-a" href="">nota anterior</a>
-                </li>
+            </li>
             <li class="li-notas">
                 <a href="">nota</a>
-                </li>
+            </li>
             <li class="li-notas">
                 <a href="">overflow para titulo nota larga</a>
                 </li>
@@ -338,6 +326,7 @@
             </ul>
        </div>
 
+       <!-- this LOADS dynamic -->
        <div class="div-fechas">
             <ul class="ul-fechas">
 
@@ -389,111 +378,21 @@
             </ul>
        </div>
 
-       <!-- This was the first approach. Couldn't manage
-            to get a text-overflow ONLY for the a tag and not the span
-            so I created two divs with lists for NOTA and FECHA -->
-       <!-- <ul class="ul-notas">
-           <li class="li-notas">
-               <a href="">Ultima nota</a>
-               <span class="span-fecha">fecha</span>
-            </li>
-           <li class="li-notas">
-               <a href="">nota anterior</a>
-               <span class="span-fecha">fecha</span>
-            </li>
-           <li class="li-notas">
-               <a href="">nota</a>
-               <span class="span-fecha">fecha</span>
-            </li>
-           <li class="li-notas">
-               <a href="">overflow para titulo nota larga</a>
-               <span class="span-fecha">fecha</span>
-            </li>
-            
-           <li class="li-notas">
-               <a href="">nota anterior</a>
-               <span class="span-fecha">fecha</span>
-            </li>
-           <li class="li-notas">
-               <a href="">nota anterior</a>
-               <span class="span-fecha">fecha</span>
-            </li>
-           <li class="li-notas">
-               <a href="">nota anterior</a>
-               <span class="span-fecha">fecha</span>
-            </li>
-           <li class="li-notas">
-               <a href="">nota anterior</a>
-               <span class="span-fecha">fecha</span>
-            </li>
-           <li class="li-notas">
-               <a href="">nota anterior</a>
-               <span class="span-fecha">fecha</span>
-            </li>
-           <li class="li-notas">
-               <a href="">nota anterior</a>
-               <span class="span-fecha">fecha</span>
-            </li>
-           <li class="li-notas">
-               <a href="">nota anterior</a>
-               <span class="span-fecha">fecha</span>
-            </li>
-           <li class="li-notas">
-               <a href="">nota anterior</a>
-               <span class="span-fecha">fecha</span>
-            </li>
-           <li class="li-notas">
-               <a href="">nota anterior</a>
-               <span class="span-fecha">fecha</span>
-            </li>
-           <li class="li-notas">
-               <a href="">nota anterior</a>
-               <span class="span-fecha">fecha</span>
-            </li>
-           <li class="li-notas">
-               <a href="">nota anterior</a>
-               <span class="span-fecha">fecha</span>
-            </li>
-           <li class="li-notas">
-               <a href="">nota anterior</a>
-               <span class="span-fecha">fecha</span>
-            </li>
-           <li class="li-notas">
-               <a href="">nota anterior</a>
-               <span class="span-fecha">fecha</span>
-            </li>
-           <li class="li-notas">
-               <a href="">nota anterior</a>
-               <span class="span-fecha">fecha</span>
-            </li>
-           <li class="li-notas">
-               <a href="">nota anterior</a>
-               <span class="span-fecha">fecha</span>
-            </li>
-           <li class="li-notas">
-               <a href="">nota anterior</a>
-               <span class="span-fecha">fecha</span>
-            </li>
-           <li class="li-notas">
-               <a href="">nota anterior</a>
-               <span class="span-fecha">fecha</span>
-            </li>
-           <li class="li-notas">
-               <a href="">nota anterior</a>
-               <span class="span-fecha">fecha</span>
-            </li>
-        </ul> -->
+       
     </aside>
+
     <footer id="footer">
+
         <div class="footer-div">
             <h4>NumaX &copy; 2019</h4>
         </div>
+
         <div class="footer-icons">
-        <a href="https://github.com/GabrielNumaX/"><i class="fab fa-github-square"></i></a>
+            <a href="https://github.com/GabrielNumaX/"><i class="fab fa-github-square"></i></a>
             <a href="mailto:g.numa10@gmail.com"><i class="fas fa-envelope"></i></a>
-            <a href="https://www.linkedin.com/in/numax/"><i class="fab fa-linkedin"></i></a>
-            
+            <a href="https://www.linkedin.com/in/numax/"><i class="fab fa-linkedin"></i></a>           
         </div>
-    </footer>  
+    </footer> 
+
 </body>
 </html>

@@ -29,7 +29,7 @@
 
     <!-- this is css -->
     <link type="text/css" rel="stylesheet" href="<?= base_url()?>assets/css/master.css">
-    <link rel="stylesheet" href="<?= base_url()?>assets/css/posts.css">
+    <!-- <link rel="stylesheet" href="<?= base_url()?>assets/css/posts.css"> -->
 
     <!-- JQuery and JS scripts -->
     <script
@@ -43,12 +43,13 @@
 
     <title>LCdLV</title>
 </head>
+
 <body class="container">
     <header>
         <nav>
             <a href="#main">Inicio</a>
-            <a href="<?=base_url('Nota/index')?>">Notas</a>
-            <a href="">Archivo</a>
+            <a href="<?=base_url('Nota/notas')?>">Notas</a>
+            <a href="<?=base_url('Archivo/archivos')?>">Archivo</a>
         </nav>
         <form class="form-search" action="">
             <input class="input-search" type="search"
@@ -76,104 +77,195 @@
         </div>
     </header>
 
-    <!-- <div class="header-fix">
-        header fix
-    </div> -->
-
     <main id="main">
+
+         <aside id="aside-left">
+            aside left
+        </aside>
+
         <article id="article-main">
             <h1>ACA IRIA EL TITULO DE LA BIEVENIDA</h1>
-            <p>aca iria un saludo de bienvenida</p>
+            <p>aca iria un saludo de bienvenida
+            descripcion post esto puede ser muy largo
+            por los que habria que manejar que se despliege cuando se hace
+            click en algun lado, poner cantidad de lineas o algo
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            Pellentesque orci metus, descripcion post esto puede ser muy
+            </p>
         </article>
+
+
+        <div class="post-container">
+
+
         <!-- all this is the template for dynamic loadin from backend and/or db -->
-        <article id="article-post">
-            <h2 class="h2-title">TITULO POST</h2>
 
-            <div class="div-time">
-                <time class="time-post">fecha y hora de post</time>
-            </div>
+            <article id="article-post">
+                <h2 class="h2-title">TITULO POST</h2>
 
-            <div class="div-img">
-                <img class="img-post"
-                    src="<?=base_url()?>assets/img/mosquitos.jpg"
-                    alt="">
-            </div>
+                <div class="div-time">
+                    <time class="time-post">fecha y hora de post</time>
+                </div>
 
-            <div class="div-comments">
-                <span class="qty-comments">cantidad comentarios</span>
-            </div>
+                <div class="div-img">
+                    <img class="img-post"
+                        src="<?=base_url()?>assets/img/mosquitos.jpg"
+                        alt="">
+                </div>
 
-            <div class="div-desc">
-                <p class="p-desc-no-show">descripcion post esto puede ser muy largo
-                    por los que habria que manejar que se despliege cuando se hace
-                    click en algun lado, poner cantidad de lineas o algo
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Pellentesque orci metus, descripcion post esto puede ser muy largo
-                    por los que habria que manejar que se despliege cuando se hace
-                    click en algun lado, poner cantidad de lineas o algo
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Pellentesque orci metus, descripcion post esto puede ser muy largo
-                    por los que habria que manejar que se despliege cuando se hace
-                    click en algun lado, poner cantidad de lineas o algo
-                    por los que habria que manejar que se despliege cuando se hace
-                    click en algun lado, poner cantidad de lineas o algo
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Pellentesque orci metus, descripcion post esto puede ser muy largo
-                    por los que habria que manejar que se despliege cuando se hace
-                    click en algun lado, poner cantidad de lineas o algo
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Pellentesque orci metus, descripcion post esto puede ser muy largo
-                    por los que habria que manejar que se despliege cuando se hace
-                    click en algun lado, poner cantidad de lineas o algo
-                </p>
-    
-            </div>
-            <div class="div-p-click">
-                <p class="p-show-click">Mostrar</p>
-            </div>
+                <div class="div-comments">
+                    <span class="qty-comments">cantidad comentarios</span>
+                </div>
 
-            <table class="table-comments">
-                <!-- <tr class="table-row-comments">
-                    <th class="header-comments">Header tabla</th>
-                </tr> -->
-                <tr>
-                    <td class="comments">comentario 1</td>
-                </tr>
-                <tr>
-                    <td class="comments">
-                    <p class="p-comments-no-show">
+                <div class="div-desc">
+                    <p class="p-desc-no-show">descripcion post esto puede ser muy largo
+                        por los que habria que manejar que se despliege cuando se hace
+                        click en algun lado, poner cantidad de lineas o algo
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                         Pellentesque orci metus, descripcion post esto puede ser muy largo
                         por los que habria que manejar que se despliege cuando se hace
                         click en algun lado, poner cantidad de lineas o algo
-                        </p>
-                        <span class="show-comments">Mostrar comentario</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="comments">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Pellentesque orci metus, descripcion post esto puede ser muy largo
+                        por los que habria que manejar que se despliege cuando se hace
+                        click en algun lado, poner cantidad de lineas o algo
+                        por los que habria que manejar que se despliege cuando se hace
+                        click en algun lado, poner cantidad de lineas o algo
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Pellentesque orci metus, descripcion post esto puede ser muy largo
+                        por los que habria que manejar que se despliege cuando se hace
+                        click en algun lado, poner cantidad de lineas o algo
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Pellentesque orci metus, descripcion post esto puede ser muy largo
+                        por los que habria que manejar que se despliege cuando se hace
+                        click en algun lado, poner cantidad de lineas o algo
+                    </p>
+        
+                </div>
+                <div class="div-p-click">
+                    <p class="p-show-click">Mostrar</p>
+                </div>
+
+                <table class="table-comments">
+                
+                    <tr>
+                        <td class="comments">
                         <p class="p-comments-no-show">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            Pellentesque orci metus, descripcion post esto puede ser muy largo
+                            por los que habria que manejar que se despliege cuando se hace
+                            click en algun lado, poner cantidad de lineas o algo
+                            </p>
+                            <span class="show-comments">Mostrar comentario</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="comments">
+                            <p class="p-comments-no-show">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            Pellentesque orci metus, descripcion post esto puede ser muy largo
+                            por los que habria que manejar que se despliege cuando se hace
+                            click en algun lado, poner cantidad de lineas o algo
+                            </p>
+                            <span class="show-comments">Mostrar comentario</span>
+                        </td>
+                    </tr>
+                </table>
+
+                <form class="form-comments"action="">
+                    <input class="input-comments"
+                        type="text"
+                        placeholder="Escribe un comentario...">
+                </form>
+
+            </article>
+
+            <article id="article-post">
+                <h2 class="h2-title">TITULO POST</h2>
+
+                <div class="div-time">
+                    <time class="time-post">fecha y hora de post</time>
+                </div>
+
+                <div class="div-img">
+                    <img class="img-post"
+                        src="<?=base_url()?>assets/img/mosquitos.jpg"
+                        alt="">
+                </div>
+
+                <div class="div-comments">
+                    <span class="qty-comments">cantidad comentarios</span>
+                </div>
+
+                <div class="div-desc">
+                    <p class="p-desc-no-show">descripcion post esto puede ser muy largo
+                        por los que habria que manejar que se despliege cuando se hace
+                        click en algun lado, poner cantidad de lineas o algo
                         Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                         Pellentesque orci metus, descripcion post esto puede ser muy largo
                         por los que habria que manejar que se despliege cuando se hace
                         click en algun lado, poner cantidad de lineas o algo
-                        </p>
-                        <span class="show-comments">Mostrar comentario</span>
-                    </td>
-                </tr>
-            </table>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Pellentesque orci metus, descripcion post esto puede ser muy largo
+                        por los que habria que manejar que se despliege cuando se hace
+                        click en algun lado, poner cantidad de lineas o algo
+                        por los que habria que manejar que se despliege cuando se hace
+                        click en algun lado, poner cantidad de lineas o algo
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Pellentesque orci metus, descripcion post esto puede ser muy largo
+                        por los que habria que manejar que se despliege cuando se hace
+                        click en algun lado, poner cantidad de lineas o algo
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Pellentesque orci metus, descripcion post esto puede ser muy largo
+                        por los que habria que manejar que se despliege cuando se hace
+                        click en algun lado, poner cantidad de lineas o algo
+                    </p>
+        
+                </div>
+                <div class="div-p-click">
+                    <p class="p-show-click">Mostrar</p>
+                </div>
 
-            <form class="form-comments"action="">
-                <input class="input-comments"
-                    type="text"
-                    placeholder="Escribe un comentario...">
-            </form>
+                <table class="table-comments">
+                
+                    <tr>
+                        <td class="comments">
+                        <p class="p-comments-no-show">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            Pellentesque orci metus, descripcion post esto puede ser muy largo
+                            por los que habria que manejar que se despliege cuando se hace
+                            click en algun lado, poner cantidad de lineas o algo
+                            </p>
+                            <span class="show-comments">Mostrar comentario</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="comments">
+                            <p class="p-comments-no-show">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            Pellentesque orci metus, descripcion post esto puede ser muy largo
+                            por los que habria que manejar que se despliege cuando se hace
+                            click en algun lado, poner cantidad de lineas o algo
+                            </p>
+                            <span class="show-comments">Mostrar comentario</span>
+                        </td>
+                    </tr>
+                </table>
 
-        </article>
+                <form class="form-comments"action="">
+                    <input class="input-comments"
+                        type="text"
+                        placeholder="Escribe un comentario...">
+                </form>
+
+            </article>
+        
+        </div> <!--end post container -->
+
+        <aside id="aside-right">
+            aside right
+        </aside>
     </main>
-    <aside id="aside">
-        aside
-    </aside>
 
     <footer id="footer">
         <div class="footer-div">
@@ -186,5 +278,6 @@
             
         </div>
     </footer>
+
 </body>
 </html>

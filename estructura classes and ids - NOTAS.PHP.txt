@@ -1,0 +1,81 @@
+NOTAS.PHP
+
+    <main id="main">
+
+        <article id="article-main">
+
+            <h1>Notas</h1>
+
+            <div class="div-notas-desc">
+
+                <p>aca iria una descripcion de las notas general o bienvenida de las notas</p>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- cada article con un id para crear la plantilla de cada nota esta seria id="article-nota-1"-->
+
+        <article class="article-notas"> ESTO VA CON ID PARA CARGA DYNAMIC
+                                              
+            <div class="nota"> 		ESTO VA CON ID PARA CARGA DYNAMIC
+                <h3 class="h3-nota"> 	ESTO VA CON ID PARA CARGA DYNAMIC
+                   
+                </h3>
+                <p class="p-nota"> ESTO VA CON ID PARA CARGA DYNAMIC
+
+                
+                </p>
+                
+            </div>
+
+            <table class="table-comments"> ESTO VA CON ID PARA CARGA DYNAMIC
+        
+                <tr>
+                    <td class="comments">
+                    	<p class="p-comments-no-show"> ESTO VA CON ID PARA CARGA DYNAMIC
+                        </p>
+                        <span class="show-comments">Mostrar comentario</span>
+                    </td>
+                </tr>
+                
+			ACA VAS MAS TR-TD-P-SPAN DYNAMIC
+
+            </table>
+
+            <form class="form-comments"action="">
+                <input class="input-comments"
+            </form>                                                                   
+
+        </article> <!-- fin nota 1-->
+               
+    </main>
+
+
+ASIDE
+
+ <aside id="aside" class="aside-show">
+       <h2>Ultimas Notas</h2>
+
+       <div class="div-notas">
+        <ul class="ul-notas">
+            <li class="li-notas"> 
+                <a class="li-notas-a" href="">Ultima nota</a> ESTO VA CON ID PARA CARGA DYNAMIC
+            </li>
+
+		MAS LI-A DYNAMIC
+            </ul>
+       </div>
+
+       <div class="div-fechas">
+            <ul class="ul-fechas">
+                <li class="li-fechas"> ESTO VA CON ID PARA CARGA DYNAMIC Y SE CORRESPONDE CON LA FECHA DE LA NOTA
+                    11/10/2019		 Y SE CORRESPONDE CON LA FECHA DE LA NOTA
+                </li>
+
+		MAS LI CON FECHAS DYNAMIC			
+
+            </ul>
+       </div>

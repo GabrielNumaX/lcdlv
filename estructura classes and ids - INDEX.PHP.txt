@@ -1,0 +1,56 @@
+<body class="container">
+
+    <main id="main">
+        <article id="article-main">
+            <h1>
+            <p>
+        </article>
+
+        <!-- all this is the template for dynamic loadin from backend and/or db -->
+
+        <article id="article-post"> 		ESTO LLEVA ID PARA CARGA DYNAMIC
+            <h2 class="h2-title">   		ESTO LLEVA ID PARA CARGA DYNAMIC
+
+            <div class="div-time">  		ESTO LLEVA ID PARA CARGA DYNAMIC
+                <time class="time-post">  	ESTO LLEVA ID PARA CARGA DYNAMIC
+            </div>
+
+            <div class="div-img"> 		ESTO LLEVA ID PARA CARGA DYNAMIC
+                <img class="img-post"  		ESTO LLEVA ID PARA CARGA DYNAMIC                  
+            </div>
+
+            <div class="div-comments"> 
+                <span class="qty-comments">cantidad comentarios</span> ESTO LLEVA ID PARA CARGA DYNAMIC
+            </div>
+
+            <div class="div-desc"> 		ESTO LLEVA ID PARA CARGA DYNAMIC
+                <p class="p-desc-no-show">
+            </div>
+
+            <div class="div-p-click">
+                <p class="p-show-click">Mostrar</p>
+            </div>
+
+            <table class="table-comments"> 	ESTO LLEVA ID PARA CARGA DYNAMIC
+
+                <tr>
+                    <td class="comments">comentario 1</td> ESTO BORRAR PORQUE ESTA INCOMPLETO
+                </tr>
+                <tr>
+                    <td class="comments"> 	ESTO LLEVA ID PARA CARGA DYNAMIC
+                    <p class="p-comments-no-show">  ESTO LLEVA ID PARA CARGA DYNAMIC                     
+                        </p>
+                        <span class="show-comments">Mostrar comentario</span>
+                    </td>
+                </tr>
+                
+			MAS TR-TD-P-SPAN DYNAMIC
+
+            </table>
+
+            <form class="form-comments"action="">
+                <input class="input-comments"             
+            </form>
+
+        </article>
+    </main>
