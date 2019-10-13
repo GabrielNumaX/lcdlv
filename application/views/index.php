@@ -153,7 +153,7 @@
                 
                     <tr>
                         <td class="comments">
-                        <p class="comments-p p-comments-no-show">
+                        <p class="p-comments-no-show">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                             Pellentesque orci metus, descripcion post esto puede ser muy largo
                             por los que habria que manejar que se despliege cuando se hace

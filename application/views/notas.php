@@ -323,12 +323,9 @@
                 <a href="">nota anterior</a>
                 </li>
             <li class="li-notas">
-                <a href="">nota anterior</a>
+                <a href="">14 notas</a>
                 </li>
-            <li class="li-notas">
-                <a href="">nota anterior</a>
-                </li>
-            </ul>
+            
        </div>
 
        <!-- this LOADS dynamic -->
@@ -376,9 +373,6 @@
                 </li>
                 <li class="li-fechas">
                 28/10/2019
-                </li>
-                <li class="li-fechas">
-                27/10/2019
                 </li>
             </ul>
        </div>
