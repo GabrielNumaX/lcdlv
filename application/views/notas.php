@@ -32,6 +32,7 @@
         crossorigin="anonymous"></script>
     <!-- este script tiene las funciones show/hide de los comentarios -->
     <script type="text/javascript" src="<?php echo base_url();?>assets/js/index.js" ></script>
+    <script type="text/javascript" src="<?php echo base_url();?>assets/js/notas.js" ></script>
 
     <title>LCdLV</title>
 </head>
@@ -67,6 +68,12 @@
         
         </div>
     </header>
+
+    <!-- <div class="header-fix">
+
+    </div> -->
+
+
     <main id="main">
         <article id="article-main">
             <h1>Notas</h1>
@@ -272,20 +279,21 @@
                
     </main>
 
+    <!-- esto esta solucionado con js en notas.js -->
     <!-- aside con position fixed para que no scrollee
         con sticky overlapea al header sino dejar normal
         asi da para cargar 15 notas/fechas. pero overlapea el
         footer asi que ver mas adelante.  -->
-    <aside id="aside">
+    <aside id="aside" class="aside-show">
        <h2>Ultimas Notas</h2>
 
        <div class="div-notas">
         <ul class="ul-notas">
             <li class="li-notas">
-                <a href="">Ultima nota</a>
+                <a class="li-notas-a" href="">Ultima nota</a>
                 </li>
             <li class="li-notas">
-                <a href="">nota anterior</a>
+                <a class="li-notas-a" href="">nota anterior</a>
                 </li>
             <li class="li-notas">
                 <a href="">nota</a>
@@ -476,8 +484,16 @@
             </li>
         </ul> -->
     </aside>
-    <footer>
-        footer
+    <footer id="footer">
+        <div class="footer-div">
+            <h4>NumaX &copy; 2019</h4>
+        </div>
+        <div class="footer-icons">
+        <a href="https://github.com/GabrielNumaX/"><i class="fab fa-github-square"></i></a>
+            <a href="mailto:g.numa10@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/numax/"><i class="fab fa-linkedin"></i></a>
+            
+        </div>
     </footer>  
 </body>
 </html>

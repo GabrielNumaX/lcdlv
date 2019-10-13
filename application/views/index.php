@@ -5,8 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
+    <!-- this is for SEO -->
+    <meta name="keywords" content="cara vergha, vergha" />
+    <meta name="description" content="la cara de la vergha" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- this are the fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet"> 
     <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
 
+    <!-- this is for the icons -->
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
 
@@ -19,6 +27,7 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
+    <!-- this is css -->
     <link type="text/css" rel="stylesheet" href="<?= base_url()?>assets/css/master.css">
     <link rel="stylesheet" href="<?= base_url()?>assets/css/posts.css">
 
@@ -28,6 +37,7 @@
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous"></script>
 
+    <!-- this is js -->
     <script type="text/javascript" src="<?php echo base_url();?>assets/js/index.js" ></script>
               
 
@@ -65,6 +75,11 @@
 
         </div>
     </header>
+
+    <!-- <div class="header-fix">
+        header fix
+    </div> -->
+
     <main id="main">
         <article id="article-main">
             <h1>ACA IRIA EL TITULO DE LA BIEVENIDA</h1>
@@ -159,8 +174,17 @@
     <aside id="aside">
         aside
     </aside>
-    <footer>
-        footer
+
+    <footer id="footer">
+        <div class="footer-div">
+            <h4>NumaX &copy; 2019</h4>
+        </div>
+        <div class="footer-icons">
+        <a href="https://github.com/GabrielNumaX/"><i class="fab fa-github-square"></i></a>
+            <a href="mailto:g.numa10@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/in/numax/"><i class="fab fa-linkedin"></i></a>
+            
+        </div>
     </footer>
 </body>
 </html>

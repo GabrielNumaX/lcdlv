@@ -1,16 +1,18 @@
-#main {
+/* #main {
     margin-top: 0;
     padding-top: 0;
-}
+} */
 
 /* this to set table commmets equal */
 #article-main {
     width: 70%;
+    margin: 30px auto;
 }
 
 #article-main h1 {
+    font-family: 'Lobster', cursive;
     background-color: #dddddd;
-    margin-top: 0;
+    margin-top: 30px;
     padding-top: 0;
     font-size: 48px;
     letter-spacing: 1px;
@@ -19,23 +21,40 @@
 
 .div-notas-desc {
     /* background-color: blue; */
-    width: 70%;
+    width: 100%;
     margin: 0 auto;
+    text-align: justify;
+    padding: 0 22px;
+}
+
+.div-notas-desc p {
+    margin-bottom: 54px;
 }
 
 #aside {
     display: grid;
-    grid-template-columns: 170px 80px; /*280px*/
+    grid-template-columns: 160px 90px; /*250px*/
     grid-template-rows: auto auto;
-    align-content: flex-start;
-    position: fixed;
+    /* align-content: flex-start; */
+    /* justify-content: start; */
     right: 0;
     top: 50px;
     height: 100%;
+} 
+
+.aside-show {
+    align-content: start;
+    position: fixed;
+}
+
+.aside-no-show {
+    align-content: end;
+    position: static;
 }
 
 
 #aside h2 {
+    font-family: 'Lobster', cursive;
     grid-column: 1 / 3;
     grid-row: 1 / 1;
     letter-spacing: 2px;
@@ -45,6 +64,10 @@
     grid-column: 1 / 2;
     grid-row: 2 / 2;
 }
+
+/* .aside-child-end {
+    align-items: end;
+} */
 
 .div-fechas {
     grid-column: 2 / 3;
@@ -61,7 +84,7 @@
 .li-notas {
     margin-bottom: 8px;
     margin-left: 12px;
-    padding-right: 4px;
+    padding-right: 6px;
     letter-spacing: 1px;
     white-space: nowrap;
     overflow: hidden;
@@ -78,7 +101,6 @@
     text-decoration: none;
     margin: 0;
     margin-right: 16px;
-    color: #dddddd;
     text-align: left;
 }
 
@@ -113,10 +135,12 @@
 .li-fechas {
     margin-bottom: 8px;
     letter-spacing: 1px;
+    padding-right: 6px;
     /* white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;    */
     font-size: 14px;
+    color: #dddddd;
 }
 
 .li-fechas:last-of-type {
@@ -128,7 +152,8 @@
 .article-notas {
     width: 70%;
     margin: 0 auto 50px;
-    /* background-color: tomato; */
+    /* text-align: center;
+    background-color: tomato; */
 }
 
 .nota {
@@ -137,18 +162,27 @@
     background-color: whitesmoke;
     border: 1px solid black;
     border-radius: 1rem;
+    /* this is from cssmatic/box-shadow */
+    -webkit-box-shadow: 0px 0px 13px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 13px 1px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 13px 1px rgba(0,0,0,0.75);
 }
 
 .h3-nota {
     text-align: center;
+    font-family: 'Lobster', cursive;
+    letter-spacing: 2px;
+    font-size: 26px;
+    /* background-color: crimson; */
 }
 
 .p-nota {
     margin: 0 28px 40px;
-    text-align: left;
-    letter-spacing: 1px;
+    text-align: justify;
+    /* letter-spacing: 1px; */
     word-spacing: 2px;
     line-height: 2;
+    font-size: 17px;
 }
 
 /* THIS ARE COMMENTS STYLES */
@@ -210,6 +244,8 @@
 }
 
 .input-comments {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
     width: 100%;
     border-radius: 20px;
     border: 1px solid black;

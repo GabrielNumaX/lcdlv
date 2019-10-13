@@ -51,4 +51,13 @@ Sino dejar normal.
 se agrego jquery e index.js a index.php
 se hicieron dos funciones para mostrar y ocultar los comentarios y la descripcion d la foto
 
+13.10.19
+
+- notas.js
+
+funcion para que cuando llegue al footer ponga static el 
+aside
+
+mas css en index.php y notas.php
+
 
