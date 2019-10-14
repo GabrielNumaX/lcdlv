@@ -39,13 +39,13 @@ $(document).ready(function() {
 
         const footerFixPos = $(document).height() - $('#footer').height(); //5800
 
-        console.log('window ' + windowPos);
+        // console.log('window ' + windowPos);
 
-        console.log('footer ' + footerFixPos);
+        // console.log('footer ' + footerFixPos);
 
         if(windowPos > footerFixPos) {
 
-            console.log('if saca show');
+            // console.log('if saca show');
 
             $('#aside').removeClass('aside-show');
 
@@ -57,7 +57,7 @@ $(document).ready(function() {
         }
         else if (windowPos < footerFixPos) {
 
-            console.log('else saca no show');
+            // console.log('else saca no show');
         
             $('#aside').removeClass('aside-no-show');
 

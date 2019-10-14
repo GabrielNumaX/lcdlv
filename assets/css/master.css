@@ -108,14 +108,12 @@ nav a:hover {
     grid-column: 1 / 2;
     width: 80px;
     text-align: center;
-    padding-left: 60px;
 }
 
 #icon-div2 {
     grid-column: 2 / 3;
     width: 80px;
     text-align: center;
-    padding-right: 60px;
 }
 
 .social-icons {

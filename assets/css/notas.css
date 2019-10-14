@@ -101,16 +101,15 @@ nav a:active {
 
 #icon-div1 {
     grid-column: 1 / 2;
-    width: 125px;
+    width: 80px;
     text-align: center;
-    padding-left: 60px;
 }
 
 #icon-div2 {
     grid-column: 2 / 3;
-    width: 125px;
+    width: 80px;
     text-align: center;
-    padding-right: 60px;
+   
 }
 
 .social-icons {

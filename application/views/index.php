@@ -344,7 +344,7 @@
         </div>
         <div class="footer-icons">
         <a href="https://github.com/GabrielNumaX/"><i class="fab fa-github-square"></i></a>
-            <a href="mailto:g.numa10@gmail.com"><i class="fas fa-envelope"></i></a>
+            <a href="mailto:g.numa10@hotmail.com"><i class="fas fa-envelope"></i></a>
             <a href="https://www.linkedin.com/in/numax/"><i class="fab fa-linkedin"></i></a>
             
         </div>
