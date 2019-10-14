@@ -7,7 +7,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" 
+    <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
 
     <!-- this is for favicon from realfavicongenerator.net -->
@@ -37,13 +37,13 @@
 <body class="container">
     <header>
         <nav>
-            <a href="<?=base_url('Home/index')?>">Inicio</a>
+            <a href="<?=base_url('Home')?>">Inicio</a>
             <a href="#main">Notas</a>
-            <a href="<?=base_url('Archivo/archivos')?>">Archivo</a>
+            <a href="<?=base_url('Archivo')?>">Archivo</a>
         </nav>
         <form class="form-search" action="">
-            <input class="input-search" type="search" 
-                autofocus 
+            <input class="input-search" type="search"
+                autofocus
                 placeholder="Buscar...">
         </form>
 
@@ -55,7 +55,7 @@
                     <i class="fab fa-facebook"></i>
                 </a>
             </div>
-        
+
             <div id="icon-div2">
                 <a class="social-icons"
                     href="https://www.instagram.com/lacaradelavergha/"
@@ -63,28 +63,28 @@
                     <i class="fab fa-instagram"></i>
                 </a>
             </div>
-        
+
         </div>
     </header>
 
-    
+
     <main id="main">
         <article id="article-main">
             <h1>Notas</h1>
 
             <div class="div-notas-desc">
                 <p>aca iria una descripcion de las notas general o bienvenida de las notas
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Pellentesque orci metus, pharetra eu elit a, malesuada condimentum felis. 
-                Fusce a tellus eleifend, ultrices ligula id, luctus tellus. 
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Pellentesque orci metus, pharetra eu elit a, malesuada condimentum felis.
+                Fusce a tellus eleifend, ultrices ligula id, luctus tellus.
                 Donec eleifend lorem id turpis suscipit, nec vehicula nunc egestas.
                 </p>
             </div>
         </article>
 
         <!-- cada article con un id para crear la plantilla de cada nota esta seria id="article-nota-1"-->
-        <article class="article-notas"> 
-                                              
+        <article class="article-notas">
+
             <div class="nota">
                 <h3 class="h3-nota">
                     ACA IRIA EL TITULO NOTA1
@@ -93,75 +93,75 @@
 
                 <!-- dummy text -->
 
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Pellentesque orci metus, pharetra eu elit a, malesuada condimentum felis. 
-                Fusce a tellus eleifend, ultrices ligula id, luctus tellus. 
-                Donec eleifend lorem id turpis suscipit, nec vehicula nunc egestas. 
-                Ut sit amet ex vitae nunc lacinia lobortis sed sed urna. 
-                Sed ut gravida dui. Pellentesque laoreet, ante ut sollicitudin varius, 
-                sapien nunc ultricies magna, vel egestas libero ipsum et orci. 
-                Nunc sit amet ipsum sed est consectetur luctus. 
-                Nullam neque lectus, convallis non magna a, facilisis tincidunt velit. 
-                Phasellus ultricies consequat nibh. Nulla rutrum ultricies convallis. 
-                Sed pharetra tortor sit amet facilisis luctus. Duis quis pharetra purus, 
-                non fringilla augue. Nunc non eleifend sem. Aenean fermentum suscipit erat, 
-                eget interdum leo condimentum at. Integer condimentum justo nec congue 
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Pellentesque orci metus, pharetra eu elit a, malesuada condimentum felis.
+                Fusce a tellus eleifend, ultrices ligula id, luctus tellus.
+                Donec eleifend lorem id turpis suscipit, nec vehicula nunc egestas.
+                Ut sit amet ex vitae nunc lacinia lobortis sed sed urna.
+                Sed ut gravida dui. Pellentesque laoreet, ante ut sollicitudin varius,
+                sapien nunc ultricies magna, vel egestas libero ipsum et orci.
+                Nunc sit amet ipsum sed est consectetur luctus.
+                Nullam neque lectus, convallis non magna a, facilisis tincidunt velit.
+                Phasellus ultricies consequat nibh. Nulla rutrum ultricies convallis.
+                Sed pharetra tortor sit amet facilisis luctus. Duis quis pharetra purus,
+                non fringilla augue. Nunc non eleifend sem. Aenean fermentum suscipit erat,
+                eget interdum leo condimentum at. Integer condimentum justo nec congue
                 rhoncus. Suspendisse eu erat non quam aliquet porttitor at a orci.
 
-                Pellentesque condimentum elementum nisl, id fringilla turpis viverra vel. 
+                Pellentesque condimentum elementum nisl, id fringilla turpis viverra vel.
                 Donec condimentum at leo in ullamcorper. Pellentesque in nunc sit amet arcu
-                 rhoncus sollicitudin. In in leo consequat, pretium lacus eu, malesuada 
-                 nisl. Sed tellus tellus, porttitor ut facilisis sit amet, convallis ut 
+                 rhoncus sollicitudin. In in leo consequat, pretium lacus eu, malesuada
+                 nisl. Sed tellus tellus, porttitor ut facilisis sit amet, convallis ut
                  orci. Aliquam feugiat, dui ut placerat elementum, dui tortor facilisis m
-                 assa, sit amet facilisis tellus nisl quis sem. Nullam consectetur lacus 
-                 aliquet, fringilla quam in, ultrices libero. Maecenas mollis purus ante, 
-                 ac tempus felis placerat at. Nunc vitae viverra ligula, sed gravida elit. 
-                 Aenean vehicula, turpis in placerat ultrices, nisi mi gravida ex, at 
-                 ultricies felis odio eu odio. Sed convallis aliquam ante sed pellentesque. 
-                 Quisque iaculis commodo nisl eget laoreet. Cras dignissim, felis quis 
-                 molestie ultrices, ipsum felis lobortis turpis, ut rutrum justo massa ut 
-                 tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus. 
-                 Phasellus volutpat placerat justo, id pretium nunc viverra sed. 
+                 assa, sit amet facilisis tellus nisl quis sem. Nullam consectetur lacus
+                 aliquet, fringilla quam in, ultrices libero. Maecenas mollis purus ante,
+                 ac tempus felis placerat at. Nunc vitae viverra ligula, sed gravida elit.
+                 Aenean vehicula, turpis in placerat ultrices, nisi mi gravida ex, at
+                 ultricies felis odio eu odio. Sed convallis aliquam ante sed pellentesque.
+                 Quisque iaculis commodo nisl eget laoreet. Cras dignissim, felis quis
+                 molestie ultrices, ipsum felis lobortis turpis, ut rutrum justo massa ut
+                 tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                 Phasellus volutpat placerat justo, id pretium nunc viverra sed.
                  Etiam auctor risus libero, et sagittis justo iaculis ut.
 
-                Curabitur rutrum tortor pellentesque mauris lobortis rhoncus. 
-                Donec tristique condimentum urna eu tincidunt. Interdum et malesuada 
-                fames ac ante ipsum primis in faucibus. Cras ut orci et massa posuere 
-                aliquet. Phasellus finibus finibus dui, a finibus ex elementum eget. 
-                Quisque et tellus metus. Morbi et semper erat. Duis pulvinar ex ac ligula 
-                semper, rhoncus porta mi volutpat. Nunc sit amet viverra arcu. 
-                Phasellus lectus neque, facilisis id ornare eu, laoreet in metus. 
-                Praesent sollicitudin nulla id augue auctor lobortis. Nulla cursus massa 
-                vel lorem mollis, in pretium sem hendrerit. Praesent at faucibus sapien. 
-                Maecenas eu turpis ultricies ante vehicula aliquet non ut quam. Nulla non 
+                Curabitur rutrum tortor pellentesque mauris lobortis rhoncus.
+                Donec tristique condimentum urna eu tincidunt. Interdum et malesuada
+                fames ac ante ipsum primis in faucibus. Cras ut orci et massa posuere
+                aliquet. Phasellus finibus finibus dui, a finibus ex elementum eget.
+                Quisque et tellus metus. Morbi et semper erat. Duis pulvinar ex ac ligula
+                semper, rhoncus porta mi volutpat. Nunc sit amet viverra arcu.
+                Phasellus lectus neque, facilisis id ornare eu, laoreet in metus.
+                Praesent sollicitudin nulla id augue auctor lobortis. Nulla cursus massa
+                vel lorem mollis, in pretium sem hendrerit. Praesent at faucibus sapien.
+                Maecenas eu turpis ultricies ante vehicula aliquet non ut quam. Nulla non
                 consectetur lectus, non mattis turpis. Cras commodo justo in viverra varius.
 
-                Sed egestas tristique ipsum, ac consequat nulla sagittis gravida. 
-                Vestibulum non purus mollis, dictum nibh vitae, viverra arcu. Praesent 
-                placerat justo in erat lacinia volutpat. Duis arcu justo, pulvinar ac 
-                sapien in, pellentesque pretium tortor. Sed fringilla orci in vehicula 
-                congue. Suspendisse at nisi non augue tempus faucibus. Duis eleifend 
+                Sed egestas tristique ipsum, ac consequat nulla sagittis gravida.
+                Vestibulum non purus mollis, dictum nibh vitae, viverra arcu. Praesent
+                placerat justo in erat lacinia volutpat. Duis arcu justo, pulvinar ac
+                sapien in, pellentesque pretium tortor. Sed fringilla orci in vehicula
+                congue. Suspendisse at nisi non augue tempus faucibus. Duis eleifend
                 neque tincidunt, egestas massa non, maximus mi.
 
                 Quisque ante nisi, dictum a rhoncus eget, efficitur at justo. Ut a
-                 fermentum tellus. Integer scelerisque blandit urna eu malesuada. 
-                 Vivamus et lacus non velit volutpat imperdiet sed congue massa. 
-                 Maecenas ut suscipit nulla, nec tincidunt urna. Nam auctor dui a 
-                 pellentesque pharetra. Ut nisl orci, pharetra vel quam sed, tempor 
+                 fermentum tellus. Integer scelerisque blandit urna eu malesuada.
+                 Vivamus et lacus non velit volutpat imperdiet sed congue massa.
+                 Maecenas ut suscipit nulla, nec tincidunt urna. Nam auctor dui a
+                 pellentesque pharetra. Ut nisl orci, pharetra vel quam sed, tempor
                  sodales orci. Sed pharetra ex eu magna gravida dapibus ut ut mauris.
-                  Quisque turpis nisl, fringilla id dictum nec, laoreet sed nibh. 
-                  Sed pellentesque dolor in efficitur accumsan. Vestibulum eget ipsum 
-                  vitae metus semper fringilla. 
+                  Quisque turpis nisl, fringilla id dictum nec, laoreet sed nibh.
+                  Sed pellentesque dolor in efficitur accumsan. Vestibulum eget ipsum
+                  vitae metus semper fringilla.
                 </p>
-                
+
             </div>
 
             <table class="table-comments">
-               
+
                 <tr>
                     <td class="comments">
                     <p class="p-comments-no-show">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Pellentesque orci metus, descripcion post esto puede ser muy largo
                         por los que habria que manejar que se despliege cuando se hace
                         click en algun lado, poner cantidad de lineas o algo
@@ -172,7 +172,7 @@
                 <tr>
                     <td class="comments">
                         <p class="p-comments-no-show">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Pellentesque orci metus, descripcion post esto puede ser muy largo
                         por los que habria que manejar que se despliege cuando se hace
                         click en algun lado, poner cantidad de lineas o algo
@@ -186,11 +186,11 @@
                 <input class="input-comments"
                     type="text"
                     placeholder="Escribe un comentario...">
-            </form>                                                                   
+            </form>
 
         </article> <!-- fin nota 1-->
 
-        <article class="article-notas"> 
+        <article class="article-notas">
         <!-- cada article con un id para crear la plantilla de cada nota esta seria id="article-nota-2" y asi-->
         <div class="nota">
                 <h3 class="h3-nota">
@@ -200,46 +200,46 @@
 
                 <!-- dummy text -->
 
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Pellentesque orci metus, pharetra eu elit a, malesuada condimentum felis. 
-                Fusce a tellus eleifend, ultrices ligula id, luctus tellus. 
-                Donec eleifend lorem id turpis suscipit, nec vehicula nunc egestas. 
-                Ut sit amet ex vitae nunc lacinia lobortis sed sed urna. 
-                Sed ut gravida dui. Pellentesque laoreet, ante ut sollicitudin varius, 
-                sapien nunc ultricies magna, vel egestas libero ipsum et orci. 
-                Nunc sit amet ipsum sed est consectetur luctus. 
-                Nullam neque lectus, convallis non magna a, facilisis tincidunt velit. 
-                Phasellus ultricies consequat nibh. Nulla rutrum ultricies convallis. 
-                Sed pharetra tortor sit amet facilisis luctus. Duis quis pharetra purus, 
-                non fringilla augue. Nunc non eleifend sem. Aenean fermentum suscipit erat, 
-                eget interdum leo condimentum at. Integer condimentum justo nec congue 
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                Pellentesque orci metus, pharetra eu elit a, malesuada condimentum felis.
+                Fusce a tellus eleifend, ultrices ligula id, luctus tellus.
+                Donec eleifend lorem id turpis suscipit, nec vehicula nunc egestas.
+                Ut sit amet ex vitae nunc lacinia lobortis sed sed urna.
+                Sed ut gravida dui. Pellentesque laoreet, ante ut sollicitudin varius,
+                sapien nunc ultricies magna, vel egestas libero ipsum et orci.
+                Nunc sit amet ipsum sed est consectetur luctus.
+                Nullam neque lectus, convallis non magna a, facilisis tincidunt velit.
+                Phasellus ultricies consequat nibh. Nulla rutrum ultricies convallis.
+                Sed pharetra tortor sit amet facilisis luctus. Duis quis pharetra purus,
+                non fringilla augue. Nunc non eleifend sem. Aenean fermentum suscipit erat,
+                eget interdum leo condimentum at. Integer condimentum justo nec congue
                 rhoncus. Suspendisse eu erat non quam aliquet porttitor at a orci.
 
-                Pellentesque condimentum elementum nisl, id fringilla turpis viverra vel. 
+                Pellentesque condimentum elementum nisl, id fringilla turpis viverra vel.
                 Donec condimentum at leo in ullamcorper. Pellentesque in nunc sit amet arcu
-                 rhoncus sollicitudin. In in leo consequat, pretium lacus eu, malesuada 
-                 nisl. Sed tellus tellus, porttitor ut facilisis sit amet, convallis ut 
+                 rhoncus sollicitudin. In in leo consequat, pretium lacus eu, malesuada
+                 nisl. Sed tellus tellus, porttitor ut facilisis sit amet, convallis ut
                  orci. Aliquam feugiat, dui ut placerat elementum, dui tortor facilisis m
-                 assa, sit amet facilisis tellus nisl quis sem. Nullam consectetur lacus 
-                 aliquet, fringilla quam in, ultrices libero. Maecenas mollis purus ante, 
-                 ac tempus felis placerat at. Nunc vitae viverra ligula, sed gravida elit. 
-                 Aenean vehicula, turpis in placerat ultrices, nisi mi gravida ex, at 
-                 ultricies felis odio eu odio. Sed convallis aliquam ante sed pellentesque. 
-                 Quisque iaculis commodo nisl eget laoreet. Cras dignissim, felis quis 
-                 molestie ultrices, ipsum felis lobortis turpis, ut rutrum justo massa ut 
-                 tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus. 
-                 Phasellus volutpat placerat justo, id pretium nunc viverra sed. 
+                 assa, sit amet facilisis tellus nisl quis sem. Nullam consectetur lacus
+                 aliquet, fringilla quam in, ultrices libero. Maecenas mollis purus ante,
+                 ac tempus felis placerat at. Nunc vitae viverra ligula, sed gravida elit.
+                 Aenean vehicula, turpis in placerat ultrices, nisi mi gravida ex, at
+                 ultricies felis odio eu odio. Sed convallis aliquam ante sed pellentesque.
+                 Quisque iaculis commodo nisl eget laoreet. Cras dignissim, felis quis
+                 molestie ultrices, ipsum felis lobortis turpis, ut rutrum justo massa ut
+                 tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                 Phasellus volutpat placerat justo, id pretium nunc viverra sed.
                  Etiam auctor risus libero, et sagittis justo iaculis ut.
                 </p>
 
             </div>
 
             <table class="table-comments">
-               
+
                 <tr>
                     <td class="comments">
                     <p class="p-comments-no-show">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Pellentesque orci metus, descripcion post esto puede ser muy largo
                         por los que habria que manejar que se despliege cuando se hace
                         click en algun lado, poner cantidad de lineas o algo
@@ -250,7 +250,7 @@
                 <tr>
                     <td class="comments">
                         <p class="p-comments-no-show">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Pellentesque orci metus, descripcion post esto puede ser muy largo
                         por los que habria que manejar que se despliege cuando se hace
                         click en algun lado, poner cantidad de lineas o algo
@@ -264,10 +264,10 @@
                 <input class="input-comments"
                     type="text"
                     placeholder="Escribe un comentario...">
-            </form> 
+            </form>
 
-        </article>  <!--fin nota dos --> 
-               
+        </article>  <!--fin nota dos -->
+
     </main>
 
     <!-- esto esta solucionado con js en notas.js -->
@@ -294,7 +294,7 @@
             <li class="li-notas">
                 <a href="">overflow para titulo nota larga</a>
                 </li>
-                
+
             <li class="li-notas">
                 <a href="">nota anterior</a>
                 </li>
@@ -325,7 +325,7 @@
             <li class="li-notas">
                 <a href="">14 notas</a>
                 </li>
-            
+
        </div>
 
        <!-- this LOADS dynamic -->
@@ -343,7 +343,7 @@
                 </li>
                 <li class="li-fechas">
                 08/10/2019
-                </li>               
+                </li>
                 <li class="li-fechas">
                 07/10/2019
                 </li>
@@ -377,7 +377,7 @@
             </ul>
        </div>
 
-       
+
     </aside>
 
     <footer id="footer">
@@ -389,9 +389,9 @@
         <div class="footer-icons">
             <a href="https://github.com/GabrielNumaX/"><i class="fab fa-github-square"></i></a>
             <a href="mailto:g.numa10@gmail.com"><i class="fas fa-envelope"></i></a>
-            <a href="https://www.linkedin.com/in/numax/"><i class="fab fa-linkedin"></i></a>           
+            <a href="https://www.linkedin.com/in/numax/"><i class="fab fa-linkedin"></i></a>
         </div>
-    </footer> 
+    </footer>
 
 </body>
 </html>
