@@ -11,7 +11,7 @@
     <meta name="robots" content="index, follow" />
 
     <!-- this are the fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,600&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
 
     <!-- this is for the icons -->
@@ -39,7 +39,7 @@
 
     <!-- this is js -->
     <script type="text/javascript" src="<?php echo base_url();?>assets/js/index.js" ></script>
-              
+
 
     <title>LCdLV</title>
 </head>
@@ -48,8 +48,8 @@
     <header>
         <nav>
             <a href="#main">Inicio</a>
-            <a href="<?=base_url('Nota/notas')?>">Notas</a>
-            <a href="<?=base_url('Archivo/archivos')?>">Archivo</a>
+            <a href="<?=base_url('Nota')?>">Notas</a>
+            <a href="<?=base_url('Archivo')?>">Archivo</a>
         </nav>
         <form class="form-search" action="">
             <input class="input-search" type="search"
@@ -80,10 +80,10 @@
     <main id="main">
 
          <aside id="aside-left">
-           
+
         </aside>
         <aside id="aside-right">
-            
+
         </aside>
 
         <article id="article-main">
@@ -92,7 +92,7 @@
             descripcion post esto puede ser muy largo
             por los que habria que manejar que se despliege cuando se hace
             click en algun lado, poner cantidad de lineas o algo
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Pellentesque orci metus, descripcion post esto puede ser muy
             </p>
         </article>
@@ -124,37 +124,37 @@
                     <p class="p-desc-no-show">descripcion post esto puede ser muy largo
                         por los que habria que manejar que se despliege cuando se hace
                         click en algun lado, poner cantidad de lineas o algo
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Pellentesque orci metus, descripcion post esto puede ser muy largo
                         por los que habria que manejar que se despliege cuando se hace
                         click en algun lado, poner cantidad de lineas o algo
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Pellentesque orci metus, descripcion post esto puede ser muy largo
                         por los que habria que manejar que se despliege cuando se hace
                         click en algun lado, poner cantidad de lineas o algo
                         por los que habria que manejar que se despliege cuando se hace
                         click en algun lado, poner cantidad de lineas o algo
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Pellentesque orci metus, descripcion post esto puede ser muy largo
                         por los que habria que manejar que se despliege cuando se hace
                         click en algun lado, poner cantidad de lineas o algo
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Pellentesque orci metus, descripcion post esto puede ser muy largo
                         por los que habria que manejar que se despliege cuando se hace
                         click en algun lado, poner cantidad de lineas o algo
                     </p>
-        
+
                 </div>
                 <div class="div-p-click">
                     <p class="p-show-click">Mostrar</p>
                 </div>
 
                 <table class="table-comments">
-                
+
                     <tr>
                         <td class="comments">
                         <p class="p-comments-no-show">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                             Pellentesque orci metus, descripcion post esto puede ser muy largo
                             por los que habria que manejar que se despliege cuando se hace
                             click en algun lado, poner cantidad de lineas o algo
@@ -165,7 +165,7 @@
                     <tr>
                         <td class="comments">
                             <p class="p-comments-no-show">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                             Pellentesque orci metus, descripcion post esto puede ser muy largo
                             por los que habria que manejar que se despliege cuando se hace
                             click en algun lado, poner cantidad de lineas o algo
@@ -193,8 +193,8 @@
 
                 <div class="div-img">
                     <video class="video-post" controls>
-                        <source 
-                        src="<?=base_url()?>assets/videos/2019-10-13 15-02-42.mp4" 
+                        <source
+                        src="<?=base_url()?>assets/videos/2019-10-13 15-02-42.mp4"
                         type="video/mp4"
                         controls>
                     </video>
@@ -207,20 +207,20 @@
                 <div class="div-desc">
                     <p class="p-desc-no-show">descripcion post esto puede ser muy largo
                         por los que habria que manejar que se despliege cuando se hace
-                        click en algun lado, poner cantidad de lineas o algo                        
+                        click en algun lado, poner cantidad de lineas o algo
                     </p>
-        
+
                 </div>
                 <div class="div-p-click">
                     <p class="p-show-click">Mostrar</p>
                 </div>
 
                 <table class="table-comments">
-                
+
                     <tr>
                         <td class="comments">
                         <p class="p-comments-no-show">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                             Pellentesque orci metus, descripcion post esto puede ser muy largo
                             por los que habria que manejar que se despliege cuando se hace
                             click en algun lado, poner cantidad de lineas o algo
@@ -231,7 +231,7 @@
                     <tr>
                         <td class="comments">
                             <p class="p-comments-no-show">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                             Pellentesque orci metus, descripcion post esto puede ser muy largo
                             por los que habria que manejar que se despliege cuando se hace
                             click en algun lado, poner cantidad de lineas o algo
@@ -251,8 +251,8 @@
 
 
             <!-- template notas -->
-            <article class="article-notas"> 
-                                              
+            <article class="article-notas">
+
                 <div class="nota">
                     <h3 class="h3-nota">
                         ACA IRIA EL TITULO NOTA1
@@ -261,39 +261,39 @@
 
                     <!-- dummy text -->
 
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                    Pellentesque orci metus, pharetra eu elit a, malesuada condimentum felis. 
-                    Fusce a tellus eleifend, ultrices ligula id, luctus tellus. 
-                    Donec eleifend lorem id turpis suscipit, nec vehicula nunc egestas. 
-                    Ut sit amet ex vitae nunc lacinia lobortis sed sed urna. 
-                    Sed ut gravida dui. Pellentesque laoreet, ante ut sollicitudin varius, 
-                    sapien nunc ultricies magna, vel egestas libero ipsum et orci. 
-                    Nunc sit amet ipsum sed est consectetur luctus. 
-                    Nullam neque lectus, convallis non magna a, facilisis tincidunt velit. 
-                    Phasellus ultricies consequat nibh. Nulla rutrum ultricies convallis. 
-                    Sed pharetra tortor sit amet facilisis luctus. Duis quis pharetra purus, 
-                    non fringilla augue. Nunc non eleifend sem. Aenean fermentum suscipit erat, 
-                    eget interdum leo condimentum at. Integer condimentum justo nec congue 
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    Pellentesque orci metus, pharetra eu elit a, malesuada condimentum felis.
+                    Fusce a tellus eleifend, ultrices ligula id, luctus tellus.
+                    Donec eleifend lorem id turpis suscipit, nec vehicula nunc egestas.
+                    Ut sit amet ex vitae nunc lacinia lobortis sed sed urna.
+                    Sed ut gravida dui. Pellentesque laoreet, ante ut sollicitudin varius,
+                    sapien nunc ultricies magna, vel egestas libero ipsum et orci.
+                    Nunc sit amet ipsum sed est consectetur luctus.
+                    Nullam neque lectus, convallis non magna a, facilisis tincidunt velit.
+                    Phasellus ultricies consequat nibh. Nulla rutrum ultricies convallis.
+                    Sed pharetra tortor sit amet facilisis luctus. Duis quis pharetra purus,
+                    non fringilla augue. Nunc non eleifend sem. Aenean fermentum suscipit erat,
+                    eget interdum leo condimentum at. Integer condimentum justo nec congue
                     rhoncus. Suspendisse eu erat non quam aliquet porttitor at a orci.
 
-                    Pellentesque condimentum elementum nisl, id fringilla turpis viverra vel. 
+                    Pellentesque condimentum elementum nisl, id fringilla turpis viverra vel.
                     Donec condimentum at leo in ullamcorper. Pellentesque in nunc sit amet arcu
-                    rhoncus sollicitudin. In in leo consequat, pretium lacus eu, malesuada 
-                    nisl. Sed tellus tellus, porttitor ut facilisis sit amet, convallis ut 
+                    rhoncus sollicitudin. In in leo consequat, pretium lacus eu, malesuada
+                    nisl. Sed tellus tellus, porttitor ut facilisis sit amet, convallis ut
                     orci. Aliquam feugiat, dui ut placerat elementum, dui tortor facilisis m
-                    assa, sit amet facilisis tellus nisl quis sem. Nullam consectetur lacus 
-                    aliquet, fringilla quam in, ultrices libero. Maecenas mollis purus ante, 
-                    ac tempus felis placerat at. Nunc vitae viverra ligula, sed gravida elit. 
-                    Aenean vehicula, turpis in placerat ultrices, nisi mi gravida ex, at 
-                    ultricies felis odio eu odio. Sed convallis aliquam ante sed pellentesque. 
-                    Quisque iaculis commodo nisl eget laoreet. Cras dignissim, felis quis 
-                    molestie ultrices, ipsum felis lobortis turpis, ut rutrum justo massa ut 
-                    tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus. 
-                    Phasellus volutpat placerat justo, id pretium nunc viverra sed. 
+                    assa, sit amet facilisis tellus nisl quis sem. Nullam consectetur lacus
+                    aliquet, fringilla quam in, ultrices libero. Maecenas mollis purus ante,
+                    ac tempus felis placerat at. Nunc vitae viverra ligula, sed gravida elit.
+                    Aenean vehicula, turpis in placerat ultrices, nisi mi gravida ex, at
+                    ultricies felis odio eu odio. Sed convallis aliquam ante sed pellentesque.
+                    Quisque iaculis commodo nisl eget laoreet. Cras dignissim, felis quis
+                    molestie ultrices, ipsum felis lobortis turpis, ut rutrum justo massa ut
+                    tellus. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                    Phasellus volutpat placerat justo, id pretium nunc viverra sed.
                     Etiam auctor risus libero, et sagittis justo iaculis ut.
 
                     </p>
-                    
+
                 </div>
 
                 <div class="div-notes-comments">
@@ -301,11 +301,11 @@
                 </div>
 
                 <table class="table-comments">
-                
+
                     <tr>
                         <td class="comments">
                         <p class="p-comments-no-show">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                             Pellentesque orci metus, descripcion post esto puede ser muy largo
                             por los que habria que manejar que se despliege cuando se hace
                             click en algun lado, poner cantidad de lineas o algo
@@ -316,7 +316,7 @@
                     <tr>
                         <td class="comments">
                             <p class="p-comments-no-show">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                             Pellentesque orci metus, descripcion post esto puede ser muy largo
                             por los que habria que manejar que se despliege cuando se hace
                             click en algun lado, poner cantidad de lineas o algo
@@ -330,10 +330,10 @@
                     <input class="input-comments"
                         type="text"
                         placeholder="Escribe un comentario...">
-                </form>                                                                   
+                </form>
 
             </article> <!-- fin nota 1-->
-        
+
         </div> <!--end post container -->
 
     </main>
@@ -346,7 +346,7 @@
         <a href="https://github.com/GabrielNumaX/"><i class="fab fa-github-square"></i></a>
             <a href="mailto:g.numa10@hotmail.com"><i class="fas fa-envelope"></i></a>
             <a href="https://www.linkedin.com/in/numax/"><i class="fab fa-linkedin"></i></a>
-            
+
         </div>
     </footer>
 
