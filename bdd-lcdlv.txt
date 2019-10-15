@@ -4,18 +4,30 @@ tabla FOTOS
 	->foto
 	->descripcion foto
 	->comentarios asociados a foto
+	 	- los comentarios se me ocurre que 
+		tendrian que tener asociado el id de la
+		foto y un numero de comentario para
+		cargarlos dynamic
 
 tabla NOTAS
 	->titulo nota
 	->fecha nota
 	->nota
 	->comentarios nota
+		- los comentarios se me ocurre que 
+		tendrian que tener asociado el id de la
+		foto y un numero de comentario para
+		cargarlos dynamic
 
 tabla VIDEO
 	->titulo video
 	->fecha video
 	->video
 	->comentarios video
+		- los comentarios se me ocurre que 
+		tendrian que tener asociado el id de la
+		foto y un numero de comentario para
+		cargarlos dynamic
 
 tabla ARCHIVO
 	(no seria necesaria lee todo de las demas tablas

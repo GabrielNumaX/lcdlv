@@ -51,9 +51,6 @@ $(document).ready(function() {
 
             $('#aside').addClass('aside-no-show');
 
-            $('.div-notas').addClass('aside-child-end');
-
-            $('.div-fechas').addClass('aside-child-end')
         }
         else if (windowPos < footerFixPos) {
 
@@ -62,10 +59,7 @@ $(document).ready(function() {
             $('#aside').removeClass('aside-no-show');
 
             $('#aside').addClass('aside-show');
-
-            $('.div-notas').removeClass('aside-child-end');
-
-            $('.div-fechas').removeClass('aside-child-end')
+            
         }  
     }
 

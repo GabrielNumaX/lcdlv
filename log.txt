@@ -60,4 +60,19 @@ aside
 
 mas css en index.php y notas.php
 
+se agrego function para que muestre/oculte la descripcion
+de las fotos y video
+
+se hizo TODO el responsive
+
+14.10.19
+
+se corrigieron algunos detalles del js y css
+se termino el template de archivo.php
+basicamente se reutilizo el template 
+y classes de index.php bitch :)
+
+tambien se agrego un div con un span para mostrar
+mas comentarios onclick
+
 

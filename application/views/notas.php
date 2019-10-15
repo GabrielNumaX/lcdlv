@@ -7,8 +7,9 @@
 
     <link href="https://fonts.googleapis.com/css?family=Lobster&display=swap" rel="stylesheet">
 
+    <!-- this is for the icons -->
     <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">ll.css">
 
     <!-- this is for favicon from realfavicongenerator.net -->
     <link rel="apple-touch-icon" sizes="180x180" href="<?= base_url()?>assets/favicon/apple-touch-icon.png">
@@ -28,6 +29,8 @@
         src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous"></script>
+
+
     <!-- este script tiene las funciones show/hide de los comentarios -->
     <script type="text/javascript" src="<?php echo base_url();?>assets/js/index.js" ></script>
     <script type="text/javascript" src="<?php echo base_url();?>assets/js/notas.js" ></script>
@@ -181,6 +184,10 @@
                     </td>
                 </tr>
             </table>
+
+            <div class="show-more-comments">
+                    <span class="span-more-comments">Mostrar mas comentarios</span>
+                </div>
 
             <form class="form-comments"action="">
                 <input class="input-comments"
@@ -388,13 +395,8 @@
 
         <div class="footer-icons">
             <a href="https://github.com/GabrielNumaX/"><i class="fab fa-github-square"></i></a>
-<<<<<<< HEAD
             <a href="mailto:g.numa10@hotmail.com"><i class="fas fa-envelope"></i></a>
             <a href="https://www.linkedin.com/in/numax/"><i class="fab fa-linkedin"></i></a>           
-=======
-            <a href="mailto:g.numa10@gmail.com"><i class="fas fa-envelope"></i></a>
-            <a href="https://www.linkedin.com/in/numax/"><i class="fab fa-linkedin"></i></a>
->>>>>>> 22d688fd9db750d8a99b347fe76369a821889579
         </div>
     </footer>
 

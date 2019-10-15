@@ -58,9 +58,9 @@ nav a:hover {
     color: #1c52c7cc; 
 }
 
-/* nav a:active {
+nav a:active {
     color: #1c52c7cc; 
-} */
+}
 
 /* ORDER
 :link
@@ -370,6 +370,21 @@ html {
 .show-comments:hover {
     color: #002b88;
     cursor: pointer;
+}
+
+.show-more-comments {
+    width: 70%;
+    padding: 8px 2px 8px 12px;
+    margin: 0 auto;
+}
+
+.span-more-comments {
+    text-decoration: underline;
+}
+
+.span-more-comments:hover {
+    cursor: pointer;
+    color: #002b88;
 }
 
 .form-comments {

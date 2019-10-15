@@ -29,9 +29,8 @@
 
     <!-- this is css -->
     <link type="text/css" rel="stylesheet" href="<?= base_url()?>assets/css/master.css">
-    <!-- <link rel="stylesheet" href="<?= base_url()?>assets/css/posts.css"> -->
 
-    <!-- JQuery and JS scripts -->
+    <!-- JQuery scripts -->
     <script
         src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -101,7 +100,8 @@
         <div class="post-container">
 
 
-        <!-- all this is the template for dynamic loading from backend and/or db -->
+        <!-- all this is the template for dynamic loading from backend 
+        and/or db EVERY ITEM GOES WITH A UNIQUE ID=""-->
 
             <article class="article-post">
                 <h2 class="h2-title">TITULO POST</h2>
@@ -175,6 +175,10 @@
                     </tr>
                 </table>
 
+                <div class="show-more-comments">
+                    <span class="span-more-comments">Mostrar mas comentarios</span>
+                </div>
+
                 <form class="form-comments"action="">
                     <input class="input-comments"
                         type="text"
@@ -240,6 +244,10 @@
                         </td>
                     </tr>
                 </table>
+
+                <div class="show-more-comments">
+                    <span class="span-more-comments">Mostrar mas comentarios</span>
+                </div>
 
                 <form class="form-comments"action="">
                     <input class="input-comments"
@@ -325,6 +333,10 @@
                         </td>
                     </tr>
                 </table>
+
+                <div class="show-more-comments">
+                    <span class="span-more-comments">Mostrar mas comentarios</span>
+                </div>
 
                 <form class="form-comments"action="">
                     <input class="input-comments"
