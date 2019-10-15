@@ -75,4 +75,7 @@ y classes de index.php bitch :)
 tambien se agrego un div con un span para mostrar
 mas comentarios onclick
 
+se definio la estructura de los JSON en estructuraJSON.txt
+tambien se modifico bdd-lcdlv.txt (se agrego un tabla)...
+
 

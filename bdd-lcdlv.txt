@@ -23,6 +23,7 @@ tabla VIDEO
 	->titulo video
 	->fecha video
 	->video
+	->descripcion video
 	->comentarios video
 		- los comentarios se me ocurre que 
 		tendrian que tener asociado el id de la
