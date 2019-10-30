@@ -1,11 +1,11 @@
 Client Specs:
 
-A ver, la idea seria plantilla tipo blog, un 
--> posteo, que pueda ser 
-	-texto, 
-	-imagen, 
-	-video, y 
-	-casilla de comentarios. 
+A ver, la idea seria plantilla tipo blog, un
+-> posteo, que pueda ser
+	-texto,
+	-imagen,
+	-video, y
+	-casilla de comentarios.
 
 Y tal vez un apartado en donde escribir algunas notas, o textos mas largos, tipo como tiene la fanpage de facebook. Y despues no mucho mas amigo.
 
@@ -18,7 +18,7 @@ esta comentado en el html la parte que tiene que cargar dinamico
 de la bdd.
 Faltaria la plantilla para que suba videos o solo el texto (NOTAS)
 
-la casilla de los comentarios llevan funciones de VALIDATION para 
+la casilla de los comentarios llevan funciones de VALIDATION para
 que el formato del texto. tambien para que esconda el texto
 despues de X lineas como FACEBOOK.
 
@@ -55,7 +55,7 @@ se hicieron dos funciones para mostrar y ocultar los comentarios y la descripcio
 
 - notas.js
 
-funcion para que cuando llegue al footer ponga static el 
+funcion para que cuando llegue al footer ponga static el
 aside
 
 mas css en index.php y notas.php
@@ -69,7 +69,7 @@ se hizo TODO el responsive
 
 se corrigieron algunos detalles del js y css
 se termino el template de archivo.php
-basicamente se reutilizo el template 
+basicamente se reutilizo el template
 y classes de index.php bitch :)
 
 tambien se agrego un div con un span para mostrar
@@ -78,4 +78,7 @@ mas comentarios onclick
 se definio la estructura de los JSON en estructuraJSON.txt
 tambien se modifico bdd-lcdlv.txt (se agrego un tabla)...
 
+30.10.19
 
+Agrego acceso a la BDD y controladores para recuperar las fotos con json
+como le gusta al gato de gabi

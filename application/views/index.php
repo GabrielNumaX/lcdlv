@@ -100,8 +100,10 @@
         <div class="post-container">
 
 
-        <!-- all this is the template for dynamic loading from backend 
+        <!-- all this is the template for dynamic loading from backend
         and/or db EVERY ITEM GOES WITH A UNIQUE ID=""-->
+        <button type="button" name="button" onclick="traer_fotos()">prueba</button>
+        <p id='descripcion'></p>
 
             <article class="article-post">
                 <h2 class="h2-title">TITULO POST</h2>
@@ -363,4 +365,26 @@
     </footer>
 
 </body>
+<script>
+function traer_fotos(){
+  $.ajax({
+    type:'GET',
+    url:'<?=base_url('Home/cargar_fotos')?>',
+    dataType:'JSON',
+    success:function(data){
+      //este es para mostrar el titulo de la foto en la posicion 1 del arreglo
+      //acordate que los arreglos empiezan en 0.
+      alert(data[1]['foto']);
+      $('#descripcion').append('<span>'+data[1]['descripcion']+'</span>');
+      //asi accedes a los valores del JSON.
+      //
+      //data[posicion][valor del json];
+    },
+    error:function(){
+      alert('todo roto');
+    }
+
+  });
+}
+</script>
 </html>

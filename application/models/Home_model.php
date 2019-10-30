@@ -11,8 +11,6 @@ class Home_model extends CI_Model{
     }
 
     public function get_fotos(){
-      //$resultado = $this->db->from($this->table_fotos);
-
       $query = $this->db->get($this->table_fotos);
       return $query;
     }
