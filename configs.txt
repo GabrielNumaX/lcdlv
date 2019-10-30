@@ -1,0 +1,17 @@
+C:\Windows\System32\drivers\etc
+
+file-> host
+
+127.0.0.1 proyecto.localhost
+
+
+C:\xampp\apache\conf\extra
+
+httpd-vhosts.conf ->
+
+<VirtualHost *:80>
+    ServerAdmin proyecto.localhost
+    DocumentRoot "C:/xampp/htdocs/lcdlv"
+    ServerName proyecto.localhost
+	ServerAlias proyecto.localhost
+</VirtualHost>
