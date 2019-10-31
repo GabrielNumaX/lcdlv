@@ -7,7 +7,8 @@ A ver, la idea seria plantilla tipo blog, un
 	-video, y
 	-casilla de comentarios.
 
-Y tal vez un apartado en donde escribir algunas notas, o textos mas largos, tipo como tiene la fanpage de facebook. Y despues no mucho mas amigo.
+Y tal vez un apartado en donde escribir algunas notas, o textos mas largos, tipo como tiene la fanpage de facebook. 
+Y despues no mucho mas amigo.
 
 
 11.10.19

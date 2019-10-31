@@ -102,8 +102,13 @@
 
         <!-- all this is the template for dynamic loading from backend
         and/or db EVERY ITEM GOES WITH A UNIQUE ID=""-->
+
+        <!-- este button es de prueba. SACAR!!! -->
         <button type="button" name="button" onclick="traer_fotos()">prueba</button>
+
         <p id='descripcion'></p>
+
+        <!-- este es el template -->
 
             <article class="article-post">
                 <h2 class="h2-title">TITULO POST</h2>

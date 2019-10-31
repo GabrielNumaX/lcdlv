@@ -46,10 +46,10 @@ nav a:last-of-type {
     margin-right: 0;
 }
 
-/* nav a:link {
+nav a:link {
     color: #dddddd; 
 }
-*/
+
 nav a:visited {
     color: #dddddd;
 }
@@ -117,15 +117,22 @@ nav a:active {
 }
 
 .social-icons {
-    font-size: 36px;
+    font-size: 30px;
 }
 
+.social-icons:link {
+    color: #dddddd; 
+}
 
 .social-icons:visited {
     color: #dddddd;
 }
 
 .social-icons:hover {
+    color: #1c52c7cc; 
+}
+
+.social-icons:active {
     color: #1c52c7cc; 
 }
 
