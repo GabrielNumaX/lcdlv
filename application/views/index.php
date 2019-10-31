@@ -102,8 +102,10 @@
 
         <!-- all this is the template for dynamic loading from backend
         and/or db EVERY ITEM GOES WITH A UNIQUE ID=""-->
+
+
+        <!--Boton para probar cosas-->
         <button type="button" name="button" onclick="traer_fotos()">prueba</button>
-        <p id='descripcion'></p>
 
             <article class="article-post">
                 <h2 class="h2-title">TITULO POST</h2>
@@ -123,27 +125,8 @@
                 </div>
 
                 <div class="div-desc">
-                    <p class="p-desc-no-show">descripcion post esto puede ser muy largo
-                        por los que habria que manejar que se despliege cuando se hace
-                        click en algun lado, poner cantidad de lineas o algo
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Pellentesque orci metus, descripcion post esto puede ser muy largo
-                        por los que habria que manejar que se despliege cuando se hace
-                        click en algun lado, poner cantidad de lineas o algo
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Pellentesque orci metus, descripcion post esto puede ser muy largo
-                        por los que habria que manejar que se despliege cuando se hace
-                        click en algun lado, poner cantidad de lineas o algo
-                        por los que habria que manejar que se despliege cuando se hace
-                        click en algun lado, poner cantidad de lineas o algo
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Pellentesque orci metus, descripcion post esto puede ser muy largo
-                        por los que habria que manejar que se despliege cuando se hace
-                        click en algun lado, poner cantidad de lineas o algo
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Pellentesque orci metus, descripcion post esto puede ser muy largo
-                        por los que habria que manejar que se despliege cuando se hace
-                        click en algun lado, poner cantidad de lineas o algo
+                    <p class="p-desc-no-show" id='descripcion'>
+                      <!--Descripcion de la foto-->
                     </p>
 
                 </div>
@@ -211,9 +194,8 @@
                 </div>
 
                 <div class="div-desc">
-                    <p class="p-desc-no-show">descripcion post esto puede ser muy largo
-                        por los que habria que manejar que se despliege cuando se hace
-                        click en algun lado, poner cantidad de lineas o algo
+                    <p class="p-desc-no-show">
+                      <!--Descripcion del video-->
                     </p>
 
                 </div>
@@ -374,14 +356,14 @@ function traer_fotos(){
     success:function(data){
       //este es para mostrar el titulo de la foto en la posicion 1 del arreglo
       //acordate que los arreglos empiezan en 0.
-      alert(data[1]['foto']);
-      $('#descripcion').append('<span>'+data[1]['descripcion']+'</span>');
-      //asi accedes a los valores del JSON.
+      for(var i=0; i<=3; i++){
+        $('#descripcion').append('<span>'+data[i]['descripcion']+'</span><br>');
+      }//asi accedes a los valores del JSON.
       //
       //data[posicion][valor del json];
     },
     error:function(){
-      alert('todo roto');
+      alert('Ha ocurrido un error con el servidor');
     }
 
   });
