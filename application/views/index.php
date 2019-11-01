@@ -103,16 +103,10 @@
         <!-- all this is the template for dynamic loading from backend
         and/or db EVERY ITEM GOES WITH A UNIQUE ID=""-->
 
-<<<<<<< HEAD
         <!-- este button es de prueba. SACAR!!! -->
         <button type="button" name="button" onclick="traer_fotos()">prueba</button>
 
         <p id='descripcion'></p>
-=======
-
-        <!--Boton para probar cosas-->
-        <button type="button" name="button" onclick="traer_fotos()">prueba</button>
->>>>>>> 089bcb96353f2708001e64c9e2e687877c98cc25
 
         <!-- este es el template -->
 
@@ -344,15 +338,32 @@
     </main>
 
     <footer id="footer">
-        <div class="footer-div">
-            <h4>NumaX &copy; 2019</h4>
-        </div>
-        <div class="footer-icons">
-        <a href="https://github.com/GabrielNumaX/"><i class="fab fa-github-square"></i></a>
-            <a href="mailto:g.numa10@hotmail.com"><i class="fas fa-envelope"></i></a>
-            <a href="https://www.linkedin.com/in/numax/"><i class="fab fa-linkedin"></i></a>
+        <div class="footer-div1">
+            <h4>Front End</h4>
+            <h4>NumaX &copy; 2020</h4>
 
+            <div class="footer-icons1">
+
+                <a href="https://github.com/GabrielNumaX/" target="_blank"><i class="fab fa-github-square"></i></a>
+                <a href="mailto:g.numa10@hotmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/numax/" target="_blank"><i class="fab fa-linkedin"></i></a>
+
+            </div>
         </div>
+        
+        <div class="footer-div2">
+            <h4>Back End</h4>
+            <h4>Eric &copy; 2020</h4>
+
+            <div class="footer-icons2">
+                    
+                <a href="https://github.com/Eric19906913/" target="_blank"><i class="fab fa-github-square"></i></a>
+                <a href="mailto:ericgaston1234@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/haasericgaston/" target="_blank"><i class="fab fa-linkedin"></i></a>
+
+            </div>
+        </div>
+        
     </footer>
 
 </body>
