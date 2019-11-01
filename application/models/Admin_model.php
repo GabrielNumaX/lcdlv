@@ -14,7 +14,7 @@ class Admin_model extends CI_Model{
       $this->db->where('nombre', $usuario);
       $this->db->where('pass',$pass);
 
-      $query = $this->db->get();
+      $query = $this->db->get()->num_rows();
       return $query;
     }
 }

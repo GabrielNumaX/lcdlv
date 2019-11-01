@@ -5,6 +5,7 @@
     <title>Lcdlv - CMS Login</title>
     <link href="<?=base_url()?>assets/css/bootstrap.min.css" rel="stylesheet">
     <script src="<?=base_url()?>assets/js/jquery-3.4.1.min.js"></script>
+    <script src="<?=base_url()?>assets/js/sweetalert2.js"></script>
   </head>
   <body>
     <div class="form-group">
@@ -23,22 +24,32 @@
   function login(){
     var usuario = document.getElementById('user').value;
     var password = document.getElementById('pass').value;
-    $.ajax({
-      type:'POST',
-      url:'<?= base_url('Admin/login')?>',
-      data:{
-        usuario:usuario,
-        password:password
-      },
-      success:function(respuesta){
-        JSON.parse(respuesta);
-        alert(respuesta['estado']);
-      },
-      error:function(){
-        alert('Ocurrio un error con el servidor!');
-      }
-    });
+    if(usuario !== '' && password !== ''){
+      $.ajax({
+        type:'POST',
+        url:'<?= base_url('Admin/login')?>',
+        data:{
+          usuario:usuario,
+          password:password
+        },
+        success:function(respuesta){
+          JSON.parse(respuesta);
+          location.href = '<?=base_url('Admin/inicio')?>';
+        },
+        error:function(){
+          swal.fire({
+            type:'error',
+            title:'Error',
+            text: 'Ha ocurrido un error'
+          });
+        }
+      });
+    }else{
+      swal.fire({
+        type:'warning',
+        text:'Complete todos los campos'
+      });
+    }
   }
-
   </script>
 </html>
