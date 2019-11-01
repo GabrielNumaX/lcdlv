@@ -17,18 +17,19 @@ class Admin extends CI_Controller {
     //cifrar la clave
     //$pass = sha1($this->input->post('pass'));
     //clave sin cifrar para pruebas
-    $pass = $this->input->post('pass');
+    $pass = $this->input->post('password');
+
     $resultado = $this->admin->log($usuario, $pass);
 
-    if($resultado->num_rows() > 0){
+    if($resultado > 0){
       $respuesta = array(
-        'estado' => 'true',
+        'estado' => true,
         'mensaje' => 'bienvenido'
       );
       echo json_encode($respuesta);
     }else{
       $respuesta = array(
-        'estado' => 'false',
+        'estado' => false,
         'mensaje' => 'No existe el usuario'
       );
       echo json_encode($respuesta);
