@@ -30,7 +30,7 @@ class Admin extends CI_Controller {
 
       $user = array(
         'nombre' => $usuario,
-        'log' => true
+        'log' => true,
       );
 
       $this->session;
@@ -46,6 +46,11 @@ class Admin extends CI_Controller {
 
 
   }
+
+  public function logout(){
+    $this->session->sess_destroy();
+  }
+
   public function inicio(){
 <<<<<<< HEAD
     $this->load->view('admin/inicio');
