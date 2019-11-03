@@ -6,6 +6,7 @@ class Admin extends CI_Controller {
   public function __construct() {
 			Parent::__construct();
 			$this->load->model("Admin_model","admin");
+      $this->load->library('session');
 	}
 
   public function index(){
@@ -26,6 +27,14 @@ class Admin extends CI_Controller {
         'estado' => true,
         'mensaje' => 'bienvenido'
       );
+
+      $user = array(
+        'nombre' => $usuario,
+        'log' => true
+      );
+
+      $this->session;
+      $this->session->set_userdata($user);
       echo json_encode($respuesta);
     }else{
       $respuesta = array(
@@ -36,6 +45,13 @@ class Admin extends CI_Controller {
     }
 
 
+  }
+  public function inicio(){
+    if($this->session->has_userdata('nombre')){
+      $this->load->view('admin/inicio');
+    }else{
+      $this->load->view('admin/admin');
+    }
   }
 
 }
