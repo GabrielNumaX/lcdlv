@@ -46,13 +46,13 @@ class Admin extends CI_Controller {
 
 
   }
-
+  //Funcion para cerrar sesion
   public function logout(){
     $this->session->sess_destroy();
   }
-
+  //Verifica que este logueado y carga una vista o la otra
   public function inicio(){
-    if($this->session->has_userdata('nombre')){
+    if($this->session->has_userdata('log')){
       $this->load->view('admin/inicio');
     }else{
       $this->load->view('admin/admin');

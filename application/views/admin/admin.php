@@ -67,12 +67,12 @@
           //Swal.showLoading();
           location.href = "<?=base_url('admin/inicio')?>"
         }else{
-          alert(respuesta['mensaje']);
+          Swal.fire(respuesta['mensaje']);
         }
 
       },
       error:function(){
-        alert('Ocurrio un error con el servidor!');
+        Swal.fire('Ocurrio un error con el servidor!');
       }
     });
 >>>>>>> Back_php
