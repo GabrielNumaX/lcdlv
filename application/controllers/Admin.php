@@ -52,15 +52,11 @@ class Admin extends CI_Controller {
   }
 
   public function inicio(){
-<<<<<<< HEAD
-    $this->load->view('admin/inicio');
-=======
     if($this->session->has_userdata('nombre')){
       $this->load->view('admin/inicio');
     }else{
       $this->load->view('admin/admin');
     }
->>>>>>> Back_php
   }
 
 }
