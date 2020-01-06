@@ -26,7 +26,6 @@
   function login(){
     var usuario = document.getElementById('user').value;
     var password = document.getElementById('pass').value;
-<<<<<<< HEAD
     if(usuario !== '' && password !== ''){
       $.ajax({
         type:'POST',
@@ -53,7 +52,6 @@
         text:'Complete todos los campos'
       });
     }
-=======
     $.ajax({
       type:'POST',
       url:'<?= base_url('Admin/login')?>',
@@ -75,7 +73,6 @@
         Swal.fire('Ocurrio un error con el servidor!');
       }
     });
->>>>>>> Back_php
   }
   </script>
 </html>

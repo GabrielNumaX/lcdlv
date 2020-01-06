@@ -32,9 +32,43 @@
       <button class="btn btn-success" id='imagen'><i class="far fa-file-image" onmouseover="$('#imagen').append('<p>Agregar imagen</p>')"></i></button>
       <button class="btn btn-success" ><i class="fas fa-video"></i></button>
       <button class="btn btn-success" >Agregar notas</button>
+
+      <form method="post">
+        <input type="file" id="file_upload">
+        <input type="text" id="titulo" placeholder="Titulo" required>
+        <input type="text" id="desc" placeholder="Descripcion" required>
+        <input type="button" onclick="upPhoto()" value="Subir">
+      </form>
+      <div class="upload-msg"></div>
     </div>
   </body>
   <script>
+    function upPhoto(){
+      var titulo = document.getElementById('titulo').value;
+      var desc = document.getElementById('desc').value;
+      $(".upload-msg").text('Cargando...');
+      var inputFileImage = document.getElementById('file_upload');
+      var photo = inputFileImage.files[0];
+      var data = new FormData();
+      data.append('file_upload', photo);
+      $.ajax({
+        type:'POST',
+        url:'<?=base_url('Admin/cargar/')?>'+titulo+'/'+desc,
+        data: data,
+        contentType: false,
+        processData: false,
+        cache: false,
+        success: function(data){
+          alert(data);
+          $(".upload-msg").html(data);
+					window.setTimeout(function() {
+					       $(".alert-dismissible").fadeTo(500, 0).slideUp(500, function(){
+					       $(this).remove();
+					       });	}, 5000);
+        },
+
+      });
+    }
     function logout(){
       $.ajax({
         type:'POST',

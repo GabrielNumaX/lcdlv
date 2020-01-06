@@ -17,5 +17,14 @@ class Admin_model extends CI_Model{
       $query = $this->db->get()->num_rows();
       return $query;
     }
+
+    public function upload($file, $titulo, $desc){
+      $data = array(
+        'titulo' => $titulo,
+        'descripcion' => $desc,
+        'foto' => $file
+      );
+      $this->db->insert('fotos', $data);
+    }
 }
 ?>

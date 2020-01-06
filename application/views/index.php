@@ -104,9 +104,9 @@
         and/or db EVERY ITEM GOES WITH A UNIQUE ID=""-->
 
         <!-- este button es de prueba. SACAR!!! -->
-        <button type="button" name="button" onclick="traer_fotos()">prueba</button>
-
-        <p id='descripcion'></p>
+        <!--<button type="button" name="button" onclick="traer_fotos()">prueba</button>
+        -->
+        <p id='descripcion' onload="traer_fotos()"></p>
 
         <!-- este es el template -->
 
