@@ -18,8 +18,6 @@
     <title><?php echo 'Bienvenido '.$nombre ?></title>
   </head>
   <body>
-
-    <button type="button" name="button" onclick="logout()">Cerrar Sesion</button>
     <nav class="navbar navbar-light bg-light">
       <a class="navbar-brand" href="#">
         <img src="<?=base_url('assets/favicon/favicon-32x32.png')?>" width="30" height="30" class="d-inline-block align-top" alt="">
@@ -29,7 +27,7 @@
     </nav>
     <div class="container">
       <h1>Opciones</h1>
-      <button class="btn btn-success" id='imagen'><i class="far fa-file-image" onmouseover="$('#imagen').append('<p>Agregar imagen</p>')"></i></button>
+      <button class="btn btn-success" id='imagen'><i class="far fa-file-image"></i></button>
       <button class="btn btn-success" ><i class="fas fa-video"></i></button>
       <button class="btn btn-success" >Agregar notas</button>
 
@@ -74,9 +72,6 @@
         type:'POST',
         url:'<?=base_url('Admin/logout')?>',
         success:function(){
-          Swal.fire({
-
-          });
           location.href = "<?=base_url('admin')?>";
         },
         error:function(){
