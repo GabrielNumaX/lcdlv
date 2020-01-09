@@ -103,14 +103,11 @@
         <!-- all this is the template for dynamic loading from backend
         and/or db EVERY ITEM GOES WITH A UNIQUE ID=""-->
 
-        <!-- este button es de prueba. SACAR!!! -->
-        <button type="button" name="button" onclick="traer_fotos()">prueba</button>
-
         <p id='descripcion'></p>
 
         <!-- este es el template -->
 
-            <article class="article-post">
+            <!-- <article class="article-post">
                 <h2 class="h2-title">TITULO POST</h2>
 
                 <div class="div-time">
@@ -129,7 +126,7 @@
 
                 <div class="div-desc">
                     <p class="p-desc-no-show" id='descripcion'>
-                      <!--Descripcion de la foto-->
+                      
                     </p>
 
                 </div>
@@ -173,7 +170,7 @@
                         placeholder="Escribe un comentario...">
                 </form>
 
-            </article>
+            </article> -->
 
             <!-- VIDEO template  -->
             <article class="article-post">

@@ -2,6 +2,78 @@ $(document).ready(function() {
 
     console.log('script loaded');
 
+    //function to load photos
+
+    function loadContent(obj) {
+
+        const postContainer = $('.post-container');
+
+        const article = document.createElement('article');
+
+        $(article).attr('class', 'article-post');
+
+        for(let i = 0; i < 3; i++) {
+
+            const h2Title = document.createElement('h2');
+
+        $(h2Title).attr('class', 'h2-title');
+
+        $(h2Title).html(obj[i].titulo);
+
+        const divTime = document.createElement('div');
+
+        const time = document.createElement('time');
+
+        $(divTime).attr('class', 'div-time');
+
+        $(time).html(obj[i].fecha);
+
+        $(time).attr('class', 'time-post');
+
+        $(divTime).append(time);
+
+        const imgDiv = document.createElement('div');
+
+        $(imgDiv).attr('class', 'div-img');
+
+        const img = document.createElement('img');
+
+        $(img).attr('class', 'img-post')
+
+        $(img).attr('src', obj[i].foto);
+
+        $(imgDiv).append(img);
+
+        const divDescription = document.createElement('div');
+
+        $(divDescription).attr('class', 'div-desc');
+
+        const description = document.createElement('p');
+
+        $(description).html(obj[i].descripcion);
+
+        $(description).attr('class', 'p-desc-no-show');
+
+        $(divDescription).append(description);
+
+        $(postContainer).append(h2Title, divTime, imgDiv, divDescription);
+
+        }
+    }
+
+
+    //this is for dynamic loading of images
+
+    const protocol = window.location.protocol;
+    const URLmaster = window.location.host;
+    
+    const cargarFotos = `${protocol}//${URLmaster}/Home/cargar_fotos`;
+
+    $.get(cargarFotos, function(data, status) {
+        
+        loadContent(data);
+    });
+
     //this is to show/hide post description
     //when clicked scroll out WILL TRY TO FIX
     $('.p-show-click').on('click', function () {
