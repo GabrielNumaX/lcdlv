@@ -35,7 +35,7 @@ nav {
     grid-column: 1 / 2;
     color: #dddddd;
     font-size: 22px;
-    padding-left: 30px;
+    padding-left: 55px;
 }
 
 nav a {
@@ -104,6 +104,7 @@ nav a:active {
     display: grid;
     grid-template-columns: auto auto;
     justify-content: center;
+    margin-right: 55px;
 }
 
 #icon-div1 {
