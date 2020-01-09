@@ -86,8 +86,8 @@ class Admin extends CI_Controller {
         $uploadOk = 0;
       }
       // Check file size
-      if ($_FILES["file_upload"]["size"] > 524288) {
-        $errors[]= "Lo sentimos, el archivo es demasiado grande.  Tamaño máximo admitido: 0.5 MB";
+      if ($_FILES["file_upload"]["size"] > 11534336) {
+        $errors[]= "Lo sentimos, el archivo es demasiado grande.  Tamaño máximo admitido: 11 MB";
         $uploadOk = 0;
       }
       // Allow certain file formats
