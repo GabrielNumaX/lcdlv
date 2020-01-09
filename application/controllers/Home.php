@@ -22,7 +22,7 @@ class Home extends CI_Controller {
 				'titulo' => $r->titulo,
 				'fecha' => $r->fecha,
 				'descripcion' => $r->descripcion,
-				'foto' => base64_encode($r->foto)
+				'foto' => $r->foto
 			];
 			//Creo array de arrays.
 			array_push($output, $data);
