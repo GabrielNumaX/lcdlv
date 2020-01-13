@@ -4,62 +4,61 @@ $(document).ready(function() {
 
     //function to load photos
 
-    function loadContent(obj) {
+    // function loadContent(obj) {
 
-        const postContainer = $('.post-container');
+    //     const postContainer = $('.post-container');
 
-        const article = document.createElement('article');
+    //     const article = document.createElement('article');
 
-        $(article).attr('class', 'article-post');
+    //     $(article).attr('class', 'article-post');
 
-        for(let i = 0; i < 3; i++) {
+    //     for(let i = 0; i < 3; i++) {
 
-            const h2Title = document.createElement('h2');
+    //         const h2Title = document.createElement('h2');
 
-        $(h2Title).attr('class', 'h2-title');
+    //         $(h2Title).attr('class', 'h2-title');
 
-        $(h2Title).html(obj[i].titulo);
+    //         $(h2Title).html(obj[i].titulo);
 
-        const divTime = document.createElement('div');
+    //         const divTime = document.createElement('div');
 
-        const time = document.createElement('time');
+    //         const time = document.createElement('time');
 
-        $(divTime).attr('class', 'div-time');
+    //         $(divTime).attr('class', 'div-time');
 
-        $(time).html(obj[i].fecha);
+    //         $(time).html(obj[i].fecha);
 
-        $(time).attr('class', 'time-post');
+    //         $(time).attr('class', 'time-post');
 
-        $(divTime).append(time);
+    //         $(divTime).append(time);
 
-        const imgDiv = document.createElement('div');
+    //         const imgDiv = document.createElement('div');
 
-        $(imgDiv).attr('class', 'div-img');
+    //         $(imgDiv).attr('class', 'div-img');
 
-        const img = document.createElement('img');
+    //         const img = document.createElement('img');
 
-        $(img).attr('class', 'img-post')
+    //         $(img).attr('class', 'img-post')
 
-        $(img).attr('src', obj[i].foto);
+    //         $(img).attr('src', obj[i].foto);
 
-        $(imgDiv).append(img);
+    //         $(imgDiv).append(img);
 
-        const divDescription = document.createElement('div');
+    //         const divDescription = document.createElement('div');
 
-        $(divDescription).attr('class', 'div-desc');
+    //         $(divDescription).attr('class', 'div-desc');
 
-        const description = document.createElement('p');
+    //         const description = document.createElement('p');
 
-        $(description).html(obj[i].descripcion);
+    //         $(description).html(obj[i].descripcion);
 
-        $(description).attr('class', 'p-desc-no-show');
+    //         $(description).attr('class', 'p-desc-no-show');
 
-        $(divDescription).append(description);
+    //         $(divDescription).append(description);
 
-        $(postContainer).append(h2Title, divTime, imgDiv, divDescription);
-
-        }
-    }
+    //         $(postContainer).append(h2Title, divTime, imgDiv, divDescription);
+    //     }
+    // }
 
 
     //this is for dynamic loading of images
