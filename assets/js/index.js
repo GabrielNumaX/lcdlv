@@ -4,61 +4,81 @@ $(document).ready(function() {
 
     //function to load photos
 
-    // function loadContent(obj) {
+    function loadContent(obj) {
 
-    //     const postContainer = $('.post-container');
+        const postContainer = $('.post-container');
 
-    //     const article = document.createElement('article');
+        for(let i = 0; i < 3; i++) {
 
-    //     $(article).attr('class', 'article-post');
+            const article = document.createElement('article');
 
-    //     for(let i = 0; i < 3; i++) {
+            $(article).attr('class', 'article-post');
 
-    //         const h2Title = document.createElement('h2');
+            const h2Title = document.createElement('h2');
 
-    //         $(h2Title).attr('class', 'h2-title');
+            $(h2Title).attr('class', 'h2-title');
 
-    //         $(h2Title).html(obj[i].titulo);
+            console.log(obj[i])
 
-    //         const divTime = document.createElement('div');
+            $(h2Title).html(obj[i].titulo);
 
-    //         const time = document.createElement('time');
+            console.log(h2Title);
 
-    //         $(divTime).attr('class', 'div-time');
+            const imgDiv = document.createElement('div');
 
-    //         $(time).html(obj[i].fecha);
+            $(imgDiv).attr('class', 'div-img');
 
-    //         $(time).attr('class', 'time-post');
+            const img = document.createElement('img');
 
-    //         $(divTime).append(time);
+            $(img).attr('class', 'img-post')
 
-    //         const imgDiv = document.createElement('div');
+            $(img).attr('src', obj[i].foto);
 
-    //         $(imgDiv).attr('class', 'div-img');
+            $(imgDiv).append(img);
 
-    //         const img = document.createElement('img');
+            $(article).append(h2Title, imgDiv);
 
-    //         $(img).attr('class', 'img-post')
+            $(postContainer).append(article);
 
-    //         $(img).attr('src', obj[i].foto);
+            // const divTime = document.createElement('div');
 
-    //         $(imgDiv).append(img);
+            // const time = document.createElement('time');
 
-    //         const divDescription = document.createElement('div');
+            // $(divTime).attr('class', 'div-time');
 
-    //         $(divDescription).attr('class', 'div-desc');
+            // $(time).html(obj[i].fecha);
 
-    //         const description = document.createElement('p');
+            // $(time).attr('class', 'time-post');
 
-    //         $(description).html(obj[i].descripcion);
+            // $(divTime).append(time);
 
-    //         $(description).attr('class', 'p-desc-no-show');
+            // const imgDiv = document.createElement('div');
 
-    //         $(divDescription).append(description);
+            // $(imgDiv).attr('class', 'div-img');
 
-    //         $(postContainer).append(h2Title, divTime, imgDiv, divDescription);
-    //     }
-    // }
+            // const img = document.createElement('img');
+
+            // $(img).attr('class', 'img-post')
+
+            // $(img).attr('src', obj[i].foto);
+
+            // $(imgDiv).append(img);
+
+            // const divDescription = document.createElement('div');
+
+            // $(divDescription).attr('class', 'div-desc');
+
+            // const description = document.createElement('p');
+
+            // $(description).html(obj[i].descripcion);
+
+            // $(description).attr('class', 'p-desc-no-show');
+
+            // $(divDescription).append(description);
+
+            // $(postContainer).append(h2Title, divTime, imgDiv, divDescription);
+        }
+    }
 
 
     //this is for dynamic loading of images
@@ -69,8 +89,12 @@ $(document).ready(function() {
     const cargarFotos = `${protocol}//${URLmaster}/Home/cargar_fotos`;
 
     $.get(cargarFotos, function(data, status) {
+
+        const dataParse = JSON.parse(data)
         
-        loadContent(data);
+        loadContent(dataParse);
+
+        console.log(dataParse);
     });
 
     //this is to show/hide post description
