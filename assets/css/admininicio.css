@@ -1,0 +1,26 @@
+.div-inicio {
+    display: flex;
+    width: 100%;
+    height: calc(100vh - 50px);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.div-btn {
+    display: flex;
+    width: 50%;
+    height: 100px;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.form {
+    display: flex;
+    min-width: 50%;
+    min-height: 55%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}

@@ -4,20 +4,30 @@
     <meta charset="utf-8">
     <title>Lcdlv - CMS Login</title>
     <link href="<?=base_url()?>assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?=base_url()?>assets/css/adminhome.css" rel="stylesheet">
     <script src="<?=base_url()?>assets/js/jquery-3.4.1.min.js"></script>
     <script src="<?=base_url()?>assets/js/sweetalert2.js"></script>
   </head>
   <body>
     <div class="container">
-      <div class="form-group">
-        <form class="" method="post">
-          <label for="usuario">Usuario</label>
-          <input type="text" name="usuario" required placeholder="Nombre de usuario" id="user">
-          <br>
-          <label for="password">Contraseña</label>
-          <input type="password" name="password" value="" required placeholder="Contraseña" id="pass">
-          <br>
-          <button class="btn btn-success" type="button" name="button" onclick="login()">Ingresar</button>
+
+      <h1 class="admin-h1">Admin de la Vergha</h1>
+      <div class="form-group form-div">
+        <form class="form" method="post">
+
+          <div class="form-label">
+            <label for="usuario">Usuario</label>
+            <input type="text" name="usuario" required placeholder="Nombre de usuario" id="user">
+          </div>
+
+          <div class="form-label">
+            <label for="password">Contraseña</label>
+            <input type="password" name="password" value="" required placeholder="Contraseña" id="pass">
+          </div>
+
+          <div class="btn-div">
+            <button class="btn btn-success" type="button" name="button" onclick="login()">Ingresar</button>
+          </div>
         </form>
       </div>
     </div>

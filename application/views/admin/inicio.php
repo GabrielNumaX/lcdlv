@@ -10,6 +10,7 @@
       }
      ?>
      <link rel="stylesheet" href="<?=base_url()?>assets/css/bootstrap.min.css">
+     <link rel="stylesheet" href="<?=base_url()?>assets/css/admininicio.css">
      <script src="<?=base_url()?>assets/js/jquery-3.4.1.min.js"></script>
      <script src="<?=base_url()?>assets/js/sweetalert2.js"></script>
      <link rel="stylesheet"
@@ -25,13 +26,16 @@
       </a>
       <button class="btn btn-danger" type="button" onclick="logout()"><i class="fas fa-sign-out-alt"></i></button>
     </nav>
-    <div class="container">
+    <div class="container div-inicio">
       <h1>Opciones</h1>
-      <button class="btn btn-success" id='imagen'><i class="far fa-file-image"></i></button>
-      <button class="btn btn-success" ><i class="fas fa-video"></i></button>
-      <button class="btn btn-success" >Agregar notas</button>
 
-      <form method="post">
+      <div class="div-btn">
+        <button class="btn btn-success" id='imagen'>Fotos</button>
+        <button class="btn btn-success" >Videos</button>
+        <button class="btn btn-success" >Nota</button>
+      </div>
+
+      <form class="form" method="post">
         <input type="file" id="file_upload">
         <input type="text" id="titulo" placeholder="Titulo" required>
         <input type="text" id="desc" placeholder="Descripcion" required>
