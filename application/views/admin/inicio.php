@@ -37,9 +37,9 @@
       <form class="form" method="post">
         <div class="text-div">  
           <label>Titulo</label>
-          <input class="titulo" type="text" id="titulo" placeholder="Titulo"></input>
+          <input class="titulo" type="text" id="titulo" placeholder="Titulo..."></input>
           <label>Descripcion</label>
-          <textarea id="desc" placeholder="Descripcion"></textarea>
+          <textarea id="desc" placeholder="Descripcion..."></textarea>
         </div>
         <div class="btn-div">
           <input class="btn btn-success" type="file" id="file_upload"></input>

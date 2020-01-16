@@ -181,11 +181,11 @@
                 </div>
 
                 <div class="div-img">
-                    <video class="video-post" controls>
-                        <source
+                    <video class="video-post" 
+                        controls
                         src="<?=base_url()?>assets/videos/2019-10-13 15-02-42.mp4"
                         type="video/mp4"
-                        controls>
+                        >
                     </video>
                 </div>
 
