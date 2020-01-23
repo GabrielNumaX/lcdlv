@@ -173,7 +173,7 @@
             </article> -->
 
             <!-- VIDEO template  -->
-            <article class="article-post">
+            <!-- <article class="article-post">
                 <h2 class="h2-title">TITULO VIDEO</h2>
 
                 <div class="div-time">
@@ -195,8 +195,8 @@
 
                 <div class="div-desc">
                     <p class="p-desc-no-show">
-                      <!--Descripcion del video-->
-                    </p>
+                      Descripcion del video-->
+                    <!-- </p>
 
                 </div>
                 <div class="div-p-click">
@@ -239,21 +239,24 @@
                         placeholder="Escribe un comentario...">
                 </form>
 
-            </article> <!--fin post video-->
+            </article>  -->
+            
+            <!-- fin post video -->
 
 
             <!-- template notas -->
-            <article class="article-notas">
+
+            <!-- <article class="article-notas">
 
                 <div class="nota">
                     <h3 class="h3-nota">
                         ACA IRIA EL TITULO NOTA1
                     </h3>
-                    <p class="p-nota">
+                    <p class="p-nota"> -->
 
                     <!-- dummy text -->
 
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                    <!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Pellentesque orci metus, pharetra eu elit a, malesuada condimentum felis.
                     Fusce a tellus eleifend, ultrices ligula id, luctus tellus.
                     Donec eleifend lorem id turpis suscipit, nec vehicula nunc egestas.
@@ -328,7 +331,9 @@
                         placeholder="Escribe un comentario...">
                 </form>
 
-            </article> <!-- fin nota 1-->
+            </article>  -->
+            
+            <!-- fin nota 1-->
 
         </div> <!--end post container -->
 

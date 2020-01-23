@@ -8,61 +8,59 @@ $(document).ready(function() {
 
         const postContainer = $('.post-container');
 
-        for(let i = 0; i < 4; i++) {
+        const article = document.createElement('article');
 
-            const article = document.createElement('article');
+        $(article).attr('class', 'article-post');
 
-            $(article).attr('class', 'article-post');
+        const h2Title = document.createElement('h2');
 
-            const h2Title = document.createElement('h2');
+        $(h2Title).attr('class', 'h2-title');
 
-            $(h2Title).attr('class', 'h2-title');
+        // console.log(obj[i])
 
-            // console.log(obj[i])
+        $(h2Title).html(obj.titulo);
 
-            $(h2Title).html(obj[i].titulo);
+        // console.log(h2Title);
 
-            // console.log(h2Title);
+        const divTime = document.createElement('div');
 
-            const divTime = document.createElement('div');
+        const time = document.createElement('time');
 
-            const time = document.createElement('time');
+        $(divTime).attr('class', 'div-time');
 
-            $(divTime).attr('class', 'div-time');
+        $(time).html(obj.fecha);
 
-            $(time).html(obj[i].fecha);
+        $(time).attr('class', 'time-post');
 
-            $(time).attr('class', 'time-post');
+        $(divTime).append(time);
 
-            $(divTime).append(time);
+        const imgDiv = document.createElement('div');
 
-            const imgDiv = document.createElement('div');
+        $(imgDiv).attr('class', 'div-img');
 
-            $(imgDiv).attr('class', 'div-img');
+        const img = document.createElement('img');
 
-            const img = document.createElement('img');
+        $(img).attr('class', 'img-post')
 
-            $(img).attr('class', 'img-post')
+        $(img).attr('src', obj.foto);
 
-            $(img).attr('src', obj[i].foto);
+        $(imgDiv).append(img);
 
-            $(imgDiv).append(img);
+        const divDescription = document.createElement('div');
 
-            const divDescription = document.createElement('div');
+        $(divDescription).attr('class', 'div-desc');
 
-            $(divDescription).attr('class', 'div-desc');
+        const description = document.createElement('p');
 
-            const description = document.createElement('p');
+        $(description).html(obj.descripcion);
 
-            $(description).html(obj[i].descripcion);
+        $(description).attr('class', 'p-desc-no-show');
 
-            $(description).attr('class', 'p-desc-no-show');
+        $(divDescription).append(description);
 
-            $(divDescription).append(description);
+        $(postContainer).append(h2Title, divTime, imgDiv, divDescription);
 
-            $(postContainer).append(h2Title, divTime, imgDiv, divDescription);
-
-        }
+    
     }
 
     function loadVideos(obj) {
@@ -75,7 +73,7 @@ $(document).ready(function() {
 
         $(h2Title).attr('class', 'h2-title');
 
-        $(h2Title).html() //obj.title
+        $(h2Title).html(obj.titulo) //obj.title
 
         const divTime = document.createElement('div');
 
@@ -85,7 +83,7 @@ $(document).ready(function() {
 
         $(time).attr('class', 'time-post');
 
-        $(time).html() //obj.fecha
+        $(time).html(obj.fecha) //obj.fecha
 
         $(divTime).append(time);
 
@@ -97,7 +95,7 @@ $(document).ready(function() {
 
         $(video).attr('class', 'video-post');
 
-        $(video).attr('src', ) //obj.video
+        $(video).attr('src', obj.video ) //obj.video
 
         $(video).prop('controls', true);
 
@@ -124,15 +122,19 @@ $(document).ready(function() {
 
         const divNota = document.createElement('div');
 
+        $(divNota).attr('class', 'nota')
+
         const h3Nota = document.createElement('h3');
 
-        $(h3Nota).html() //titulo nota
+        $(h3Nota).html(obj.titulo) //titulo nota
+
+        $(h3Nota).attr('class', 'h3-nota');
 
         const pNota = document.createElement('p');
 
         $(pNota).attr('class', 'p-nota');
 
-        $(pNota).html() // obj.nota
+        $(pNota).html(obj.nota) // obj.nota
 
         //faltaria todo lo de los comentarios
         //AQUI COMENTARIOS
@@ -152,16 +154,32 @@ $(document).ready(function() {
     const protocol = window.location.protocol;
     const URLmaster = window.location.host;
     
-    const cargarFotos = `${protocol}//${URLmaster}/Home/cargar_fotos`;
+    const cargarTodo = `${protocol}//${URLmaster}/Home/cargar_todo`;
 
-    $.get(cargarFotos, function(data, status) {
+    $.get(cargarTodo, function(data, status) {
 
         const dataParse = JSON.parse(data)
 
         //aca habria que hacer un for con el json y
         //filtrar por foto video o nota y usar las functions
         
-        loadPhotos(dataParse);
+        for(let i = 0; i < dataParse.length; i++){
+
+            if(dataParse[i].tipo === "foto"){
+
+                loadPhotos(dataParse[i]);
+            }
+
+            else if(dataParse[i].tipo === "video"){
+
+                loadVideos(dataParse[i]);
+            }
+
+            else if(dataParse[i].tipo === "nota"){
+
+                loadNotes(dataParse[i]);
+            }
+        }
 
         console.log(dataParse);
     });
