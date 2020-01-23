@@ -19,9 +19,9 @@ class Home extends CI_Controller {
 		foreach($resultado->result() as $r){
 			$data = [
 				'id' => $r->id,
-				'titulo' => $r->titulo,
+				'titulo' => str_replace("%20", " ", $r->titulo),
 				'fecha' => $r->fecha,
-				'descripcion' => $r->descripcion,
+				'descripcion' => str_replace("%20", " ", $r->descripcion),
 				'foto' => $r->foto
 			];
 			//Creo array de arrays.
