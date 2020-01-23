@@ -126,7 +126,7 @@
 
                 <div class="div-desc">
                     <p class="p-desc-no-show" id='descripcion'>
-                      
+
                     </p>
 
                 </div>
@@ -181,7 +181,7 @@
                 </div>
 
                 <div class="div-img">
-                    <video class="video-post" 
+                    <video class="video-post"
                         controls
                         src="<?=base_url()?>assets/videos/2019-10-13 15-02-42.mp4"
                         type="video/mp4"
@@ -364,26 +364,5 @@
     </footer>
 
 </body>
-<script>
-function traer_fotos(){
-  $.ajax({
-    type:'GET',
-    url:'<?=base_url('Home/cargar_fotos')?>',
-    dataType:'JSON',
-    success:function(data){
-      //este es para mostrar el titulo de la foto en la posicion 1 del arreglo
-      //acordate que los arreglos empiezan en 0.
-      for(var i=0; i<=3; i++){
-        $('#descripcion').append('<span>'+data[i]['descripcion']+'</span><br>');
-      }//asi accedes a los valores del JSON.
-      //
-      //data[posicion][valor del json];
-    },
-    error:function(){
-      alert('Ha ocurrido un error con el servidor');
-    }
 
-  });
-}
-</script>
 </html>
