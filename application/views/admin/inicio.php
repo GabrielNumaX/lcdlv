@@ -131,6 +131,8 @@
         processData: false,
         cache: false,
         success: function(data){
+          document.getElementById('titulo_foto').value = "";
+          desc.textContent = "";
           alert(data);
           $(".upload-msg").html(data);
 					window.setTimeout(function() {

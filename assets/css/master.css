@@ -192,7 +192,9 @@ html {
     grid-column: 2 / 3;
     grid-row: 1 / 1;
     width: 100%; /*70%*/
+    /* min-height: calc(100vh - 50px); */
     margin: 0 auto;
+    margin-bottom: 50px;
     text-align: center;
 }
 
@@ -472,8 +474,7 @@ footer {
     align-items: center;
     display: grid;
     grid-template-columns: auto auto;
-    /* grid-template-rows: 50% 50%; */
-    
+    /* grid-template-rows: 50% 50%; */    
 }
 
 .footer-div1 {   
