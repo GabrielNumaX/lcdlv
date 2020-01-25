@@ -13,6 +13,11 @@
 
      <link rel="stylesheet" href="<?=base_url()?>assets/css/admininicio.css">
      <script src="<?=base_url()?>assets/js/jquery-3.4.1.min.js"></script>
+
+      <!-- ver los comentarios de este archivo -->
+     <!-- <script src="<?=base_url()?>assets/js/adminInicioFunciones.js"></script> -->
+     <script src="<?=base_url()?>assets/js/adminInicioModal.js"></script>
+
      <script src="<?=base_url()?>assets/js/sweetalert2.js"></script>
      <link rel="stylesheet"
          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
@@ -54,7 +59,10 @@
           </div>
           <div class="btn-div">
             <input class="btn btn-success" type="file" id="file_upload_foto"></input>
-            <input class="btn btn-success" type="button" onclick="upPhoto()" value="Subir Foto"></input>
+            <input id="btn-photo" class="btn btn-success" 
+                  type="button" 
+                  onclick="upPhoto()"
+                  value="Subir Foto"></input>
           </div>
         </form>
 
@@ -113,11 +121,39 @@
 
 
   </body>
-  <script src="<?=base_url()?>assets/js/admininicio.js"></script>
-  <script>
+  
+   <script>
+
+  //  function addEnter(element) {
+
+  //   let formatedString = '';
+
+  //   element.addEventListener('keyup', function(e) {
+
+  //     if(e.keyCode === 13){
+
+  //       formatedString += '\n';
+  //     }
+
+  //     else {
+  //       formatedString += e.target.value
+  //     }
+
+  //     console.log(formatedString)
+  //   });
+
+  //   return formatedString;
+  //  }
     function upPhoto(){
       var titulo = document.getElementById('titulo_foto').value;
       var desc = document.getElementById('desc_foto').value;
+
+      //esto no sirve guarda %3C br
+      // desc = desc.replace(/\r?\n/g, '<br/>');
+
+      // ver esto para php->html
+      // https://stackoverflow.com/questions/2902888/adding-a-line-break-in-mysql-insert-into-text
+
       $(".upload-msg").text('Cargando...');
       var inputFileImage = document.getElementById('file_upload_foto');
       var photo = inputFileImage.files[0];
@@ -132,7 +168,8 @@
         cache: false,
         success: function(data){
           document.getElementById('titulo_foto').value = "";
-          desc.textContent = "";
+          document.getElementById('desc_foto').value = "";
+          document.getElementById('file_upload_foto').value = "";
           alert(data);
           $(".upload-msg").html(data);
 					window.setTimeout(function() {
@@ -159,6 +196,9 @@
         processData: false,
         cache: false,
         success: function(data){
+          document.getElementById('titulo_video').value = "";
+          document.getElementById('desc_video').value = "";
+          document.getElementById('file_upload_video').value = "";
           alert(data);
           $(".upload-msg").html(data);
 					window.setTimeout(function() {
@@ -181,6 +221,9 @@
         },
         success: function(){
           //mostrar cargando
+          document.getElementById('titulo_nota').value = "";
+          document.getElementById('nota').value = "";
+          alert('Nota Cargada')
         },
         error: function(){
           alert('Error 502');
