@@ -95,6 +95,10 @@ $(document).ready(function() {
 
         $(video).attr('class', 'video-post');
 
+        //recordar que pone el id en el video 
+        //no en el div
+        $(video).attr('id', obj.id);
+
         $(video).attr('src', obj.video ) //obj.video
 
         $(video).prop('controls', true);
@@ -106,7 +110,25 @@ $(document).ready(function() {
         //faltaria todo lo de los comentarios
         //AQUI COMENTARIOS
 
-        $(article).append(h2Title, divTime, divVideo);
+        //esto crea el input para el comentario
+
+        const form = document.createElement('form');
+
+        $(form).attr('class', 'form-comments');
+
+        const inputComment = document.createElement('input');
+
+        $(inputComment).attr('class', 'input-comments');
+
+        $(inputComment).prop('type', 'text');
+
+        $(inputComment).prop('placeholder', 'Escribe un comentario...');
+
+        $(inputComment).attr('data-tipo', obj.tipo);
+
+        $(form).append(inputComment);
+
+        $(article).append(h2Title, divTime, divVideo, form);
 
         $(postContainer).append(article);
 
