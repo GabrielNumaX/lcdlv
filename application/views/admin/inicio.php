@@ -10,6 +10,7 @@
       }
      ?>
      <link rel="stylesheet" href="<?=base_url()?>assets/css/bootstrap.min.css">
+     
      <link rel="stylesheet" href="<?=base_url()?>assets/css/admininicio.css">
      <script src="<?=base_url()?>assets/js/jquery-3.4.1.min.js"></script>
      <script src="<?=base_url()?>assets/js/sweetalert2.js"></script>
@@ -29,25 +30,91 @@
     <div class="container div-inicio">
 
       <div class="div-btn">
-        <button class="btn btn-success" id='imagen'>Fotos</button>
-        <button class="btn btn-success" >Videos</button>
-        <button class="btn btn-success" >Nota</button>
+
+        <button class="btn btn-success" id="photos">Fotos</button>
+        <button class="btn btn-success" id="videos">Videos</button>
+        <button class="btn btn-success" id="notes">Nota</button>
       </div>
 
-      <form class="form" method="post">
-        <div class="text-div">
-          <label>Titulo</label>
-          <input class="titulo" type="text" id="titulo" placeholder="Titulo..."></input>
-          <label>Descripcion</label>
-          <textarea id="desc" placeholder="Descripcion..."></textarea>
-        </div>
-        <div class="btn-div">
-          <input class="btn btn-success" type="file" id="file_upload"></input>
-          <input class="btn btn-success" type="button" onclick="upPhoto()" value="Subir"></input>
-          <div class="upload-msg"></div>
-        </div>
-      </form>
+      <!-- modales de los form -->
+
+      <div id="modalPhotos" class="modal">
+
+        <form class="form modal-content" method="post">
+
+          <div class="span-close">
+            <span id="span-photos" class="close">&times;</span>
+          </div>
+
+          <div class="text-div">
+            <label>Titulo Foto</label>
+            <input class="titulo" type="text" id="titulo" placeholder="Titulo..."></input>
+            <label>Descripcion Foto</label>
+            <textarea id="desc" placeholder="Descripcion..."></textarea>
+          </div>
+          <div class="btn-div">
+            <input class="btn btn-success" type="file" id="file_upload"></input>
+            <input class="btn btn-success" type="button" onclick="upPhoto()" value="Subir Foto"></input>
+            <div class="upload-msg"></div>
+          </div>
+        </form>
+
+      </div>
+
+      <!-- modal videos -->
+
+      <div id="modalVideos" class="modal">
+
+        <form class="form modal-content" method="post">
+
+          <div class="span-close">
+            <span id="span-videos" class="close">&times;</span>
+          </div>
+
+          <div class="text-div">
+            <label>Titulo Video</label>
+            <input class="titulo" type="text" id="titulo" placeholder="Titulo..."></input>
+            <label>Descripcion Video</label>
+            <textarea id="desc" placeholder="Descripcion..."></textarea>
+          </div>
+          <div class="btn-div">
+            <input class="btn btn-success" type="file" id="file_upload"></input>
+            <input class="btn btn-success" type="button" onclick="upVideo()" value="Subir Video"></input>
+            <div class="upload-msg"></div>
+          </div>
+        </form>
+
+      </div>
+
+      <!-- modal notas -->
+
+      <div id="modalNotes" class="modal">
+
+        <form class="form modal-content" method="post">
+
+          <div class="span-close">
+            <span id="span-notes" class="close">&times;</span>
+          </div>
+
+          <div class="text-div">
+            <label>Titulo Nota</label>
+            <input class="titulo" type="text" id="titulo" placeholder="Titulo..."></input>
+            <label>Nota</label>
+            <textarea id="desc" placeholder="Descripcion..."></textarea>
+          </div>
+          <div class="btn-div">
+            <input class="btn btn-success" type="button" onclick="upNote()" value="Subir Nota"></input>
+            <div class="upload-msg"></div>
+          </div>
+        </form>
+
+      </div>
+
+      
     </div>
+
+    <script src="<?=base_url()?>assets/js/admininicio.js"></script>
+
   </body>
   <script>
     function upPhoto(){
