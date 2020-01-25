@@ -10,7 +10,7 @@
       }
      ?>
      <link rel="stylesheet" href="<?=base_url()?>assets/css/bootstrap.min.css">
-     
+
      <link rel="stylesheet" href="<?=base_url()?>assets/css/admininicio.css">
      <script src="<?=base_url()?>assets/js/jquery-3.4.1.min.js"></script>
      <script src="<?=base_url()?>assets/js/sweetalert2.js"></script>
@@ -48,14 +48,13 @@
 
           <div class="text-div">
             <label>Titulo Foto</label>
-            <input class="titulo" type="text" id="titulo" placeholder="Titulo..."></input>
+            <input class="titulo" type="text" id="titulo_foto" placeholder="Titulo..."></input>
             <label>Descripcion Foto</label>
-            <textarea id="desc" placeholder="Descripcion..."></textarea>
+            <textarea id="desc_foto" placeholder="Descripcion..."></textarea>
           </div>
           <div class="btn-div">
-            <input class="btn btn-success" type="file" id="file_upload"></input>
+            <input class="btn btn-success" type="file" id="file_upload_foto"></input>
             <input class="btn btn-success" type="button" onclick="upPhoto()" value="Subir Foto"></input>
-            <div class="upload-msg"></div>
           </div>
         </form>
 
@@ -73,14 +72,13 @@
 
           <div class="text-div">
             <label>Titulo Video</label>
-            <input class="titulo" type="text" id="titulo" placeholder="Titulo..."></input>
+            <input class="titulo" type="text" id="titulo_video" placeholder="Titulo..."></input>
             <label>Descripcion Video</label>
-            <textarea id="desc" placeholder="Descripcion..."></textarea>
+            <textarea id="desc_video" placeholder="Descripcion..."></textarea>
           </div>
           <div class="btn-div">
-            <input class="btn btn-success" type="file" id="file_upload"></input>
+            <input class="btn btn-success" type="file" id="file_upload_video"></input>
             <input class="btn btn-success" type="button" onclick="upVideo()" value="Subir Video"></input>
-            <div class="upload-msg"></div>
           </div>
         </form>
 
@@ -98,33 +96,33 @@
 
           <div class="text-div">
             <label>Titulo Nota</label>
-            <input class="titulo" type="text" id="titulo" placeholder="Titulo..."></input>
+            <input class="titulo" type="text" id="titulo_nota" placeholder="Titulo..."></input>
             <label>Nota</label>
-            <textarea id="desc" placeholder="Descripcion..."></textarea>
+            <textarea id="nota" placeholder="Nota"></textarea>
           </div>
           <div class="btn-div">
             <input class="btn btn-success" type="button" onclick="upNote()" value="Subir Nota"></input>
-            <div class="upload-msg"></div>
           </div>
         </form>
 
       </div>
 
-      
+
     </div>
 
-    <script src="<?=base_url()?>assets/js/admininicio.js"></script>
+
 
   </body>
+  <script src="<?=base_url()?>assets/js/admininicio.js"></script>
   <script>
     function upPhoto(){
-      var titulo = document.getElementById('titulo').value;
-      var desc = document.getElementById('desc').value;
+      var titulo = document.getElementById('titulo_foto').value;
+      var desc = document.getElementById('desc_foto').value;
       $(".upload-msg").text('Cargando...');
-      var inputFileImage = document.getElementById('file_upload');
+      var inputFileImage = document.getElementById('file_upload_foto');
       var photo = inputFileImage.files[0];
       var data = new FormData();
-      data.append('file_upload', photo);
+      data.append('file_upload_foto', photo);
       $.ajax({
         type:'POST',
         url:'<?=base_url('Admin/cargar_fotos/')?>'+titulo+'/'+desc,
@@ -141,6 +139,50 @@
 					       });	}, 5000);
         },
 
+      });
+    }
+    function upVideo(){
+      var titulo = document.getElementById('titulo_video').value;
+      var desc = document.getElementById('desc_video').value;
+      $(".upload-msg").text('Cargando...');
+      var inputFileImage = document.getElementById('file_upload_video');
+      var video = inputFileImage.files[0];
+      var data = new FormData();
+      data.append('file_upload_video', video);
+      $.ajax({
+        type:'POST',
+        url:'<?=base_url('Admin/cargar_videos/')?>'+titulo+'/'+desc,
+        data: data,
+        contentType: false,
+        processData: false,
+        cache: false,
+        success: function(data){
+          alert(data);
+          $(".upload-msg").html(data);
+					window.setTimeout(function() {
+					       $(".alert-dismissible").fadeTo(500, 0).slideUp(500, function(){
+					       $(this).remove();
+					       });	}, 5000);
+        },
+
+      });
+    }
+    function upNote(){
+      var titulo = document.getElementById('titulo_nota').value;
+      var nota = document.getElementById('nota').value;
+      $.ajax({
+        type: 'POST',
+        url: '<?=base_url('Admin/cargar_notas/')?>'+titulo+'/'+nota,
+        data: {
+          titulo: titulo,
+          nota : nota
+        },
+        success: function(){
+          //mostrar cargando
+        },
+        error: function(){
+          alert('Error 502');
+        },
       });
     }
     function logout(){

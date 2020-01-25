@@ -60,18 +60,18 @@ class Admin extends CI_Controller {
   }
 
   public function cargar_fotos($titulo, $desc){
-    if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_FILES["file_upload"]["type"])){
+    if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_FILES["file_upload_foto"]["type"])){
       $target_dir = "upload/fotos/";
       $carpeta=$target_dir;
       if (!file_exists($carpeta)) {
         mkdir($carpeta, 0777, true);
       }
-      $target_file = $carpeta . basename($_FILES["file_upload"]["name"]);
+      $target_file = $carpeta . basename($_FILES["file_upload_foto"]["name"]);
       $uploadOk = 1;
       $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
       // Check if image file is a actual image or fake image
       if(isset($_POST["submit"])) {
-        $check = getimagesize($_FILES["file_upload"]["tmp_name"]);
+        $check = getimagesize($_FILES["file_upload_foto"]["tmp_name"]);
         if($check !== false) {
           $errors[]= "El archivo es una imagen - " . $check["mime"] . ".";
           $uploadOk = 1;
@@ -86,7 +86,7 @@ class Admin extends CI_Controller {
         $uploadOk = 0;
       }
       // Check file size
-      if ($_FILES["file_upload"]["size"] > 11534336) {
+      if ($_FILES["file_upload_foto"]["size"] > 11534336) {
         $errors[]= "Lo sentimos, el archivo es demasiado grande.  Tamaño máximo admitido: 11 MB";
         $uploadOk = 0;
       }
@@ -101,7 +101,7 @@ class Admin extends CI_Controller {
         $errors[]= "Lo sentimos, tu archivo no fue subido.";
         // if everything is ok, try to upload file
       } else {
-        if (move_uploaded_file($_FILES["file_upload"]["tmp_name"], $target_file)) {
+        if (move_uploaded_file($_FILES["file_upload_foto"]["tmp_name"], $target_file)) {
           $messages[]= "El Archivo ha sido subido correctamente.";
 
 
@@ -129,18 +129,18 @@ class Admin extends CI_Controller {
 }
 
 public function cargar_videos($titulo, $desc){
-  if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_FILES["file_upload"]["type"])){
+  if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_FILES["file_upload_video"]["type"])){
     $target_dir = "upload/videos/";
     $carpeta=$target_dir;
     if (!file_exists($carpeta)) {
       mkdir($carpeta, 0777, true);
     }
-    $target_file = $carpeta . basename($_FILES["file_upload"]["name"]);
+    $target_file = $carpeta . basename($_FILES["file_upload_video"]["name"]);
     $uploadOk = 1;
     $imageFileType = pathinfo($target_file,PATHINFO_EXTENSION);
     // Check if image file is a actual image or fake image
     if(isset($_POST["submit"])) {
-      $check = getimagesize($_FILES["file_upload"]["tmp_name"]);
+      $check = getimagesize($_FILES["file_upload_video"]["tmp_name"]);
       if($check !== false) {
         $errors[]= "El archivo es un video - " . $check["mime"] . ".";
         $uploadOk = 1;
@@ -155,7 +155,7 @@ public function cargar_videos($titulo, $desc){
       $uploadOk = 0;
     }
     // Check file size
-    if ($_FILES["file_upload"]["size"] > 111534336) {
+    if ($_FILES["file_upload_video"]["size"] > 111534336) {
       $errors[]= "Lo sentimos, el archivo es demasiado grande.  Tamaño máximo admitido: 111 MB";
       $uploadOk = 0;
     }
@@ -170,7 +170,7 @@ public function cargar_videos($titulo, $desc){
       $errors[]= "Lo sentimos, tu archivo no fue subido.";
       // if everything is ok, try to upload file
     } else {
-      if (move_uploaded_file($_FILES["file_upload"]["tmp_name"], $target_file)) {
+      if (move_uploaded_file($_FILES["file_upload_video"]["tmp_name"], $target_file)) {
         $messages[]= "El Archivo ha sido subido correctamente.";
 
 
@@ -195,6 +195,10 @@ if(isset($messages)){
   //var_dump($data);
 }
 echo $target_file;
+}
+
+function cargar_notas($titulo, $nota){
+  $this->admin->upload_nota($titulo, $nota);
 }
 
 }

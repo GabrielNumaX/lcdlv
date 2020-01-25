@@ -35,5 +35,12 @@ class Admin_model extends CI_Model{
       );
       $this->db->insert('videos', $data);
     }
+    public function upload_nota($titulo, $nota){
+      $data = array(
+        'titulo' => $titulo,
+        'nota' => $nota
+      );
+      $this->db->insert('notas', $data);
+    }
 }
 ?>
