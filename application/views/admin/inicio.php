@@ -35,7 +35,7 @@
       </div>
 
       <form class="form" method="post">
-        <div class="text-div">  
+        <div class="text-div">
           <label>Titulo</label>
           <input class="titulo" type="text" id="titulo" placeholder="Titulo..."></input>
           <label>Descripcion</label>
@@ -60,7 +60,7 @@
       data.append('file_upload', photo);
       $.ajax({
         type:'POST',
-        url:'<?=base_url('Admin/cargar/')?>'+titulo+'/'+desc,
+        url:'<?=base_url('Admin/cargar_fotos/')?>'+titulo+'/'+desc,
         data: data,
         contentType: false,
         processData: false,

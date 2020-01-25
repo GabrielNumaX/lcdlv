@@ -18,13 +18,22 @@ class Admin_model extends CI_Model{
       return $query;
     }
 
-    public function upload($file, $titulo, $desc){
+    public function upload_foto($file, $titulo, $desc){
       $data = array(
         'titulo' => $titulo,
         'descripcion' => $desc,
         'foto' => $file
       );
       $this->db->insert('fotos', $data);
+    }
+
+    public function upload_video($file, $titulo, $desc){
+      $data = array(
+        'titulo' => $titulo,
+        'descripcion' => $desc,
+        'video' => $file
+      );
+      $this->db->insert('videos', $data);
     }
 }
 ?>
