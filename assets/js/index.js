@@ -56,9 +56,41 @@ $(document).ready(function() {
 
         $(description).attr('class', 'p-desc-no-show');
 
+        // $(description).attr('id', 'descripcion');
+
         $(divDescription).append(description);
 
-        $(postContainer).append(h2Title, divTime, imgDiv, divDescription);
+        const divClickDesc = document.createElement('div');
+
+        $(divClickDesc).attr('class', 'div-p-click');
+
+        const pShowClick = document.createElement('p');
+
+        $(pShowClick).attr('class', 'p-show-click');
+
+        $(pShowClick).html('Mostrar');
+
+        $(divClickDesc).append(pShowClick);
+
+        const formComments = document.createElement('form');
+
+        $(formComments).attr('class', 'form-comments');
+
+        $(formComments).prop('method', 'post');
+
+        const inputComments = document.createElement('input');
+
+        $(inputComments).attr('class', 'input-comments');
+
+        $(inputComments).prop('type', 'text');
+
+        $(inputComments).prop('placeholder', 'Escribe un comentario...');
+        
+        $(formComments).append(inputComments);
+
+        $(article).append(h2Title, divTime, imgDiv, divDescription, divClickDesc, formComments);
+
+        $(postContainer).append(article);
 
     
     }
@@ -68,6 +100,8 @@ $(document).ready(function() {
         const postContainer = $('.post-container');
 
         const article = document.createElement('article');
+
+        $(article).attr('class', 'article-post');
 
         const h2Title = document.createElement('h2');
 
@@ -208,13 +242,24 @@ $(document).ready(function() {
 
     //this is to show/hide post description
     //when clicked scroll out WILL TRY TO FIX
-    $('.p-show-click').on('click', function () {
+    $('.post-container').on('click', '.p-show-click', function () {
         
         let desc = $('.div-desc p');
 
-        const elemToScrollTo = $(this).parent().prev().prev().children();
+        // alert('click');
 
-        // console.log(elemToScrollTo);
+        // console.log($(this));
+
+        //arreglar cuando scrollea el texto de la descripcion
+        //que baja a la base de la foto o al top del texto descripcion
+
+        const imgToScrollTo = $(this).parent().prev().prev().children();
+
+        const divToScrollTo = $(this).parent().prev().children();
+
+        // console.log(imgToScrollTo);
+
+        // console.log(divToScrollTo);
 
 
         if($(desc).hasClass('p-desc-no-show')){
@@ -226,11 +271,17 @@ $(document).ready(function() {
             $('.p-show-click').html('Ocultar');
 
             // $('html, body').animate({
-            //     scrollTop: $(elemToScrollTo).offset().top
-            // }, 1500);
+            //     scrollTop: $(divToScrollTo).offset().top
+            // }, 1000);
+
+            // $('html, body').animate({
+            //     scrollTop: $(divToScrollTo).scrollTop(50)
+            // }, 1000);
 
             //this solves the scrolling issue
-            $('html, body').scrollTop(elemToScrollTo.offset().top);
+            // $('html, body').scrollTop(divToScrollTo.offset().top);
+
+            $(imgToScrollTo).scrollTop(divToScrollTo.offset().top);
 
         }
         else if($(desc).hasClass('p-desc-show')){
@@ -242,11 +293,11 @@ $(document).ready(function() {
             $('.p-show-click').html('Mostrar');
 
             // $('html, body').animate({
-            //     scrollTop: $(elemToScrollTo).offset().top
-            // }, 1500);   
+            //     scrollTop: $(imgToScrollTo).offset().top
+            // }, 700);   
             
             //this solves the scrolling issue
-            $('html, body').scrollTop(elemToScrollTo.offset().top);
+            $('html, body').scrollTop(imgToScrollTo.offset().top);
         }
     });
 
@@ -275,5 +326,35 @@ $(document).ready(function() {
         }
         
       }); //end show/no show
+
+      //function postear comments
+
+      $('.post-container').on('submit', '.form-comments', function(e) {
+
+        e.preventDefault();
+
+        const inputVal = $(this).children().val();
+
+        // console.log(inputVal);
+
+        $.ajax({
+            type: 'POST',
+            dataType: 'text',
+            contentType: 'application/x-www-form-urlencoded',
+            url: 'index.php',
+            data: { input: $(inputVal).serialize()}, 
+            success: function(data) {
+                alert('comentario exitoso');          
+            },
+            error: function() {
+                alert('se produjo un error cancerigeno');
+            }
+
+        });    
+
+        //esto borra el text del input
+        $(this).children().val("");
+
+      }); // end comments function
 
 }); //end JQuery

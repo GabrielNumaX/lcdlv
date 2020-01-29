@@ -15,7 +15,6 @@
      <script src="<?=base_url()?>assets/js/jquery-3.4.1.min.js"></script>
 
       <!-- ver los comentarios de este archivo -->
-     <!-- <script src="<?=base_url()?>assets/js/adminInicioFunciones.js"></script> -->
      <script src="<?=base_url()?>assets/js/adminInicioModal.js"></script>
 
      <script src="<?=base_url()?>assets/js/sweetalert2.js"></script>
@@ -144,9 +143,14 @@
 
   //   return formatedString;
   //  }
+  
     function upPhoto(){
       var titulo = document.getElementById('titulo_foto').value;
       var desc = document.getElementById('desc_foto').value;
+
+      // const desc = $('#desc_foto').val();
+
+      // desc = $(desc).serialize();
 
       //esto no sirve guarda %3C br
       // desc = desc.replace(/\r?\n/g, '<br/>');
@@ -158,10 +162,17 @@
       var inputFileImage = document.getElementById('file_upload_foto');
       var photo = inputFileImage.files[0];
       var data = new FormData();
+
+      // https://www.javascripture.com/FormData
+      // en el FormData() abria que hacer dos key con los values del
+      //titulo y la descripcion ya que procesa signos
+      //como en el ejemplo que esta ahi VER EJEMPLO!!!
       data.append('file_upload_foto', photo);
       $.ajax({
         type:'POST',
-        url:'<?=base_url('Admin/cargar_fotos/')?>'+titulo+'/'+desc,
+
+        // el problema esta aca
+        url:'<?=base_url('Admin/cargar_fotos/')?>'+titulo+'/'+desc,         
         data: data,
         contentType: false,
         processData: false,
