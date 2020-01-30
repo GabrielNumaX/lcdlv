@@ -297,7 +297,9 @@ $(document).ready(function() {
             // }, 700);   
             
             //this solves the scrolling issue
-            $('html, body').scrollTop(imgToScrollTo.offset().top);
+            // $('html, body').scrollTop(imgToScrollTo.offset().top);
+
+            $(divToScrollTo).scrollTop(imgToScrollTo.offset().top);
         }
     });
 
@@ -331,11 +333,18 @@ $(document).ready(function() {
 
       $('.post-container').on('submit', '.form-comments', function(e) {
 
+
+        //esto es para que no haga reload pero no va a cargar el comentario
+        //salvo que refresce o añada la tabla de los comments
         e.preventDefault();
 
         const inputVal = $(this).children().val();
 
-        // console.log(inputVal);
+        console.log(inputVal);
+
+        // const cargarComentario = `${protocol}//${URLmaster}/Home/cargar_comentario`;
+
+        // console.log(cargarComentario);
 
         $.ajax({
             type: 'POST',
@@ -344,7 +353,9 @@ $(document).ready(function() {
             url: 'index.php',
             data: { input: inputVal}, 
             success: function(data) {
-                alert('comentario exitoso');          
+                alert('comentario exitoso');
+                //da undefined porque es asychronous
+                // alert(data.input);          
             },
             error: function() {
                 alert('se produjo un error cancerigeno');
@@ -356,5 +367,35 @@ $(document).ready(function() {
         $(this).children().val("");
 
       }); // end comments function
+
+      $('.form-search').on('submit', function(e) {
+
+
+        // esto no iria se tendria q mostrar los
+        //resultados al recargar la pagina
+        e.preventDefault();
+
+        const searchVal = $('.input-search').val();
+
+        console.log(searchVal);
+
+        $.ajax({
+            type: 'GET',
+            dataType: 'text',
+            contentType: 'application/x-www-form-urlencoded',
+            url: 'index.php',
+            data: { search: searchVal}, 
+            success: function(data) {
+                alert('busqueda exitosa');
+                //da undefined porque es asychronous
+                // alert(data.input);          
+            },
+            error: function() {
+                alert('se produjo un error buscarioso');
+            }
+
+        });    
+
+      })// end search form function
 
 }); //end JQuery

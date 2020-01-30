@@ -200,6 +200,11 @@
       var titulo = document.getElementById('titulo_foto').value;
       var desc = document.getElementById('desc_foto').value;
 
+      //no sacar esto NO SEAS GAYYYYYY
+      //UD NO APRENDE VERDAD
+      //lo tuve que buscar en el historial cateric
+      desc = desc.replace(/\r?\n/g, '<br/>');
+
       $(".upload-msg").text('Cargando...');
       var inputFileImage = document.getElementById('file_upload_foto');
       var photo = inputFileImage.files[0];
@@ -232,6 +237,12 @@
     function upVideo(){
       var titulo = document.getElementById('titulo_video').value;
       var desc = document.getElementById('desc_video').value;
+
+      //no sacar esto NO SEAS GAYYYYYY
+      //UD NO APRENDE VERDAD
+      //lo tuve que buscar en el historial cateric
+      desc = desc.replace(/\r?\n/g, '<br/>');
+
       $(".upload-msg").text('Cargando...');
       var inputFileImage = document.getElementById('file_upload_video');
       var video = inputFileImage.files[0];
@@ -266,6 +277,13 @@
     function upNote(){
       var titulo = document.getElementById('titulo_nota').value;
       var nota = document.getElementById('nota').value;
+
+      //no sacar esto NO SEAS GAYYYYYY
+      //UD NO APRENDE VERDAD
+      //lo tuve que buscar en el historial cateric
+      nota = nota.replace(/\r?\n/g, '<br/>');
+
+
       var data = new FormData();
       data.append('titulo', titulo);
       data.append('nota', nota);

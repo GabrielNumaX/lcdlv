@@ -52,8 +52,9 @@
             <a href="<?=base_url('Nota')?>">Notas</a>
             <a href="<?=base_url('Archivo')?>">Archivo</a>
         </nav>
-        <form class="form-search" action="">
-            <input class="input-search" type="search"
+        <form class="form-search" action="" method="get">
+            <input class="input-search" id="search-bar"
+                type="search"
                 autofocus
                 placeholder="Buscar...">
         </form>
