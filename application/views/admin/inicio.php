@@ -13,6 +13,7 @@
 
      <link rel="stylesheet" href="<?=base_url()?>assets/css/admininicio.css">
      <script src="<?=base_url()?>assets/js/jquery-3.4.1.min.js"></script>
+     <script src="<?=base_url()?>assets/js/jquery.dataTables.min.js"></script>
 
       <!-- ver los comentarios de este archivo -->
      <script src="<?=base_url()?>assets/js/adminInicioModal.js"></script>
@@ -32,14 +33,12 @@
       <button class="btn btn-danger" type="button" onclick="logout()"><i class="fas fa-sign-out-alt"></i></button>
     </nav>
     <div class="container div-inicio">
-
       <div class="div-btn">
 
         <button class="btn btn-success" id="photos">Fotos</button>
         <button class="btn btn-success" id="videos">Videos</button>
         <button class="btn btn-success" id="notes">Nota</button>
       </div>
-
       <!-- modales de los form -->
 
       <div id="modalPhotos" class="modal">
@@ -114,35 +113,58 @@
 
       </div>
 
-
     </div>
-
-
+    <div class="table-responsive">
+      <table id="fotos" class="table table-striped table-bordered" width="100%">
+        <thead>
+          <th>ID</th>
+          <th>Titulo</th>
+          <th>Fecha</th>
+          <th>Descripcion</th>
+          <th>Foto</th>
+          <th>Acción</th>
+        </thead>
+      </table>
+    </div>
 
   </body>
 
    <script>
 
-  //  function addEnter(element) {
-
-  //   let formatedString = '';
-
-  //   element.addEventListener('keyup', function(e) {
-
-  //     if(e.keyCode === 13){
-
-  //       formatedString += '\n';
-  //     }
-
-  //     else {
-  //       formatedString += e.target.value
-  //     }
-
-  //     console.log(formatedString)
-  //   });
-
-  //   return formatedString;
-  //  }
+   var table;
+   //var save_method;
+   jQuery(document).ready(function($){ //funcion para crear datatables
+       table = $('#fotos').DataTable({
+           "ajax": {
+               url : '<?= base_url('Admin/ajax_listado_fotos')?>',
+               type : 'GET'
+           },
+           language: {
+               "sProcessing":     "Procesando...",
+               "sLengthMenu":     "Mostrar _MENU_ registros",
+               "sZeroRecords":    "No se encontraron resultados",
+               "sEmptyTable":     "Ningún dato disponible en esta tabla",
+               "sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+               "sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros",
+               "sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
+               "sInfoPostFix":    "",
+               "sSearch":         "Buscar:",
+               "sUrl":            "",
+               "sInfoThousands":  ",",
+               "sLoadingRecords": "Cargando...",
+               "oPaginate": {
+                   "sFirst":    "Primero",
+                   "sLast":     "Último",
+                   "sNext":     "Siguiente",
+                   "sPrevious": "Anterior"
+               },
+               "oAria": {
+                   "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+                   "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+               }
+           }
+       });
+   });
 
     function upPhoto(){
       var titulo = document.getElementById('titulo_foto').value;

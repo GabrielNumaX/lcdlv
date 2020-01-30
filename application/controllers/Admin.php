@@ -210,5 +210,32 @@ function cargar_notas(){
   $nota = $_POST['nota'];
   $this->admin->upload_nota($titulo, $nota);
 }
+//datatables
+public function ajax_listado_fotos(){
+    $resultados = $this->admin->get_datatables_photos();
+
+    $data = array();
+    foreach($resultados->result() as $r) { //se crea un array asociativo con cada resultados de la consulta a la BDD
+        $accion = '<a class="btn btn-sm btn-info" href="javascript:void(0)" title="Editar" onclick="editar_foto('."'".$r->id."'".')"><i class="fas fa-user-edit"></i></a>
+                    <a class="btn btn-sm btn-danger" href="javascript:void(0)" title="Borrar" onclick="borrar_foto('."'".$r->id."'".')"><i class="fas fa-trash"></i></a>';
+
+        $data[] = array(
+          'id' => $r->id,
+          'titulo' => $r->titulo,
+          'fecha' => $r->fecha,
+          'descripcion' => $r->descripcion,
+          'foto' => $r->foto,
+          'accion' => $accion
+        );
+    }
+
+    $output = array(
+        "recordsTotal" => $resultados->num_rows(),
+        "recordsFiltered" => $resultados->num_rows(),
+        "data" => $data // se establecen la cantidad de resultados y los filtros
+    );
+    echo json_encode($output); // se envian los filtros y los resultados por JSON junto con el array que contiene los datos
+    exit();
+  }
 
 }
