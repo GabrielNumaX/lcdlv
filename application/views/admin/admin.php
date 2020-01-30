@@ -26,7 +26,7 @@
           </div>
 
           <div class="btn-div">
-            <button class="btn btn-success" type="button" name="button" onclick="login()">Ingresar</button>
+            <input class="btn btn-success" type="submit" onclick="login()" value="Ingresar">
           </div>
         </form>
       </div>
