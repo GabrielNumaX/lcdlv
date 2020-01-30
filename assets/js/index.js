@@ -342,7 +342,7 @@ $(document).ready(function() {
             dataType: 'text',
             contentType: 'application/x-www-form-urlencoded',
             url: 'index.php',
-            data: { input: $(inputVal).serialize()}, 
+            data: { input: inputVal}, 
             success: function(data) {
                 alert('comentario exitoso');          
             },

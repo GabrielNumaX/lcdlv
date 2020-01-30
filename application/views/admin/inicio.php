@@ -143,7 +143,7 @@
 
   //   return formatedString;
   //  }
-  
+
     function upPhoto(){
       var titulo = document.getElementById('titulo_foto').value;
       var desc = document.getElementById('desc_foto').value;
@@ -162,18 +162,32 @@
       var inputFileImage = document.getElementById('file_upload_foto');
       var photo = inputFileImage.files[0];
       var data = new FormData();
+      data.append('file_upload_foto', photo);
 
       // https://www.javascripture.com/FormData
       // en el FormData() abria que hacer dos key con los values del
       //titulo y la descripcion ya que procesa signos
       //como en el ejemplo que esta ahi VER EJEMPLO!!!
-      data.append('file_upload_foto', photo);
+
+      
+
+
+      // for (var pair of formData.entries()) {
+
+      //   let i = 0
+      //   console.log(pair[i]); 
+      //   i++;
+      // }
+     
+
+
       $.ajax({
         type:'POST',
-
-        // el problema esta aca
-        url:'<?=base_url('Admin/cargar_fotos/')?>'+titulo+'/'+desc,         
-        data: data,
+        url:'<?=base_url('Admin/cargar_fotos')?>',          
+        data: {
+          titulo : titulo,
+          descripcion : desc
+        },
         contentType: false,
         processData: false,
         cache: false,
@@ -198,7 +212,12 @@
       var inputFileImage = document.getElementById('file_upload_video');
       var video = inputFileImage.files[0];
       var data = new FormData();
+      
       data.append('file_upload_video', video);
+      data.append('titulo', titulo);
+      data.append('descripcion', desc);
+
+
       $.ajax({
         type:'POST',
         url:'<?=base_url('Admin/cargar_videos/')?>'+titulo+'/'+desc,

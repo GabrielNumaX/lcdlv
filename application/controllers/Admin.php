@@ -59,7 +59,9 @@ class Admin extends CI_Controller {
     }
   }
 
-  public function cargar_fotos($titulo, $desc){
+  // public function cargar_fotos($titulo, $desc){
+
+    public function cargar_fotos(){
     if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_FILES["file_upload_foto"]["type"])){
       $target_dir = "upload/fotos/";
       $carpeta=$target_dir;
@@ -122,10 +124,16 @@ class Admin extends CI_Controller {
     foreach ($messages as $message) {
       $data[] .= $message;
     }
-    $this->admin->upload_foto($target_file, $titulo, $desc);
-    //var_dump($data);
+
+    $titulo = $_POST['titulo'];
+    $desc = $_POST['descripcion'];
+    echo $titulo;
+
+    // $this->admin->upload_foto($target_file, $titulo, $desc);
+    //$this->admin->upload_foto($target_file, $titulo, $desc);
+    // var_dump($data);
   }
-  echo $target_file;
+  //echo $target_file;
 }
 
 public function cargar_videos($titulo, $desc){
