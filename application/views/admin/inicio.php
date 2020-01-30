@@ -32,13 +32,55 @@
       </a>
       <button class="btn btn-danger" type="button" onclick="logout()"><i class="fas fa-sign-out-alt"></i></button>
     </nav>
-    <div class="container div-inicio">
+    <div class="div-inicio">
       <div class="div-btn">
 
-        <button class="btn btn-success" id="photos">Fotos</button>
-        <button class="btn btn-success" id="videos">Videos</button>
-        <button class="btn btn-success" id="notes">Nota</button>
+      <!-- en href tiene que ir el enlace del archivo que qeres q 
+          se abra tipo react como dijiste -->
+
+        <a href="" class="link" >Fotos</a>
+        <a href="" class="link" >Videos</a>
+        <a href="" class="link" >Nota</a>
+
       </div>
+
+      <div class="div-tabla">
+
+        <div class="div-btn-modal">
+          
+          <button class="btn btn-success" id="photos">Subir Foto</button>
+
+          <!-- <button class="btn btn-success" id="video">Subir Video</button>
+          <button class="btn btn-success" id="notes">Subir Nota</button> -->
+
+
+          <!-- aca tienen que ir los button de video y nota
+              no se como lo vas a hacer pedazo de cato ajajaj -->
+
+        </div>
+
+        <!-- la table va aca no la cambies -->
+
+        <div class="table-responsive">
+
+          <table id="fotos" class="table table-striped table-bordered" 
+                  width="100%">
+
+            <thead>
+              <th>ID</th>
+              <th>Titulo</th>
+              <th>Fecha</th>
+              <th>Descripcion</th>
+              <th>Foto</th>
+              <th>Acción</th>
+            </thead>
+
+          </table>
+
+        </div>
+
+      </div>
+      
       <!-- modales de los form -->
 
       <div id="modalPhotos" class="modal">
@@ -114,57 +156,45 @@
       </div>
 
     </div>
-    <div class="table-responsive">
-      <table id="fotos" class="table table-striped table-bordered" width="100%">
-        <thead>
-          <th>ID</th>
-          <th>Titulo</th>
-          <th>Fecha</th>
-          <th>Descripcion</th>
-          <th>Foto</th>
-          <th>Acción</th>
-        </thead>
-      </table>
-    </div>
 
   </body>
 
    <script>
 
-   var table;
-   //var save_method;
-   jQuery(document).ready(function($){ //funcion para crear datatables
-       table = $('#fotos').DataTable({
-           "ajax": {
-               url : '<?= base_url('Admin/ajax_listado_fotos')?>',
-               type : 'GET'
-           },
-           language: {
-               "sProcessing":     "Procesando...",
-               "sLengthMenu":     "Mostrar _MENU_ registros",
-               "sZeroRecords":    "No se encontraron resultados",
-               "sEmptyTable":     "Ningún dato disponible en esta tabla",
-               "sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
-               "sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros",
-               "sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
-               "sInfoPostFix":    "",
-               "sSearch":         "Buscar:",
-               "sUrl":            "",
-               "sInfoThousands":  ",",
-               "sLoadingRecords": "Cargando...",
-               "oPaginate": {
-                   "sFirst":    "Primero",
-                   "sLast":     "Último",
-                   "sNext":     "Siguiente",
-                   "sPrevious": "Anterior"
-               },
-               "oAria": {
-                   "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
-                   "sSortDescending": ": Activar para ordenar la columna de manera descendente"
-               }
-           }
-       });
-   });
+  //  var table;
+  //  //var save_method;
+  //  jQuery(document).ready(function($){ //funcion para crear datatables
+  //      table = $('#fotos').DataTable({
+  //          "ajax": {
+  //              url : '<?= base_url('Admin/ajax_listado_fotos')?>',
+  //              type : 'GET'
+  //          },
+  //          language: {
+  //              "sProcessing":     "Procesando...",
+  //              "sLengthMenu":     "Mostrar _MENU_ registros",
+  //              "sZeroRecords":    "No se encontraron resultados",
+  //              "sEmptyTable":     "Ningún dato disponible en esta tabla",
+  //              "sInfo":           "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+  //              "sInfoEmpty":      "Mostrando registros del 0 al 0 de un total de 0 registros",
+  //              "sInfoFiltered":   "(filtrado de un total de _MAX_ registros)",
+  //              "sInfoPostFix":    "",
+  //              "sSearch":         "Buscar:",
+  //              "sUrl":            "",
+  //              "sInfoThousands":  ",",
+  //              "sLoadingRecords": "Cargando...",
+  //              "oPaginate": {
+  //                  "sFirst":    "Primero",
+  //                  "sLast":     "Último",
+  //                  "sNext":     "Siguiente",
+  //                  "sPrevious": "Anterior"
+  //              },
+  //              "oAria": {
+  //                  "sSortAscending":  ": Activar para ordenar la columna de manera ascendente",
+  //                  "sSortDescending": ": Activar para ordenar la columna de manera descendente"
+  //              }
+  //          }
+  //      });
+  //  });
 
     function upPhoto(){
       var titulo = document.getElementById('titulo_foto').value;
