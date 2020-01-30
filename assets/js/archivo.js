@@ -1,5 +1,6 @@
 $(document).ready(function() {
 
+
     console.log('script loaded');
 
     //function to load photos
@@ -235,7 +236,7 @@ $(document).ready(function() {
         //aca habria que hacer un for con el json y
         //filtrar por foto video o nota y usar las functions
         
-        for(let i = 0; i < dataParse.length; i++){
+        for(let i = dataParse.length - 1; i >= 0; i--){
 
             if(dataParse[i].tipo === "foto"){
 
@@ -256,162 +257,5 @@ $(document).ready(function() {
         console.log(dataParse);
     });
 
-    //this is to show/hide post description
-    //when clicked scroll out WILL TRY TO FIX
-    $('.post-container').on('click', '.p-show-click', function () {
-        
-        let desc = $('.div-desc p');
 
-        // alert('click');
-
-        // console.log($(this));
-
-        //arreglar cuando scrollea el texto de la descripcion
-        //que baja a la base de la foto o al top del texto descripcion
-
-        const imgToScrollTo = $(this).parent().prev().prev().children();
-
-        const divToScrollTo = $(this).parent().prev().children();
-
-        // console.log(imgToScrollTo);
-
-        // console.log(divToScrollTo);
-
-
-        if($(desc).hasClass('p-desc-no-show')){
-
-            $(desc).removeClass('p-desc-no-show');
-
-            $(desc).addClass('p-desc-show');
-
-            $('.p-show-click').html('Ocultar');
-
-            // $('html, body').animate({
-            //     scrollTop: $(divToScrollTo).offset().top
-            // }, 1000);
-
-            // $('html, body').animate({
-            //     scrollTop: $(divToScrollTo).scrollTop(50)
-            // }, 1000);
-
-            //this solves the scrolling issue
-            // $('html, body').scrollTop(divToScrollTo.offset().top);
-
-            $(imgToScrollTo).scrollTop(divToScrollTo.offset().top);
-
-        }
-        else if($(desc).hasClass('p-desc-show')){
-
-            $(desc).removeClass('p-desc-show');
-
-            $(desc).addClass('p-desc-no-show');
-
-            $('.p-show-click').html('Mostrar');
-
-            // $('html, body').animate({
-            //     scrollTop: $(imgToScrollTo).offset().top
-            // }, 700);   
-            
-            //this solves the scrolling issue
-            // $('html, body').scrollTop(imgToScrollTo.offset().top);
-
-            $(divToScrollTo).scrollTop(imgToScrollTo.offset().top);
-        }
-    });
-
-    //this event is to hide or show comments according to click 
-    //on span .show-comments
-    $('.show-comments').on('click', function() {
-
-        let comment = $(this).prev();
-
-
-        if($(comment).hasClass('p-comments-no-show')){
-
-            $(comment).removeClass('p-comments-no-show');
-
-            $(comment).addClass('p-comments-show');
-
-            $(this).html('Ocultar comentario');
-        }
-        else if ($(comment).hasClass('p-comments-show')){
-
-            $(comment).removeClass('p-comments-show');
-
-             $(comment).addClass('p-comments-no-show');
-
-             $(this).html('Mostrar comentario');
-        }
-        
-      }); //end show/no show
-
-      //function postear comments
-
-      $('.post-container').on('submit', '.form-comments', function(e) {
-
-
-        //esto es para que no haga reload pero no va a cargar el comentario
-        //salvo que refresce o añada la tabla de los comments
-        e.preventDefault();
-
-        const inputVal = $(this).children().val();
-
-        console.log(inputVal);
-
-        // const cargarComentario = `${protocol}//${URLmaster}/Home/cargar_comentario`;
-
-        // console.log(cargarComentario);
-
-        $.ajax({
-            type: 'POST',
-            dataType: 'text',
-            contentType: 'application/x-www-form-urlencoded',
-            url: 'index.php',
-            data: { input: inputVal}, 
-            success: function(data) {
-                alert('comentario exitoso');
-                //da undefined porque es asychronous
-                // alert(data.input);          
-            },
-            error: function() {
-                alert('se produjo un error cancerigeno');
-            }
-
-        });    
-
-        //esto borra el text del input
-        $(this).children().val("");
-
-      }); // end comments function
-
-      $('.form-search').on('submit', function(e) {
-
-
-        // esto no iria se tendria q mostrar los
-        //resultados al recargar la pagina
-        e.preventDefault();
-
-        const searchVal = $('.input-search').val();
-
-        console.log(searchVal);
-
-        $.ajax({
-            type: 'GET',
-            dataType: 'text',
-            contentType: 'application/x-www-form-urlencoded',
-            url: 'index.php',
-            data: { search: searchVal}, 
-            success: function(data) {
-                alert('busqueda exitosa');
-                //da undefined porque es asychronous
-                // alert(data.input);          
-            },
-            error: function() {
-                alert('se produjo un error buscarioso');
-            }
-
-        });    
-
-      })// end search form function
-
-}); //end JQuery
+}); //end jquery

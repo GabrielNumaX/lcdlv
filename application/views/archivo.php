@@ -31,13 +31,15 @@
     <link type="text/css" rel="stylesheet" href="<?= base_url()?>assets/css/archivo.css">
 
     <!-- JQuery scripts -->
-    <script
+    <!-- <script
         src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script> -->
+
+        <script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery-3.4.1.min.js" ></script>
 
     <!-- this is js -->
-    <script type="text/javascript" src="<?php echo base_url();?>assets/js/index.js" ></script>
+    <script type="text/javascript" src="<?php echo base_url();?>assets/js/archivo.js" ></script>
 
 
     <title>LCdLV</title>
@@ -99,7 +101,7 @@
 
         <div class="post-container" id="archivo-main"> <!--este ID no se si iria-->
 
-        <article class="article-post">
+        <!-- <article class="article-post">
                 <h2 class="h2-title">TITULO POST</h2>
 
                 <div class="div-time">
@@ -171,10 +173,11 @@
                 </form>
 
                 
-            </article>
+            </article> -->
 
             <!-- VIDEO template  -->
-            <article class="article-post">
+
+            <!-- <article class="article-post">
                 <h2 class="h2-title">TITULO VIDEO</h2>
 
                 <div class="div-time">
@@ -241,19 +244,20 @@
                         placeholder="Escribe un comentario...">
                 </form>
 
-            </article> <!--fin post video-->
+            </article>  -->
+            
+            <!--fin post video-->
 
 
             <!-- template notas -->
-            <article class="article-notas">
+
+            <!-- <article class="article-notas">
 
                 <div class="nota">
                     <h3 class="h3-nota">
                         ACA IRIA EL TITULO NOTA1
                     </h3>
                     <p class="p-nota">
-
-                    <!-- dummy text -->
 
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                     Pellentesque orci metus, pharetra eu elit a, malesuada condimentum felis.
@@ -314,7 +318,9 @@
                         placeholder="Escribe un comentario...">
                 </form>
 
-            </article> <!-- fin nota 1-->
+            </article>  -->
+            
+            <!-- fin nota 1-->
         
         </div>
 

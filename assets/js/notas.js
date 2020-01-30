@@ -2,7 +2,7 @@ $(document).ready(function() {
 
 
     //THIS IS DEBOUNCE FUNCTION COPIED FROM Wes Bos VIDEO 13  
-    function debounce(func, wait = 20, inmediate = true)  {
+    function debounce(func, wait = 30, inmediate = true)  {
     
         var timeout;
     
@@ -97,7 +97,23 @@ $(document).ready(function() {
 
         $(divNota).append(h3Nota, pNota);
 
-        $(article).append(divNota);
+        const formComments = document.createElement('form');
+
+        $(formComments).attr('class', 'form-comments');
+
+        $(formComments).prop('method', 'post');
+
+        const inputComments = document.createElement('input');
+
+        $(inputComments).attr('class', 'input-comments');
+
+        $(inputComments).prop('type', 'text');
+
+        $(inputComments).prop('placeholder', 'Escribe un comentario...');
+        
+        $(formComments).append(inputComments);
+
+        $(article).append(divNota, formComments);
 
         $(main).append(article);
 

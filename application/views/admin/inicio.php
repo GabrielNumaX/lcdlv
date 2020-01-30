@@ -50,8 +50,8 @@
           
           <button class="btn btn-success" id="photos">Subir Foto</button>
 
-          <!-- <button class="btn btn-success" id="video">Subir Video</button>
-          <button class="btn btn-success" id="notes">Subir Nota</button> -->
+          <button class="btn btn-success" id="videos">Subir Video</button>
+          <button class="btn btn-success" id="notes">Subir Nota</button>
 
 
           <!-- aca tienen que ir los button de video y nota
