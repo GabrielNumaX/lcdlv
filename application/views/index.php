@@ -36,7 +36,7 @@
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
         crossorigin="anonymous"></script> -->
 
-        <script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery-3.4.1.min.js" ></script>
+    <script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery-3.4.1.min.js" ></script>
 
     <!-- this is js -->
     <script type="text/javascript" src="<?php echo base_url();?>assets/js/index.js" ></script>

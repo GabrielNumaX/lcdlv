@@ -265,7 +265,7 @@ footer {
 /* this is ASIDE style */
 #aside {
     display: grid;
-    grid-template-columns: 157px 93px; /*250px*/
+    grid-template-columns: 150px 100px; /*250px*/
     grid-template-rows: auto auto;
     right: 0;
     top: 50px;
@@ -308,7 +308,7 @@ footer {
 
 .li-notas {
     margin-bottom: 8px;
-    margin-left: 12px;
+    margin-left: 18px;
     padding-right: 6px;
     letter-spacing: 1px;
     white-space: nowrap;
@@ -353,6 +353,7 @@ footer {
 
 .li-fechas {
     margin-bottom: 8px;
+    margin-right: 18px;
     letter-spacing: 1px;
     padding-right: 6px;
     font-size: 14px;

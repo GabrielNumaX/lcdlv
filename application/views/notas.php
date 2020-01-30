@@ -25,14 +25,15 @@
     <link type="text/css"rel="stylesheet" href="<?= base_url()?>assets/css/notas.css">
 
     <!-- JQuery and JS scripts -->
-    <script
+    <!-- <script
         src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script> -->
 
+    <script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery-3.4.1.min.js" ></script>
 
     <!-- este script tiene las funciones show/hide de los comentarios -->
-    <script type="text/javascript" src="<?php echo base_url();?>assets/js/index.js" ></script>
+    <!-- <script type="text/javascript" src="<?php echo base_url();?>assets/js/index.js" ></script> -->
     <script type="text/javascript" src="<?php echo base_url();?>assets/js/notas.js" ></script>
 
     <title>LCdLV</title>
@@ -86,15 +87,14 @@
         </article>
 
         <!-- cada article con un id para crear la plantilla de cada nota esta seria id="article-nota-1"-->
-        <article class="article-notas">
+        
+        <!-- <article class="article-notas">
 
             <div class="nota">
                 <h3 class="h3-nota">
                     ACA IRIA EL TITULO NOTA1
                 </h3>
                 <p class="p-nota">
-
-                <!-- dummy text -->
 
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Pellentesque orci metus, pharetra eu elit a, malesuada condimentum felis.
@@ -195,17 +195,18 @@
                     placeholder="Escribe un comentario...">
             </form>
 
-        </article> <!-- fin nota 1-->
+        </article>  -->
+        
+        <!-- fin nota 1-->
 
         <article class="article-notas">
         <!-- cada article con un id para crear la plantilla de cada nota esta seria id="article-nota-2" y asi-->
-        <div class="nota">
+        
+        <!-- <div class="nota">
                 <h3 class="h3-nota">
                     ACA IRIA EL TITULO  NOTA2
                 </h3>
                 <p class="p-nota">
-
-                <!-- dummy text -->
 
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 Pellentesque orci metus, pharetra eu elit a, malesuada condimentum felis.
@@ -273,7 +274,9 @@
                     placeholder="Escribe un comentario...">
             </form>
 
-        </article>  <!--fin nota dos -->
+        </article>   -->
+        
+        <!--fin nota dos -->
 
     </main>
 
@@ -289,7 +292,7 @@
 
        <!-- this LOADS dynamic -->
         <ul class="ul-notas">
-            <li class="li-notas">
+            <!-- <li class="li-notas">
                 <a class="li-notas-a" href="">Ultima nota</a>
             </li>
             <li class="li-notas">
@@ -331,7 +334,7 @@
                 </li>
             <li class="li-notas">
                 <a href="">14 notas</a>
-                </li>
+                </li> -->
 
        </div>
 
@@ -339,7 +342,7 @@
        <div class="div-fechas">
             <ul class="ul-fechas">
 
-                <li class="li-fechas">
+                <!-- <li class="li-fechas">
                     11/10/2019
                 </li>
                 <li class="li-fechas">
@@ -380,7 +383,8 @@
                 </li>
                 <li class="li-fechas">
                 28/10/2019
-                </li>
+                </li> -->
+                
             </ul>
        </div>
 

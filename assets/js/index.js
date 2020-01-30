@@ -205,7 +205,7 @@ $(document).ready(function() {
     }
 
 
-    //this is for dynamic loading of images
+    //this is for dynamic loading of content
 
     const protocol = window.location.protocol;
     const URLmaster = window.location.host;
