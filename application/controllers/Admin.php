@@ -62,6 +62,9 @@ class Admin extends CI_Controller {
   // public function cargar_fotos($titulo, $desc){
 
     public function cargar_fotos(){
+    $titulo = $_POST['titulo'];
+    $desc = $_POST['descripcion'];
+
     if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_FILES["file_upload_foto"]["type"])){
       $target_dir = "upload/fotos/";
       $carpeta=$target_dir;
@@ -125,18 +128,15 @@ class Admin extends CI_Controller {
       $data[] .= $message;
     }
 
-    $titulo = $_POST['titulo'];
-    $desc = $_POST['descripcion'];
-    echo $titulo;
+    $this->admin->upload_foto($target_file, $titulo, $desc);
 
-    // $this->admin->upload_foto($target_file, $titulo, $desc);
-    //$this->admin->upload_foto($target_file, $titulo, $desc);
-    // var_dump($data);
   }
-  //echo $target_file;
+  echo $target_file;
 }
 
-public function cargar_videos($titulo, $desc){
+public function cargar_videos(){
+  $titulo = $_POST['titulo'];
+  $desc = $_POST['descripcion'];
   if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_FILES["file_upload_video"]["type"])){
     $target_dir = "upload/videos/";
     $carpeta=$target_dir;
@@ -205,7 +205,9 @@ if(isset($messages)){
 echo $target_file;
 }
 
-function cargar_notas($titulo, $nota){
+function cargar_notas(){
+  $titulo = $_POST['titulo'];
+  $nota = $_POST['nota'];
   $this->admin->upload_nota($titulo, $nota);
 }
 
