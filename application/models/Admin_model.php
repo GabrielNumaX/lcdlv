@@ -7,7 +7,7 @@ class Admin_model extends CI_Model{
     var $table_videos = "videos";
     var $table_notes = "notas";
     var $column_order_photos = array('id',null);
-    var $column_search_photos = array('fotos.foto','fotos.fecha');
+    var $column_search_photos = array('fotos.foto','fotos.fecha','fotos.id');
     var $order_photos = array('fecha' => 'desc');
 
 

@@ -220,12 +220,12 @@ public function ajax_listado_fotos(){
                     <a class="btn btn-sm btn-danger" href="javascript:void(0)" title="Borrar" onclick="borrar_foto('."'".$r->id."'".')"><i class="fas fa-trash"></i></a>';
 
         $data[] = array(
-          'id' => $r->id,
-          'titulo' => $r->titulo,
-          'fecha' => $r->fecha,
-          'descripcion' => $r->descripcion,
-          'foto' => $r->foto,
-          'accion' => $accion
+           $r->id,
+           $r->titulo,
+           $r->fecha,
+           $r->descripcion,
+           $r->foto,
+           $accion
         );
     }
 
