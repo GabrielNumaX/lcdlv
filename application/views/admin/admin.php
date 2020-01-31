@@ -39,7 +39,7 @@
     if(usuario !== '' && password !== ''){
     $.ajax({
       type:'POST',
-      url:'<?= base_url('Admin/login')?>',
+      url:'<?= base_url('admin/login')?>',
       data:{
         usuario:usuario,
         password:password

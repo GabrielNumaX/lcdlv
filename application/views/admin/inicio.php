@@ -32,12 +32,37 @@
       </a>
       <button class="btn btn-danger" type="button" onclick="logout()"><i class="fas fa-sign-out-alt"></i></button>
     </nav>
-    <div class="container div-inicio">
+    <div class="div-inicio">
       <div class="div-btn">
 
-        <button class="btn btn-success" id="photos">Fotos</button>
-        <button class="btn btn-success" id="videos">Videos</button>
-        <button class="btn btn-success" id="notes">Nota</button>
+        <a class="link">Fotos</a>
+        <a class="a" >Videos</a>
+        <a class="link" >Nota</>
+      </div>
+
+      <div class="div-btn-modal">
+
+        <button class="btn btn-success" id="fotos">Subir Fotos</button>
+        <button class="btn btn-success" id="videos">Subir Videos</button>
+        <button class="btn btn-success" id="notas">Subir Notas</button>
+      </div>
+
+
+      <div class="div-tabla">
+
+        <div class="table-responsive">
+          <table id="fotos" class="table table-striped table-bordered" width="100%">
+            <thead>
+              <th>ID</th>
+              <th>Titulo</th>
+              <th>Fecha</th>
+              <th>Descripcion</th>
+              <th>Foto</th>
+              <th>Acción</th>
+            </thead>
+          </table>
+        </div>
+
       </div>
       <!-- modales de los form -->
 
@@ -113,18 +138,6 @@
 
       </div>
 
-    </div>
-    <div class="table-responsive">
-      <table id="fotos" class="table table-striped table-bordered" width="100%">
-        <thead>
-          <th>ID</th>
-          <th>Titulo</th>
-          <th>Fecha</th>
-          <th>Descripcion</th>
-          <th>Foto</th>
-          <th>Acción</th>
-        </thead>
-      </table>
     </div>
 
   </body>
