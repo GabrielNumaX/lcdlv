@@ -31,12 +31,10 @@
     <link type="text/css" rel="stylesheet" href="<?= base_url()?>assets/css/master.css">
 
     <!-- JQuery scripts -->
-    <!-- <script
+    <script
         src="https://code.jquery.com/jquery-3.4.1.min.js"
         integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-        crossorigin="anonymous"></script> -->
-
-    <script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery-3.4.1.min.js" ></script>
+        crossorigin="anonymous"></script>
 
     <!-- this is js -->
     <script type="text/javascript" src="<?php echo base_url();?>assets/js/index.js" ></script>
@@ -52,9 +50,8 @@
             <a href="<?=base_url('Nota')?>">Notas</a>
             <a href="<?=base_url('Archivo')?>">Archivo</a>
         </nav>
-        <form class="form-search" action="" method="get">
-            <input class="input-search" id="search-bar"
-                type="search"
+        <form class="form-search" action="">
+            <input class="input-search" type="search"
                 autofocus
                 placeholder="Buscar...">
         </form>
@@ -243,7 +240,7 @@
                 </form>
 
             </article>  -->
-            
+
             <!-- fin post video -->
 
 
@@ -335,7 +332,7 @@
                 </form>
 
             </article>  -->
-            
+
             <!-- fin nota 1-->
 
         </div> <!--end post container -->

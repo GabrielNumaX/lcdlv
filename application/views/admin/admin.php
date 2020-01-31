@@ -37,31 +37,6 @@
     var usuario = document.getElementById('user').value;
     var password = document.getElementById('pass').value;
     if(usuario !== '' && password !== ''){
-      $.ajax({
-        type:'POST',
-        url:'<?= base_url('Admin/login')?>',
-        data:{
-          usuario:usuario,
-          password:password
-        },
-        success:function(respuesta){
-          JSON.parse(respuesta);
-          location.href = '<?=base_url('Admin/inicio')?>';
-        },
-        error:function(){
-          swal.fire({
-            type:'error',
-            title:'Error',
-            text: 'Ha ocurrido un error'
-          });
-        }
-      });
-    }else{
-      swal.fire({
-        type:'warning',
-        text:'Complete todos los campos'
-      });
-    }
     $.ajax({
       type:'POST',
       url:'<?= base_url('Admin/login')?>',
@@ -84,5 +59,6 @@
       }
     });
   }
+}
   </script>
 </html>
