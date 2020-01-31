@@ -38,16 +38,17 @@
 
         <a class="link">Fotos</a>
         <a class="link" >Videos</a>
-        <a class="link" >Nota</>
+        <a class="link" >Nota</a>
+        
       </div>
 
       <div class="div-btn-and-tabla">
 
         <div class="div-btn-modal">
 
-          <button class="btn btn-success" id="fotos">Subir Fotos</button>
+          <button class="btn btn-success" id="photos">Subir Fotos</button>
           <button class="btn btn-success" id="videos">Subir Videos</button>
-          <button class="btn btn-success" id="notas">Subir Notas</button>
+          <button class="btn btn-success" id="notes">Subir Notas</button>
         </div>
 
 
