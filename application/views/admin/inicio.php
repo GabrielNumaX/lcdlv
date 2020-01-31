@@ -32,111 +32,116 @@
       </a>
       <button class="btn btn-danger" type="button" onclick="logout()"><i class="fas fa-sign-out-alt"></i></button>
     </nav>
+
     <div class="div-inicio">
       <div class="div-btn">
 
         <a class="link">Fotos</a>
-        <a class="a" >Videos</a>
+        <a class="link" >Videos</a>
         <a class="link" >Nota</>
       </div>
 
-      <div class="div-btn-modal">
+      <div class="div-btn-and-tabla">
 
-        <button class="btn btn-success" id="fotos">Subir Fotos</button>
-        <button class="btn btn-success" id="videos">Subir Videos</button>
-        <button class="btn btn-success" id="notas">Subir Notas</button>
-      </div>
+        <div class="div-btn-modal">
 
-
-      <div class="div-tabla">
-
-        <div class="table-responsive">
-          <table id="fotos" class="table table-striped table-bordered" width="100%">
-            <thead>
-              <th>ID</th>
-              <th>Titulo</th>
-              <th>Fecha</th>
-              <th>Descripcion</th>
-              <th>Foto</th>
-              <th>Acción</th>
-            </thead>
-          </table>
+          <button class="btn btn-success" id="fotos">Subir Fotos</button>
+          <button class="btn btn-success" id="videos">Subir Videos</button>
+          <button class="btn btn-success" id="notas">Subir Notas</button>
         </div>
 
+
+        <div class="div-tabla">
+
+          <div class="table-responsive">
+            <table id="fotos" class="table table-striped table-bordered" width="100%">
+              <thead>
+                <th>ID</th>
+                <th>Titulo</th>
+                <th>Fecha</th>
+                <th>Descripcion</th>
+                <th>Foto</th>
+                <th>Acción</th>
+              </thead>
+            </table>
+          </div>
+
+        </div>
+    
       </div>
       <!-- modales de los form -->
 
-      <div id="modalPhotos" class="modal">
+        <div id="modalPhotos" class="modal">
 
-        <form class="form modal-content" method="post">
+          <form class="form modal-content" method="post">
 
-          <div class="span-close">
-            <span id="span-photos" class="close">&times;</span>
-          </div>
+            <div class="span-close">
+              <span id="span-photos" class="close">&times;</span>
+            </div>
 
-          <div class="text-div">
-            <label>Titulo Foto</label>
-            <input class="titulo" type="text" id="titulo_foto" placeholder="Titulo..."></input>
-            <label>Descripcion Foto</label>
-            <textarea id="desc_foto"  placeholder="Descripcion..."></textarea>
-          </div>
-          <div class="btn-div">
-            <input class="btn btn-success" type="file" id="file_upload_foto"></input>
-            <input id="btn-photo" class="btn btn-success"
-                  type="button"
-                  onclick="upPhoto()"
-                  value="Subir Foto"></input>
-          </div>
-        </form>
+            <div class="text-div">
+              <label>Titulo Foto</label>
+              <input class="titulo" type="text" id="titulo_foto" placeholder="Titulo..."></input>
+              <label>Descripcion Foto</label>
+              <textarea id="desc_foto"  placeholder="Descripcion..."></textarea>
+            </div>
+            <div class="btn-div">
+              <input class="btn btn-success" type="file" id="file_upload_foto"></input>
+              <input id="btn-photo" class="btn btn-success"
+                    type="button"
+                    onclick="upPhoto()"
+                    value="Subir Foto"></input>
+            </div>
+          </form>
 
-      </div>
+        </div>
 
-      <!-- modal videos -->
+        <!-- modal videos -->
 
-      <div id="modalVideos" class="modal">
+        <div id="modalVideos" class="modal">
 
-        <form class="form modal-content" method="post">
+          <form class="form modal-content" method="post">
 
-          <div class="span-close">
-            <span id="span-videos" class="close">&times;</span>
-          </div>
+            <div class="span-close">
+              <span id="span-videos" class="close">&times;</span>
+            </div>
 
-          <div class="text-div">
-            <label>Titulo Video</label>
-            <input class="titulo" type="text" id="titulo_video" placeholder="Titulo..."></input>
-            <label>Descripcion Video</label>
-            <textarea id="desc_video" placeholder="Descripcion..."></textarea>
-          </div>
-          <div class="btn-div">
-            <input class="btn btn-success" type="file" id="file_upload_video"></input>
-            <input class="btn btn-success" type="button" onclick="upVideo()" value="Subir Video"></input>
-          </div>
-        </form>
+            <div class="text-div">
+              <label>Titulo Video</label>
+              <input class="titulo" type="text" id="titulo_video" placeholder="Titulo..."></input>
+              <label>Descripcion Video</label>
+              <textarea id="desc_video" placeholder="Descripcion..."></textarea>
+            </div>
+            <div class="btn-div">
+              <input class="btn btn-success" type="file" id="file_upload_video"></input>
+              <input class="btn btn-success" type="button" onclick="upVideo()" value="Subir Video"></input>
+            </div>
+          </form>
 
-      </div>
+        </div>
 
-      <!-- modal notas -->
+        <!-- modal notas -->
 
-      <div id="modalNotes" class="modal">
+        <div id="modalNotes" class="modal">
 
-        <form class="form modal-content" method="post">
+          <form class="form modal-content" method="post">
 
-          <div class="span-close">
-            <span id="span-notes" class="close">&times;</span>
-          </div>
+            <div class="span-close">
+              <span id="span-notes" class="close">&times;</span>
+            </div>
 
-          <div class="text-div">
-            <label>Titulo Nota</label>
-            <input class="titulo" type="text" id="titulo_nota" placeholder="Titulo..."></input>
-            <label>Nota</label>
-            <textarea id="nota" placeholder="Nota"></textarea>
-          </div>
-          <div class="btn-div">
-            <input class="btn btn-success" type="button" onclick="upNote()" value="Subir Nota"></input>
-          </div>
-        </form>
+            <div class="text-div">
+              <label>Titulo Nota</label>
+              <input class="titulo" type="text" id="titulo_nota" placeholder="Titulo..."></input>
+              <label>Nota</label>
+              <textarea id="nota" placeholder="Nota"></textarea>
+            </div>
+            <div class="btn-div">
+              <input class="btn btn-success" type="button" onclick="upNote()" value="Subir Nota"></input>
+            </div>
+          </form>
 
-      </div>
+        </div>
 
     </div>
 
