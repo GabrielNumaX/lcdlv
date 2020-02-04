@@ -16,7 +16,7 @@
      <script src="<?=base_url()?>assets/js/jquery.dataTables.min.js"></script>
 
       <!-- ver los comentarios de este archivo -->
-     <script src="<?=base_url()?>assets/js/adminInicioModal.js"></script>
+     <script src="<?=base_url()?>assets/js/adminInicioModalNotas.js"></script>
 
      <script src="<?=base_url()?>assets/js/sweetalert2.js"></script>
      <link rel="stylesheet"
@@ -36,9 +36,8 @@
     <div class="div-inicio">
       <div class="div-btn">
 
-        <a href="<?=base_url('admin/videos')?>" class="link">Videos</a>
-        <a href="<?=base_url('admin/notas')?>" class="link">Notas</a>
-    
+        <a href="<?=base_url('inicio')?>" class="link">Fotos</a>
+        <a href="<?=base_url('notas')?>" class="link">Videos</a>
 
       </div>
 
@@ -46,10 +45,8 @@
 
         <div class="div-btn-modal">
 
-          <h2>Fotos</h2>
+          <button class="btn btn-success" id="notes">Subir Notas</button>
 
-          <button class="btn btn-success" id="photos">Subir Foto</button>
-          
         </div>
 
 
