@@ -13,6 +13,8 @@ require_once 'includes/header.php'
 
         <div class="div-btn-modal">
 
+          <h2>Videos</h2>
+
           <button class="btn btn-success" id="videos">Subir Videos</button>
 
         </div>

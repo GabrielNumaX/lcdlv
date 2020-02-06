@@ -14,6 +14,8 @@ require_once 'includes/header.php';
 
         <div class="div-btn-modal">
 
+          <h2>Notas</h2>
+
           <button class="btn btn-success" id="notes">Subir Notas</button>
 
         </div>
