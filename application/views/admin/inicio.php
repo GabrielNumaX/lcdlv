@@ -111,6 +111,11 @@ require_once 'includes/header.php';
       var titulo = document.getElementById('titulo_foto').value;
       var desc = document.getElementById('desc_foto').value;
 
+      //NO SACAR ESTO!!!
+      desc = desc.replace(/\r?\n/g, '<br/>');
+
+      const modalPhotos = document.getElementById("modalPhotos");
+
       $(".upload-msg").text('Cargando...');
       var inputFileImage = document.getElementById('file_upload_foto');
       var photo = inputFileImage.files[0];
@@ -130,10 +135,13 @@ require_once 'includes/header.php';
           document.getElementById('titulo_foto').value = "";
           document.getElementById('desc_foto').value = "";
           document.getElementById('file_upload_foto').value = "";
+
+          modalPhotos.style.display= "none";
           //recarga la tabla cada vez que se sube una foto para que aparezca la nueva info
           table.ajax.reload();
 
-          $('span-photos').click();
+          //esto es un canceric jajaja
+          // $('span-photos').click();
 
         },
 

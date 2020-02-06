@@ -105,9 +105,14 @@ require_once 'includes/header.php';
     function upNote(){
       var titulo = document.getElementById('titulo_nota').value;
       var nota = document.getElementById('nota').value;
+
+      //NO SACAR ESTO!!!
+      nota = nota.replace(/\r?\n/g, '<br/>');
+
       var data = new FormData();
       data.append('titulo', titulo);
       data.append('nota', nota);
+      
       $.ajax({
         type: 'POST',
         url: '<?=base_url('Notas/cargar_notas/')?>',

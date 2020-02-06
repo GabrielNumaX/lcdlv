@@ -106,6 +106,12 @@ require_once 'includes/header.php'
     function upVideo(){
       var titulo = document.getElementById('titulo_video').value;
       var desc = document.getElementById('desc_video').value;
+
+      const modalVideos = document.getElementById("modalVideos");
+
+      //NO SACAR ESTO!!!
+      desc = desc.replace(/\r?\n/g, '<br/>');
+
       $(".upload-msg").text('Cargando...');
       var inputFileImage = document.getElementById('file_upload_video');
       var video = inputFileImage.files[0];
@@ -127,7 +133,11 @@ require_once 'includes/header.php'
           document.getElementById('titulo_video').value = "";
           document.getElementById('desc_video').value = "";
           document.getElementById('file_upload_video').value = "";
+
           alert(data);
+
+          modalVideos.style.display = "none";
+
           table.ajax.reaload();
         },
 

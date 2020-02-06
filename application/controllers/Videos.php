@@ -77,7 +77,7 @@ class Videos extends CI_Controller {
     foreach ($messages as $message) {
       $data[] .= $message;
     }
-    $this->admin->upload_video($target_file, $titulo, $desc);
+    $this->upload_video($target_file, $titulo, $desc);
     //var_dump($data);
   }
   echo $target_file;

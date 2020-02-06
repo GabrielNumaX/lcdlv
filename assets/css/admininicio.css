@@ -6,7 +6,7 @@
     display: flex;
     width: 100%;
     /* height: calc(100vh - 50px); */
-    height: auto;
+    height: 100vh;
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
@@ -19,12 +19,14 @@
     display: flex;
     width: 15%;
     height: calc(100vh - 50px);
+    /* height: 100vh; */
     background-color: black;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     margin: 0;
     /* padding: 10% 0 10% 0; */
+    position: bottom;
 }
 
 .link {
@@ -34,7 +36,7 @@
 }
 
 .div-btn-and-tabla {
-    width: 100%;
+    width: 85%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
