@@ -47,7 +47,6 @@
       success:function(r){
         respuesta = JSON.parse(r);
         if(respuesta['estado'] == true){
-          Swal.showLoading();
           location.href = "<?=base_url('admin/inicio')?>"
         }else{
           Swal.fire(respuesta['mensaje']);
