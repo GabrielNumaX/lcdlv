@@ -87,18 +87,18 @@ class Fotos extends CI_Controller {
 
 public function ajax_listado(){
     $resultados = $this->fotos->get_datatables();
-
+    //$url = base_url();
     $data = array();
     foreach($resultados->result() as $r) { //se crea un array asociativo con cada resultados de la consulta a la BDD
         $accion = '<a class="btn btn-sm btn-info" href="javascript:void(0)" title="Editar" onclick="editar_foto('."'".$r->id."'".')"><i class="fas fa-user-edit"></i></a>
                     <a class="btn btn-sm btn-danger" href="javascript:void(0)" title="Borrar" onclick="borrar_foto('."'".$r->id."'".')"><i class="fas fa-trash"></i></a>';
-
+        $foto = '<img src="'.base_url().$r->foto.'" width=50px>';
         $data[] = array(
            $r->id,
            $r->titulo,
            $r->fecha,
            $r->descripcion,
-           $r->foto,
+           $foto,
            $accion
         );
     }
