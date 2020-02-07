@@ -19,7 +19,7 @@ class Videos_model extends CI_Model{
         'descripcion' => $desc,
         'video' => $file
       );
-      $this->db->insert('videos', $data);
+      $this->db->insert($this->table, $data);
     }
 
     private function _get_datatables_query()
