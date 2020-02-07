@@ -8,9 +8,9 @@ class Notas extends CI_Controller {
 			$this->load->model("Notas_model","notas");
 	}
 
-  /*public function index(){
-    $this->load->view('admin/notas');
-  }*/
+  public function index(){
+    $this->load->view('notas');
+  }
 
   function cargar_notas(){
     $titulo = $_POST['titulo'];
