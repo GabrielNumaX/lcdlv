@@ -141,6 +141,8 @@ main {
     grid-column: 1 / 6;
     background-color: #ddd;
     padding-bottom: 30px;
+
+    min-height: 100vh;
 }
 
 
@@ -330,7 +332,10 @@ footer {
 }
 
 .li-notas a:link {
-    color: #1c52c7cc; 
+    /* color: #1c52c7cc;  */
+
+    color: #dddddd;
+
 }
 
 .li-notas a:visited {

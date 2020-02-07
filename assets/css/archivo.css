@@ -152,6 +152,8 @@ main {
     display: grid;
     grid-template-columns: 5% 90% 5%;
     grid-template-rows: 1fr auto;
+
+    min-height: 100vh;
 }
 
 /* this to avoid header overlapping */
