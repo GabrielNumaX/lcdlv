@@ -15,6 +15,7 @@ class Videos extends CI_Controller {
   public function cargar_videos(){
     $titulo = $_POST['titulo'];
     $desc = $_POST['descripcion'];
+    var_dump($titulo);
     if($_SERVER['REQUEST_METHOD'] == "POST" && isset($_FILES["file_upload_video"]["type"])){
       $target_dir = "upload/videos/";
       $carpeta=$target_dir;
@@ -37,11 +38,25 @@ class Videos extends CI_Controller {
       }
       // Check if file already exists
       if (file_exists($target_file)) {
-        $errors[]="Lo sentimos, archivo ya existe.";
-        $uploadOk = 0;
+        $contador = 0;
+        $gestor = opendir($carpeta);
+        if($gestor){
+          $archivo = [];
+          while(($video_file = readdir($gestor)) !== false){
+            if($video_file != '.' && $video_file != '..'){
+              array_push($archivo, $video_file);
+            }
+          }
+          foreach($archivo as $a){
+            if(strpos($a, basename($_FILES['file_upload_video']['name']))){
+              $contador ++;
+            }
+          }
+        }
+        $target_file = $carpeta .$contador. basename($_FILES['file_upload_video']['name']);
       }
       // Check file size
-      if ($_FILES["file_upload_video"]["size"] > 111534336) {
+      if ($_FILES["file_upload_video"]["size"] > 1115343368) {
         $errors[]= "Lo sentimos, el archivo es demasiado grande.  Tamaño máximo admitido: 111 MB";
         $uploadOk = 0;
       }

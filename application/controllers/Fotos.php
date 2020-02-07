@@ -36,10 +36,24 @@ class Fotos extends CI_Controller {
         $uploadOk = 0;
       }
     }
-    // Check if file already exists
+    // Verifica si existe el archivo y lo renombra
     if (file_exists($target_file)) {
-      $errors[]="Lo sentimos, archivo ya existe.";
-      $uploadOk = 0;
+      $contador = 0;
+      $gestor = opendir($carpeta);
+      if($gestor){
+        $archivo = [];
+        while(($foto_file = readdir($gestor)) !== false){
+          if($foto_file != '.' && $foto_file != '..'){
+            array_push($archivo, $foto_file);
+          }
+        }
+        foreach($archivo as $a){
+          if(strpos($a, basename($_FILES['file_upload_foto']['name']))){
+            $contador ++;
+          }
+        }
+      }
+      $target_file = $carpeta . $contador . basename($_FILES['file_upload_foto']['name']);
     }
     // Check file size
     if ($_FILES["file_upload_foto"]["size"] > 11534336) {

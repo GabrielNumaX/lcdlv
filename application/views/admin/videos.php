@@ -43,7 +43,7 @@ require_once 'includes/header.php';
 
         <div id="modalVideos" class="modal">
 
-          <form class="form modal-content" method="post">
+          <form class="form modal-content" method="post" enctype="multipart/form-data">
 
             <div class="span-close">
               <span id="span-videos" class="close">&times;</span>
