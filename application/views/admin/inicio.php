@@ -28,12 +28,12 @@ require_once 'includes/header.php';
           <!-- <div class="table-responsive"> -->
             <table id="fotos" class="table table-striped table-bordered" width="100%" >
               <thead>
-                <th>ID</th>
-                <th>Titulo</th>
-                <th>Fecha</th>
-                <th>Descripcion</th>
-                <th>Foto</th>
-                <th>Acción</th>
+                <th width="5%">ID</th>
+                <th width="20%">Titulo</th>
+                <th width="20%">Fecha</th>
+                <th width="30%">Descripcion</th>
+                <th width="10%">Foto</th>
+                <th width="15%">Acción</th>
               </thead>
             </table>
 
