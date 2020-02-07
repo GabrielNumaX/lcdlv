@@ -109,9 +109,6 @@ require_once 'includes/header.php'
 
       const modalVideos = document.getElementById("modalVideos");
 
-      //NO SACAR ESTO!!!
-      desc = desc.replace(/\r?\n/g, '<br/>');
-
       $(".upload-msg").text('Cargando...');
       var inputFileImage = document.getElementById('file_upload_video');
       var video = inputFileImage.files[0];
@@ -120,7 +117,6 @@ require_once 'includes/header.php'
       data.append('file_upload_video', video);
       data.append('titulo', titulo);
       data.append('descripcion', desc);
-
 
       $.ajax({
         type:'POST',
@@ -138,7 +134,7 @@ require_once 'includes/header.php'
 
           modalVideos.style.display = "none";
 
-          table.ajax.reaload();
+          table.ajax.reload();
         },
 
       });

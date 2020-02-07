@@ -111,9 +111,6 @@ require_once 'includes/header.php';
       var titulo = document.getElementById('titulo_foto').value;
       var desc = document.getElementById('desc_foto').value;
 
-      //NO SACAR ESTO!!!
-      desc = desc.replace(/\r?\n/g, '<br/>');
-
       const modalPhotos = document.getElementById("modalPhotos");
 
       $(".upload-msg").text('Cargando...');

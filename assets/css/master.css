@@ -251,16 +251,21 @@ html {
 }
 
 .p-desc-no-show {
+
+    /* line-height: 1.1em; */
+    /* height: 3.3em; */
+
     padding: 8px 2px 8px 12px;
     max-width: 54vw;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-
 }
 
 .p-desc-show {
     padding: 8px 2px 8px 12px;
+
+    height: auto;
 }
 
 .div-p-click {

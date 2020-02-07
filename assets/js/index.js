@@ -141,6 +141,32 @@ $(document).ready(function() {
 
         $(divVideo).append(video);
 
+        const divDescription = document.createElement('div');
+
+        $(divDescription).attr('class', 'div-desc');
+
+        const description = document.createElement('p');
+
+        $(description).html(obj.descripcion);
+
+        $(description).attr('class', 'p-desc-no-show');
+
+        // $(description).attr('id', 'descripcion');
+
+        $(divDescription).append(description);
+
+        const divClickDesc = document.createElement('div');
+
+        $(divClickDesc).attr('class', 'div-p-click');
+
+        const pShowClick = document.createElement('p');
+
+        $(pShowClick).attr('class', 'p-show-click');
+
+        $(pShowClick).html('Mostrar');
+
+        $(divClickDesc).append(pShowClick);
+
         //faltaria todo lo de los comentarios
         //AQUI COMENTARIOS
 
@@ -162,7 +188,7 @@ $(document).ready(function() {
 
         $(form).append(inputComment);
 
-        $(article).append(h2Title, divTime, divVideo, form);
+        $(article).append(h2Title, divTime, divVideo, divDescription, divClickDesc, form);
 
         $(postContainer).append(article);
 
@@ -354,9 +380,20 @@ $(document).ready(function() {
         //salvo que refresce o añada la tabla de los comments
         e.preventDefault();
 
-        const inputVal = $(this).children().val();
+        let inputVal = $(this).children().val();
 
-        console.log(inputVal);
+        if(inputVal === ""){
+
+            // alert('no empty string')
+
+            return false;
+        }
+
+        else {
+
+            inputVal = inputVal.trim();
+
+            console.log(inputVal);
 
         // const cargarComentario = `${protocol}//${URLmaster}/Home/cargar_comentario`;
 
@@ -382,7 +419,14 @@ $(document).ready(function() {
         //esto borra el text del input
         $(this).children().val("");
 
+        }
+
+        
+
       }); // end comments function
+
+
+      //function para buscar ver si se hace o no
 
       $('.form-search').on('submit', function(e) {
 
