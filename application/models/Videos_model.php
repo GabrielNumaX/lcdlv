@@ -68,5 +68,15 @@ class Videos_model extends CI_Model{
         $query = $this->db->get();
         return $query;
     }
+    function borrar($id){
+      $this->db->where('id',$id);
+      $this->db->delete($this->table);
+    }
+    function buscar($id){
+      $this->db->from($this->table);
+      $this->db->where('id',$id);
+      $query = $this->db->get();
+      return $query->result();
+    }
 
 }

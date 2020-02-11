@@ -144,6 +144,42 @@ require_once 'includes/header.php';
 
       });
     }
+    /*Funcion para borrar fotos de la BDD*/
+    function borrar_foto(id){
+      $.ajax({
+        type:'POST',
+        url: '<?=base_url('Fotos/borrar_foto/')?>'+id,
+        success:function(){
+          /*no se si poner una alerta o no, queda medio cancer si pongo una!*/
+          table.ajax.reload();
+        },
+        error:function(){
+          /*y esto tambien queda medio cancer.. perohay que poner algo para el error,
+          de ultima se puede hacer que aparezca un div en rojo con la info del error;*/
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Algo salio mal',
+          });
+        },
+      });
+    }
+    function editar_foto(id){
+      $.ajax({
+        type:'GET',
+        url:'<?=base_url('Fotos/editar_foto/')?>'+id,
+        dataType:'JSON',
+        success:function(data){
+          document.getElementById('titulo_foto').value = data.titulo;
+          document.getElementById('desc_foto').value = data.descripcion;
+          document.getElementById('file_upload_foto').disabled = true;
+          modalPhotos.style.display = "block";
+        },
+        error:function(){
+          alert('no vuelve nada');
+        },
+      });
+    }
     function logout(){
       $.ajax({
         type:'POST',

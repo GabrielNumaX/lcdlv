@@ -125,6 +125,20 @@ public function ajax_listado(){
     echo json_encode($output); // se envian los filtros y los resultados por JSON junto con el array que contiene los datos
     exit();
   }
+  function borrar_foto($id){
+    $this->fotos->borrar($id);
+  }
+  function editar_foto($id){
+    $query = $this->fotos->buscar($id);
+    $data = array(
+      'id' => $query[0]->id,
+      'titulo' => $query[0]->titulo,
+      'fecha' => $query[0]->fecha,
+      'descripcion' => $query[0]->descripcion,
+      'foto' => $query[0]->foto
+    );
+    echo json_encode($data);
+  }
 }
 
 ?>

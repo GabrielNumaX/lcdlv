@@ -139,6 +139,37 @@ require_once 'includes/header.php';
 
       });
     }
+    function borrar_video(id){
+      $.ajax({
+        type:'POST',
+        url: '<?=base_url('Videos/borrar_video/')?>'+id,
+        success:function(){
+          alert('dato borrado');
+          table.ajax.reload();
+        },
+        error:function(){
+          alert('a la verga wey');
+        },
+      });
+    }
+    function editar_video(id){
+      $.ajax({
+        type:'GET',
+        url:'<?=base_url('Videos/editar_video/')?>'+id,
+        dataType:'JSON',
+        success:function(data){
+          /*asi hay que hacer en todos los modal, vamos a necesitar uno para subir y otro para editar
+          serian 2 modal por pagina*/
+          document.getElementById('titulo_video').value = data.titulo;
+          document.getElementById('desc_video').value = data.descripcion;
+          document.getElementById('file_upload_video').disabled = true;
+          modalVideos.style.display = "block";
+        },
+        error:function(){
+          alert('no vuelve nada');
+        },
+      });
+    }
     function logout(){
       $.ajax({
         type:'POST',

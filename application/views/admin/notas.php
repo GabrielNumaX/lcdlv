@@ -112,7 +112,7 @@ require_once 'includes/header.php';
       var data = new FormData();
       data.append('titulo', titulo);
       data.append('nota', nota);
-      
+
       $.ajax({
         type: 'POST',
         url: '<?=base_url('Notas/cargar_notas/')?>',
@@ -129,6 +129,34 @@ require_once 'includes/header.php';
         },
         error: function(){
           alert('Error 502');
+        },
+      });
+    }
+    function borrar_nota(id){
+      $.ajax({
+        type:'POST',
+        url:'<?=base_url('Notas/borrar_nota/')?>'+id,
+        success:function(){
+          alert('se borro');
+          table.ajax.reload();
+        },
+        error:function(){
+          alert('todo mal');
+        },
+      });
+    }
+    function editar_nota(id){
+      $.ajax({
+        type:'GET',
+        url:'<?=base_url('Notas/editar_nota/')?>'+id,
+        dataType:'JSON',
+        success:function(data){
+          document.getElementById('titulo_nota').value = data.titulo;
+          document.getElementById('nota').value = data.nota;
+          modalNotes.style.display = "block";
+        },
+        error:function(){
+          alert('no vuelve nada');
         },
       });
     }
