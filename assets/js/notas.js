@@ -138,7 +138,10 @@ $(document).ready(function() {
 
         // $(a).attr('class', 'li-notas-a');
 
-        $(a).prop('href', '#nota'+obj.id);
+        //recordar que esto viene del ID de carga dynamic de arriba
+        //loadNotes();
+
+        $(a).prop('href', '#n-'+obj.id);
 
         $(a).html(obj.titulo);
 

@@ -64,15 +64,11 @@ require_once 'includes/header.php';
 
         </article>
 
-        <!--fin nota dos -->
+
 
     </main>
 
-    <!-- esto esta solucionado con js en notas.js -->
-    <!-- aside con position fixed para que no scrollee
-        con sticky overlapea al header sino dejar normal
-        asi da para cargar 15 notas/fechas. pero overlapea el
-        footer asi que ver mas adelante.  -->
+    
     <aside id="aside" class="aside-show">
        <h2>Ultimas Notas</h2>
 
