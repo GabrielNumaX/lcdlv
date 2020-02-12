@@ -180,7 +180,8 @@ require_once 'includes/header.php';
           modalPhotos.style.display = "block";
         },
         error:function(){
-          alert('no vuelve nada');
+          //esto hay que sacarlo o hacer algo para el error no se!
+          alert('Error');
         },
       });
     }
