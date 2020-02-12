@@ -84,6 +84,8 @@ $(document).ready(function() {
 
         $(divNota).attr('data-type', 'nota');
 
+        $(divNota).attr('data-id', obj.id);
+
         const h3Nota = document.createElement('h3');
 
         $(h3Nota).html(obj.titulo) //titulo nota

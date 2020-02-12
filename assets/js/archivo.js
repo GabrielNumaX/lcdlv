@@ -41,9 +41,11 @@ $(document).ready(function() {
 
         $(imgDiv).attr('class', 'div-img');
 
-        $(imgDiv).attr('id', 'f-'+obj.id);
+        // $(imgDiv).attr('id', 'f-'+obj.id);
 
         $(imgDiv).attr('data-type', 'foto');
+
+        $(imgDiv).attr('data-id', obj.id);
 
         const img = document.createElement('img');
 
@@ -134,9 +136,11 @@ $(document).ready(function() {
 
         $(divVideo).attr('class', 'div-img');
 
-        $(divVideo).attr('id', 'v-'+obj.id);
+        // $(divVideo).attr('id', 'v-'+obj.id);
 
         $(divVideo).attr('data-type', 'video');
+
+        $(divVideo).attr('data-id', obj.id);
 
         const video = document.createElement('video');
 
@@ -221,9 +225,11 @@ $(document).ready(function() {
 
         $(divNota).attr('class', 'nota')
 
-        $(divNota).attr('id', 'n-'+obj.id);
+        // $(divNota).attr('id', 'n-'+obj.id);
 
         $(divNota).attr('data-type', 'nota');
+
+        $(divNota).attr('data-id', obj.id);
 
         const h3Nota = document.createElement('h3');
 
