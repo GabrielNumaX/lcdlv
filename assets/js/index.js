@@ -34,9 +34,15 @@ $(document).ready(function() {
 
         $(divTime).append(time);
 
+        //en este div va al ID y el data-type="foto"
+
         const imgDiv = document.createElement('div');
 
         $(imgDiv).attr('class', 'div-img');
+
+        $(imgDiv).attr('id', 'f-'+obj.id);
+
+        $(imgDiv).attr('data-type', 'foto');
 
         const img = document.createElement('img');
 
@@ -121,9 +127,15 @@ $(document).ready(function() {
 
         $(divTime).append(time);
 
+        //aca va el ID y el data-type="video";
+
         const divVideo = document.createElement('div');
 
         $(divVideo).attr('class', 'div-img');
+
+        $(divVideo).attr('id', 'v-'+obj.id);
+
+        $(divVideo).attr('data-type', 'video');
 
         const video = document.createElement('video');
 
@@ -202,9 +214,15 @@ $(document).ready(function() {
 
         $(article).attr('class', 'article-notas');
 
+        //aca va el ID y el data-type="nota"
+
         const divNota = document.createElement('div');
 
         $(divNota).attr('class', 'nota')
+
+        $(divNota).attr('id', 'n-'+obj.id);
+
+        $(divNota).attr('data-type', 'nota');
 
         const h3Nota = document.createElement('h3');
 

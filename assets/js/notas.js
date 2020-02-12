@@ -74,11 +74,15 @@ $(document).ready(function() {
 
         $(article).attr('class', 'article-notas');
 
+        //aca va el ID y el data-type="nota"
+
         const divNota = document.createElement('div');
 
         $(divNota).attr('class', 'nota')
 
-        $(divNota).attr('id', 'nota'+obj.id);
+        $(divNota).attr('id', 'n-'+obj.id);
+
+        $(divNota).attr('data-type', 'nota');
 
         const h3Nota = document.createElement('h3');
 
