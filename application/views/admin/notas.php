@@ -57,6 +57,8 @@ require_once 'includes/header.php';
             </div>
             <div class="btn-div">
               <input class="btn btn-success" type="button" onclick="upNote()" value="Subir Nota"></input>
+              <input id="btn-note_editar" class="btn btn-success" type="button" onclick="" value="Guardar cambios"
+                      style="display: none"></input>
             </div>
           </form>
 

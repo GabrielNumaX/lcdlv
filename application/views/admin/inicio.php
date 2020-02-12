@@ -61,7 +61,8 @@ require_once 'includes/header.php';
             <div class="btn-div">
               <input class="btn btn-success" type="file" id="file_upload_foto"></input>
               <input id="btn-photo" class="btn btn-success" type="button" onclick="upPhoto()" value="Subir Foto"></input>
-              <input id="btn-photo_editar" class="btn btn-success" type="button" onclick="" value="Guardar cambios"></input>
+              <input id="btn-photo_editar" class="btn btn-success" type="button" onclick="" value="Guardar cambios"
+                      style="display: none"></input>
             </div>
           </form>
 

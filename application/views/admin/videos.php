@@ -58,6 +58,8 @@ require_once 'includes/header.php';
             <div class="btn-div">
               <input class="btn btn-success" type="file" id="file_upload_video"></input>
               <input class="btn btn-success" type="button" onclick="upVideo()" value="Subir Video"></input>
+              <input id="btn-video_editar" class="btn btn-success" type="button" onclick="" value="Guardar cambios"
+                      style="display: none"></input>
             </div>
           </form>
 
