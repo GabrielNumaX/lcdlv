@@ -56,7 +56,7 @@ require_once 'includes/header.php';
               <textarea id="nota" placeholder="Nota"></textarea>
             </div>
             <div class="btn-div">
-              <input class="btn btn-success" type="button" onclick="upNote()" value="Subir Nota"></input>
+              <input id="btn-note" class="btn btn-success" type="button" onclick="upNote()" value="Subir Nota"></input>
               <input id="btn-note_editar" class="btn btn-success" type="button" onclick="" value="Guardar cambios"
                       style="display: none"></input>
             </div>
@@ -155,7 +155,11 @@ require_once 'includes/header.php';
         success:function(data){
           document.getElementById('titulo_nota').value = data.titulo;
           document.getElementById('nota').value = data.nota;
+          document.getElementById('btn-note').style.display = "none";
+          document.getElementById('btn-note_editar').style.display = "block";
+
           modalNotes.style.display = "block";
+          
         },
         error:function(){
           alert('no vuelve nada');

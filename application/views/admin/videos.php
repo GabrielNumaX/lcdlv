@@ -57,7 +57,7 @@ require_once 'includes/header.php';
             </div>
             <div class="btn-div">
               <input class="btn btn-success" type="file" id="file_upload_video"></input>
-              <input class="btn btn-success" type="button" onclick="upVideo()" value="Subir Video"></input>
+              <input id="btn-video" class="btn btn-success" type="button" onclick="upVideo()" value="Subir Video"></input>
               <input id="btn-video_editar" class="btn btn-success" type="button" onclick="" value="Guardar cambios"
                       style="display: none"></input>
             </div>
@@ -165,7 +165,10 @@ require_once 'includes/header.php';
           document.getElementById('titulo_video').value = data.titulo;
           document.getElementById('desc_video').value = data.descripcion;
           document.getElementById('file_upload_video').disabled = true;
+          document.getElementById('btn-video').style.display = "none";
+          document.getElementById('btn-video_editar').style.display = "block";
           modalVideos.style.display = "block";
+
         },
         error:function(){
           alert('no vuelve nada');
