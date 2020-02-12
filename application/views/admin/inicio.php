@@ -61,6 +61,7 @@ require_once 'includes/header.php';
             <div class="btn-div">
               <input class="btn btn-success" type="file" id="file_upload_foto"></input>
               <input id="btn-photo" class="btn btn-success" type="button" onclick="upPhoto()" value="Subir Foto"></input>
+              <input id="btn-photo_editar" class="btn btn-success" type="button" onclick="" value="Guardar cambios"></input>
             </div>
           </form>
 
@@ -173,6 +174,9 @@ require_once 'includes/header.php';
           document.getElementById('titulo_foto').value = data.titulo;
           document.getElementById('desc_foto').value = data.descripcion;
           document.getElementById('file_upload_foto').disabled = true;
+          //solo cambia los botones del modal, mas facil!
+          document.getElementById('btn-photo').style.display = "none";
+          document.getElementById('btn-photo_editar').style.display = "block";
           modalPhotos.style.display = "block";
         },
         error:function(){
