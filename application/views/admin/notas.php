@@ -57,10 +57,27 @@ require_once 'includes/header.php';
             </div>
             <div class="btn-div">
               <input id="btn-note" class="btn btn-success" type="button" onclick="upNote()" value="Subir Nota"></input>
-              <input id="btn-note_editar" class="btn btn-success" type="button" onclick="guardar_cambios()" value="Guardar cambios"></input>
             </div>
           </form>
 
+        </div>
+
+        <!-- Modal para edicion-->
+        <div id="modalEdit" class="modal">
+          <form class="form modal-content" method="post">
+            <div class="span-close">
+              <span id="span-notes_edit" class="close">&times;</span>
+            </div>
+            <div class="text-div">
+              <label>Titulo nota</label>
+              <input class="titulo" type="text" id="titulo_edit" placeholder="Titulo...">
+              <label>Nota</label>
+              <textarea id="nota_edit" placeholder="Nota"></textarea>
+            </div>
+            <div class="btn-div">
+              <input id="btn-note_editar" class="btn btn-success" type="button" onclick="guardar_cambios()" value="Guardar cambios"></input>
+            </div>
+          </form>
         </div>
 
     </div>
