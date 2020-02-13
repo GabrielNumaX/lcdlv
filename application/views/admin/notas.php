@@ -57,8 +57,7 @@ require_once 'includes/header.php';
             </div>
             <div class="btn-div">
               <input id="btn-note" class="btn btn-success" type="button" onclick="upNote()" value="Subir Nota"></input>
-              <input id="btn-note_editar" class="btn btn-success" type="button" onclick="" value="Guardar cambios"
-                      style="display: none"></input>
+              <input id="btn-note_editar" class="btn btn-success" type="button" onclick="guardar_cambios()" value="Guardar cambios"></input>
             </div>
           </form>
 
@@ -107,7 +106,6 @@ require_once 'includes/header.php';
     function upNote(){
       var titulo = document.getElementById('titulo_nota').value;
       var nota = document.getElementById('nota').value;
-
       //NO SACAR ESTO!!!
       nota = nota.replace(/\r?\n/g, '<br/>');
 
@@ -139,11 +137,11 @@ require_once 'includes/header.php';
         type:'POST',
         url:'<?=base_url('Notas/borrar_nota/')?>'+id,
         success:function(){
-          alert('se borro');
+          alert('Nota borrada');
           table.ajax.reload();
         },
         error:function(){
-          alert('todo mal');
+          alert('Error');
         },
       });
     }
@@ -153,16 +151,19 @@ require_once 'includes/header.php';
         url:'<?=base_url('Notas/editar_nota/')?>'+id,
         dataType:'JSON',
         success:function(data){
+          var elemento = document.querySelector('#modalNotes');
+          elemento.dataset.id = data.id;
+          alert(elemento.dataset.id);
           document.getElementById('titulo_nota').value = data.titulo;
           document.getElementById('nota').value = data.nota;
           document.getElementById('btn-note').style.display = "none";
           document.getElementById('btn-note_editar').style.display = "block";
 
           modalNotes.style.display = "block";
-          
+
         },
         error:function(){
-          alert('no vuelve nada');
+          alert('Error');
         },
       });
     }
@@ -174,7 +175,7 @@ require_once 'includes/header.php';
           location.href = "<?=base_url('admin')?>";
         },
         error:function(){
-          Swal.fire('no anduvo nada');
+          Swal.fire('Error');
         }
       });
     }
