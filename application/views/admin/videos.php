@@ -62,7 +62,25 @@ require_once 'includes/header.php';
                       style="display: none"></input>
             </div>
           </form>
+        </div>
 
+        <!-- Modal para edicion-->
+        <div id="modalVideosEdit" class="modal">
+          <form class="form modal-content" method="post">
+            <div class="span-close">
+              <span id="span-videos_edit" class="close">&times;</span>
+            </div>
+
+            <div class="text-div">
+              <label>Editar Titulo</label>
+              <input class="titulo" type="text" id="titulo-video_edit" placeholder="Titulo...">
+              <label>Editar Descripcion</label>
+              <textarea id="video_edit" placeholder="Descripcion..."></textarea>
+            </div>
+            <div class="btn-div">
+              <input id="btn-video_editar" class="btn btn-success" type="button" onclick="guardar_cambios()" value="Guardar cambios"></input>
+            </div>
+          </form>
         </div>
 
     </div>
@@ -160,14 +178,40 @@ require_once 'includes/header.php';
         url:'<?=base_url('Videos/editar_video/')?>'+id,
         dataType:'JSON',
         success:function(data){
-          /*asi hay que hacer en todos los modal, vamos a necesitar uno para subir y otro para editar
-          serian 2 modal por pagina*/
-          document.getElementById('titulo_video').value = data.titulo;
-          document.getElementById('desc_video').value = data.descripcion;
-          document.getElementById('file_upload_video').disabled = true;
-          document.getElementById('btn-video').style.display = "none";
-          document.getElementById('btn-video_editar').style.display = "block";
+          // /*asi hay que hacer en todos los modal, vamos a necesitar uno para subir y otro para editar
+          // serian 2 modal por pagina*/
+          // document.getElementById('titulo_video').value = data.titulo;
+          // document.getElementById('desc_video').value = data.descripcion;
+          // document.getElementById('file_upload_video').disabled = true;
+          // document.getElementById('btn-video').style.display = "none";
+          // document.getElementById('btn-video_editar').style.display = "block";
+          // modalVideos.style.display = "block";
+
+          const modalVideos = document.getElementById('modalVideosEdit');
+
+          modalVideos.dataset.id = data.id;
+
           modalVideos.style.display = "block";
+
+          alert(modalVideos.dataset.id);
+
+          document.getElementById('titulo-video_edit').value = data.titulo;
+          document.getElementById('video_edit').value = data.descripcion;
+
+          // Get the <span> element that closes the modal
+          const spanVideos = document.getElementById("span-videos_edit");
+
+          // When the user clicks on <span> (x), close the modal
+          spanVideos.onclick = function() {
+            modalVideos.style.display = "none";
+          }
+
+          // When the user clicks anywhere outside of the modal, close it
+          window.onclick = function(event) {
+            if (event.target == modalVideos) {
+              modalVideos.style.display = "none";
+            }
+          }
 
         },
         error:function(){

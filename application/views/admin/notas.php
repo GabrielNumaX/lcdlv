@@ -63,15 +63,16 @@ require_once 'includes/header.php';
         </div>
 
         <!-- Modal para edicion-->
-        <div id="modalEdit" class="modal">
+        <div id="modalNotesEdit" class="modal">
           <form class="form modal-content" method="post">
             <div class="span-close">
               <span id="span-notes_edit" class="close">&times;</span>
             </div>
+
             <div class="text-div">
-              <label>Titulo nota</label>
-              <input class="titulo" type="text" id="titulo_edit" placeholder="Titulo...">
-              <label>Nota</label>
+              <label>Editar Titulo</label>
+              <input class="titulo" type="text" id="titulo-nota_edit" placeholder="Titulo...">
+              <label>Editar Nota</label>
               <textarea id="nota_edit" placeholder="Nota"></textarea>
             </div>
             <div class="btn-div">
@@ -125,6 +126,9 @@ require_once 'includes/header.php';
       var nota = document.getElementById('nota').value;
       //NO SACAR ESTO!!!
       nota = nota.replace(/\r?\n/g, '<br/>');
+      
+      //NO sacar esto perric!!! LEER COMENTARIO DE ABAJO
+      const modalNote = document.getElementById('modalNotes');
 
       var data = new FormData();
       data.append('titulo', titulo);
@@ -141,6 +145,9 @@ require_once 'includes/header.php';
           //mostrar cargando
           document.getElementById('titulo_nota').value = "";
           document.getElementById('nota').value = "";
+
+          //NO sacar esto perric es para q cierre el modal despues de cargar
+          modalNotes.style.display = 'none';
           alert('Nota Cargada');
           table.ajax.reload();
         },
@@ -163,21 +170,38 @@ require_once 'includes/header.php';
       });
     }
     function editar_nota(id){
+
       $.ajax({
         type:'GET',
         url:'<?=base_url('Notas/editar_nota/')?>'+id,
         dataType:'JSON',
         success:function(data){
-          var elemento = document.querySelector('#modalNotes');
-          elemento.dataset.id = data.id;
-          alert(elemento.dataset.id);
-          document.getElementById('titulo_nota').value = data.titulo;
-          document.getElementById('nota').value = data.nota;
-          document.getElementById('btn-note').style.display = "none";
-          document.getElementById('btn-note_editar').style.display = "block";
+
+          const modalNotes = document.getElementById('modalNotesEdit');
+
+          modalNotes.dataset.id = data.id;
 
           modalNotes.style.display = "block";
 
+          alert(modalNotes.dataset.id);
+
+          document.getElementById('titulo-nota_edit').value = data.titulo;
+          document.getElementById('nota_edit').value = data.nota;
+
+          // Get the <span> element that closes the modal
+          const spanNotes = document.getElementById("span-notes_edit");
+
+          // When the user clicks on <span> (x), close the modal
+          spanNotes.onclick = function() {
+            modalNotes.style.display = "none";
+          }
+
+          // When the user clicks anywhere outside of the modal, close it
+          window.onclick = function(event) {
+            if (event.target == modalNotes) {
+              modalNotes.style.display = "none";
+            }
+          }
         },
         error:function(){
           alert('Error');

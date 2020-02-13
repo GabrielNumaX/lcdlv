@@ -65,7 +65,25 @@ require_once 'includes/header.php';
                       style="display: none"></input>
             </div>
           </form>
+        </div>
 
+        <!-- Modal para edicion-->
+        <div id="modalPhotosEdit" class="modal">
+          <form class="form modal-content" method="post">
+            <div class="span-close">
+              <span id="span-photos_edit" class="close">&times;</span>
+            </div>
+
+            <div class="text-div">
+              <label>Editar Titulo</label>
+              <input class="titulo" type="text" id="titulo-foto_edit" placeholder="Titulo...">
+              <label>Editar Descripcion</label>
+              <textarea id="foto_edit" placeholder="Descripcion..."></textarea>
+            </div>
+            <div class="btn-div">
+              <input id="btn-photo_editar" class="btn btn-success" type="button" onclick="guardar_cambios()" value="Guardar cambios"></input>
+            </div>
+          </form>
         </div>
 
     </div>
@@ -172,13 +190,32 @@ require_once 'includes/header.php';
         url:'<?=base_url('Fotos/editar_foto/')?>'+id,
         dataType:'JSON',
         success:function(data){
-          document.getElementById('titulo_foto').value = data.titulo;
-          document.getElementById('desc_foto').value = data.descripcion;
-          document.getElementById('file_upload_foto').disabled = true;
-          //solo cambia los botones del modal, mas facil!
-          document.getElementById('btn-photo').style.display = "none";
-          document.getElementById('btn-photo_editar').style.display = "block";
+
+          const modalPhotos = document.getElementById('modalPhotosEdit');
+
+          modalPhotos.dataset.id = data.id;
+
           modalPhotos.style.display = "block";
+
+          alert(modalPhotos.dataset.id);
+
+          document.getElementById('titulo-foto_edit').value = data.titulo;
+          document.getElementById('foto_edit').value = data.descripcion;
+
+          // Get the <span> element that closes the modal
+          const spanPhotos = document.getElementById("span-photos_edit");
+
+          // When the user clicks on <span> (x), close the modal
+          spanPhotos.onclick = function() {
+            modalPhotos.style.display = "none";
+          }
+
+          // When the user clicks anywhere outside of the modal, close it
+          window.onclick = function(event) {
+            if (event.target == modalPhotos) {
+              modalPhotos.style.display = "none";
+            }
+          }
         },
         error:function(){
           //esto hay que sacarlo o hacer algo para el error no se!
