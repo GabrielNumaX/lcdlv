@@ -45,6 +45,8 @@
 
   passField.addEventListener('keyup', function(e){
 
+    e.preventDefault();
+
     if(e.keyCode === 13){
  
       login();
