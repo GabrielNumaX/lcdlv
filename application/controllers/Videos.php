@@ -138,5 +138,10 @@ class Videos extends CI_Controller {
       );
       echo json_encode($data);
     }
+    function update_video($id){
+      $titulo = $this->input->post('titulo');
+      $desc = $this->input->post('descripcion');
+      $this->videos->update($id, $titulo, $desc);
+    }
 
 }

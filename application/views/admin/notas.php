@@ -76,7 +76,7 @@ require_once 'includes/header.php';
               <textarea id="nota_edit" placeholder="Nota"></textarea>
             </div>
             <div class="btn-div">
-              <input id="btn-note_editar" class="btn btn-success" type="button" onclick="guardar_cambios()" value="Guardar cambios"></input>
+              <button id="btn-note_editar" class="btn btn-success" type="button" onclick="guardar()">Guardar cambios</button>
             </div>
           </form>
         </div>
@@ -126,7 +126,7 @@ require_once 'includes/header.php';
       var nota = document.getElementById('nota').value;
       //NO SACAR ESTO!!!
       nota = nota.replace(/\r?\n/g, '<br/>');
-      
+
       //NO sacar esto perric!!! LEER COMENTARIO DE ABAJO
       const modalNote = document.getElementById('modalNotes');
 
@@ -180,13 +180,9 @@ require_once 'includes/header.php';
           const modalNotes = document.getElementById('modalNotesEdit');
 
           modalNotes.dataset.id = data.id;
-
-          modalNotes.style.display = "block";
-
-          alert(modalNotes.dataset.id);
-
           document.getElementById('titulo-nota_edit').value = data.titulo;
           document.getElementById('nota_edit').value = data.nota;
+          modalNotes.style.display = "block";
 
           // Get the <span> element that closes the modal
           const spanNotes = document.getElementById("span-notes_edit");
@@ -206,6 +202,26 @@ require_once 'includes/header.php';
         error:function(){
           alert('Error');
         },
+      });
+    }
+    function guardar(){
+      var titulo = document.getElementById('titulo-nota_edit').value;
+      var nota = document.getElementById('nota_edit').value;
+      const modal = document.getElementById('modalNotesEdit');
+      var id = modal.dataset.id;
+      $.ajax({
+        type:'POST',
+        url:'<?=base_url('Notas/update_nota/')?>'+id,
+        data:{
+          titulo:titulo,
+          nota:nota
+        },
+        success:function(){
+          table.ajax.reload();
+        },
+        error:function(){
+
+        }
       });
     }
     function logout(){

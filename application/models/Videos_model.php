@@ -78,5 +78,12 @@ class Videos_model extends CI_Model{
       $query = $this->db->get();
       return $query->result();
     }
+    function update($id, $titulo, $desc){
+      $this->db->set('titulo', $titulo);
+      $this->db->set('descripcion', $desc);
+      $this->db->set('fecha',date('Y-m-d H:i:s'));
+      $this->db->where('id',$id);
+      $this->db->update($this->table);
+    }
 
 }

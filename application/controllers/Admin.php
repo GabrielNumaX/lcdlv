@@ -14,22 +14,21 @@ class Admin extends CI_Controller {
   }
 
   public function login(){
-    $usuario = $this->input->post('usuario');
+    $user = $this->input->post('user');
     //cifrar la clave
     //$pass = sha1($this->input->post('pass'));
     //clave sin cifrar para pruebas
-    $pass = $this->input->post('password');
+    $pass = $this->input->post('pass');
+    $resultado = $this->admin->log($user, $pass);
 
-    $resultado = $this->admin->log($usuario, $pass);
-
-    if($resultado > 0){
+    if($resultado == 1){
       $respuesta = array(
         'estado' => true,
         'mensaje' => 'bienvenido'
       );
 
       $user = array(
-        'nombre' => $usuario,
+        'nombre' => $user,
         'log' => true,
       );
 
@@ -52,31 +51,27 @@ class Admin extends CI_Controller {
   }
   //Verifica que este logueado y carga una vista o la otra
   public function inicio(){
-    if($this->session->has_userdata('log')){
       $this->load->view('admin/inicio');
-    }else{
-      $this->load->view('admin/admin');
-    }
   }
   public function foto(){
-    if($this->session->has_userdata('log')){
+    if($this->session->userdata('log') == true){
       $this->load->view('admin/inicio');
     }else{
-      $this->load->view('admin/admin');
+      $this->load->view('admin');
     }
   }
   public function video(){
-    if($this->session->has_userdata('log')){
+    if($this->session->userdata('log') == true){
       $this->load->view('admin/videos');
     }else{
-      $this->load->view('admin/admin');
+      $this->load->view('admin');
     }
   }
   public function nota(){
-    if($this->session->has_userdata('log')){
+    if($this->session->userdata('log') == true){
       $this->load->view('admin/notas');
     }else{
-      $this->load->view('admin/admin');
+      $this->load->view('admin');
     }
   }
 }

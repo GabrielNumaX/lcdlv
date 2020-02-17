@@ -10,9 +10,9 @@ class Admin_model extends CI_Model{
         $this->load->database();
     }
 
-    public function log($usuario, $pass){
+    public function log($user, $pass){
       $this->db->from($this->table);
-      $this->db->where('nombre', $usuario);
+      $this->db->where('nombre', $user);
       $this->db->where('pass',$pass);
 
       $query = $this->db->get()->num_rows();

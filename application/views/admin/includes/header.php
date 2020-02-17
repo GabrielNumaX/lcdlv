@@ -2,11 +2,12 @@
 <html lang="en" dir="ltr">
   <head>
     <?php
+    $this->session;
     if(isset($_SESSION['nombre']) && isset($_SESSION['log'])){
       $nombre = $_SESSION['nombre'];
       $log    = $_SESSION['log'];
     }else{
-      header('Location: admin.php');
+      header('Location: admin');
     }
      ?>
      <link rel="stylesheet" href="<?=base_url()?>assets/css/bootstrap.min.css">

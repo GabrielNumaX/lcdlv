@@ -12,6 +12,7 @@
     <div class="container">
 
       <h1 class="admin-h1">Admin de la Vergha</h1>
+      <span id="mensaje" style="display:none"></span>
       <div class="form-group form-div">
         <form class="form" method="post">
 
@@ -24,40 +25,44 @@
             <label for="password">Contraseña</label>
             <input type="password" name="password" value="" required placeholder="Contraseña" id="pass">
           </div>
-
           <div class="btn-div">
-            <input class="btn btn-success" type="submit" onclick="login()" value="Ingresar">
+            <button class="btn btn-success" type="button" onclick="login()">Ingresar</button>
+            <br>
+
           </div>
         </form>
+
       </div>
+      <!--esto tiene que aparecer abajo del form-->
     </div>
   </body>
   <script>
   function login(){
-    var usuario = document.getElementById('user').value;
-    var password = document.getElementById('pass').value;
-    if(usuario !== '' && password !== ''){
+    user = document.getElementById('user').value;
+    pass = document.getElementById('pass').value;
     $.ajax({
       type:'POST',
       url:'<?= base_url('admin/login')?>',
       data:{
-        usuario:usuario,
-        password:password
+        pass:pass,
+        user:user
       },
       success:function(r){
-        respuesta = JSON.parse(r);
-        if(respuesta['estado'] == true){
-          location.href = "<?=base_url('admin/inicio')?>"
+        response = JSON.parse(r);
+        if(response.estado == true){
+            location.href = "<?=base_url('admin/inicio')?>";
         }else{
-          Swal.fire(respuesta['mensaje']);
+          const mensaje = document.getElementById('mensaje');
+          mensaje.innerHTML = '<p style="color:red">'+response.mensaje+'</p>';
+          mensaje.style.display = "block";
         }
+
 
       },
       error:function(){
         Swal.fire('Ocurrio un error con el servidor!');
       }
-    });
-  }
+  });
 }
   </script>
 </html>

@@ -56,7 +56,11 @@ class Notas extends CI_Controller {
     );
     echo json_encode($data);
   }
-
+  function update_nota($id){
+    $titulo = $this->input->post('titulo');
+    $nota = $this->input->post('nota');
+    $this->notas->update($id, $titulo, $nota);
+  }
 
 
 

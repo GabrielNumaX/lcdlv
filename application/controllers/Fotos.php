@@ -139,6 +139,11 @@ public function ajax_listado(){
     );
     echo json_encode($data);
   }
+  function update_foto($id){
+    $titulo = $this->input->post('titulo');
+    $desc = $this->input->post('descripcion');
+    $this->fotos->update($id, $titulo, $desc);
+  }
 }
 
 ?>

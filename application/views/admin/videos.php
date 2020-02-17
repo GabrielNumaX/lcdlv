@@ -78,7 +78,7 @@ require_once 'includes/header.php';
               <textarea id="video_edit" placeholder="Descripcion..."></textarea>
             </div>
             <div class="btn-div">
-              <input id="btn-video_editar" class="btn btn-success" type="button" onclick="guardar_cambios()" value="Guardar cambios"></input>
+              <button id="btn-video_editar" class="btn btn-success" type="button" onclick="guardar()">Guardar cambios</button>
             </div>
           </form>
         </div>
@@ -178,25 +178,15 @@ require_once 'includes/header.php';
         url:'<?=base_url('Videos/editar_video/')?>'+id,
         dataType:'JSON',
         success:function(data){
-          // /*asi hay que hacer en todos los modal, vamos a necesitar uno para subir y otro para editar
-          // serian 2 modal por pagina*/
-          // document.getElementById('titulo_video').value = data.titulo;
-          // document.getElementById('desc_video').value = data.descripcion;
-          // document.getElementById('file_upload_video').disabled = true;
-          // document.getElementById('btn-video').style.display = "none";
-          // document.getElementById('btn-video_editar').style.display = "block";
-          // modalVideos.style.display = "block";
-
           const modalVideos = document.getElementById('modalVideosEdit');
 
+          document.getElementById('titulo-video_edit').value = data.titulo;
+          document.getElementById('video_edit').value = data.descripcion;
           modalVideos.dataset.id = data.id;
 
           modalVideos.style.display = "block";
 
-          alert(modalVideos.dataset.id);
 
-          document.getElementById('titulo-video_edit').value = data.titulo;
-          document.getElementById('video_edit').value = data.descripcion;
 
           // Get the <span> element that closes the modal
           const spanVideos = document.getElementById("span-videos_edit");
@@ -217,6 +207,27 @@ require_once 'includes/header.php';
         error:function(){
           alert('no vuelve nada');
         },
+      });
+    }
+    function guardar(){
+      var titulo = document.getElementById('titulo-video_edit').value;
+      var descripcion = document.getElementById('video_edit').value;
+      const modal = document.getElementById('modalVideosEdit');
+      var id = modal.dataset.id;
+      $.ajax({
+        type:'POST',
+        url:'<?=base_url('Videos/update_video/')?>'+id,
+        data:{
+          titulo:titulo,
+          descripcion:descripcion
+        },
+        success:function(){
+          table.ajax.reload();
+          modal.style.display = "none";
+        },
+        error:function(){
+
+        }
       });
     }
     function logout(){

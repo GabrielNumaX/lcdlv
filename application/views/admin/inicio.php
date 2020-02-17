@@ -81,7 +81,7 @@ require_once 'includes/header.php';
               <textarea id="foto_edit" placeholder="Descripcion..."></textarea>
             </div>
             <div class="btn-div">
-              <input id="btn-photo_editar" class="btn btn-success" type="button" onclick="guardar_cambios()" value="Guardar cambios"></input>
+              <button id="btn-photo_editar" class="btn btn-success" type="button" onclick="guardar()">Guardar cambios</button>
             </div>
           </form>
         </div>
@@ -192,16 +192,11 @@ require_once 'includes/header.php';
         success:function(data){
 
           const modalPhotos = document.getElementById('modalPhotosEdit');
-
           modalPhotos.dataset.id = data.id;
-
-          modalPhotos.style.display = "block";
-
-          alert(modalPhotos.dataset.id);
-
           document.getElementById('titulo-foto_edit').value = data.titulo;
           document.getElementById('foto_edit').value = data.descripcion;
 
+          modalPhotos.style.display = "block";
           // Get the <span> element that closes the modal
           const spanPhotos = document.getElementById("span-photos_edit");
 
@@ -221,6 +216,26 @@ require_once 'includes/header.php';
           //esto hay que sacarlo o hacer algo para el error no se!
           alert('Error');
         },
+      });
+    }
+    function guardar(){
+      var titulo = document.getElementById('titulo-foto_edit').value;
+      var descripcion = document.getElementById('foto_edit').value;
+      const modal = document.getElementById('modalPhotosEdit');
+      var id = modal.dataset.id;
+      $.ajax({
+        type:'POST',
+        url:'<?=base_url('Fotos/update_foto/')?>'+id,
+        data:{
+          titulo:titulo,
+          descripcion:descripcion
+        },
+        success:function(){
+          table.ajax.reload();
+        },
+        error:function(){
+
+        }
       });
     }
     function logout(){
