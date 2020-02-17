@@ -419,7 +419,7 @@ $(document).ready(function() {
 
             console.log(inputVal);
 
-        // const cargarComentario = `${protocol}//${URLmaster}/Home/cargar_comentario`;
+        const subirComentario = `${protocol}//${URLmaster}/Comentarios/subir_comentario`;
 
         // console.log(cargarComentario);
 
@@ -427,7 +427,7 @@ $(document).ready(function() {
             type: 'POST',
             dataType: 'text',
             contentType: 'application/x-www-form-urlencoded',
-            url: 'index.php',
+            url: subirComentario,
             data: { input: inputVal}, 
             success: function(data) {
                 alert('comentario exitoso');
