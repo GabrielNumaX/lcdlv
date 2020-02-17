@@ -207,6 +207,10 @@ require_once 'includes/header.php';
     function guardar(){
       var titulo = document.getElementById('titulo-nota_edit').value;
       var nota = document.getElementById('nota_edit').value;
+
+      //NO SACAR ESTO!!!
+      nota = nota.replace(/\r?\n/g, '<br/>');
+      
       const modal = document.getElementById('modalNotesEdit');
       var id = modal.dataset.id;
       $.ajax({
@@ -217,6 +221,9 @@ require_once 'includes/header.php';
           nota:nota
         },
         success:function(){
+
+          modal.style.display = 'none';
+
           table.ajax.reload();
         },
         error:function(){

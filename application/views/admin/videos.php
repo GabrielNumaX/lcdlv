@@ -186,8 +186,6 @@ require_once 'includes/header.php';
 
           modalVideos.style.display = "block";
 
-
-
           // Get the <span> element that closes the modal
           const spanVideos = document.getElementById("span-videos_edit");
 
@@ -222,8 +220,11 @@ require_once 'includes/header.php';
           descripcion:descripcion
         },
         success:function(){
-          table.ajax.reload();
+
+          // document.getElementById('modalVideosEdit').style.display = 'none';
           modal.style.display = "none";
+          table.ajax.reload();
+          
         },
         error:function(){
 

@@ -12,7 +12,7 @@
     <div class="container">
 
       <h1 class="admin-h1">Admin de la Vergha</h1>
-      <span id="mensaje" style="display:none"></span>
+    
       <div class="form-group form-div">
         <form class="form" method="post">
 
@@ -25,10 +25,13 @@
             <label for="password">Contraseña</label>
             <input type="password" name="password" value="" required placeholder="Contraseña" id="pass">
           </div>
+
+          <!-- aca va el mensaje cancer de error-->
+          <div id="mensaje" style="display:none">
+          </div>
+
           <div class="btn-div">
             <button class="btn btn-success" type="button" onclick="login()">Ingresar</button>
-            <br>
-
           </div>
         </form>
 
@@ -37,6 +40,19 @@
     </div>
   </body>
   <script>
+
+  const passField = document.getElementById('pass');
+
+  passField.addEventListener('keyup', function(e){
+
+    if(e.keyCode === 13){
+ 
+      login();
+
+    }
+
+  })
+
   function login(){
     user = document.getElementById('user').value;
     pass = document.getElementById('pass').value;
@@ -53,8 +69,8 @@
             location.href = "<?=base_url('admin/inicio')?>";
         }else{
           const mensaje = document.getElementById('mensaje');
-          mensaje.innerHTML = '<p style="color:red">'+response.mensaje+'</p>';
-          mensaje.style.display = "block";
+          mensaje.innerHTML = '<p style="color:red; padding: 0; margin: 0;">'+response.mensaje+'</p>';
+          mensaje.style.display = "flex";
         }
 
 

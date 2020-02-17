@@ -231,6 +231,9 @@ require_once 'includes/header.php';
           descripcion:descripcion
         },
         success:function(){
+
+          modal.style.display = 'none';
+          
           table.ajax.reload();
         },
         error:function(){
