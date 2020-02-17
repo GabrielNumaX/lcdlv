@@ -9,8 +9,10 @@ class Comentarios extends CI_Controller {
 	}
 
   function subir_comentario(){
-    $comentario = $_POST['input'];
-    $this->comentarios->update($comentario);
+    // $comentario = $_POST['comentario'];
+    // $this->comentarios->update($comentario);
+
+    var_dump($_POST);
     }
 
 //   function editar_nota($id){

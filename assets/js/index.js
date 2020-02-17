@@ -417,18 +417,23 @@ $(document).ready(function() {
 
             inputVal = inputVal.trim();
 
+            let data = new FormData();
+
+            data.append('comentario', inputVal);
+
             console.log(inputVal);
 
-        const subirComentario = `${protocol}//${URLmaster}/Comentarios/subir_comentario`;
+        // const subirComentario = `${protocol}//${URLmaster}/Comentarios/subir_comentario`;
 
-        // console.log(cargarComentario);
 
         $.ajax({
             type: 'POST',
             dataType: 'text',
             contentType: 'application/x-www-form-urlencoded',
-            url: subirComentario,
-            data: { input: inputVal}, 
+            url: '/Comentarios/subir_comentario',
+            data: data,
+            processData: false,
+            contentType: false, 
             success: function(data) {
                 alert('comentario exitoso');
                 //da undefined porque es asychronous
