@@ -423,18 +423,28 @@ $(document).ready(function() {
 
             inputVal = inputVal.trim();
 
+            let data = new FormData();
+
+            data.append('comentario', inputVal);
+
             console.log(inputVal);
 
-        // const cargarComentario = `${protocol}//${URLmaster}/Home/cargar_comentario`;
+        // const subirComentario = `${protocol}//${URLmaster}/Comentarios/subir_comentario`;
 
-        // console.log(cargarComentario);
 
         $.ajax({
             type: 'POST',
             dataType: 'text',
             contentType: 'application/x-www-form-urlencoded',
+<<<<<<< HEAD
             url: 'index.php',
             data: { input: inputVal},
+=======
+            url: '/Comentarios/subir_comentario',
+            data: data,
+            processData: false,
+            contentType: false, 
+>>>>>>> 8698a8082b4b2288614e3f74ed647df65b49984c
             success: function(data) {
                 alert('comentario exitoso');
                 //da undefined porque es asychronous
