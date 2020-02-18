@@ -399,20 +399,35 @@ $(document).ready(function() {
 
       $('.post-container').on('submit', '.form-comments', function(e) {
 
-
         //esto es para que no haga reload pero no va a cargar el comentario
         //salvo que refresce o añada la tabla de los comments
+        
         e.preventDefault();
 
         let inputVal = $(this).children().val();
 
-        if(inputVal === ""){
+        let tipo, id;
 
-            // alert('no empty string')
+        const sibling = $(this).siblings(); 
+
+        if($(sibling).hasClass('div-img')){
+
+            tipo = $(this).siblings('.div-img').attr('data-type');
+
+            id = $(this).siblings('.div-img').attr('data-id');
+        }
+
+        else if($(sibling).hasClass('nota')){
+
+            tipo = $(this).siblings('.nota').attr('data-type');
+
+            id = $(this).siblings('.nota').attr('data-id');
+        }
+
+        if(inputVal === ""){
 
             return false;
         }
-
         else {
 
             inputVal = inputVal.trim();
@@ -420,11 +435,12 @@ $(document).ready(function() {
             let data = new FormData();
 
             data.append('comentario', inputVal);
+            data.append('tipo', tipo);
+            data.append('id', id);
 
             console.log(inputVal);
 
         // const subirComentario = `${protocol}//${URLmaster}/Comentarios/subir_comentario`;
-
 
         $.ajax({
             type: 'POST',
@@ -449,8 +465,6 @@ $(document).ready(function() {
         $(this).children().val("");
 
         }
-
-        
 
       }); // end comments function
 
