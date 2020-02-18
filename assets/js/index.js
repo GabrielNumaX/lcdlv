@@ -89,22 +89,24 @@ $(document).ready(function() {
         const inputComments = document.createElement('input');
 
         $(inputComments).attr('class', 'input-comments');
+        //le pongo un id al input para los comentarios
+        $(inputComments).attr('id', 'photo_comments');
 
         $(inputComments).prop('type', 'text');
 
         $(inputComments).prop('placeholder', 'Escribe un comentario...');
-        
+
         $(formComments).append(inputComments);
 
         $(article).append(h2Title, divTime, imgDiv, divDescription, divClickDesc, formComments);
 
         $(postContainer).append(article);
 
-    
+
     }
 
     function loadVideos(obj) {
-        
+
         const postContainer = $('.post-container');
 
         const article = document.createElement('article');
@@ -145,7 +147,7 @@ $(document).ready(function() {
 
         $(video).attr('class', 'video-post');
 
-        //recordar que pone el id en el video 
+        //recordar que pone el id en el video
         //no en el div
         $(video).attr('id', obj.id);
 
@@ -195,6 +197,8 @@ $(document).ready(function() {
         const inputComment = document.createElement('input');
 
         $(inputComment).attr('class', 'input-comments');
+
+        $(inputComment).attr('id', 'video_input');
 
         $(inputComment).prop('type', 'text');
 
@@ -257,10 +261,12 @@ $(document).ready(function() {
 
         $(inputComments).attr('class', 'input-comments');
 
+        $(inputComments).attr('id', 'note_coment');
+
         $(inputComments).prop('type', 'text');
 
         $(inputComments).prop('placeholder', 'Escribe un comentario...');
-        
+
         $(formComments).append(inputComments);
 
         $(article).append(divNota, formComments);
@@ -275,7 +281,7 @@ $(document).ready(function() {
 
     const protocol = window.location.protocol;
     const URLmaster = window.location.host;
-    
+
     const cargarTodo = `${protocol}//${URLmaster}/Home/cargar_todo`;
 
     $.get(cargarTodo, function(data, status) {
@@ -284,7 +290,7 @@ $(document).ready(function() {
 
         //aca habria que hacer un for con el json y
         //filtrar por foto video o nota y usar las functions
-        
+
         for(let i = 0; i < dataParse.length; i++){
 
             if(dataParse[i].tipo === "foto"){
@@ -309,7 +315,7 @@ $(document).ready(function() {
     //this is to show/hide post description
     //when clicked scroll out WILL TRY TO FIX
     $('.post-container').on('click', '.p-show-click', function () {
-        
+
         let desc = $('.div-desc p');
 
         // alert('click');
@@ -360,8 +366,8 @@ $(document).ready(function() {
 
             // $('html, body').animate({
             //     scrollTop: $(imgToScrollTo).offset().top
-            // }, 700);   
-            
+            // }, 700);
+
             //this solves the scrolling issue
             // $('html, body').scrollTop(imgToScrollTo.offset().top);
 
@@ -369,7 +375,7 @@ $(document).ready(function() {
         }
     });
 
-    //this event is to hide or show comments according to click 
+    //this event is to hide or show comments according to click
     //on span .show-comments
     $('.show-comments').on('click', function() {
 
@@ -392,7 +398,7 @@ $(document).ready(function() {
 
              $(this).html('Mostrar comentario');
         }
-        
+
       }); //end show/no show
 
       //function postear comments
@@ -453,13 +459,13 @@ $(document).ready(function() {
             success: function(data) {
                 alert('comentario exitoso');
                 //da undefined porque es asychronous
-                // alert(data.input);          
+                // alert(data.input);
             },
             error: function() {
                 alert('se produjo un error cancerigeno');
             }
 
-        });    
+        });
 
         //esto borra el text del input
         $(this).children().val("");
@@ -487,17 +493,17 @@ $(document).ready(function() {
             dataType: 'text',
             contentType: 'application/x-www-form-urlencoded',
             url: 'index.php',
-            data: { search: searchVal}, 
+            data: { search: searchVal},
             success: function(data) {
                 alert('busqueda exitosa');
                 //da undefined porque es asychronous
-                // alert(data.input);          
+                // alert(data.input);
             },
             error: function() {
                 alert('se produjo un error buscarioso');
             }
 
-        });    
+        });
 
       })// end search form function
 

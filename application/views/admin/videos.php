@@ -221,10 +221,9 @@ require_once 'includes/header.php';
         },
         success:function(){
 
-          // document.getElementById('modalVideosEdit').style.display = 'none';
           modal.style.display = "none";
           table.ajax.reload();
-          
+
         },
         error:function(){
 
