@@ -38,7 +38,9 @@ class Home extends CI_Controller {
 						];
 
 				}
-				array_push($comentario_foto, $data_coment);
+				if(!empty($data_coment)){
+					array_push($comentario_foto, $data_coment);
+				}
 			}
 				$data_foto = [
 					'id' => $r->id,
@@ -67,7 +69,9 @@ class Home extends CI_Controller {
 						'id_video' => $rc->id_video
 						];
 				}
-				array_push($comentario_video, $data_coment);
+				if(!empty($data_coment)){
+					array_push($comentario_video, $data_coment);
+				}
 			}
 				$data_video = [
 					'id' => $r->id,
@@ -94,7 +98,9 @@ class Home extends CI_Controller {
 						'id_nota' => $rc->id_nota
 					];
 				}
-				array_push($comentario_nota, $data_coment);
+				if(!empty($data_coment)){
+					array_push($comentario_nota, $data_coment);
+				}
 			}
 			$data_nota = [
 				'id' => $r->id,
