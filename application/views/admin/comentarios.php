@@ -4,12 +4,11 @@ require_once 'includes/header.php';
 
      <div class="div-inicio">
        <div class="div-btn">
-
-         <a href="<?=base_url('admin/video')?>" class="link">Videos</a>
-         <a href="<?=base_url('admin/nota')?>" class="link">Notas</a>
-         <a href="<?=base_url('admin/inicio')?>" class="link">Fotos</a>
-
-
+        
+        <a href="<?=base_url('admin/inicio')?>" class="link">Fotos</a>
+        <a href="<?=base_url('admin/video')?>" class="link">Videos</a>
+        <a href="<?=base_url('admin/nota')?>" class="link">Notas</a>
+         
        </div>
 
        <div class="div-btn-and-tabla">

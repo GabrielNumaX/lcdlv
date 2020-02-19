@@ -5,8 +5,9 @@
 .div-inicio {
     display: flex;
     width: 100%;
-    /* height: calc(100vh - 50px); */
-    height: 100vh;
+    min-height: calc(100vh - 50px);
+    max-height: fit-content;
+    /* min-height: 100vh; */
     flex-direction: row;
     justify-content: flex-start;
     align-items: flex-start;
@@ -17,25 +18,43 @@
 
 .div-btn {
     display: flex;
+    /* flex: 1 1 auto; */
     width: 10%;
-    height: calc(100vh - 50px);
-    /* height: 100vh; */
+    /* height: calc(100vh - 50px); */
+    /* height: 100%; */
     background-color: black;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
+    align-self: stretch;
     margin: 0;
     /* padding: 10% 0 10% 0; */
     position: bottom;
 }
 
+
+.link:first-of-type {
+    padding-top: 100%;
+}
 .link {
     color: whitesmoke;
     font-size: 1.8vw;
     text-decoration: none;
+    padding: 30% 0 30% 0;
 }
 
 .link:hover {
+    text-decoration: none;
+}
+
+.link-comentario {
+    color: whitesmoke;
+    font-size: 1.6vw;
+    text-decoration: none;
+    padding: 30% 0 0 0;
+}
+
+.link-comentario:hover {
     text-decoration: none;
 }
 

@@ -29,7 +29,7 @@
     <nav class="navbar navbar-light bg-light">
       <a class="navbar-brand" href="#">
         <img src="<?=base_url('assets/favicon/favicon-32x32.png')?>" width="30" height="30" class="d-inline-block align-top" alt="">
-        LCDLV
+        La Cara De La Vergha
       </a>
       <button class="btn btn-danger" type="button" onclick="logout()"><i class="fas fa-sign-out-alt"></i></button>
     </nav>
