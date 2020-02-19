@@ -89,8 +89,6 @@ $(document).ready(function() {
         const inputComments = document.createElement('input');
 
         $(inputComments).attr('class', 'input-comments');
-        //le pongo un id al input para los comentarios
-        $(inputComments).attr('id', 'photo_comments');
 
         $(inputComments).prop('type', 'text');
 
@@ -198,8 +196,6 @@ $(document).ready(function() {
 
         $(inputComment).attr('class', 'input-comments');
 
-        $(inputComment).attr('id', 'video_input');
-
         $(inputComment).prop('type', 'text');
 
         $(inputComment).prop('placeholder', 'Escribe un comentario...');
@@ -260,8 +256,6 @@ $(document).ready(function() {
         const inputComments = document.createElement('input');
 
         $(inputComments).attr('class', 'input-comments');
-
-        $(inputComments).attr('id', 'note_coment');
 
         $(inputComments).prop('type', 'text');
 
@@ -436,15 +430,12 @@ $(document).ready(function() {
             type: 'POST',
             dataType: 'text',
             contentType: 'application/x-www-form-urlencoded',
-<<<<<<< HEAD
             url: 'index.php',
             data: { input: inputVal},
-=======
             url: '/Comentarios/subir_comentario',
             data: data,
             processData: false,
-            contentType: false, 
->>>>>>> 8698a8082b4b2288614e3f74ed647df65b49984c
+            contentType: false,
             success: function(data) {
                 alert('comentario exitoso');
                 //da undefined porque es asychronous

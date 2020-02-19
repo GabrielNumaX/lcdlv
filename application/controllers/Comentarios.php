@@ -9,27 +9,7 @@ class Comentarios extends CI_Controller {
 	}
 
   function subir_comentario(){
-    // $comentario = $_POST['comentario'];
-    // $this->comentarios->update($comentario);
 
-    var_dump($_POST);
-    }
-
-//   function editar_nota($id){
-//     $query = $this->notas->buscar($id);
-//     $data = array(
-//       'id' => $query[0]->id,
-//       'titulo' => $query[0]->titulo,
-//       'nota' => $query[0]->nota,
-//       'fecha' => $query[0]->fecha
-//     );
-//     echo json_encode($data);
-//   }
-//   function update_nota($id){
-//     $titulo = $this->input->post('titulo');
-//     $nota = $this->input->post('nota');
-//     $this->notas->update($id, $titulo, $nota);
-//   }
-
+  }
 }
 ?>
