@@ -8,6 +8,7 @@ require_once 'includes/header.php';
 
         <a href="<?=base_url('admin/video')?>" class="link">Videos</a>
         <a href="<?=base_url('admin/nota')?>" class="link">Notas</a>
+        <a href="<?=base_url('admin/comentarios')?>" class="link">Comentarios</a>
 
 
       </div>
@@ -233,7 +234,7 @@ require_once 'includes/header.php';
         success:function(){
 
           modal.style.display = 'none';
-          
+
           table.ajax.reload();
         },
         error:function(){

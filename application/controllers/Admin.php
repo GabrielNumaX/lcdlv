@@ -74,4 +74,11 @@ class Admin extends CI_Controller {
       $this->load->view('admin');
     }
   }
+  public function comentarios(){
+    if($this->session->userdata('log') == true){
+      $this->load->view('admin/comentarios');
+    }else{
+      $this->load->view('admin');
+    }
+  }
 }
