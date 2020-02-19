@@ -21,73 +21,91 @@ class Home extends CI_Controller {
 		$resultado_coment = $this->home->get_coment();
 		//creo array asociativo con el resultado de la BDD
 		$output = array();
+		$comentario_foto = array();
+		$comentario_video = array();
+		$comentario_nota = array();
+
 		foreach($resultado_foto->result() as $r){
-			$data_foto = [
-				'id' => $r->id,
-				'titulo' => str_replace("%20", " ", $r->titulo),
-				'fecha' => $r->fecha,
-				'descripcion' => str_replace("%20", " ", $r->descripcion),
-				'foto' => $r->foto,
-				'tipo' => 'foto'
-			];
+			foreach($resultado_coment->result() as $rc){
+				$data_coment = array();
+				if(($rc->id_foto !== null) && ($r->id === $rc->id_foto)){
+					$data_coment = [
+						'tipo' => 'comentario_foto',
+						'id' => $rc->id,
+						'fecha_coment' => $rc->fecha,
+						'comentario' => $rc->comentario,
+						'id_foto' => $rc->id_foto
+						];
+
+				}
+				array_push($comentario_foto, $data_coment);
+			}
+				$data_foto = [
+					'id' => $r->id,
+					'titulo' => str_replace("%20", " ", $r->titulo),
+					'fecha' => $r->fecha,
+					'descripcion' => str_replace("%20", " ", $r->descripcion),
+					'foto' => $r->foto,
+					'tipo' => 'foto',
+					'comntarios'=> $comentario_foto
+				];
 			//Creo array de arrays.
 			array_push($output, $data_foto);
+			$comentario_foto = array();
 		}
+
 		//carga los datos de la bdd (video);
 		foreach($resultado_video->result() as $r){
-			$data_video = [
-				'id' => $r->id,
-				'titulo' => str_replace("%20", " ", $r->titulo),
-				'fecha' => $r->fecha,
-				'descripcion' => str_replace("%20", " ", $r->descripcion),
-				'video' => $r->video,
-				'tipo' => 'video'
-			];
-			array_push($output, $data_video);
+			foreach($resultado_coment->result() as $rc){
+				$data_coment = array();
+				if(($rc->id_video !== null) && ($r->id === $rc->id_video)){
+					$data_coment = [
+						'tipo' => 'comentario_video',
+						'id' => $rc->id,
+						'fecha_coment' => $rc->fecha,
+						'comentario' => $rc->comentario,
+						'id_video' => $rc->id_video
+						];
+				}
+				array_push($comentario_video, $data_coment);
+			}
+				$data_video = [
+					'id' => $r->id,
+					'titulo' => str_replace("%20", " ", $r->titulo),
+					'fecha' => $r->fecha,
+					'descripcion' => str_replace("%20", " ", $r->descripcion),
+					'video' => $r->video,
+					'tipo' => 'video',
+					'comentario' =>$comentario_video
+				];
+		array_push($output, $data_video);
+		$comentario_video = array();
 		}
 		//carga los datos de la BDd (notas)
 		foreach($resultado_nota->result() as $r){
+			foreach ($resultado_coment->result() as $rc) {
+				$data_coment = array();
+				if(($rc->id_nota !== null) && ($r->id === $rc->id_nota)){
+					$data_coment = [
+						'tipo' => 'comentario_nota',
+						'id' => $rc->id,
+						'fecha_coment' => $rc->fecha,
+						'comentario' => $rc->comentario,
+						'id_nota' => $rc->id_nota
+					];
+				}
+				array_push($comentario_nota, $data_coment);
+			}
 			$data_nota = [
 				'id' => $r->id,
 				'fecha' => $r->fecha,
 				'titulo' => str_replace("%20"," ", $r->titulo),
 				'nota' => str_replace("%20"," ", $r->nota),
-				'tipo' => 'nota'
+				'tipo' => 'nota',
+				'comentario' => $comentario_nota
 			];
 			array_push($output, $data_nota);
-		}
-		foreach($resultado_coment->result() as $r){
-			if($r->id_foto !== null){
-				$data_coment = [
-						'tipo' => 'comentario_foto',
-						'id' => $r->id,
-						'fecha' => $r->fecha,
-						'comentario' => $r->comentario,
-						'id_foto' => $r->id_foto
-				];
-				array_push($output, $data_coment);
-			}
-			if($r->id_video !== null){
-				$data_coment = [
-						'tipo' => 'comentario_video',
-						'id' => $r->id,
-						'fecha' => $r->fecha,
-						'comentario' => $r->comentario,
-						'id_video' => $r->id_video
-				];
-				array_push($output, $data_coment);
-			}
-			if($r->id_nota !== null){
-				$data_coment = [
-						'tipo' => 'comentario_nota',
-						'id' => $r->id,
-						'fecha' => $r->fecha,
-						'comentario' => $r->comentario,
-						'id_nota' => $r->id_nota
-				];
-				array_push($output, $data_coment);
-			}
-
+			$comentario_nota = array();
 		}
 
 		//Funcion para ordenar un array
