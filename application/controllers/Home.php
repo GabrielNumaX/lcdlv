@@ -18,6 +18,7 @@ class Home extends CI_Controller {
 		$resultado_foto = $this->home->get_fotos();
 		$resultado_nota = $this->home->get_notas();
 		$resultado_video = $this->home->get_videos();
+		$resultado_coment = $this->home->get_coment();
 		//creo array asociativo con el resultado de la BDD
 		$output = array();
 		foreach($resultado_foto->result() as $r){
@@ -54,6 +55,39 @@ class Home extends CI_Controller {
 				'tipo' => 'nota'
 			];
 			array_push($output, $data_nota);
+		}
+		foreach($resultado_coment->result() as $r){
+			if($r->id_foto !== null){
+				$data_coment = [
+						'tipo' => 'comentario_foto',
+						'id' => $r->id,
+						'fecha' => $r->fecha,
+						'comentario' => $r->comentario,
+						'id_foto' => $r->id_foto
+				];
+				array_push($output, $data_coment);
+			}
+			if($r->id_video !== null){
+				$data_coment = [
+						'tipo' => 'comentario_video',
+						'id' => $r->id,
+						'fecha' => $r->fecha,
+						'comentario' => $r->comentario,
+						'id_video' => $r->id_video
+				];
+				array_push($output, $data_coment);
+			}
+			if($r->id_nota !== null){
+				$data_coment = [
+						'tipo' => 'comentario_nota',
+						'id' => $r->id,
+						'fecha' => $r->fecha,
+						'comentario' => $r->comentario,
+						'id_nota' => $r->id_nota
+				];
+				array_push($output, $data_coment);
+			}
+
 		}
 
 		//Funcion para ordenar un array

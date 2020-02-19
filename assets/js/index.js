@@ -401,14 +401,14 @@ $(document).ready(function() {
 
         //esto es para que no haga reload pero no va a cargar el comentario
         //salvo que refresce o añada la tabla de los comments
-        
+
         e.preventDefault();
 
         let inputVal = $(this).children().val();
 
         let tipo, id;
 
-        const sibling = $(this).siblings(); 
+        const sibling = $(this).siblings();
 
         if($(sibling).hasClass('div-img')){
 
@@ -439,24 +439,23 @@ $(document).ready(function() {
             data.append('id', id);
 
             console.log(inputVal);
+            console.log(tipo);
+            console.log(id);
 
-        // const subirComentario = `${protocol}//${URLmaster}/Comentarios/subir_comentario`;
+        const subirComentario = `${protocol}//${URLmaster}/Comentarios/subir_comentario`;
 
         $.ajax({
             type: 'POST',
             dataType: 'text',
             contentType: 'application/x-www-form-urlencoded',
-            url: '/Comentarios/subir_comentario',
+            url: subirComentario,
             data: data,
             processData: false,
             contentType: false,
-            success: function(data) {
-                alert('comentario exitoso');
-                //da undefined porque es asychronous
-                // alert(data.input);
-            },
+            //solo dejamos el error!
             error: function() {
-                alert('se produjo un error cancerigeno');
+              //igual es al pedo el error se va a dar cuenta cuando no comente! ja
+                alert('Ha ocurrido un error');
             }
 
         });

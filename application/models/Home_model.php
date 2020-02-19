@@ -24,5 +24,9 @@ class Home_model extends CI_Model{
       $query = $this->db->get($this->table_videos);
       return $query;
     }
+    public function get_coment(){
+      $query = $this->db->get($this->table_coment);
+      return $query;
+    }
 }
 ?>
