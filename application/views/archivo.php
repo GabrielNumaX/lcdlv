@@ -2,7 +2,6 @@
 require_once 'includes/header.php';
  ?>
 
-
     <!--Esto queda en archivo-->
     <script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery-3.4.1.min.js" ></script>
     <link type="text/css" rel="stylesheet" href="<?= base_url()?>assets/css/archivo.css">
@@ -58,19 +57,16 @@ require_once 'includes/header.php';
             <h1>Bienvenidos al Archivo</h1>
 
         </article>
-        <!-- adentro de esto "post-container" tiene que cargar dynamic segun
-        los resultados la idea es que cargue FOTOS, VIDEOS o
-        NOTAS con las clases y elementos ya utilzados
-        en index.php -->
 
         <!-- IMPORTANTE RECORDAR los archivos cargan con
         determinado numero de comentarios-->
 
-        <div class="post-container" id="archivo-main"> <!--este ID no se si iria-->
+        <div class="post-container" id="archivo-main"> 
 
         </div>
 
     </main>
+
 <?php
 require_once 'includes/footer.php';
  ?>

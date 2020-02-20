@@ -2,7 +2,6 @@
 require_once 'includes/header.php';
  ?>
 
-
     <!--Esto queda en notas-->
     <link type="text/css"rel="stylesheet" href="<?= base_url()?>assets/css/notas.css">
     <script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery-3.4.1.min.js" ></script>
@@ -58,39 +57,31 @@ require_once 'includes/header.php';
             </div>
         </article>
 
-
-
         <article class="article-notas">
 
         </article>
 
-
-
     </main>
-
-    
+  
     <aside id="aside" class="aside-show">
        <h2>Ultimas Notas</h2>
 
        <div class="div-notas">
-
        <!-- this LOADS dynamic -->
-        <ul class="ul-notas">
+            <ul class="ul-notas">
 
-
+            </ul>      
        </div>
 
        <!-- this LOADS dynamic -->
        <div class="div-fechas">
             <ul class="ul-fechas">
 
-
-
             </ul>
        </div>
 
-
     </aside>
+
 <?php
 require_once 'includes/footer.php';
  ?>
