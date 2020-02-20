@@ -2,6 +2,18 @@ $(document).ready(function() {
 
     console.log('script loaded');
 
+    if(!localStorage.getItem('commentCounter')){
+
+        let commentCounter = [];
+    
+        localStorage.setItem('commentCounter', JSON.stringify(commentCounter));
+    }
+    else {
+        var commentFromLocal = JSON.parse(localStorage.commentCounter)
+    }
+
+    console.log(commentFromLocal);
+
     //function to load photos
 
     function loadPhotos(obj) {
