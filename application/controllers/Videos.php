@@ -103,8 +103,10 @@ class Videos extends CI_Controller {
 
       $data = array();
       foreach($resultados->result() as $r) { //se crea un array asociativo con cada resultados de la consulta a la BDD
-          $accion = '<a class="btn btn-sm btn-info" href="javascript:void(0)" title="Editar" onclick="editar_video('."'".$r->id."'".')"><i class="fas fa-user-edit"></i></a>
-                      <a class="btn btn-sm btn-danger" href="javascript:void(0)" title="Borrar" onclick="borrar_video('."'".$r->id."'".')"><i class="fas fa-trash"></i></a>';
+          // $accion = '<a class="btn btn-sm btn-info" href="javascript:void(0)" title="Editar" onclick="editar_video('."'".$r->id."'".')"><i class="fas fa-user-edit"></i></a>
+          //             <a class="btn btn-sm btn-danger" href="javascript:void(0)" title="Borrar" onclick="borrar_video('."'".$r->id."'".')"><i class="fas fa-trash"></i></a>';
+          $accion = '<a class="btn btn-sm btn-info" href="javascript:void(0)" title="Editar"><i class="fas fa-user-edit"></i></a>
+          <a class="btn btn-sm btn-danger" href="javascript:void(0)" title="Borrar"><i class="fas fa-trash"></i></a>';
           $video = '<video src="'.base_url().$r->video.'" width=100px controls></video>';
           $data[] = array(
              $r->id,

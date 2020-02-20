@@ -59,6 +59,13 @@ $(document).ready(function() {
         });
       }
 
+    $('.div-tabla').on('click', '.btn.btn-sm.btn-danger', function() {
+
+      const id = $(this).parent().siblings('.sorting_1').html();
+
+      borrar_comment(id);
+    });
+
       const logoutUrl = `${protocol}//${URLmaster}/Admin/logout`;
 
       const adminUrl = `${protocol}//${URLmaster}/Admin`;
@@ -79,12 +86,7 @@ $(document).ready(function() {
 
       $('#btn-logout').on('click', logout)
 
-    $('.div-tabla').on('click', '.btn.btn-sm.btn-danger', function() {
-
-        const id = $(this).parent().siblings('.sorting_1').html();
-
-        borrar_comment(id);
-    });
+    
 
 }); //end jquery
 

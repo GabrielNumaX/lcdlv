@@ -201,6 +201,8 @@ $(document).ready(function() {
       });
     }
 
+    $('#btn-logout').on('click', logout)
+
 }); //end Jquery
 
 
