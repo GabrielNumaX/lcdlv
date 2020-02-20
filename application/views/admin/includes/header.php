@@ -31,5 +31,5 @@
         <img src="<?=base_url('assets/favicon/favicon-32x32.png')?>" width="30" height="30" class="d-inline-block align-top" alt="">
         La Cara De La Vergha
       </a>
-      <button class="btn btn-danger" type="button" onclick="logout()"><i class="fas fa-sign-out-alt"></i></button>
+      <button id="btn-logout" class="btn btn-danger" type="button"><i class="fas fa-sign-out-alt"></i></button>
     </nav>

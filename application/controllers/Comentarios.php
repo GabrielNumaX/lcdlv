@@ -27,7 +27,8 @@ class Comentarios extends CI_Controller {
       //$url = base_url();
       $data = array();
       foreach($resultados->result() as $r) { //se crea un array asociativo con cada resultados de la consulta a la BDD
-          $accion = '<a class="btn btn-sm btn-danger" href="javascript:void(0)" title="Borrar" onclick="borrar_coment('."'".$r->id."'".')"><i class="fas fa-trash"></i></a>';
+          // $accion = '<a class="btn btn-sm btn-danger" href="javascript:void(0)" title="Borrar" onclick="borrar_coment('."'".$r->id."'".')"><i class="fas fa-trash"></i></a>';
+          $accion = '<a class="btn btn-sm btn-danger" href="javascript:void(0)" title="Borrar"><i class="fas fa-trash"></i></a>';
           if($r->id_foto !== null){
             $tipo = 'Foto';
           }elseif($r->id_video !== null){

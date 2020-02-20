@@ -2,6 +2,9 @@
 require_once 'includes/header.php';
 
 ?>
+  <script src="<?=base_url()?>assets/js/jquery-3.4.1.min.js"></script>
+  <script src="<?=base_url()?>assets/js/jquery.dataTables.min.js"></script>
+  <script src="<?=base_url()?>assets/js/admin/adminInicio.js"></script>
 
     <div class="div-inicio">
       <div class="div-btn">
@@ -43,6 +46,7 @@ require_once 'includes/header.php';
         </div>
 
       </div>
+
       <!-- modal fotos-->
 
         <div id="modalPhotos" class="modal">
@@ -61,9 +65,7 @@ require_once 'includes/header.php';
             </div>
             <div class="btn-div">
               <input class="btn btn-success" type="file" id="file_upload_foto"></input>
-              <input id="btn-photo" class="btn btn-success" type="button" onclick="upPhoto()" value="Subir Foto"></input>
-              <input id="btn-photo_editar" class="btn btn-success" type="button" onclick="" value="Guardar cambios"
-                      style="display: none"></input>
+              <input id="btn-photo" class="btn btn-success" type="button" value="Subir Foto"></input>
             </div>
           </form>
         </div>
@@ -82,7 +84,7 @@ require_once 'includes/header.php';
               <textarea id="foto_edit" placeholder="Descripcion..."></textarea>
             </div>
             <div class="btn-div">
-              <button id="btn-photo_editar" class="btn btn-success" type="button" onclick="guardar()">Guardar cambios</button>
+              <button id="btn-photo_editar" class="btn btn-success" type="button">Guardar cambios</button>
             </div>
           </form>
         </div>
@@ -91,7 +93,7 @@ require_once 'includes/header.php';
 
   </body>
 
-   <script>
+   <!-- <script>
 
    var table;
    //var save_method;
@@ -254,5 +256,5 @@ require_once 'includes/header.php';
         }
       });
     }
-  </script>
+  </script> -->
 </html>

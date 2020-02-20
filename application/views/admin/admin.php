@@ -7,6 +7,7 @@
     <link href="<?=base_url()?>assets/css/adminhome.css" rel="stylesheet">
     <script src="<?=base_url()?>assets/js/jquery-3.4.1.min.js"></script>
     <script src="<?=base_url()?>assets/js/sweetalert2.js"></script>
+    <script src="<?=base_url()?>assets/js/admin/adminHome.js"></script>
   </head>
   <body>
     <div class="container">
@@ -31,7 +32,7 @@
           </div>
 
           <div class="btn-div">
-            <button class="btn btn-success" type="button" onclick="login()">Ingresar</button>
+            <button id="btn-login" class="btn btn-success" type="button">Ingresar</button>
           </div>
         </form>
 
@@ -41,19 +42,19 @@
   </body>
   <script>
 
-  const passField = document.getElementById('pass');
+  // const passField = document.getElementById('pass');
 
-  passField.addEventListener('keyup', function(e){
+  // passField.addEventListener('keyup', function(e){
 
-    e.preventDefault();
+  //   e.preventDefault();
 
-    if(e.keyCode === 13){
+  //   if(e.keyCode === 13){
  
-      login();
+  //     login();
 
-    }
+  //   }
 
-  })
+  // })
 
   function login(){
     user = document.getElementById('user').value;
