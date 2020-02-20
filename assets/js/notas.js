@@ -119,7 +119,63 @@ $(document).ready(function() {
         
         $(formComments).append(inputComments);
 
-        $(article).append(divNota, formComments);
+        //aca los comments
+
+        const tableComments = document.createElement('table');
+
+        $(tableComments).attr('class', 'table-comments');
+
+        if (Array.isArray(obj.comentarios) && obj.comentarios.length) {
+
+            // console.log('inside if')
+            
+            for(let i = obj.comentarios.length - 1; i >= 0; i--){
+
+                // console.log(obj.comentarios[i].comentario)
+
+                const tr = document.createElement('tr');
+
+                const td = document.createElement('td');
+
+                $(td).attr('class', 'comments');
+
+                const pComment = document.createElement('p');
+
+                $(pComment).attr('class', 'p-comments-no-show');
+
+                $(pComment).html(obj.comentarios[i].comentario);
+
+                if(obj.comentarios[i].comentario.length >= 45){
+
+                    const spanShowComm = document.createElement('span');
+
+                    $(spanShowComm).attr('class', 'show-comments');
+
+                    $(spanShowComm).html('Mostrar Mas...');
+
+                    $(td).append(pComment, spanShowComm);
+
+                }
+                else {
+
+                    $(td).append(pComment);
+
+                }
+
+                $(tr).append(td);
+
+                $(tableComments).append(tr);
+            }
+
+
+        }
+        // else {
+        //     console.log('inside else');
+        // }
+
+        //fin comments
+
+        $(article).append(divNota, formComments, tableComments);
 
         $(main).append(article);
 
@@ -209,6 +265,110 @@ $(document).ready(function() {
 
     //la funcion para mostrar mas comentarios esta en index.js
     //COPIAR Y PEGAR
+
+    //this event is to hide or show comments according to click
+    //on span .show-comments
+    $('#main').on('click','.show-comments', function() {
+
+        let comment = $(this).prev();
+
+
+        if($(comment).hasClass('p-comments-no-show')){
+
+            $(comment).removeClass('p-comments-no-show');
+
+            $(comment).addClass('p-comments-show');
+
+            $(this).html('Ocultar comentario');
+        }
+        else if ($(comment).hasClass('p-comments-show')){
+
+            $(comment).removeClass('p-comments-show');
+
+             $(comment).addClass('p-comments-no-show');
+
+             $(this).html('Mostrar Mas...');
+        }
+
+      }); //end show/no show
+
+      //function postear comments
+
+      $('#main').on('submit', '.form-comments', function(e) {
+
+        //esto es para que no haga reload pero no va a cargar el comentario
+        //salvo que refresce o añada la tabla de los comments
+
+        e.preventDefault();
+
+        let inputVal = $(this).children().val();
+
+        let tipo, id;
+
+        const sibling = $(this).siblings();
+
+        if($(sibling).hasClass('div-img')){
+
+            tipo = $(this).siblings('.div-img').attr('data-type');
+
+            id = $(this).siblings('.div-img').attr('data-id');
+        }
+
+        else if($(sibling).hasClass('nota')){
+
+            tipo = $(this).siblings('.nota').attr('data-type');
+
+            id = $(this).siblings('.nota').attr('data-id');
+        }
+
+        if(inputVal === ""){
+
+            return false;
+        }
+        else {
+
+            inputVal = inputVal.trim();
+
+            let data = new FormData();
+
+            data.append('comentario', inputVal);
+            data.append('tipo', tipo);
+            data.append('id', id);
+
+            // console.log(inputVal);
+            // console.log(tipo);
+            // console.log(id);
+
+        const subirComentario = `${protocol}//${URLmaster}/Comentarios/subir_comentario`;
+
+        $.ajax({
+            type: 'POST',
+            dataType: 'text',
+            contentType: 'application/x-www-form-urlencoded',
+            url: subirComentario,
+            data: data,
+            processData: false,
+            contentType: false,
+            //solo dejamos el error!
+            success: function() {
+                
+                $(this).children().val("");
+                // alert('successfull comment')
+                location.reload(true);
+            },
+            error: function() {
+              //igual es al pedo el error se va a dar cuenta cuando no comente! ja
+                alert('Ha ocurrido un error');
+            }
+
+        });
+
+        // //esto borra el text del input
+        // $(this).children().val("");
+
+        }
+
+      }); // end comments function
 
 
 }); //end JQuery

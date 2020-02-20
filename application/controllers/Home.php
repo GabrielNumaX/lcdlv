@@ -49,7 +49,7 @@ class Home extends CI_Controller {
 					'descripcion' => str_replace("%20", " ", $r->descripcion),
 					'foto' => $r->foto,
 					'tipo' => 'foto',
-					'comntarios'=> $comentario_foto
+					'comentarios'=> $comentario_foto
 				];
 			//Creo array de arrays.
 			array_push($output, $data_foto);
@@ -80,7 +80,7 @@ class Home extends CI_Controller {
 					'descripcion' => str_replace("%20", " ", $r->descripcion),
 					'video' => $r->video,
 					'tipo' => 'video',
-					'comentario' =>$comentario_video
+					'comentarios' =>$comentario_video
 				];
 		array_push($output, $data_video);
 		$comentario_video = array();
@@ -108,7 +108,7 @@ class Home extends CI_Controller {
 				'titulo' => str_replace("%20"," ", $r->titulo),
 				'nota' => str_replace("%20"," ", $r->nota),
 				'tipo' => 'nota',
-				'comentario' => $comentario_nota
+				'comentarios' => $comentario_nota
 			];
 			array_push($output, $data_nota);
 			$comentario_nota = array();

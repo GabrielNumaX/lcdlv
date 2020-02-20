@@ -66,6 +66,72 @@ require_once 'includes/header.php';
         <!-- all this is the template for dynamic loading from backend
         and/or db EVERY ITEM GOES WITH A UNIQUE ID=""-->
         <p id='descripcion'></p>
+
+        <!-- <article class="article-post">
+            <h2 class="h2-title">TITULO POST</h2>
+
+            <div class="div-time">
+                <time class="time-post">fecha y hora de post</time>
+            </div>
+
+            <div class="div-img">
+                <img class="img-post"
+                    src="<?=base_url()?>assets/img/mosquitos.jpg"
+                    alt="">
+            </div>
+
+            <div class="div-comments">
+                <span class="qty-comments">cantidad comentarios</span>
+            </div>
+
+            <div class="div-desc">
+                <p class="p-desc-no-show" id='descripcion'>
+
+                </p>
+
+            </div>
+            <div class="div-p-click">
+                <p class="p-show-click">Mostrar</p>
+            </div>
+
+            <table class="table-comments">
+
+                <tr>
+                    <td class="comments">
+                    <p class="p-comments-no-show">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Pellentesque orci metus, descripcion post esto puede ser muy largo
+                        por los que habria que manejar que se despliege cuando se hace
+                        click en algun lado, poner cantidad de lineas o algo
+                        </p>
+                        <span class="show-comments">Mostrar comentario</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="comments">
+                        <p class="p-comments-no-show">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Pellentesque orci metus, descripcion post esto puede ser muy largo
+                        por los que habria que manejar que se despliege cuando se hace
+                        click en algun lado, poner cantidad de lineas o algo
+                        </p>
+                        <span class="show-comments">Mostrar comentario</span>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="show-more-comments">
+                <span class="span-more-comments">Mostrar mas comentarios</span>
+            </div>
+
+            <form class="form-comments"action="">
+                <input class="input-comments"
+                    type="text"
+                    placeholder="Escribe un comentario...">
+            </form>
+
+        </article> -->
+
       </div> <!--end post container -->
 
     </main>

@@ -96,7 +96,60 @@ $(document).ready(function() {
 
         $(formComments).append(inputComments);
 
-        $(article).append(h2Title, divTime, imgDiv, divDescription, divClickDesc, formComments);
+        //aca los comments
+
+        const tableComments = document.createElement('table');
+
+        $(tableComments).attr('class', 'table-comments');
+
+        if (Array.isArray(obj.comentarios) && obj.comentarios.length) {
+
+            // console.log('inside if')
+            
+            for(let i = obj.comentarios.length - 1; i >= 0; i--){
+
+                // console.log(obj.comentarios[i].comentario)
+
+                const tr = document.createElement('tr');
+
+                const td = document.createElement('td');
+
+                $(td).attr('class', 'comments');
+
+                const pComment = document.createElement('p');
+
+                $(pComment).attr('class', 'p-comments-no-show');
+
+                $(pComment).html(obj.comentarios[i].comentario);
+
+                if(obj.comentarios[i].comentario.length >= 45){
+
+                    const spanShowComm = document.createElement('span');
+
+                    $(spanShowComm).attr('class', 'show-comments');
+
+                    $(spanShowComm).html('Mostrar Mas...');
+
+                    $(td).append(pComment, spanShowComm);
+
+                }
+                else {
+
+                    $(td).append(pComment);
+
+                }
+
+                $(tr).append(td);
+
+                $(tableComments).append(tr);
+            }
+
+
+        }
+
+        //fin comments
+
+        $(article).append(h2Title, divTime, imgDiv, divDescription, divClickDesc, formComments, tableComments);
 
         $(postContainer).append(article);
 
@@ -183,9 +236,6 @@ $(document).ready(function() {
 
         $(divClickDesc).append(pShowClick);
 
-        //faltaria todo lo de los comentarios
-        //AQUI COMENTARIOS
-
         //esto crea el input para el comentario
 
         const form = document.createElement('form');
@@ -204,7 +254,60 @@ $(document).ready(function() {
 
         $(form).append(inputComment);
 
-        $(article).append(h2Title, divTime, divVideo, divDescription, divClickDesc, form);
+        //aca los comments
+
+        const tableComments = document.createElement('table');
+
+        $(tableComments).attr('class', 'table-comments');
+
+        if (Array.isArray(obj.comentarios) && obj.comentarios.length) {
+
+            // console.log('inside if')
+            
+            for(let i = obj.comentarios.length - 1; i >= 0; i--){
+
+                // console.log(obj.comentarios[i].comentario)
+
+                const tr = document.createElement('tr');
+
+                const td = document.createElement('td');
+
+                $(td).attr('class', 'comments');
+
+                const pComment = document.createElement('p');
+
+                $(pComment).attr('class', 'p-comments-no-show');
+
+                $(pComment).html(obj.comentarios[i].comentario);
+
+                if(obj.comentarios[i].comentario.length >= 45){
+
+                    const spanShowComm = document.createElement('span');
+
+                    $(spanShowComm).attr('class', 'show-comments');
+
+                    $(spanShowComm).html('Mostrar Mas...');
+
+                    $(td).append(pComment, spanShowComm);
+
+                }
+                else {
+
+                    $(td).append(pComment);
+
+                }
+
+                $(tr).append(td);
+
+                $(tableComments).append(tr);
+            }
+
+
+        }
+
+        //fin comments
+
+        $(article).append(h2Title, divTime, divVideo, divDescription, divClickDesc, form, tableComments);
 
         $(postContainer).append(article);
 
@@ -242,9 +345,6 @@ $(document).ready(function() {
 
         $(pNota).html(obj.nota) // obj.nota
 
-        //faltaria todo lo de los comentarios
-        //AQUI COMENTARIOS
-
         $(divNota).append(h3Nota, pNota);
 
         const formComments = document.createElement('form');
@@ -263,7 +363,60 @@ $(document).ready(function() {
 
         $(formComments).append(inputComments);
 
-        $(article).append(divNota, formComments);
+        //aca los comments
+
+        const tableComments = document.createElement('table');
+
+        $(tableComments).attr('class', 'table-comments');
+
+        if (Array.isArray(obj.comentarios) && obj.comentarios.length) {
+
+            // console.log('inside if')
+            
+            for(let i = obj.comentarios.length - 1; i >= 0; i--){
+
+                // console.log(obj.comentarios[i].comentario)
+
+                const tr = document.createElement('tr');
+
+                const td = document.createElement('td');
+
+                $(td).attr('class', 'comments');
+
+                const pComment = document.createElement('p');
+
+                $(pComment).attr('class', 'p-comments-no-show');
+
+                $(pComment).html(obj.comentarios[i].comentario);
+
+                if(obj.comentarios[i].comentario.length >= 45){
+
+                    const spanShowComm = document.createElement('span');
+
+                    $(spanShowComm).attr('class', 'show-comments');
+
+                    $(spanShowComm).html('Mostrar Mas...');
+
+                    $(td).append(pComment, spanShowComm);
+
+                }
+                else {
+
+                    $(td).append(pComment);
+
+                }
+
+                $(tr).append(td);
+
+                $(tableComments).append(tr);
+            }
+
+
+        }
+
+        //fin comments
+
+        $(article).append(divNota, formComments, tableComments);
 
         $(postContainer).append(article);
 
@@ -371,7 +524,7 @@ $(document).ready(function() {
 
     //this event is to hide or show comments according to click
     //on span .show-comments
-    $('.show-comments').on('click', function() {
+    $('.post-container').on('click','.show-comments', function() {
 
         let comment = $(this).prev();
 
@@ -390,7 +543,7 @@ $(document).ready(function() {
 
              $(comment).addClass('p-comments-no-show');
 
-             $(this).html('Mostrar comentario');
+             $(this).html('Mostrar Mas...');
         }
 
       }); //end show/no show
@@ -438,9 +591,9 @@ $(document).ready(function() {
             data.append('tipo', tipo);
             data.append('id', id);
 
-            console.log(inputVal);
-            console.log(tipo);
-            console.log(id);
+            // console.log(inputVal);
+            // console.log(tipo);
+            // console.log(id);
 
         const subirComentario = `${protocol}//${URLmaster}/Comentarios/subir_comentario`;
 
@@ -453,6 +606,12 @@ $(document).ready(function() {
             processData: false,
             contentType: false,
             //solo dejamos el error!
+            success: function() {
+               
+                $(this).children().val("");
+                // alert('successfull comment')
+                location.reload(true);
+            },
             error: function() {
               //igual es al pedo el error se va a dar cuenta cuando no comente! ja
                 alert('Ha ocurrido un error');
@@ -461,7 +620,7 @@ $(document).ready(function() {
         });
 
         //esto borra el text del input
-        $(this).children().val("");
+        // $(this).children().val("");
 
         }
 
