@@ -57,28 +57,63 @@ class Admin extends CI_Controller {
     if($this->session->userdata('log') == true){
       $this->load->view('admin/inicio');
     }else{
-      $this->load->view('admin');
+      $this->load->view('admin/admin');
     }
   }
   public function video(){
     if($this->session->userdata('log') == true){
       $this->load->view('admin/videos');
     }else{
-      $this->load->view('admin');
+      $this->load->view('admin/admin');
     }
   }
   public function nota(){
     if($this->session->userdata('log') == true){
       $this->load->view('admin/notas');
     }else{
-      $this->load->view('admin');
+      $this->load->view('admin/admin');
     }
   }
   public function comentarios(){
     if($this->session->userdata('log') == true){
       $this->load->view('admin/comentarios');
     }else{
-      $this->load->view('admin');
+      $this->load->view('admin/admin');
     }
   }
+  public function usuarios(){
+    if($this->session->userdata('log') == true){
+      $this->load->view('admin/usuarios');
+    }else{
+      $this->load->view('admin/admin');
+    }
+  }
+  public function ajax_listado(){
+      $resultados = $this->admin->get_datatables();
+      //$url = base_url();
+      $data = array();
+      foreach($resultados->result() as $r) { //se crea un array asociativo con cada resultados de la consulta a la BDD
+          // $accion = '<a class="btn btn-sm btn-danger" href="javascript:void(0)" title="Borrar" onclick="borrar_coment('."'".$r->id."'".')"><i class="fas fa-trash"></i></a>';
+          $accion = '<a class="btn btn-sm btn-danger" href="javascript:void(0)" title="Borrar"><i class="fas fa-trash"></i></a>';
+
+          $data[] = array(
+             $r->id,
+             $r->nombre,
+             $r->ultimo_log,
+             $accion
+          );
+      }
+
+      $output = array(
+          "recordsTotal" => $resultados->num_rows(),
+          "recordsFiltered" => $resultados->num_rows(),
+          "data" => $data // se establecen la cantidad de resultados y los filtros
+      );
+      echo json_encode($output); // se envian los filtros y los resultados por JSON junto con el array que contiene los datos
+      exit();
+    }
+    function borrar_usuario($id){
+      $this->admin->borrar($id);
+    }
+
 }

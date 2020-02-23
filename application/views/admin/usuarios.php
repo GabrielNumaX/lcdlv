@@ -4,7 +4,7 @@ require_once 'includes/header.php';
 ?>
   <script src="<?=base_url()?>assets/js/jquery-3.4.1.min.js"></script>
   <script src="<?=base_url()?>assets/js/jquery.dataTables.min.js"></script>
-  <script src="<?=base_url()?>assets/js/admin/adminInicio.js"></script>
+  <script src="<?=base_url()?>assets/js/admin/adminUsuarios.js"></script>
 
     <div class="div-inicio">
       <div class="div-btn">
@@ -12,7 +12,7 @@ require_once 'includes/header.php';
         <a href="<?=base_url('admin/video')?>" class="link">Videos</a>
         <a href="<?=base_url('admin/nota')?>" class="link">Notas</a>
         <a href="<?=base_url('admin/comentarios')?>" class="link-comentario">Comentarios</a>
-        <a href="<?=base_url('admin/usuarios')?>" class="link-comentario">Usuarios</a>
+        <a href="<?=base_url('admin/inicio')?>" class="link">Fotos</a>
 
 
       </div>
@@ -22,22 +22,19 @@ require_once 'includes/header.php';
         <div class="div-btn-modal">
 
           <h2>Fotos</h2>
-
           <button class="btn btn-success" id="photos">Subir Foto</button>
-
+        
         </div>
 
 
         <div class="div-tabla">
 
           <!-- <div class="table-responsive"> -->
-            <table id="fotos" class="table table-striped table-bordered" width="100%" >
+            <table id="usuarios" class="table table-striped table-bordered" width="100%" >
               <thead>
                 <th width="5%">ID</th>
-                <th width="20%">Titulo</th>
-                <th width="20%">Fecha</th>
-                <th width="30%">Descripcion</th>
-                <th width="10%">Foto</th>
+                <th width="20%">Nombre</th>
+                <th width="20%">Ultimo Login</th>
                 <th width="15%">Acción</th>
               </thead>
             </table>
@@ -48,7 +45,7 @@ require_once 'includes/header.php';
 
       </div>
 
-      <!-- modal fotos-->
+      <!-- modal fotos
 
         <div id="modalPhotos" class="modal">
 
@@ -71,24 +68,7 @@ require_once 'includes/header.php';
           </form>
         </div>
 
-        <!-- Modal para edicion-->
-        <div id="modalPhotosEdit" class="modal">
-          <form class="form modal-content" method="post">
-            <div class="span-close">
-              <span id="span-photos_edit" class="close">&times;</span>
-            </div>
-
-            <div class="text-div">
-              <label>Editar Titulo</label>
-              <input class="titulo" type="text" id="titulo-foto_edit" placeholder="Titulo...">
-              <label>Editar Descripcion</label>
-              <textarea id="foto_edit" placeholder="Descripcion..."></textarea>
-            </div>
-            <div class="btn-div">
-              <button id="btn-photo_editar" class="btn btn-success" type="button">Guardar cambios</button>
-            </div>
-          </form>
-        </div>
+         Modal para edicion-->
 
     </div>
 

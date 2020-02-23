@@ -1,18 +1,19 @@
 <?php
 require_once 'includes/header.php';
- ?> 
-  
+ ?>
+
   <script src="<?=base_url()?>assets/js/jquery-3.4.1.min.js"></script>
   <script src="<?=base_url()?>assets/js/jquery.dataTables.min.js"></script>
   <script src="<?=base_url()?>assets/js/admin/adminComentarios.js"></script>
 
      <div class="div-inicio">
        <div class="div-btn">
-        
+
         <a href="<?=base_url('admin/inicio')?>" class="link">Fotos</a>
         <a href="<?=base_url('admin/video')?>" class="link">Videos</a>
         <a href="<?=base_url('admin/nota')?>" class="link">Notas</a>
-         
+        <a href="<?=base_url('admin/usuarios')?>" class="link-comentario">Usuarios</a>
+
        </div>
 
        <div class="div-btn-and-tabla">
@@ -41,7 +42,7 @@ require_once 'includes/header.php';
          </div>
 
        </div>
-     </div>  
+     </div>
 
    </body>
 </html>
