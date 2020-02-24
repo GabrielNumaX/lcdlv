@@ -6,7 +6,7 @@ $(document).ready(function() {
 
     if(!localStorage.getItem('commentCounter')){
 
-        let commentCounter = 5;
+        let commentCounter = 4;
     
         localStorage.setItem('commentCounter', JSON.stringify(commentCounter));
 
@@ -127,48 +127,50 @@ $(document).ready(function() {
 
         if (Array.isArray(obj.comentarios) && obj.comentarios.length) {
 
+            createComments(tableComments, obj.comentarios, commentCounter);
+
             // console.log('inside if')
             
             // let commentCounter = JSON.parse(localStorage.getItem('commentCounter'));
 
-            for(let i = obj.comentarios.length - 1; i >= obj.comentarios.length
-                - commentCounter; i--){
+            // for(let i = obj.comentarios.length - 1; i >= obj.comentarios.length
+            //     - commentCounter; i--){
 
-                // console.log(obj.comentarios[i].comentario)
+            //     // console.log(obj.comentarios[i].comentario)
 
-                const tr = document.createElement('tr');
+            //     const tr = document.createElement('tr');
 
-                const td = document.createElement('td');
+            //     const td = document.createElement('td');
 
-                $(td).attr('class', 'comments');
+            //     $(td).attr('class', 'comments');
 
-                const pComment = document.createElement('p');
+            //     const pComment = document.createElement('p');
 
-                $(pComment).attr('class', 'p-comments-no-show');
+            //     $(pComment).attr('class', 'p-comments-no-show');
 
-                $(pComment).html(obj.comentarios[i].comentario);
+            //     $(pComment).html(obj.comentarios[i].comentario);
 
-                if(obj.comentarios[i].comentario.length >= 45){
+            //     if(obj.comentarios[i].comentario.length >= 45){
 
-                    const spanShowComm = document.createElement('span');
+            //         const spanShowComm = document.createElement('span');
 
-                    $(spanShowComm).attr('class', 'show-comments');
+            //         $(spanShowComm).attr('class', 'show-comments');
 
-                    $(spanShowComm).html('Mostrar Mas...');
+            //         $(spanShowComm).html('Mostrar Mas...');
 
-                    $(td).append(pComment, spanShowComm);
+            //         $(td).append(pComment, spanShowComm);
 
-                }
-                else {
+            //     }
+            //     else {
 
-                    $(td).append(pComment);
+            //         $(td).append(pComment);
 
-                }
+            //     }
 
-                $(tr).append(td);
+            //     $(tr).append(td);
 
-                $(tableComments).append(tr);
-            }
+            //     $(tableComments).append(tr);
+            // }
         }
 
         if(obj.comentarios.length >= commentCounter){
@@ -482,6 +484,9 @@ $(document).ready(function() {
 
         const dataParse = JSON.parse(data)
 
+        //esto es para guardar el json para cargar mas comentarios
+        localStorage.setItem('lcdlv', data);
+
         //aca habria que hacer un for con el json y
         //filtrar por foto video o nota y usar las functions
 
@@ -503,8 +508,111 @@ $(document).ready(function() {
             }
         }
 
-        console.log(dataParse);
+        // console.log(dataParse);
     });
+
+    //function to create comments
+    function createComments(table, arrayComments, commentCounter){
+
+        console.log(arrayComments);
+
+        for(let i = arrayComments.length - 1; i >= arrayComments.length
+            - commentCounter; i--){
+
+            // console.log(obj.comentarios[i].comentario)
+
+            const tr = document.createElement('tr');
+
+            const td = document.createElement('td');
+
+            $(td).attr('class', 'comments');
+
+            const pComment = document.createElement('p');
+
+            $(pComment).attr('class', 'p-comments-no-show');
+
+            $(pComment).html(arrayComments[i].comentario);
+
+            if(arrayComments[i].comentario.length >= 45){
+
+                const spanShowComm = document.createElement('span');
+
+                $(spanShowComm).attr('class', 'show-comments');
+
+                $(spanShowComm).html('Mostrar Mas...');
+
+                $(td).append(pComment, spanShowComm);
+
+            }
+            else {
+
+                $(td).append(pComment);
+
+            }
+
+            $(tr).append(td);
+
+            $(table).append(tr);
+        }
+    }
+
+  
+    //esta es la func para cargar mas comments anda pero medio cancer
+    //faltaria guardar en el localStorage un obj que tenga el id y tipo 
+    //de elemento con su respectivo contador
+    //y probar q no se rompa sin comentarios!!!
+    //MUY IMPORTANTE ESTO
+    $('.post-container').on('click', '.span-more-comments', function() {
+
+        let commentCounter = JSON.parse(localStorage.getItem('commentCounter'));
+
+        commentCounter = parseInt(commentCounter) + 4;
+
+        const divElement = $(this).parent().siblings('.div-img');
+
+        const type = $(divElement).attr('data-type');
+
+        const id = $(divElement).attr('data-id');
+
+        // console.log(type, id);
+
+        const dataFromLocal = JSON.parse(localStorage.getItem('lcdlv'));
+
+        let commentsArray;
+
+        for(let i = 0; i < dataFromLocal.length; i++){
+
+            if(dataFromLocal[i].id === id && dataFromLocal[i].tipo === type){
+
+                // console.log(dataFromLocal[i]);
+
+                commentsArray = [...dataFromLocal[i].comentarios];
+
+                break;
+            }
+        }
+
+        const table = $(this).parent().siblings('.table-comments');
+
+        $(table).empty();
+
+        console.log(commentsArray.length, commentCounter);
+
+        if(commentCounter > commentsArray.length){
+
+            commentCounter = commentsArray.length;
+
+            $(this).parent().empty();
+
+            alert(commentCounter);
+            
+        }
+
+        localStorage.setItem('commentCounter', commentCounter);
+
+        createComments(table, commentsArray, commentCounter);
+
+    })
 
     //this is to show/hide post description
     //when clicked scroll out WILL TRY TO FIX
