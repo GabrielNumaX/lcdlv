@@ -2,17 +2,23 @@ $(document).ready(function() {
 
     console.log('script loaded');
 
+    let commentFromLocal;
+
     if(!localStorage.getItem('commentCounter')){
 
-        let commentCounter = [];
+        let commentCounter = 5;
     
         localStorage.setItem('commentCounter', JSON.stringify(commentCounter));
+
+        // console.log('if')
     }
     else {
-        var commentFromLocal = JSON.parse(localStorage.commentCounter)
+        commentFromLocal = JSON.parse(localStorage.getItem('commentCounter'));
+
+        // console.log('else');
     }
 
-    console.log(commentFromLocal);
+    // console.log(localStorage.getItem('commentCounter'));
 
     //function to load photos
 
@@ -84,13 +90,16 @@ $(document).ready(function() {
 
         $(divClickDesc).attr('class', 'div-p-click');
 
-        const pShowClick = document.createElement('p');
+        if(obj.descripcion.length >=45){
 
-        $(pShowClick).attr('class', 'p-show-click');
+            const pShowClick = document.createElement('p');
 
-        $(pShowClick).html('Mostrar');
+            $(pShowClick).attr('class', 'p-show-click');
 
-        $(divClickDesc).append(pShowClick);
+            $(pShowClick).html('Mostrar');
+
+            $(divClickDesc).append(pShowClick);
+        }
 
         const formComments = document.createElement('form');
 
@@ -114,11 +123,16 @@ $(document).ready(function() {
 
         $(tableComments).attr('class', 'table-comments');
 
+        const commentCounter = JSON.parse(localStorage.getItem('commentCounter'));
+
         if (Array.isArray(obj.comentarios) && obj.comentarios.length) {
 
             // console.log('inside if')
             
-            for(let i = obj.comentarios.length - 1; i >= 0; i--){
+            // let commentCounter = JSON.parse(localStorage.getItem('commentCounter'));
+
+            for(let i = obj.comentarios.length - 1; i >= obj.comentarios.length
+                - commentCounter; i--){
 
                 // console.log(obj.comentarios[i].comentario)
 
@@ -155,13 +169,34 @@ $(document).ready(function() {
 
                 $(tableComments).append(tr);
             }
+        }
 
+        if(obj.comentarios.length >= commentCounter){
+
+            const divShowComment = document.createElement('div');
+
+            $(divShowComment).attr('class', 'show-more-comments');
+
+            const spanMoreComments = document.createElement('span');
+
+            $(spanMoreComments).attr('class', 'span-more-comments');
+
+            $(spanMoreComments).html('Mostrar mas comentarios');
+
+            $(divShowComment).append(spanMoreComments);
+
+            $(article).append(h2Title, divTime, imgDiv, divDescription, 
+                divClickDesc, formComments, tableComments, divShowComment);
+    
+        }
+        else {
+
+            $(article).append(h2Title, divTime, imgDiv, divDescription, 
+                divClickDesc, formComments, tableComments);
 
         }
 
         //fin comments
-
-        $(article).append(h2Title, divTime, imgDiv, divDescription, divClickDesc, formComments, tableComments);
 
         $(postContainer).append(article);
 
