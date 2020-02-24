@@ -34,26 +34,30 @@
 
 
 .link:first-of-type {
-    padding-top: 100%;
+    padding-top: 50%;
 }
 .link {
     color: whitesmoke;
     font-size: 1.8vw;
     text-decoration: none;
-    padding: 30% 0 30% 0;
+    padding: 20% 0 20% 0;
 }
 
 .link:hover {
     text-decoration: none;
 }
 
-.link-comentario {
-    color: whitesmoke;
+.link:last-of-type {
+    /* color: whitesmoke;
     font-size: 1.6vw;
-    text-decoration: none;
-    padding: 30% 0 0 0;
+    text-decoration: none; */
+    padding: 20% 0 0 0;
 }
 
+
+.link-comentarios {
+    font-size: 1.5vw;
+}
 .link-comentario:hover {
     text-decoration: none;
 }

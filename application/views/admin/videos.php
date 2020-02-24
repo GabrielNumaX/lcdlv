@@ -12,8 +12,8 @@ require_once 'includes/header.php';
 
         <a href="<?=base_url('admin/inicio')?>" class="link">Fotos</a>
         <a href="<?=base_url('admin/nota')?>" class="link">Notas</a>
-        <a href="<?=base_url('admin/comentarios')?>" class="link-comentario">Comentarios</a>
-        <a href="<?=base_url('admin/usuarios')?>" class="link-comentario">Usuarios</a>
+        <a href="<?=base_url('admin/comentarios')?>" class="link link-comentarios">Comentarios</a>
+        <a href="<?=base_url('admin/usuarios')?>" class="link">Usuarios</a>
 
       </div>
 
