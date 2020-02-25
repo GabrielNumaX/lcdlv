@@ -13,12 +13,12 @@ class Admin_model extends CI_Model{
         $this->load->database();
     }
 
-    public function log($user, $pass){
+    public function log($user){
       $this->db->from($this->table);
       $this->db->where('nombre', $user);
-      $this->db->where('pass',$pass);
+      $this->db->or_where('email',$user);
 
-      $query = $this->db->get()->num_rows();
+      $query = $this->db->get();
       return $query;
     }
     private function _get_datatables_query()
@@ -71,7 +71,23 @@ class Admin_model extends CI_Model{
       $this->db->where('id',$id);
       $this->db->delete($this->table);
     }
-
+    function crear($nombre, $apellido, $email, $pass_cypher){
+      $this->db->select('email');
+      $this->db->where('email', $email);
+      $query = $this->db->get($this->table, 1);
+      if($query->num_rows() == 1){
+        return $query;
+      }else{
+        $data = array(
+          'nombre' => $nombre,
+          'apellido' => $apellido,
+          'email' => $email,
+          'pass' => $pass_cypher,
+          'ultimo_log' => null
+        );
+        $this->db->insert($this->table, $data);
+      }
+    }
 }
 
 ?>
