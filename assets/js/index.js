@@ -2,21 +2,21 @@ $(document).ready(function() {
 
     console.log('script loaded');
 
-    let commentFromLocal;
+    // let commentFromLocal;
 
-    if(!localStorage.getItem('commentCounter')){
+    // if(!localStorage.getItem('commentCounter')){
 
-        let commentCounter = 4;
+    //     let commentCounter = 4;
     
-        localStorage.setItem('commentCounter', JSON.stringify(commentCounter));
+    //     localStorage.setItem('commentCounter', JSON.stringify(commentCounter));
 
-        // console.log('if')
-    }
-    else {
-        commentFromLocal = JSON.parse(localStorage.getItem('commentCounter'));
+    //     // console.log('if')
+    // }
+    // else {
+    //     commentFromLocal = JSON.parse(localStorage.getItem('commentCounter'));
 
-        // console.log('else');
-    }
+    //     // console.log('else');
+    // }
 
     // console.log(localStorage.getItem('commentCounter'));
 
@@ -123,57 +123,17 @@ $(document).ready(function() {
 
         $(tableComments).attr('class', 'table-comments');
 
-        const commentCounter = JSON.parse(localStorage.getItem('commentCounter'));
+        // const commentCounter = JSON.parse(localStorage.getItem('commentCounter'));
+
+        const commentCounter = 5;
 
         if (Array.isArray(obj.comentarios) && obj.comentarios.length) {
 
             createComments(tableComments, obj.comentarios, commentCounter);
 
-            // console.log('inside if')
-            
-            // let commentCounter = JSON.parse(localStorage.getItem('commentCounter'));
-
-            // for(let i = obj.comentarios.length - 1; i >= obj.comentarios.length
-            //     - commentCounter; i--){
-
-            //     // console.log(obj.comentarios[i].comentario)
-
-            //     const tr = document.createElement('tr');
-
-            //     const td = document.createElement('td');
-
-            //     $(td).attr('class', 'comments');
-
-            //     const pComment = document.createElement('p');
-
-            //     $(pComment).attr('class', 'p-comments-no-show');
-
-            //     $(pComment).html(obj.comentarios[i].comentario);
-
-            //     if(obj.comentarios[i].comentario.length >= 45){
-
-            //         const spanShowComm = document.createElement('span');
-
-            //         $(spanShowComm).attr('class', 'show-comments');
-
-            //         $(spanShowComm).html('Mostrar Mas...');
-
-            //         $(td).append(pComment, spanShowComm);
-
-            //     }
-            //     else {
-
-            //         $(td).append(pComment);
-
-            //     }
-
-            //     $(tr).append(td);
-
-            //     $(tableComments).append(tr);
-            // }
         }
 
-        if(obj.comentarios.length >= commentCounter){
+        if(obj.comentarios.length > commentCounter){
 
             const divShowComment = document.createElement('div');
 
@@ -202,8 +162,7 @@ $(document).ready(function() {
 
         $(postContainer).append(article);
 
-
-    }
+    } // end loadPhotos()
 
     function loadVideos(obj) {
 
@@ -360,7 +319,7 @@ $(document).ready(function() {
 
         $(postContainer).append(article);
 
-    }
+    } //end loadVideos();
 
     function loadNotes(obj) {
 
@@ -469,8 +428,7 @@ $(document).ready(function() {
 
         $(postContainer).append(article);
 
-
-    }
+    } //end loadNotes();
 
 
     //this is for dynamic loading of content
@@ -487,10 +445,21 @@ $(document).ready(function() {
         //esto es para guardar el json para cargar mas comentarios
         localStorage.setItem('lcdlv', data);
 
+        let commentCountArray = [];
+
         //aca habria que hacer un for con el json y
         //filtrar por foto video o nota y usar las functions
-
         for(let i = 0; i < dataParse.length; i++){
+
+            //esto es para el array del localStorage
+            const obj = {
+                id: dataParse[i].id,
+                tipo: dataParse[i].tipo,
+                counter: 10,
+                comentarios: [...dataParse[i].comentarios]
+            }
+
+            commentCountArray.push(obj);
 
             if(dataParse[i].tipo === "foto"){
 
@@ -508,13 +477,19 @@ $(document).ready(function() {
             }
         }
 
-        // console.log(dataParse);
+
+        console.log(commentCountArray);
+
+        localStorage.setItem('counterArray', JSON.stringify(commentCountArray));
+
+        console.log(dataParse);
+
     });
 
     //function to create comments
     function createComments(table, arrayComments, commentCounter){
 
-        console.log(arrayComments);
+        // console.log(arrayComments);
 
         for(let i = arrayComments.length - 1; i >= arrayComments.length
             - commentCounter; i--){
@@ -547,14 +522,49 @@ $(document).ready(function() {
             else {
 
                 $(td).append(pComment);
-
             }
 
             $(tr).append(td);
 
             $(table).append(tr);
         }
+    } //end createComments()
+
+    //esta function carga mas comments comparando con el array de obj del
+    //localStorage (id, tipo, counter, y elemento para vaciar)
+    function loadMoreComments(table, commentsArray, id, tipo, parentEmpty) {
+
+        // console.log('inside load+comm');
+
+        for(let i = 0; i < commentsArray.length; i++){
+
+            if(commentsArray[i].id === id && commentsArray[i].tipo === tipo){
+
+                if(commentsArray[i].counter >= commentsArray[i].comentarios.length){
+
+                    commentsArray[i].counter = commentsArray[i].comentarios.length;
+
+                    createComments(table, commentsArray[i].comentarios, commentsArray[i].counter);
+                    
+                    parentEmpty.empty();
+        
+                }
+                else {
+                createComments(table, commentsArray[i].comentarios, commentsArray[i].counter);
+
+                commentsArray[i].counter = commentsArray[i].counter + 4;
+
+                // console.log(commentsArray[i].counter);
+                }
+
+            }
+        }
+
+        localStorage.setItem('counterArray', JSON.stringify(commentsArray));
+
+        // console.log(commentsArray);
     }
+
 
   
     //esta es la func para cargar mas comments anda pero medio cancer
@@ -562,11 +572,10 @@ $(document).ready(function() {
     //de elemento con su respectivo contador
     //y probar q no se rompa sin comentarios!!!
     //MUY IMPORTANTE ESTO
+    //ESTO DE ARRIBA YA ESTA Y NO SE ROMPE SIN COMMENTS
     $('.post-container').on('click', '.span-more-comments', function() {
 
-        let commentCounter = JSON.parse(localStorage.getItem('commentCounter'));
-
-        commentCounter = parseInt(commentCounter) + 4;
+        let commentsArray = JSON.parse(localStorage.getItem('counterArray'));
 
         const divElement = $(this).parent().siblings('.div-img');
 
@@ -574,45 +583,15 @@ $(document).ready(function() {
 
         const id = $(divElement).attr('data-id');
 
-        // console.log(type, id);
-
-        const dataFromLocal = JSON.parse(localStorage.getItem('lcdlv'));
-
-        let commentsArray;
-
-        for(let i = 0; i < dataFromLocal.length; i++){
-
-            if(dataFromLocal[i].id === id && dataFromLocal[i].tipo === type){
-
-                // console.log(dataFromLocal[i]);
-
-                commentsArray = [...dataFromLocal[i].comentarios];
-
-                break;
-            }
-        }
-
         const table = $(this).parent().siblings('.table-comments');
 
         $(table).empty();
 
-        console.log(commentsArray.length, commentCounter);
+        const parentEmpty = $(this).parent();
 
-        if(commentCounter > commentsArray.length){
+        loadMoreComments(table, commentsArray, id, type, parentEmpty)
 
-            commentCounter = commentsArray.length;
-
-            $(this).parent().empty();
-
-            alert(commentCounter);
-            
-        }
-
-        localStorage.setItem('commentCounter', commentCounter);
-
-        createComments(table, commentsArray, commentCounter);
-
-    })
+    }) //end loadMoreComments();
 
     //this is to show/hide post description
     //when clicked scroll out WILL TRY TO FIX
@@ -764,8 +743,8 @@ $(document).ready(function() {
             success: function() {
                
                 $(this).children().val("");
-                // alert('successfull comment')
-                location.reload(true);
+                console.log(data.comentario);
+                // location.reload(true);
             },
             error: function() {
               //igual es al pedo el error se va a dar cuenta cuando no comente! ja
