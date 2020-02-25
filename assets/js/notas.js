@@ -125,64 +125,161 @@ $(document).ready(function() {
 
         $(tableComments).attr('class', 'table-comments');
 
+        const commentCounter = 5;
+
         if (Array.isArray(obj.comentarios) && obj.comentarios.length) {
 
-            // console.log('inside if')
-            
-            for(let i = obj.comentarios.length - 1; i >= 0; i--){
-
-                // console.log(obj.comentarios[i].comentario)
-
-                const tr = document.createElement('tr');
-
-                const td = document.createElement('td');
-
-                $(td).attr('class', 'comments');
-
-                const pComment = document.createElement('p');
-
-                $(pComment).attr('class', 'p-comments-no-show');
-
-                $(pComment).html(obj.comentarios[i].comentario);
-
-                if(obj.comentarios[i].comentario.length >= 45){
-
-                    const spanShowComm = document.createElement('span');
-
-                    $(spanShowComm).attr('class', 'show-comments');
-
-                    $(spanShowComm).html('Mostrar Mas...');
-
-                    $(td).append(pComment, spanShowComm);
-
-                }
-                else {
-
-                    $(td).append(pComment);
-
-                }
-
-                $(tr).append(td);
-
-                $(tableComments).append(tr);
-            }
-
+            createComments(tableComments, obj.comentarios, commentCounter);
 
         }
-        // else {
-        //     console.log('inside else');
-        // }
+
+        if(obj.comentarios.length > commentCounter){
+
+            const divShowComment = document.createElement('div');
+
+            $(divShowComment).attr('class', 'show-more-comments');
+
+            const spanMoreComments = document.createElement('span');
+
+            $(spanMoreComments).attr('class', 'span-more-comments');
+
+            $(spanMoreComments).html('Mostrar mas comentarios');
+
+            $(divShowComment).append(spanMoreComments);
+
+            $(article).append(divNota, formComments, tableComments, divShowComment);
+    
+        }
+        else {
+
+            $(article).append(divNota, formComments, tableComments);
+
+        }
 
         //fin comments
 
-        $(article).append(divNota, formComments, tableComments);
-
         $(main).append(article);
 
-        // console.log('note added');
+    } //end loadNotes();
 
 
+    //function to create comments
+    function createComments(table, arrayComments, commentCounter){
+
+        // console.log(arrayComments);
+
+        for(let i = arrayComments.length - 1; i >= arrayComments.length
+            - commentCounter; i--){
+
+            // console.log(obj.comentarios[i].comentario)
+
+            const tr = document.createElement('tr');
+
+            const td = document.createElement('td');
+
+            $(td).attr('class', 'comments');
+
+            const pComment = document.createElement('p');
+
+            $(pComment).attr('class', 'p-comments-no-show');
+
+            $(pComment).html(arrayComments[i].comentario);
+
+            if(arrayComments[i].comentario.length >= 45){
+
+                const spanShowComm = document.createElement('span');
+
+                $(spanShowComm).attr('class', 'show-comments');
+
+                $(spanShowComm).html('Mostrar Mas...');
+
+                $(td).append(pComment, spanShowComm);
+
+            }
+            else {
+
+                $(td).append(pComment);
+            }
+
+            $(tr).append(td);
+
+            $(table).append(tr);
+        }
+    } //end createComments()
+
+
+    //esta function carga mas comments comparando con el array de obj del
+    //localStorage (id, tipo, counter, y elemento para vaciar)
+    function loadMoreComments(table, commentsArray, id, tipo, parentEmpty) {
+
+        // console.log('inside load+comm');
+
+        for(let i = 0; i < commentsArray.length; i++){
+
+            if(commentsArray[i].id === id && commentsArray[i].tipo === tipo){
+
+                if(commentsArray[i].counter >= commentsArray[i].comentarios.length){
+
+                    commentsArray[i].counter = commentsArray[i].comentarios.length;
+
+                    createComments(table, commentsArray[i].comentarios, commentsArray[i].counter);
+                    
+                    parentEmpty.empty();
+        
+                }
+                else {
+
+                createComments(table, commentsArray[i].comentarios, commentsArray[i].counter);
+
+                commentsArray[i].counter = commentsArray[i].counter + 4;
+
+                // console.log(commentsArray[i].counter);
+                }
+
+            }
+        }
+
+        localStorage.setItem('counterArray', JSON.stringify(commentsArray));
+
+        // console.log(commentsArray);
     }
+
+    //esta es la func para cargar mas comments anda pero medio cancer
+    //faltaria guardar en el localStorage un obj que tenga el id y tipo 
+    //de elemento con su respectivo contador
+    //y probar q no se rompa sin comentarios!!!
+    //MUY IMPORTANTE ESTO
+    //ESTO DE ARRIBA YA ESTA Y NO SE ROMPE SIN COMMENTS
+    $('#main').on('click', '.span-more-comments', function() {
+
+        let commentsArray = JSON.parse(localStorage.getItem('counterArray'));
+
+        let divElement = $(this).parent().siblings();
+        
+        if($(divElement).hasClass('div-img')){
+
+            divElement = $(this).parent().siblings('.div-img');
+        }
+        else if ($(divElement).hasClass('notas')){
+
+            divElement = $(this).parent().siblings('.notas');
+        }
+
+        // console.log(divElement);
+
+        const type = $(divElement).attr('data-type');
+
+        const id = $(divElement).attr('data-id');
+
+        const table = $(this).parent().siblings('.table-comments');
+
+        $(table).empty();
+
+        const parentEmpty = $(this).parent();
+
+        loadMoreComments(table, commentsArray, id, type, parentEmpty)
+
+    }) //end load more comments SPAN click;
 
     function asideNotes(obj) {
 
@@ -236,12 +333,21 @@ $(document).ready(function() {
 
         const dataParse = JSON.parse(data)
 
-        //aca habria que hacer un for con el json y
-        //filtrar por foto video o nota y usar las functions
+        localStorage.setItem('lcdlv', data);
+
+        let commentCountArray = [];
         
         for(let i = 0; i < dataParse.length; i++){
 
-            // console.log(i);
+            //esto es para el array del localStorage
+            const obj = {
+                id: dataParse[i].id,
+                tipo: dataParse[i].tipo,
+                counter: 10,
+                comentarios: [...dataParse[i].comentarios]
+            }
+
+            commentCountArray.push(obj);
 
             let noteCount = 0;
 
@@ -260,6 +366,10 @@ $(document).ready(function() {
             }
         }
 
+        console.log(commentCountArray);
+
+        localStorage.setItem('counterArray', JSON.stringify(commentCountArray));
+
         console.log(dataParse);
     });
 
@@ -271,7 +381,6 @@ $(document).ready(function() {
     $('#main').on('click','.show-comments', function() {
 
         let comment = $(this).prev();
-
 
         if($(comment).hasClass('p-comments-no-show')){
 
@@ -341,6 +450,8 @@ $(document).ready(function() {
 
         const subirComentario = `${protocol}//${URLmaster}/Comentarios/subir_comentario`;
 
+        const table = $(this).siblings('.table-comments');
+
         $.ajax({
             type: 'POST',
             dataType: 'text',
@@ -352,9 +463,44 @@ $(document).ready(function() {
             //solo dejamos el error!
             success: function() {
                 
-                $(this).children().val("");
-                // alert('successfull comment')
-                location.reload(true);
+                const scroll = $(window).scrollTop();
+
+                //aca hay que recargar la tabla de coments con el id, tipo y comentario 
+                //o mejor dicho hacerle un prepend
+
+                const tr = document.createElement('tr');
+
+                const td = document.createElement('td');
+
+                $(td).attr('class', 'comments');
+
+                const pComment = document.createElement('p');
+
+                $(pComment).attr('class', 'p-comments-no-show');
+
+                $(pComment).html(inputVal);
+
+                if(inputVal.length >= 40){
+
+                    const spanShowComm = document.createElement('span');
+
+                    $(spanShowComm).attr('class', 'show-comments');
+
+                    $(spanShowComm).html('Mostrar Mas...');
+
+                    $(td).append(pComment, spanShowComm);
+
+                }
+                else {
+
+                    $(td).append(pComment);
+                }
+
+                $(tr).append(td);
+
+                $(table).prepend(tr);
+
+                $('html').scrollTop(scroll);
             },
             error: function() {
               //igual es al pedo el error se va a dar cuenta cuando no comente! ja
@@ -364,7 +510,7 @@ $(document).ready(function() {
         });
 
         // //esto borra el text del input
-        // $(this).children().val("");
+        $(this).children().val("");
 
         }
 

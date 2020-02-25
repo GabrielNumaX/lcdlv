@@ -2,24 +2,6 @@ $(document).ready(function() {
 
     console.log('script loaded');
 
-    // let commentFromLocal;
-
-    // if(!localStorage.getItem('commentCounter')){
-
-    //     let commentCounter = 4;
-    
-    //     localStorage.setItem('commentCounter', JSON.stringify(commentCounter));
-
-    //     // console.log('if')
-    // }
-    // else {
-    //     commentFromLocal = JSON.parse(localStorage.getItem('commentCounter'));
-
-    //     // console.log('else');
-    // }
-
-    // console.log(localStorage.getItem('commentCounter'));
-
     //function to load photos
 
     function loadPhotos(obj) {
@@ -236,15 +218,16 @@ $(document).ready(function() {
 
         $(divClickDesc).attr('class', 'div-p-click');
 
-        const pShowClick = document.createElement('p');
+        if(obj.descripcion.length >=45){
 
-        $(pShowClick).attr('class', 'p-show-click');
+            const pShowClick = document.createElement('p');
 
-        $(pShowClick).html('Mostrar');
+            $(pShowClick).attr('class', 'p-show-click');
 
-        $(divClickDesc).append(pShowClick);
+            $(pShowClick).html('Mostrar');
 
-        //esto crea el input para el comentario
+            $(divClickDesc).append(pShowClick);
+        }
 
         const form = document.createElement('form');
 
@@ -268,54 +251,40 @@ $(document).ready(function() {
 
         $(tableComments).attr('class', 'table-comments');
 
+        const commentCounter = 5;
+
         if (Array.isArray(obj.comentarios) && obj.comentarios.length) {
 
-            // console.log('inside if')
-            
-            for(let i = obj.comentarios.length - 1; i >= 0; i--){
+            createComments(tableComments, obj.comentarios, commentCounter);
 
-                // console.log(obj.comentarios[i].comentario)
+        }
 
-                const tr = document.createElement('tr');
+        if(obj.comentarios.length > commentCounter){
 
-                const td = document.createElement('td');
+            const divShowComment = document.createElement('div');
 
-                $(td).attr('class', 'comments');
+            $(divShowComment).attr('class', 'show-more-comments');
 
-                const pComment = document.createElement('p');
+            const spanMoreComments = document.createElement('span');
 
-                $(pComment).attr('class', 'p-comments-no-show');
+            $(spanMoreComments).attr('class', 'span-more-comments');
 
-                $(pComment).html(obj.comentarios[i].comentario);
+            $(spanMoreComments).html('Mostrar mas comentarios');
 
-                if(obj.comentarios[i].comentario.length >= 45){
+            $(divShowComment).append(spanMoreComments);
 
-                    const spanShowComm = document.createElement('span');
+            $(article).append(h2Title, divTime, divVideo, divDescription, 
+                divClickDesc, form, tableComments, divShowComment);
+    
+        }
+        else {
 
-                    $(spanShowComm).attr('class', 'show-comments');
-
-                    $(spanShowComm).html('Mostrar Mas...');
-
-                    $(td).append(pComment, spanShowComm);
-
-                }
-                else {
-
-                    $(td).append(pComment);
-
-                }
-
-                $(tr).append(td);
-
-                $(tableComments).append(tr);
-            }
-
+            $(article).append(h2Title, divTime, divVideo, divDescription, 
+                divClickDesc, form, tableComments);
 
         }
 
         //fin comments
-
-        $(article).append(h2Title, divTime, divVideo, divDescription, divClickDesc, form, tableComments);
 
         $(postContainer).append(article);
 
@@ -377,54 +346,38 @@ $(document).ready(function() {
 
         $(tableComments).attr('class', 'table-comments');
 
+        const commentCounter = 5;
+
         if (Array.isArray(obj.comentarios) && obj.comentarios.length) {
 
-            // console.log('inside if')
-            
-            for(let i = obj.comentarios.length - 1; i >= 0; i--){
+            createComments(tableComments, obj.comentarios, commentCounter);
 
-                // console.log(obj.comentarios[i].comentario)
+        }
 
-                const tr = document.createElement('tr');
+        if(obj.comentarios.length > commentCounter){
 
-                const td = document.createElement('td');
+            const divShowComment = document.createElement('div');
 
-                $(td).attr('class', 'comments');
+            $(divShowComment).attr('class', 'show-more-comments');
 
-                const pComment = document.createElement('p');
+            const spanMoreComments = document.createElement('span');
 
-                $(pComment).attr('class', 'p-comments-no-show');
+            $(spanMoreComments).attr('class', 'span-more-comments');
 
-                $(pComment).html(obj.comentarios[i].comentario);
+            $(spanMoreComments).html('Mostrar mas comentarios');
 
-                if(obj.comentarios[i].comentario.length >= 40){
+            $(divShowComment).append(spanMoreComments);
 
-                    const spanShowComm = document.createElement('span');
+            $(article).append(divNota, formComments, tableComments, divShowComment);
+    
+        }
+        else {
 
-                    $(spanShowComm).attr('class', 'show-comments');
-
-                    $(spanShowComm).html('Mostrar Mas...');
-
-                    $(td).append(pComment, spanShowComm);
-
-                }
-                else {
-
-                    $(td).append(pComment);
-
-                }
-
-                $(tr).append(td);
-
-                $(tableComments).append(tr);
-            }
-
+            $(article).append(divNota, formComments, tableComments);
 
         }
 
         //fin comments
-
-        $(article).append(divNota, formComments, tableComments);
 
         $(postContainer).append(article);
 
@@ -432,7 +385,6 @@ $(document).ready(function() {
 
 
     //this is for dynamic loading of content
-
     const protocol = window.location.protocol;
     const URLmaster = window.location.host;
 
@@ -550,6 +502,7 @@ $(document).ready(function() {
         
                 }
                 else {
+
                 createComments(table, commentsArray[i].comentarios, commentsArray[i].counter);
 
                 commentsArray[i].counter = commentsArray[i].counter + 4;
@@ -577,7 +530,18 @@ $(document).ready(function() {
 
         let commentsArray = JSON.parse(localStorage.getItem('counterArray'));
 
-        const divElement = $(this).parent().siblings('.div-img');
+        let divElement = $(this).parent().siblings();
+        
+        if($(divElement).hasClass('div-img')){
+
+            divElement = $(this).parent().siblings('.div-img');
+        }
+        else if ($(divElement).hasClass('notas')){
+
+            divElement = $(this).parent().siblings('.notas');
+        }
+
+        // console.log(divElement);
 
         const type = $(divElement).attr('data-type');
 
@@ -591,7 +555,7 @@ $(document).ready(function() {
 
         loadMoreComments(table, commentsArray, id, type, parentEmpty)
 
-    }) //end loadMoreComments();
+    }) //end load more comments SPAN click;
 
     //this is to show/hide post description
     //when clicked scroll out WILL TRY TO FIX
