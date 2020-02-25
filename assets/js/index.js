@@ -397,7 +397,7 @@ $(document).ready(function() {
 
                 $(pComment).html(obj.comentarios[i].comentario);
 
-                if(obj.comentarios[i].comentario.length >= 45){
+                if(obj.comentarios[i].comentario.length >= 40){
 
                     const spanShowComm = document.createElement('span');
 
@@ -725,11 +725,11 @@ $(document).ready(function() {
             data.append('tipo', tipo);
             data.append('id', id);
 
-            // console.log(inputVal);
-            // console.log(tipo);
-            // console.log(id);
+            const subirComentario = `${protocol}//${URLmaster}/Comentarios/subir_comentario`;
 
-        const subirComentario = `${protocol}//${URLmaster}/Comentarios/subir_comentario`;
+            const table = $(this).siblings('.table-comments');
+
+            console.log(table);
 
         $.ajax({
             type: 'POST',
@@ -741,10 +741,52 @@ $(document).ready(function() {
             contentType: false,
             //solo dejamos el error!
             success: function() {
-               
-                $(this).children().val("");
-                console.log(data.comentario);
-                // location.reload(true);
+
+                // $(this).children().val("");
+
+                const scroll = $(window).scrollTop();
+
+                //aca hay que recargar la tabla de coments con el id, tipo y comentario 
+                //o mjor dicho hacerle un prepend
+
+                // const table = $(this).siblings('.table-comments');
+
+                const tr = document.createElement('tr');
+
+                const td = document.createElement('td');
+
+                $(td).attr('class', 'comments');
+
+                const pComment = document.createElement('p');
+
+                $(pComment).attr('class', 'p-comments-no-show');
+
+                $(pComment).html(inputVal);
+
+                if(inputVal.length >= 40){
+
+                    // alert('if');
+
+                    const spanShowComm = document.createElement('span');
+
+                    $(spanShowComm).attr('class', 'show-comments');
+
+                    $(spanShowComm).html('Mostrar Mas...');
+
+                    $(td).append(pComment, spanShowComm);
+
+                }
+                else {
+
+                    $(td).append(pComment);
+                }
+
+                $(tr).append(td);
+
+                $(table).prepend(tr);
+
+                $("html").scrollTop(scroll);
+                
             },
             error: function() {
               //igual es al pedo el error se va a dar cuenta cuando no comente! ja
@@ -754,7 +796,11 @@ $(document).ready(function() {
         });
 
         //esto borra el text del input
-        // $(this).children().val("");
+        $(this).children().val("");
+
+        // console.log(scroll);
+
+        // $("html").scrollTop(scroll);
 
         }
 
