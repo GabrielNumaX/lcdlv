@@ -2,8 +2,9 @@
 require_once 'includes/header.php';
  ?>
     <!--Esto queda en el index-->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> -->
     <link type="text/css" rel="stylesheet" href="<?= base_url()?>assets/css/master.css">
+    <script type="text/javascript" src="<?php echo base_url();?>assets/js/jquery-3.4.1.min.js" ></script>
     <script type="text/javascript" src="<?php echo base_url();?>assets/js/index.js" ></script>
 
 

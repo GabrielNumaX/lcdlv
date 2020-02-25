@@ -587,7 +587,7 @@ footer {
     }
 
     .p-nota {
-        line-height: 1.5;
+        line-height: 2;
         font-size: 14px;
     }
 
@@ -664,7 +664,7 @@ footer {
     }
 
     .p-nota {
-        line-height: 1;
+        line-height: 1.8;
         font-size: 12px;
     }
 
@@ -704,10 +704,10 @@ footer {
     }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 374px) {
 
     nav {
-        font-size: 14px;
+        font-size: 18px;
         /* padding-left: 16px; */
     }
 
@@ -715,4 +715,110 @@ footer {
         /* width: 110px; */
         font-size: 12px;
     }
+
+    main {
+        grid-template-columns: 3% 94% 3%;
+    }
+
+    #article-main {
+        width: 90%;
+        /* margin: 30px auto; */
+    }
+
+    #article-main h1 {
+       font-size: 8vw;
+    }
+    
+    .article-notas {
+        width: 88%;
+        margin: 0 auto 40px;
+    }
+
+    .div-time {
+        width: 100%;
+        text-align: left;
+        margin: 0 auto;
+        height: 35px;
+        padding-left: 4px;
+    }
+    
+    /* acancer */
+
+    .div-p-click {
+        width: 100%;
+        margin: 0 auto;
+        text-align: justify;
+        
+    }
+
+    .p-desc-no-show {
+        max-width: 84vw;
+    }
+
+    .form-comments {
+        width: 90%;
+    }
+
+    .table-comments {
+        width: 90%;
+        border-spacing: 0 10px;
+    }
+
+    .p-comments-no-show {
+        max-width: 70vw;
+        /* background-color: red; */
+    }
+    
+    .p-comments-show {
+        width: 70vw;
+        /* background-color: red; */
+        padding-bottom: 4px;
+    }
+
+    .span-more-comments {
+        font-size: 12px;
+    }
+
+    .footer-div1 h4, .footer-div2 h4 {
+        font-size: 4.6vw;
+    }
+
+    .footer-icons1 a, .footer-icons2 a {
+        font-size: 6.2vw;
+    }
+}
+
+@media (max-width: 352px) {  
+
+    header {
+        align-content: center;
+    }
+
+    .form-search {      
+        display: none;
+    }
+    
+    nav {
+        grid-column: 2 / 4;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-items: center;       
+    }
+
+    nav a:first-of-type {
+        grid-column: 1 / 2;
+    }
+
+    nav a {
+        grid-column: 2 / 3;
+    }
+
+    nav a:last-of-type {
+        grid-column: 3 / 4;
+    }
+
+    #article-main h1 {
+        margin-top: 16px;
+    }
+
 }

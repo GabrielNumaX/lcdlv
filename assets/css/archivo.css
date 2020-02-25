@@ -701,6 +701,14 @@ footer {
     .h3-nota {
         font-size: 14px;
     }
+
+    .footer-div1 h4, .footer-div2 h4 {
+        font-size: 4.6vw;
+    }
+
+    .footer-icons1 a, .footer-icons2 a {
+        font-size: 6.2vw;
+    }
 }
 
 @media (max-width: 415px) {
@@ -711,32 +719,133 @@ footer {
     }
 }
 
+
 @media (max-width: 374px) {
 
     nav {
-        font-size: 16px;
+        font-size: 18px;
         /* padding-left: 16px; */
     }
 
     .input-search {
         /* width: 110px; */
+        font-size: 12px;
+    }
+
+    main {
+        grid-template-columns: 3% 94% 3%;
+    }
+
+    #article-main h1 {
+       font-size: 8vw;
+    }
+
+    #article-main p{
+        width: 100%;
+        font-size: 4vw;
+        /* margin: 0 auto;
+        text-align: justify; */
+        padding: 14px 14px 0;
+    }
+
+    .article-post {
+        width: 90%;
+        margin: 0 auto 40px;
+    }
+    
+    .article-notas {
+        width: 88%;
+        margin: 0 auto 40px;
+    }
+
+    .div-time {
+        width: 100%;
+        text-align: left;
+        margin: 0 auto;
+        height: 35px;
+        padding-left: 4px;
+    }
+    
+    .div-img {
+        width: 100%;
+        text-align: justify;
+        margin: 0 auto;
+        padding: 0;
+    }
+
+    .div-desc {
+        width: 100%;
+    }
+
+    /* acancer */
+
+    .div-p-click {
+        width: 100%;
+        margin: 0 auto;
+        text-align: justify;
+        
+    }
+
+    .p-desc-no-show {
+        max-width: 84vw;
+    }
+
+    .form-comments {
+        width: 90%;
+    }
+
+    .table-comments {
+        width: 90%;
+        border-spacing: 0 10px;
+    }
+
+    .p-comments-no-show {
+        max-width: 70vw;
+        /* background-color: red; */
+    }
+    
+    .p-comments-show {
+        width: 70vw;
+        /* background-color: red; */
+        padding-bottom: 4px;
+    }
+
+    .span-more-comments {
         font-size: 12px;
     }
 }
 
-@media (max-width: 335px) {
+@media (max-width: 352px) {  
 
+    header {
+        align-content: center;
+    }
+
+    .form-search {      
+        display: none;
+    }
+    
     nav {
-        font-size: 14px;
-        /* padding-left: 16px; */
+        grid-column: 2 / 4;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        justify-items: center;       
+    }
+
+    nav a:first-of-type {
+        grid-column: 1 / 2;
     }
 
     nav a {
-        margin-right: 4px;
+        grid-column: 2 / 3;
     }
 
-    .input-search {
-        /* width: 110px; */
-        font-size: 12px;
+    nav a:last-of-type {
+        grid-column: 3 / 4;
     }
+
+    #article-main h1 {
+        margin-top: 16px;
+    }
+
 }

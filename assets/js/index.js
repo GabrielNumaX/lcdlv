@@ -729,7 +729,7 @@ $(document).ready(function() {
 
             const table = $(this).siblings('.table-comments');
 
-            console.log(table);
+            // console.log(table);
 
         $.ajax({
             type: 'POST',
@@ -742,14 +742,10 @@ $(document).ready(function() {
             //solo dejamos el error!
             success: function() {
 
-                // $(this).children().val("");
-
                 const scroll = $(window).scrollTop();
 
                 //aca hay que recargar la tabla de coments con el id, tipo y comentario 
-                //o mjor dicho hacerle un prepend
-
-                // const table = $(this).siblings('.table-comments');
+                //o mejor dicho hacerle un prepend
 
                 const tr = document.createElement('tr');
 
@@ -764,8 +760,6 @@ $(document).ready(function() {
                 $(pComment).html(inputVal);
 
                 if(inputVal.length >= 40){
-
-                    // alert('if');
 
                     const spanShowComm = document.createElement('span');
 
@@ -785,7 +779,7 @@ $(document).ready(function() {
 
                 $(table).prepend(tr);
 
-                $("html").scrollTop(scroll);
+                $('html').scrollTop(scroll);
                 
             },
             error: function() {
@@ -798,17 +792,12 @@ $(document).ready(function() {
         //esto borra el text del input
         $(this).children().val("");
 
-        // console.log(scroll);
-
-        // $("html").scrollTop(scroll);
-
         }
 
       }); // end comments function
 
 
       //function para buscar ver si se hace o no
-
       $('.form-search').on('submit', function(e) {
 
 
