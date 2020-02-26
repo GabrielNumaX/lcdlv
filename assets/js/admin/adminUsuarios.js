@@ -113,7 +113,162 @@ $(document).ready(function() {
         }
       }
 
-    $('#btn-user').on('click', upUser);
+    $('#pass2').on('keyup', function(e){
+
+      const pass1 = document.getElementById('pass1').value;
+
+      const verify = document.getElementById('pass-verify');
+
+      const btn = document.getElementById('btn-user');
+
+      if(e.target.value != pass1){
+
+        verify.style.display = 'block';
+
+        btn.disabled = true;
+      }
+      else {
+
+        verify.style.display = 'none';
+
+        btn.disabled = false;
+
+        $('#btn-user').on('click', upUser);
+      }
+    });
+    
+
+    $('#btn-logout').on('click', logout);
+
+    const updateUser = `${protocol}//${URLmaster}/Admin/update_user/`;
+
+    function editar(id){
+      $.ajax({
+        type:'POST',
+        url: updateUser + id,
+        dataType:'JSON',
+        success:function(data){
+          const modalUser = document.getElementById('modalUser_edit');
+          modalUser.dataset.id = data.id;
+          document.getElementById('name_edit').value = data.nombre;
+          document.getElementById('surname_edit').value = data.apellido;
+          document.getElementById('email_edit').value = data.email;
+          document.getElementById('pass1_edit').value = "";
+          document.getElementById('pass2_edit').value = "";
+         
+          $('#type_edit').val(data.tipo);
+    
+          modalUser.style.display = "block";
+    
+          const spanUser = document.getElementById("span-user_edit");
+    
+          // When the user clicks on <span> (x), close the modal
+          spanUser.onclick = function() {
+              modalUser.style.display = "none";
+          }
+    
+          // When the user clicks anywhere outside of the modal, close it
+          window.onclick = function(event) {
+              if (event.target == modalUser) {
+              modalUser.style.display = "none";
+              }
+          }
+        },
+      });
+    }
+    
+    
+    
+    $('#btn-edit-user').on('click', function() {
+      
+      const idFromData = $('#btn-edit-user').attr('data-id');
+      
+      editar(idFromData)
+    });
+    
+    $('#btn-user_edit').on('click', function() {
+    
+      const pass1 = document.getElementById('pass1_edit').value;
+    
+      const pass2 = document.getElementById('pass2_edit').value;
+    
+      const modalUser = document.getElementById('modalUser_edit');
+    
+      if(pass1 === '' && pass2 === ''){
+    
+        guardar();
+    
+        modalUser.style.display = 'none';
+    
+      }
+      else {
+    
+        $('#pass2_edit').on('keyup', function(e){
+    
+          const verify = document.getElementById('pass-verify_edit');
+    
+          const btn = document.getElementById('btn-user_edit');
+    
+          if(e.target.value !== pass1){
+    
+           verify.style.display = 'block';
+    
+           btn.disabled = true;
+          }
+          else {
+        
+           verify.style.display = 'none';
+    
+           btn.disabled = false;
+    
+            $('#btn-user_edit').on('click', function() {
+              
+              guardar();
+    
+              modalUser.style.display = 'none';
+    
+            });
+          }
+        });
+      }
+    })
+    
+
+    const guardarUsuarios = `${protocol}//${URLmaster}/Admin/save_user`;
+
+    function guardar(){
+    
+        const modalUser = document.getElementById('modalUser_edit');
+        var id = modalUser.dataset.id;
+        var name = document.getElementById('name_edit').value;
+        var surname = document.getElementById('surname_edit').value;
+        var email = document.getElementById('email_edit').value;
+        var rol = document.getElementById('type_edit').value;
+        var pass1 = document.getElementById('pass1_edit').value;
+        var pass2 = document.getElementById('pass2_edit').value;
+        $.ajax({
+            type:'POST',
+            url: guardarUsuarios,
+            data:{
+              id:id,
+              name:name,
+              surname:surname,
+              email:email,
+              rol:rol,
+              pass1:pass1,
+              pass2:pass2
+            },
+            success:function(){
+    
+                modalUser.style.display = 'none';
+    
+                table.ajax.reload();
+            },
+            error:function(){
+                alert('Error al actualizar usuario');
+            }
+        });
+    }
 
     const logoutUrl = `${protocol}//${URLmaster}/Admin/logout`;
 
@@ -132,5 +287,4 @@ $(document).ready(function() {
         });
     }
 
-    $('#btn-logout').on('click', logout);
-});
+}); //end jquery

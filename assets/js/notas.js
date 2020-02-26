@@ -340,6 +340,8 @@ $(document).ready(function() {
         localStorage.setItem('lcdlv', data);
 
         let commentCountArray = [];
+
+        let noteCount = 0;
         
         for(let i = 0; i < dataParse.length; i++){
 
@@ -353,13 +355,11 @@ $(document).ready(function() {
 
             commentCountArray.push(obj);
 
-            let noteCount = 0;
-
             if(dataParse[i].tipo === "nota"){
 
                 loadNotes(dataParse[i]);
 
-                if(noteCount < 15) {
+                if(noteCount < 10) {
 
                     asideNotes(dataParse[i]);
 

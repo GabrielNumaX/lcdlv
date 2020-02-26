@@ -59,7 +59,7 @@ require_once 'includes/header.php';
               <label>Titulo Nota</label>
               <input class="titulo" type="text" id="titulo_nota" placeholder="Titulo..."></input>
               <label>Nota</label>
-              <textarea id="nota" placeholder="Nota"></textarea>
+              <textarea id="nota" placeholder="Texto nota..."></textarea>
             </div>
             <div class="btn-div">
               <input id="btn-note" class="btn btn-success" type="button" value="Subir Nota"></input>
