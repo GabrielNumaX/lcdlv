@@ -167,6 +167,10 @@ $(document).ready(function() {
     function createComments(table, arrayComments, commentCounter){
 
         // console.log(arrayComments);
+        if(commentCounter > arrayComments.length){
+
+            commentCounter = arrayComments.length;
+        }
 
         for(let i = arrayComments.length - 1; i >= arrayComments.length
             - commentCounter; i--){

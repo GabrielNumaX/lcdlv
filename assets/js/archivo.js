@@ -401,7 +401,9 @@ $.get(cargarTodo, function(data, status) {
 
     //aca habria que hacer un for con el json y
     //filtrar por foto video o nota y usar las functions
-    for(let i = 0; i < dataParse.length; i++){
+    for(let i = dataParse.length - 1; i > 0; i--){
+
+        // console.log(i);
 
         //esto es para el array del localStorage
         const obj = {
@@ -442,6 +444,11 @@ $.get(cargarTodo, function(data, status) {
 function createComments(table, arrayComments, commentCounter){
 
     // console.log(arrayComments);
+
+    if(commentCounter > arrayComments.length){
+
+        commentCounter = arrayComments.length;
+    }
 
     for(let i = arrayComments.length - 1; i >= arrayComments.length
         - commentCounter; i--){

@@ -111,6 +111,8 @@ $(document).ready(function() {
 
         if (Array.isArray(obj.comentarios) && obj.comentarios.length) {
 
+            // console.log('array photos');
+            // console.log(obj.comentarios);
             createComments(tableComments, obj.comentarios, commentCounter);
 
         }
@@ -254,6 +256,11 @@ $(document).ready(function() {
         const commentCounter = 5;
 
         if (Array.isArray(obj.comentarios) && obj.comentarios.length) {
+
+
+            // console.log('array video');
+            // console.log(obj.comentarios);
+            // console.log(obj.comentarios[0].comentario);
 
             createComments(tableComments, obj.comentarios, commentCounter);
 
@@ -443,8 +450,17 @@ $(document).ready(function() {
 
         // console.log(arrayComments);
 
+        if(commentCounter > arrayComments.length){
+
+            commentCounter = arrayComments.length;
+        }
+
+        // console.log(commentCounter);
+
         for(let i = arrayComments.length - 1; i >= arrayComments.length
             - commentCounter; i--){
+
+                // console.log(i);
 
             // console.log(obj.comentarios[i].comentario)
 
