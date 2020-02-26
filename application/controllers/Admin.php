@@ -18,7 +18,7 @@ class Admin extends CI_Controller {
     $pass = $this->input->post('pass');
 
     $resultado = $this->admin->log($user);
-    if($resultado->result()[0] !== null){
+    if($resultado->num_rows() == 1){
       $pass_result = $resultado->result()[0]->pass;
       if(password_verify($pass, $pass_result)){
         $respuesta = array(
@@ -27,18 +27,22 @@ class Admin extends CI_Controller {
         );
 
         $user = array(
-          'nombre' => $user,
+          'id' => (int) $resultado->result()[0]->id,
+          'nombre' => $resultado->result()[0]->nombre,
+          'email' => $resultado->result()[0]->email,
           'log' => true,
         );
 
         $this->session;
         $this->session->set_userdata($user);
+        $this->admin->update_fecha($resultado->result()[0]->id);
         echo json_encode($respuesta);
       }else{
         $respuesta = array(
           'estado' => false,
           'mensaje' => 'Contraseña incorrecta'
         );
+        echo json_encode($respuesta);
       }
     }else{
       $respuesta = array(
@@ -96,14 +100,21 @@ class Admin extends CI_Controller {
       //$url = base_url();
       $data = array();
       foreach($resultados->result() as $r) { //se crea un array asociativo con cada resultados de la consulta a la BDD
-          // $accion = '<a class="btn btn-sm btn-danger" href="javascript:void(0)" title="Borrar" onclick="borrar_coment('."'".$r->id."'".')"><i class="fas fa-trash"></i></a>';
-          $accion = '<a class="btn btn-sm btn-danger" href="javascript:void(0)" title="Borrar"><i class="fas fa-trash"></i></a>';
+        if($r->tipo == 1){
+          $accion = '<button disabled class="btn btn-sm btn-danger" title="Admin"><i class="fas fa-trash"></i></button>';
+          $tipo = '<strong style="color:red">Administrador</strong>';
+        }else{
+          $accion = '<button class="btn btn-sm btn-danger" title="Borrar"><i class="fas fa-trash"></i></button>';
+          $tipo = '<p style="color:blue">Usuario</p>';
+        }
+
 
           $data[] = array(
              $r->id,
              $r->nombre,
              $r->apellido,
              $r->email,
+             $tipo,
              $r->ultimo_log,
              $accion
           );
@@ -121,9 +132,10 @@ class Admin extends CI_Controller {
       $nombre = $this->input->post('nombre');
       $apellido = $this->input->post('apellido');
       $email = $this->input->post('email');
+      $tipo = $this->input->post('tipo');
       //cifrado de pass
       $pass_cypher = password_hash($this->input->post('pass1'), PASSWORD_BCRYPT, ['cost' => 4]);
-      $query = $this->admin->crear($nombre, $apellido, $email, $pass_cypher);
+      $query = $this->admin->crear($nombre, $apellido, $email, $tipo, $pass_cypher);
 
       if($query !== null){
         if($query->num_rows() == 1){
@@ -145,6 +157,60 @@ class Admin extends CI_Controller {
 
     function borrar_usuario($id){
       $this->admin->borrar($id);
+    }
+
+    function update_user($id){
+      $query = $this->admin->buscar($id);
+      $data = array(
+        'id' => $query[0]->id,
+        'nombre' => $query[0]->nombre,
+        'apellido' => $query[0]->apellido,
+        'email' => $query[0]->email,
+        'pass' => $query[0]->pass,
+        'tipo' => $query[0]->tipo
+      );
+      echo json_encode($data);
+    }
+    function save_user(){
+      $id = $this->input->post('id');
+      $nombre = $this->input->post('name');
+      $apellido = $this->input->post('surname');
+      $email = $this->input->post('email');
+      $rol = $this->input->post('rol');
+
+      if($this->input->post('pass1') === $this->input->post('pass2')){
+        if($this->input->post('pass1') !== "" && $this->input->post('pass2')){
+          $resultado = $this->admin->update_all($id, $nombre, $apellido, $email, $rol, $this->input->post('pass1'));
+          if($resultado){
+            $data = array(
+              'estado' => true,
+              'mensaje' => 'Usuario actulizado con exito'
+            );
+            echo json_encode($data);
+          }else{
+            $data = array(
+              'estado' => false,
+              'mensaje' => 'Ocurrio un error'
+            );
+            echo json_encode($data);
+          }
+        }else{
+          $resultado = $this->admin->update_some($id, $nombre, $apellido, $email, $rol);
+          if($resultado){
+            $data = array(
+              'estado' => true,
+              'mensaje' => 'Usuario actualizado con exito'
+            );
+            echo json_encode($data);
+          }else{
+            $data = array(
+              'estado' => false,
+              'mensaje' => 'Ocurrio un error'
+            );
+            echo json_encode($data);
+          }
+        }
+      }
     }
 
 }

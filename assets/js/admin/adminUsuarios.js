@@ -71,6 +71,7 @@ $(document).ready(function() {
         var email = document.getElementById('email').value;
         var pass1 = document.getElementById('pass1').value;
         var pass2 = document.getElementById('pass2').value;
+        var tipo = document.getElementById('type').value;
 
         //NO sacar esto perric!!! LEER COMENTARIO DE ABAJO
         const modalUser = document.getElementById('modalUser');
@@ -80,6 +81,7 @@ $(document).ready(function() {
           data.append('apellido', apellido);
           data.append('email', email);
           data.append('pass1', pass1);
+          data.append('tipo', tipo);
           $.ajax({
               type: 'POST',
               url: cargarUsuarios,
@@ -112,4 +114,23 @@ $(document).ready(function() {
       }
 
     $('#btn-user').on('click', upUser);
+
+    const logoutUrl = `${protocol}//${URLmaster}/Admin/logout`;
+
+    const adminUrl = `${protocol}//${URLmaster}/admin`;
+
+    function logout(){
+        $.ajax({
+            type:'POST',
+            url: logoutUrl,
+            success:function(){
+            location.href = adminUrl;
+            },
+            error:function(){
+            Swal.fire('Error');
+            }
+        });
+    }
+
+    $('#btn-logout').on('click', logout);
 });
