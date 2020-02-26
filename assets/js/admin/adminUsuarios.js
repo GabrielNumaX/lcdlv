@@ -40,7 +40,7 @@ $(document).ready(function() {
 
     createDataTable();
 
-    const usuariosBorrar = `${protocol}//${URLmaster}/Admin/borrar_user/`;
+    const usuariosBorrar = `${protocol}//${URLmaster}/Admin/borrar_usuario/`;
 
     function borrar_usuario(id){
         $.ajax({
@@ -59,46 +59,57 @@ $(document).ready(function() {
     $('.div-tabla').on('click', '.btn.btn-sm.btn-danger', function() {
 
       const id = $(this).parent().siblings('.sorting_1').html();
-
+      //console.log('borrar');
       borrar_usuario(id);
     });
 
-    const cargarUsuarios = `${protocol}//${URLmaster}/Admin/cargar_usuario`;
+    const cargarUsuarios = `${protocol}//${URLmaster}/Admin/crear_usuario`;
 
     function upUser(){
-        var titulo = document.getElementById('titulo_nota').value;
-        var nota = document.getElementById('nota').value;
-        //NO SACAR ESTO!!!
-        nota = nota.replace(/\r?\n/g, '<br/>');
+        var nombre = document.getElementById('name').value;
+        var apellido = document.getElementById('surname').value;
+        var email = document.getElementById('email').value;
+        var pass1 = document.getElementById('pass1').value;
+        var pass2 = document.getElementById('pass2').value;
 
         //NO sacar esto perric!!! LEER COMENTARIO DE ABAJO
-        const modalNotes = document.getElementById('modalUser');
+        const modalUser = document.getElementById('modalUser');
+        if((pass1 === pass2) && (pass1 !== "" && pass2 !== "")){
+          var data = new FormData();
+          data.append('nombre', nombre);
+          data.append('apellido', apellido);
+          data.append('email', email);
+          data.append('pass1', pass1);
+          $.ajax({
+              type: 'POST',
+              url: cargarUsuarios,
+              data: data,
+              contentType: false,
+              processData: false,
+              cache: false,
+              success: function(data){
+                datalert = JSON.parse(data);
+                alert(datalert.mensaje);
+                  //mostrar cargando
+                  document.getElementById('name').value = "";
+                  document.getElementById('surname').value = "";
+                  document.getElementById('email').value = "";
+                  document.getElementById('pass1').value = "";
+                  document.getElementById('pass2').value = "";
 
-        var data = new FormData();
-        data.append('titulo', titulo);
-        data.append('nota', nota);
+                  //NO sacar esto perric es para q cierre el modal despues de cargar
+                  modalUser.style.display = 'none';
+                  // alert('Nota Cargada');
+                  table.ajax.reload();
+              },
+              error: function(){
+                  alert('Error 502');
+              },
+          });
+        }else{
+          alert('las pass no son iwales');
+        }
+      }
 
-        $.ajax({
-            type: 'POST',
-            url: cargarNotas,
-            data: data,
-            contentType: false,
-            processData: false,
-            cache: false,
-            success: function(){
-                //mostrar cargando
-                document.getElementById('titulo_nota').value = "";
-                document.getElementById('nota').value = "";
-
-                //NO sacar esto perric es para q cierre el modal despues de cargar
-                modalNotes.style.display = 'none';
-                // alert('Nota Cargada');
-                table.ajax.reload();
-            },
-            error: function(){
-                alert('Error 502');
-            },
-        });
-    }
     $('#btn-user').on('click', upUser);
 });

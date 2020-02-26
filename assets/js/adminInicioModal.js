@@ -84,4 +84,31 @@ if(document.getElementById('modalNotes')){
     }
   }
 }
+if(document.getElementById('modalUser')){
+  // Get the modal
+  const modalUser = document.getElementById("modalUser");
+
+  // Get the button that opens the modal
+  const btnUser = document.getElementById("user");
+
+  // Get the <span> element that closes the modal
+  const spanUser = document.getElementById("span-user");
+
+  // When the user clicks on the button, open the modal
+  btnUser.onclick = function() {
+    modalUser.style.display = "block";
+  }
+
+  // When the user clicks on <span> (x), close the modal
+  spanUser.onclick = function() {
+    modalUser.style.display = "none";
+  }
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    if (event.target == modalUser) {
+       modalUser.style.display = "none";
+    }
+  }
+}
 }); //end jquery

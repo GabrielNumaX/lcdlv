@@ -15,36 +15,39 @@ class Admin extends CI_Controller {
 
   public function login(){
     $user = $this->input->post('user');
-    //cifrar la clave
-    //$pass = sha1($this->input->post('pass'));
-    //clave sin cifrar para pruebas
     $pass = $this->input->post('pass');
-    $resultado = $this->admin->log($user, $pass);
 
-    if($resultado == 1){
-      $respuesta = array(
-        'estado' => true,
-        'mensaje' => 'bienvenido'
-      );
+    $resultado = $this->admin->log($user);
+    if($resultado->result()[0] !== null){
+      $pass_result = $resultado->result()[0]->pass;
+      if(password_verify($pass, $pass_result)){
+        $respuesta = array(
+          'estado' => true,
+          'mensaje' => 'bienvenido'
+        );
 
-      $user = array(
-        'nombre' => $user,
-        'log' => true,
-      );
+        $user = array(
+          'nombre' => $user,
+          'log' => true,
+        );
 
-      $this->session;
-      $this->session->set_userdata($user);
-      echo json_encode($respuesta);
+        $this->session;
+        $this->session->set_userdata($user);
+        echo json_encode($respuesta);
+      }else{
+        $respuesta = array(
+          'estado' => false,
+          'mensaje' => 'Contraseña incorrecta'
+        );
+      }
     }else{
       $respuesta = array(
         'estado' => false,
         'mensaje' => 'No existe el usuario'
       );
       echo json_encode($respuesta);
-    }
-
-
   }
+}
   //Funcion para cerrar sesion
   public function logout(){
     $this->session->sess_destroy();
@@ -99,6 +102,8 @@ class Admin extends CI_Controller {
           $data[] = array(
              $r->id,
              $r->nombre,
+             $r->apellido,
+             $r->email,
              $r->ultimo_log,
              $accion
           );
@@ -112,6 +117,32 @@ class Admin extends CI_Controller {
       echo json_encode($output); // se envian los filtros y los resultados por JSON junto con el array que contiene los datos
       exit();
     }
+    function crear_usuario(){
+      $nombre = $this->input->post('nombre');
+      $apellido = $this->input->post('apellido');
+      $email = $this->input->post('email');
+      //cifrado de pass
+      $pass_cypher = password_hash($this->input->post('pass1'), PASSWORD_BCRYPT, ['cost' => 4]);
+      $query = $this->admin->crear($nombre, $apellido, $email, $pass_cypher);
+
+      if($query !== null){
+        if($query->num_rows() == 1){
+          $mensaje = "El email ingresado ya existe";
+          $data = array(
+            'mensaje' => $mensaje
+          );
+          echo json_encode($data);
+        }
+      }else{
+        $mensaje = "Usuario creado con exito";
+        $data = array(
+          'mensaje' => $mensaje
+        );
+        echo json_encode($data);
+      }
+
+    }
+
     function borrar_usuario($id){
       $this->admin->borrar($id);
     }
