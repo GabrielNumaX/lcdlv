@@ -31,6 +31,7 @@ class Admin extends CI_Controller {
           'nombre' => $resultado->result()[0]->nombre,
           'email' => $resultado->result()[0]->email,
           'log' => true,
+          'rol' => $resultado->result()[0]->tipo
         );
 
         $this->session;

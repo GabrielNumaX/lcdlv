@@ -58,9 +58,23 @@ $(document).ready(function() {
 
     $('.div-tabla').on('click', '.btn.btn-sm.btn-danger', function() {
 
-      const id = $(this).parent().siblings('.sorting_1').html();
-      //console.log('borrar');
-      borrar_usuario(id);
+      Swal.fire({
+        title: 'Confirmar Borrado',
+        text: "Esto no se podra revertir",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Aceptar'
+      }).then((result) => {
+        if (result.value) {
+
+          const id = $(this).parent().siblings('.sorting_1').html();
+          //console.log('borrar');
+          borrar_usuario(id);
+
+        }
+      });
     });
 
     const cargarUsuarios = `${protocol}//${URLmaster}/Admin/crear_usuario`;
@@ -91,14 +105,17 @@ $(document).ready(function() {
               cache: false,
               success: function(data){
                 datalert = JSON.parse(data);
-                alert(datalert.mensaje);
                   //mostrar cargando
                   document.getElementById('name').value = "";
                   document.getElementById('surname').value = "";
                   document.getElementById('email').value = "";
                   document.getElementById('pass1').value = "";
                   document.getElementById('pass2').value = "";
-
+                  console.log(datalert);
+                  Swal.fire({
+                    title: datalert.mensaje,
+                    text: "Aceptar",
+                  });
                   //NO sacar esto perric es para q cierre el modal despues de cargar
                   modalUser.style.display = 'none';
                   // alert('Nota Cargada');
@@ -232,6 +249,31 @@ $(document).ready(function() {
         });
       }
     })
+
+    $('#btn-user_delete').on('click', function(){
+
+      Swal.fire({
+        title: 'Borrar Usuario',
+        text: "La sesion se cerrara",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Aceptar'
+      }).then((result) => {
+        if (result.value) {
+
+          const idFromData = $('#btn-edit-user').attr('data-id');
+
+          borrar_usuario(idFromData);
+
+          logout();
+        }
+      });
+
+
+    });
+
     
 
     const guardarUsuarios = `${protocol}//${URLmaster}/Admin/save_user`;

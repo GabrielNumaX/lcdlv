@@ -25,7 +25,13 @@ $_SESSION['token'] = $token;
         <div class="div-btn-modal">
 
           <h2>Usuarios</h2>
-          <button class="btn btn-success" id="user">Crear Usuario</button>
+          <?php if(isset($_SESSION['rol']) && $_SESSION['rol'] == 1):?>
+            <button class="btn btn-success" id="user">Crear Usuario</button>
+          <?php else: ?>
+            <button class="btn btn-success" id="user" disabled title="Debe ser Administrador para Crear Usuario">
+              Crear Usuario</button>
+          <?php endif; ?>
+          
           <button id="btn-edit-user"class="btn btn-sm btn-info" data-id="<?=$id?>">
             <i class="fas fa-user-edit"></i> Editar <?=$nombre?>
           </button>
@@ -119,15 +125,22 @@ $_SESSION['token'] = $token;
                 <input name="pass2" type="password" id="pass2_edit"></input>
 
                 <p id="pass-verify_edit">Las contraseñas no coinciden</p>
-                
-                <label for="rol">Tipo de usuario</label>
-                <select id="type_edit" class="form-control form-control-sm" name="rol">
-                  <option value="1">Administrador</option>
-                  <option value="2">Usuario</option>
-                </select>
+                <?php if(isset($_SESSION['rol']) && $_SESSION['rol'] == 1):?>
+                  <label for="rol">Tipo de usuario</label>
+                  <select id="type_edit" class="form-control form-control-sm" name="rol">
+                    <option value="1">Administrador</option>
+                    <option value="2">Usuario</option>
+                  </select>
+                <?php else: ?>
+                  <label for="rol">Tipo de usuario</label>
+                  <select id="type_edit" class="form-control form-control-sm" name="rol">
+                    <option value="2">Usuario</option>
+                  </select>
+                <?php endif; ?>
               </div>
               <div class="btn-user-div">
                 <input id="btn-user_edit" class="btn btn-success" type="button" value="Actualizar usuario"></input>
+                <input id="btn-user_delete" class="btn btn-danger" type="button" value="Borrar usuario"></input>
               </div>
             </div>
           </form>

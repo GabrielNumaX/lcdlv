@@ -61,9 +61,22 @@ $(document).ready(function() {
 
     $('.div-tabla').on('click', '.btn.btn-sm.btn-danger', function() {
 
-      const id = $(this).parent().siblings('.sorting_1').html();
+      Swal.fire({
+        title: 'Confirmar Borrado',
+        text: "Esto no se podra revertir",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Aceptar'
+      }).then((result) => {
+        if (result.value) {
 
-      borrar_comment(id);
+          const id = $(this).parent().siblings('.sorting_1').html();
+
+          borrar_comment(id);
+        }
+      });
     });
 
       const logoutUrl = `${protocol}//${URLmaster}/Admin/logout`;
