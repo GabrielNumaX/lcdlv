@@ -79,7 +79,11 @@ $(document).ready(function() {
       });
     }
     
-    $('#btn-photo').on('click', upPhoto);
+    $('#btn-photo').on('click', function(){
+      
+      upPhoto()
+    
+    });
     
 
     const borrarFotos = `${protocol}//${URLmaster}/Fotos/borrar_foto/`;
@@ -198,7 +202,11 @@ $(document).ready(function() {
       });
     }
 
-    $('#btn-photo_editar').on('click', guardar)
+    $('#btn-photo_editar').on('click', function(){
+      
+      guardar()
+    
+    });
 
     const logoutUrl = `${protocol}//${URLmaster}/Admin/logout`;
 
@@ -217,7 +225,11 @@ $(document).ready(function() {
       });
     }
 
-    $('#btn-logout').on('click', logout)
+    $('#btn-logout').on('click', function(){
+      
+      logout()
+    
+    });
 
 }); //end Jquery
 

@@ -47,6 +47,10 @@ $(document).ready(function() {
       });
     }
 
-    $('#btn-login').on('click', login);
+    $('#btn-login').on('click', function(){
+      
+      login()
+    
+    });
    
 }); //end Jquery

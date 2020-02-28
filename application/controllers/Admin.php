@@ -142,14 +142,16 @@ class Admin extends CI_Controller {
         if($query->num_rows() == 1){
           $mensaje = "El email ingresado ya existe";
           $data = array(
-            'mensaje' => $mensaje
+            'mensaje' => $mensaje,
+            'creado' => false
           );
           echo json_encode($data);
         }
       }else{
         $mensaje = "Usuario creado con exito";
         $data = array(
-          'mensaje' => $mensaje
+          'mensaje' => $mensaje,
+          'creado' => true
         );
         echo json_encode($data);
       }

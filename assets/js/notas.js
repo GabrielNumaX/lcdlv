@@ -370,11 +370,11 @@ $(document).ready(function() {
             }
         }
 
-        console.log(commentCountArray);
+        // console.log(commentCountArray);
 
         localStorage.setItem('counterArray', JSON.stringify(commentCountArray));
 
-        console.log(dataParse);
+        // console.log(dataParse);
     });
 
     //la funcion para mostrar mas comentarios esta en index.js

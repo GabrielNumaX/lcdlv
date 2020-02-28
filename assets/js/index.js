@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    console.log('script loaded');
+    // console.log('script loaded');
 
     //function to load photos
 
@@ -437,11 +437,11 @@ $(document).ready(function() {
         }
 
 
-        console.log(commentCountArray);
+        // console.log(commentCountArray);
 
         localStorage.setItem('counterArray', JSON.stringify(commentCountArray));
 
-        console.log(dataParse);
+        // console.log(dataParse);
 
     });
 

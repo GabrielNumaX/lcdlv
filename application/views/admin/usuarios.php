@@ -116,15 +116,16 @@ $_SESSION['token'] = $token;
                 <label for="nombre">Nombre</label>
                 <input required name="nombre" type="text" id="name_edit" placeholder="Ingrese un nombre"></input>
                 <label for="apellido">Apellido</label>
-                <input required name="apellido" type="text" id="surname_edit"  placeholder="Ingrese un apellido"></input>
+                <input name="apellido" type="text" id="surname_edit"  placeholder="Ingrese un apellido"></input>
                 <label for="email">Email</label>
-                <input name="email" type="email" id="email_edit"  placeholder="Ingrese un email"></input>
+                <input required name="email" type="email" id="email_edit" placeholder="Ingrese un email"></input>
                 <label for="pass1">Contraseña</label>
                 <input name="pass1" type="password" id="pass1_edit"></input>
                 <label for="pass2">Confirmar contraseña</label>
                 <input name="pass2" type="password" id="pass2_edit"></input>
 
                 <p id="pass-verify_edit">Las contraseñas no coinciden</p>
+                
                 <?php if(isset($_SESSION['rol']) && $_SESSION['rol'] == 1):?>
                   <label for="rol">Tipo de usuario</label>
                   <select id="type_edit" class="form-control form-control-sm" name="rol">

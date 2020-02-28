@@ -61,7 +61,7 @@ $(document).ready(function() {
       Swal.fire({
         title: 'Confirmar Borrado',
         text: "Esto no se podra revertir",
-        icon: 'warning',
+        // icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
@@ -77,7 +77,7 @@ $(document).ready(function() {
       });
     });
 
-    const cargarUsuarios = `${protocol}//${URLmaster}/Admin/crear_usuario`;
+    const crearUsuario = `${protocol}//${URLmaster}/Admin/crear_usuario`;
 
     function upUser(){
         var nombre = document.getElementById('name').value;
@@ -98,7 +98,7 @@ $(document).ready(function() {
           data.append('tipo', tipo);
           $.ajax({
               type: 'POST',
-              url: cargarUsuarios,
+              url: crearUsuario,
               data: data,
               contentType: false,
               processData: false,
@@ -111,11 +111,20 @@ $(document).ready(function() {
                   document.getElementById('email').value = "";
                   document.getElementById('pass1').value = "";
                   document.getElementById('pass2').value = "";
-                  console.log(datalert);
-                  Swal.fire({
-                    title: datalert.mensaje,
-                    text: "Aceptar",
-                  });
+
+                  if(datalert.creado === true){
+                    Swal.fire({
+                      title: datalert.mensaje,
+                      text: "Aceptar",
+                    });
+                  }
+                  else {
+                    Swal.fire({
+                      title: datalert.mensaje,
+                      text: "Aceptar",
+                    });
+                  }
+                  
                   //NO sacar esto perric es para q cierre el modal despues de cargar
                   modalUser.style.display = 'none';
                   // alert('Nota Cargada');
@@ -126,7 +135,7 @@ $(document).ready(function() {
               },
           });
         }else{
-          alert('las pass no son iwales');
+          alert('las pass no son iguales');
         }
       }
 
@@ -150,12 +159,13 @@ $(document).ready(function() {
 
         btn.disabled = false;
 
-        $('#btn-user').on('click', upUser);
-      }
-    });
+        $('#btn-user').unbind('click').click(function() {
     
+        upUser();
 
-    $('#btn-logout').on('click', logout);
+      });
+    }  
+  });
 
     const updateUser = `${protocol}//${URLmaster}/Admin/update_user/`;
 
@@ -193,8 +203,6 @@ $(document).ready(function() {
         },
       });
     }
-    
-    
     
     $('#btn-edit-user').on('click', function() {
       
@@ -255,7 +263,7 @@ $(document).ready(function() {
       Swal.fire({
         title: 'Borrar Usuario',
         text: "La sesion se cerrara",
-        icon: 'warning',
+        // icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
@@ -328,5 +336,11 @@ $(document).ready(function() {
             }
         });
     }
+
+    $('#btn-logout').on('click', function(){
+      
+      logout();
+    
+    });
 
 }); //end jquery
