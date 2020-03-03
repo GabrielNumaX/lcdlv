@@ -337,7 +337,7 @@ $(document).ready(function() {
 
         const dataParse = JSON.parse(data)
 
-        localStorage.setItem('lcdlv', data);
+        // localStorage.setItem('lcdlv', data);
 
         let commentCountArray = [];
 

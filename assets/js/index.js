@@ -402,7 +402,7 @@ $(document).ready(function() {
         const dataParse = JSON.parse(data)
 
         //esto es para guardar el json para cargar mas comentarios
-        localStorage.setItem('lcdlv', data);
+        // localStorage.setItem('lcdlv', data);
 
         let commentCountArray = [];
 
@@ -586,9 +586,11 @@ $(document).ready(function() {
         //arreglar cuando scrollea el texto de la descripcion
         //que baja a la base de la foto o al top del texto descripcion
 
-        const imgToScrollTo = $(this).parent().prev().prev().children();
+        // const imgToScrollTo = $(this).parent().prev().prev().children();
 
-        const divToScrollTo = $(this).parent().prev().children();
+        // const divToScrollTo = $(this).parent().prev().children();
+
+        const scroll = $(window).scrollTop();
 
         // console.log(imgToScrollTo);
 
@@ -614,7 +616,9 @@ $(document).ready(function() {
             //this solves the scrolling issue
             // $('html, body').scrollTop(divToScrollTo.offset().top);
 
-            $(imgToScrollTo).scrollTop(divToScrollTo.offset().top);
+            // $(imgToScrollTo).scrollTop(divToScrollTo.offset().top);
+
+            $('html').scrollTop(scroll);
 
         }
         else if($(desc).hasClass('p-desc-show')){
@@ -632,7 +636,9 @@ $(document).ready(function() {
             //this solves the scrolling issue
             // $('html, body').scrollTop(imgToScrollTo.offset().top);
 
-            $(divToScrollTo).scrollTop(imgToScrollTo.offset().top);
+            // $(divToScrollTo).scrollTop(imgToScrollTo.offset().top);
+
+            $('html').scrollTop(scroll);
         }
     });
 

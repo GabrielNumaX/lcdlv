@@ -74,6 +74,7 @@ nav a:active {
     /* width: 220px; */
     margin: 0 auto 0 50px;
     width: 70%;
+    display: none;
 }
 
 .input-search {
