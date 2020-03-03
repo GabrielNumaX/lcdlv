@@ -56,6 +56,11 @@ $(document).ready(function() {
       data.append('titulo', titulo);
       data.append('descripcion', desc);
 
+      swal.fire({
+        title: 'Subiendo Foto',
+      });
+      swal.showLoading();
+
       $.ajax({
         type:'POST',
         url: cargarFotos,
@@ -64,6 +69,9 @@ $(document).ready(function() {
         processData: false,
         cache: false,
         success: function(data){
+
+          swal.close();
+          
           document.getElementById('titulo_foto').value = "";
           document.getElementById('desc_foto').value = "";
           document.getElementById('file_upload_foto').value = "";
@@ -116,7 +124,6 @@ $(document).ready(function() {
       Swal.fire({
         title: 'Confirmar Borrado',
         text: "Esto no se podra revertir",
-        icon: 'warning',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',

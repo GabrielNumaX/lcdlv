@@ -57,6 +57,11 @@ $(document).ready(function() {
       data.append('titulo', titulo);
       data.append('descripcion', desc);
 
+      swal.fire({
+        title: 'Subiendo Video',
+      });
+      swal.showLoading();
+
       $.ajax({
         type:'POST',
         url: cargarVideos,
@@ -65,6 +70,9 @@ $(document).ready(function() {
         processData: false,
         cache: false,
         success: function(){
+
+          swal.close();
+          
           document.getElementById('titulo_video').value = "";
           document.getElementById('desc_video').value = "";
           document.getElementById('file_upload_video').value = "";
