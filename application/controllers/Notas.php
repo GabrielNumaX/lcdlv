@@ -50,10 +50,13 @@ class Notas extends CI_Controller {
   }
   function editar_nota($id){
     $query = $this->notas->buscar($id);
+
+    $nota_edit = str_replace('<br/>', PHP_EOL, $query[0]->nota);
+
     $data = array(
       'id' => $query[0]->id,
       'titulo' => $query[0]->titulo,
-      'nota' => $query[0]->nota,
+      'nota' => $nota_edit,
       'fecha' => $query[0]->fecha
     );
     echo json_encode($data);
